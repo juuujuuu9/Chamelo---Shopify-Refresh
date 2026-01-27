@@ -14,6 +14,19 @@
     {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
+    
+    {%- comment -%} Preconnect to external domains for performance {%- endcomment -%}
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://dashboard.heatmap.com" crossorigin>
+    <link rel="preconnect" href="https://j.northbeam.io" crossorigin>
+    <link rel="preconnect" href="https://xp2023-pix.s3.amazonaws.com" crossorigin>
+    <link rel="preconnect" href="https://www.clarity.ms" crossorigin>
+    <link rel="preconnect" href="https://cdn.weglot.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.intelligems.io" crossorigin>
+    <link rel="preconnect" href="https://ipapi.co" crossorigin>
+    <link rel="dns-prefetch" href="https://a.klaviyo.com">
+    <link rel="dns-prefetch" href="https://tryme.directory">
 
     {%- unless settings.type_body_font.system? -%}
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
@@ -258,11 +271,27 @@
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
     {{ 'common-imports.css' |  asset_url |  stylesheet_tag }}
-    {{ 'color-swatch.css' | asset_url | stylesheet_tag }}
-    {{ 'lensadvisor-integration.css' | asset_url | stylesheet_tag }}
-    {{ 'swiper-bundle.css' | asset_url | stylesheet_tag }}
-    {{ 'custom.css' | asset_url | stylesheet_tag }}
-    {{ 'custom2.css' | asset_url | stylesheet_tag }}
+    
+    {%- comment -%} Defer non-critical CSS to improve initial page load {%- endcomment -%}
+    <link rel="preload" href="{{ 'color-swatch.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ 'color-swatch.css' | asset_url }}"></noscript>
+    
+    <link rel="preload" href="{{ 'lensadvisor-integration.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ 'lensadvisor-integration.css' | asset_url }}"></noscript>
+    
+    <link rel="preload" href="{{ 'swiper-bundle.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ 'swiper-bundle.css' | asset_url }}"></noscript>
+    
+    <link rel="preload" href="{{ 'custom.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ 'custom.css' | asset_url }}"></noscript>
+    
+    <link rel="preload" href="{{ 'custom2.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ 'custom2.css' | asset_url }}"></noscript>
+    
+    {%- comment -%} Fallback for browsers that don't support onload on link elements {%- endcomment -%}
+    <script>
+      !function(e){"use strict";var t=function(t,n,o){var i,r=e.document,a=r.createElement("link");if(o)i=o;else{var l=(r.body||r.getElementsByTagName("head")[0]).childNodes;i=l[l.length-1]}var d=r.styleSheets;a.rel="stylesheet",a.href=t,a.media="only x",function e(t){if(r.body)return t();setTimeout(function(){e(t)})}(function(){i.parentNode.insertBefore(a,o?i:i.nextSibling)});var f=function(e){for(var t=a.href,n=d.length;n--;)if(d[n].href===t)return e();setTimeout(function(){f(e)})};return a.addEventListener&&a.addEventListener("load",function(){this.media=o||"all"}),a.onloadcssdefined=f,f(function(){a.media!==n&&(a.media=n)}),a};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this);
+    </script>
     
     
 
@@ -301,13 +330,15 @@
       let sliderInstance = []
     </script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
+    {%- comment -%} Load GSAP only once - use newer version with ScrollTrigger for homepage {%- endcomment -%}
     {% if template.name == 'index' %}
       <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
       <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    {% else %}
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     {% endif %}
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 
   <script src="{{'vendors.js' | asset_url }}" defer></script>  
@@ -326,56 +357,165 @@
       <script src="{{ 'localization-form.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
-    {%- comment -%} Heatmap.com {%- endcomment -%}
+    {%- comment -%} Defer all third-party scripts to improve page load performance {%- endcomment -%}
+    
+    {%- comment -%} Heatmap.com - Deferred {%- endcomment -%}
     <script>
-      (function (h,e,a,t,m,ap) { 
-        (h._heatmap_paq = []).push(['setTrackerUrl', (h.heatUrl = e) + a]); 
-        h.hErrorLogs=h.hErrorLogs || []; 
-        ap=t.createElement('script'); 
-        ap.src=h.heatUrl+'preprocessor.min.js?sid='+m; 
-        ap.defer=true; 
-        t.head.appendChild(ap); 
-        ['error', 'unhandledrejection'].forEach(function (ty) {
-          h.addEventListener(ty, function (et) { 
-            h.hErrorLogs.push({ type: ty, event: et }); 
-          }); 
-        });
-      })(window,'https://dashboard.heatmap.com/','heatmap.php',document,4385);
+      (function() {
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(function() {
+            (function (h,e,a,t,m,ap) { 
+              (h._heatmap_paq = []).push(['setTrackerUrl', (h.heatUrl = e) + a]); 
+              h.hErrorLogs=h.hErrorLogs || []; 
+              ap=t.createElement('script'); 
+              ap.src=h.heatUrl+'preprocessor.min.js?sid='+m; 
+              ap.defer=true; 
+              t.head.appendChild(ap); 
+              ['error', 'unhandledrejection'].forEach(function (ty) {
+                h.addEventListener(ty, function (et) { 
+                  h.hErrorLogs.push({ type: ty, event: et }); 
+                }); 
+              });
+            })(window,'https://dashboard.heatmap.com/','heatmap.php',document,4385);
+          }, { timeout: 2000 });
+        } else {
+          setTimeout(function() {
+            (function (h,e,a,t,m,ap) { 
+              (h._heatmap_paq = []).push(['setTrackerUrl', (h.heatUrl = e) + a]); 
+              h.hErrorLogs=h.hErrorLogs || []; 
+              ap=t.createElement('script'); 
+              ap.src=h.heatUrl+'preprocessor.min.js?sid='+m; 
+              ap.defer=true; 
+              t.head.appendChild(ap); 
+              ['error', 'unhandledrejection'].forEach(function (ty) {
+                h.addEventListener(ty, function (et) { 
+                  h.hErrorLogs.push({ type: ty, event: et }); 
+                }); 
+              });
+            })(window,'https://dashboard.heatmap.com/','heatmap.php',document,4385);
+          }, 2000);
+        }
+      })();
     </script>
 
-
-  {%- comment -%} Northbeam Pixel {%- endcomment -%}
+  {%- comment -%} Northbeam Pixel - Deferred {%- endcomment -%}
     <script>
-      (function(){var r;(n=r=r||{}).A="identify",n.B="trackPageView",n.C="fireEmailCaptureEvent",n.D="fireCustomGoal",n.E="firePurchaseEvent";var n="//j.northbeam.io/ota-sp/7aff28c5-7c59-4c59-b573-71ae459c945f.js";function t(n){for(var e=[],r=1;r<arguments.length;r++)e[r-1]=arguments[r];a.push({fnName:n,args:e})}var a=[],e=((e={_q:a})[r.A]=function(n,e){return t(r.A,n,e)},e[r.B]=function(){return t(r.B)},e[r.C]=function(n,e){return t(r.C,n,e)},e[r.D]=function(n,e){return t(r.D,n,e)},e[r.E]=function(n){return t(r.E,n)},window.Northbeam=e,document.createElement("script"));e.async=!0,e.src=n,document.head.appendChild(e);})()
+      (function() {
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(function() {
+            (function(){var r;(n=r=r||{}).A="identify",n.B="trackPageView",n.C="fireEmailCaptureEvent",n.D="fireCustomGoal",n.E="firePurchaseEvent";var n="//j.northbeam.io/ota-sp/7aff28c5-7c59-4c59-b573-71ae459c945f.js";function t(n){for(var e=[],r=1;r<arguments.length;r++)e[r-1]=arguments[r];a.push({fnName:n,args:e})}var a=[],e=((e={_q:a})[r.A]=function(n,e){return t(r.A,n,e)},e[r.B]=function(){return t(r.B)},e[r.C]=function(n,e){return t(r.C,n,e)},e[r.D]=function(n,e){return t(r.D,n,e)},e[r.E]=function(n){return t(r.E,n)},window.Northbeam=e,document.createElement("script"));e.async=!0,e.src=n,document.head.appendChild(e);})();
+          }, { timeout: 2000 });
+        } else {
+          setTimeout(function() {
+            (function(){var r;(n=r=r||{}).A="identify",n.B="trackPageView",n.C="fireEmailCaptureEvent",n.D="fireCustomGoal",n.E="firePurchaseEvent";var n="//j.northbeam.io/ota-sp/7aff28c5-7c59-4c59-b573-71ae459c945f.js";function t(n){for(var e=[],r=1;r<arguments.length;r++)e[r-1]=arguments[r];a.push({fnName:n,args:e})}var a=[],e=((e={_q:a})[r.A]=function(n,e){return t(r.A,n,e)},e[r.B]=function(){return t(r.B)},e[r.C]=function(n,e){return t(r.C,n,e)},e[r.D]=function(n,e){return t(r.D,n,e)},e[r.E]=function(n){return t(r.E,n)},window.Northbeam=e,document.createElement("script"));e.async=!0,e.src=n,document.head.appendChild(e);})();
+          }, 2000);
+        }
+      })();
     </script>
   {%- comment -%} End Northbeam Pixel {%- endcomment -%}
 
-    {%- comment -%} Post Pilot Pixel {%- endcomment -%}
-    <script type='text/javascript'>
-      var script = document.createElement('script');
-      script.src = 'https://xp2023-pix.s3.amazonaws.com/px_WJ5t7.js';
-      document.getElementsByTagName('head')[0].appendChild(script);
+    {%- comment -%} Post Pilot Pixel - Deferred {%- endcomment -%}
+    <script>
+      (function() {
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(function() {
+            var script = document.createElement('script');
+            script.src = 'https://xp2023-pix.s3.amazonaws.com/px_WJ5t7.js';
+            script.async = true;
+            document.getElementsByTagName('head')[0].appendChild(script);
+          }, { timeout: 2000 });
+        } else {
+          setTimeout(function() {
+            var script = document.createElement('script');
+            script.src = 'https://xp2023-pix.s3.amazonaws.com/px_WJ5t7.js';
+            script.async = true;
+            document.getElementsByTagName('head')[0].appendChild(script);
+          }, 2000);
+        }
+      })();
     </script>
     {%- comment -%} End Post Pilot Pixel {%- endcomment -%}
 
-
-      <script type="text/javascript">
-      (function(c,l,a,r,i,t,y){
-          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-      })(window, document, "clarity", "script", "mtnqo9k24s");
+    {%- comment -%} Clarity - Deferred {%- endcomment -%}
+    <script>
+      (function() {
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(function() {
+            (function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "mtnqo9k24s");
+          }, { timeout: 2000 });
+        } else {
+          setTimeout(function() {
+            (function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "mtnqo9k24s");
+          }, 2000);
+        }
+      })();
     </script>
 
-  {%- comment -%} Weglot Translation {%- endcomment -%}
-<script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
-<script>
-    Weglot.initialize({
-        api_key: 'wg_d0383aa8969128e7e3d5097d1f51e6592'
-    });
-</script>
+  {%- comment -%} Weglot Translation - Deferred {%- endcomment -%}
+  <script>
+    (function() {
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(function() {
+          var script = document.createElement('script');
+          script.src = 'https://cdn.weglot.com/weglot.min.js';
+          script.async = true;
+          script.onload = function() {
+            if (typeof Weglot !== 'undefined') {
+              Weglot.initialize({
+                api_key: 'wg_d0383aa8969128e7e3d5097d1f51e6592'
+              });
+            }
+          };
+          document.head.appendChild(script);
+        }, { timeout: 2000 });
+      } else {
+        setTimeout(function() {
+          var script = document.createElement('script');
+          script.src = 'https://cdn.weglot.com/weglot.min.js';
+          script.async = true;
+          script.onload = function() {
+            if (typeof Weglot !== 'undefined') {
+              Weglot.initialize({
+                api_key: 'wg_d0383aa8969128e7e3d5097d1f51e6592'
+              });
+            }
+          };
+          document.head.appendChild(script);
+        }, 2000);
+      }
+    })();
+  </script>
 
-<script type="module" blocking="render" fetchpriority="high" src="https://cdn.intelligems.io/esm/db4d790f2d09/bundle.js" async></script>
+  {%- comment -%} Intelligems - Removed blocking="render" and deferred {%- endcomment -%}
+  <script>
+    (function() {
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(function() {
+          var script = document.createElement('script');
+          script.type = 'module';
+          script.src = 'https://cdn.intelligems.io/esm/db4d790f2d09/bundle.js';
+          script.async = true;
+          document.head.appendChild(script);
+        }, { timeout: 2000 });
+      } else {
+        setTimeout(function() {
+          var script = document.createElement('script');
+          script.type = 'module';
+          script.src = 'https://cdn.intelligems.io/esm/db4d790f2d09/bundle.js';
+          script.async = true;
+          document.head.appendChild(script);
+        }, 2000);
+      }
+    })();
+  </script>
 <script>
     window.Shopify = window.Shopify || {theme: {id: {{ theme.id }}, role: '{{ theme.role }}' } };
     window._template = {
@@ -387,20 +527,45 @@
 
   {{ content_for_header }}
 
-  <script>
+    <script>
       if (Shopify.designMode) {
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
+    
+    {%- comment -%} Defer geoIP redirect to prevent blocking page render {%- endcomment -%}
     <script>
-  fetch('https://ipapi.co/json/')
-    .then(response => response.json())
-    .then(data => {
-      if (data.country_code === "IL") {
-        window.location.href = "https://chamelo-il.com";
-      }
-    });
-</script>
+      (function() {
+        // Use requestIdleCallback if available, otherwise defer with setTimeout
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(function() {
+            fetch('https://ipapi.co/json/')
+              .then(response => response.json())
+              .then(data => {
+                if (data.country_code === "IL") {
+                  window.location.href = "https://chamelo-il.com";
+                }
+              })
+              .catch(function() {
+                // Silently fail if geoIP service is unavailable
+              });
+          }, { timeout: 3000 });
+        } else {
+          setTimeout(function() {
+            fetch('https://ipapi.co/json/')
+              .then(response => response.json())
+              .then(data => {
+                if (data.country_code === "IL") {
+                  window.location.href = "https://chamelo-il.com";
+                }
+              })
+              .catch(function() {
+                // Silently fail if geoIP service is unavailable
+              });
+          }, 3000);
+        }
+      })();
+    </script>
 
 <script>
   // const arabicCountries = ["DZ","BH","KM","DJ","EG","IQ","JO","KW","LB","LY","MR","MA","OM","PS","QA","SA","SO","SD","SY","TN","AE","YE"];
@@ -539,9 +704,36 @@
       };
     </script>
     
-    <script src="https://tryme.directory/api/embed?id=OocC-WNZa-AUfH-XdZq-JTmB-bX6O"></script>
-
-  <script src="https://a.klaviyo.com/media/js/onsite/onsite.js"></script>
+    {%- comment -%} Defer TryMe and Klaviyo scripts {%- endcomment -%}
+    <script>
+      (function() {
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(function() {
+            var trymeScript = document.createElement('script');
+            trymeScript.src = 'https://tryme.directory/api/embed?id=OocC-WNZa-AUfH-XdZq-JTmB-bX6O';
+            trymeScript.async = true;
+            document.head.appendChild(trymeScript);
+            
+            var klaviyoScript = document.createElement('script');
+            klaviyoScript.src = 'https://a.klaviyo.com/media/js/onsite/onsite.js';
+            klaviyoScript.async = true;
+            document.head.appendChild(klaviyoScript);
+          }, { timeout: 2000 });
+        } else {
+          setTimeout(function() {
+            var trymeScript = document.createElement('script');
+            trymeScript.src = 'https://tryme.directory/api/embed?id=OocC-WNZa-AUfH-XdZq-JTmB-bX6O';
+            trymeScript.async = true;
+            document.head.appendChild(trymeScript);
+            
+            var klaviyoScript = document.createElement('script');
+            klaviyoScript.src = 'https://a.klaviyo.com/media/js/onsite/onsite.js';
+            klaviyoScript.async = true;
+            document.head.appendChild(klaviyoScript);
+          }, 2000);
+        }
+      })();
+    </script>
   <script>
      //  var klaviyo = klaviyo || [];
 //       klaviyo.init({

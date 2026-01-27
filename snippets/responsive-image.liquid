@@ -159,6 +159,8 @@
       srcset="{{ srcset }}"
       data-aspectratio="{{ image_aspect_ratio }}"
       data-sizes="auto"
+      width="{{ max_width_image }}"
+      height="{{ max_height_image }}"
       tabindex="-1" 
       alt="{{ image_alt | escape }}"
       data-zoom="{{ image | image_url: width: 1600 }} {{ 1600 }}w"
@@ -170,6 +172,6 @@
   </div>
   
   <noscript>
-    <img class="{{ image_class }}" src="{{ noscript_image_url }}" alt="{{ image_alt | escape }}">
+    <img class="{{ image_class }}" src="{{ noscript_image_url }}" alt="{{ image_alt | escape }}" width="{{ max_width_image }}" height="{{ max_height_image }}">
   </noscript>
   

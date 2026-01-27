@@ -30,7 +30,16 @@
             <div class="custom-banner__image custom-banner__image--mobile tw-block md:tw-hidden">
                 {% if section.settings.mobile_image %}
                   {% assign section_index = section.index | default: 0 %}
-                     <img  {% if section_index > 1 %} loading="lazy" {% else %} loading="eager" fetchpriority="high" {% endif %} src="{{ section.settings.mobile_image | image_url }}" alt="{{ section.settings.mobile_image.alt }}" style="width: 100%; height: auto;">
+                  {% assign mobile_image = section.settings.mobile_image %}
+                  <img  
+                    {% if section_index > 1 %} loading="lazy" {% else %} loading="eager" fetchpriority="high" {% endif %} 
+                    src="{{ mobile_image | image_url }}" 
+                    srcset="{% if mobile_image.width >= 375 %}{{ mobile_image | image_url: width: 375 }} 375w,{% endif %}{% if mobile_image.width >= 750 %}{{ mobile_image | image_url: width: 750 }} 750w,{% endif %}{% if mobile_image.width >= 1100 %}{{ mobile_image | image_url: width: 1100 }} 1100w{% endif %}"
+                    sizes="100vw"
+                    width="{{ mobile_image.width }}"
+                    height="{{ mobile_image.height }}"
+                    alt="{{ mobile_image.alt | escape }}" 
+                    style="width: 100%; height: auto;">
                 {% endif %}
             </div>
           </div>
