@@ -1,0 +1,695 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_banner_dzE4dw": {
+      "type": "image-banner",
+      "disabled": true,
+      "settings": {
+        "remove_from_mobile": true,
+        "remove_from_desktop": true,
+        "image": "shopify://shop_images/Screenshot_2025-04-16_at_3.18.50_PM.png",
+        "image_overlay_opacity": 0,
+        "image_height": "large",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "class-name": "",
+        "padding_top": 28,
+        "padding_bottom": 0
+      }
+    },
+    "lp_banner_c6mJPe": {
+      "type": "LP-banner",
+      "blocks": {
+        "2_col_image_text_type_2_UfjiEz": {
+          "type": "2-col-image-text-type-2",
+          "settings": {
+            "section_bg_color_2": "#f2f2f2",
+            "main_review_text_2": "",
+            "main_heading_text_2": "The world's only color-changing diamond glasses",
+            "main_information_text_2": "<p>Lab-grown. Conflict-free. Eternally brilliant.</p>",
+            "custom_liquid": "<p style=\"font-size: 24px;\">\n  <del style=\"color: #999;\"><strong>$645</strong></del>\n  <strong style=\"color: #000;\">$499</strong>\n</p>",
+            "main_button_text_2": "Shop Now",
+            "main_button_link_2": "#LP-featured-product-inner",
+            "bottom_text_2": " Holiday pricing ends Dec. 9, 2025",
+            "best_inventions_block_bg_color_2": "#ffffff",
+            "best_inventions_block_title_2": "",
+            "best_inventions_block_description_2": "",
+            "main_image_2": "shopify://shop_images/Placeholder_Image_f307c4f4-59c2-4096-9495-f0b44f8d83f9.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "2_col_image_text_type_2_UfjiEz"
+      ],
+      "custom_css": [],
+      "settings": {}
+    },
+    "index_marquee_logos_lists_new_ywWNjn": {
+      "type": "Index-marquee-logos-lists-new",
+      "blocks": {
+        "information_pY3pmE": {
+          "type": "information",
+          "settings": {
+            "main_custom_image": "shopify://shop_images/image_140.png"
+          }
+        },
+        "information_7cLYKG": {
+          "type": "information",
+          "settings": {
+            "main_custom_image": "shopify://shop_images/image_138_3af8cccb-9d20-4796-b8aa-490c1f49ccf5.png"
+          }
+        },
+        "information_prEdUw": {
+          "type": "information",
+          "settings": {
+            "main_custom_image": "shopify://shop_images/image_133_4c40a763-ab8d-4279-89df-571b155c84e7.png"
+          }
+        },
+        "information_hGEaQQ": {
+          "type": "information",
+          "settings": {
+            "main_custom_image": "shopify://shop_images/image_132_3ce69df1-c7a1-4c11-8edf-4d51c93c79a9.png"
+          }
+        },
+        "information_kicTTp": {
+          "type": "information",
+          "settings": {
+            "main_custom_image": "shopify://shop_images/image_140.png"
+          }
+        },
+        "information_kDApcX": {
+          "type": "information",
+          "settings": {
+            "main_custom_image": "shopify://shop_images/image_138_3af8cccb-9d20-4796-b8aa-490c1f49ccf5.png"
+          }
+        },
+        "information_wTGxHf": {
+          "type": "information",
+          "settings": {
+            "main_custom_image": "shopify://shop_images/image_133_4c40a763-ab8d-4279-89df-571b155c84e7.png"
+          }
+        },
+        "information_eH3kEm": {
+          "type": "information",
+          "settings": {
+            "main_custom_image": "shopify://shop_images/image_132_3ce69df1-c7a1-4c11-8edf-4d51c93c79a9.png"
+          }
+        }
+      },
+      "block_order": [
+        "information_pY3pmE",
+        "information_7cLYKG",
+        "information_prEdUw",
+        "information_hGEaQQ",
+        "information_kicTTp",
+        "information_kDApcX",
+        "information_wTGxHf",
+        "information_eH3kEm"
+      ],
+      "settings": {
+        "main_background_color": "#ffffff"
+      }
+    },
+    "image_banner_qJ7Brf": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_8FLVka": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Eight diamonds. Infinite possibilities.</strong>",
+            "heading_size": "h0"
+          }
+        }
+      },
+      "block_order": [
+        "heading_8FLVka"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "remove_from_mobile": true,
+        "remove_from_desktop": false,
+        "image": "shopify://shop_images/491.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "top-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "image_banner_CDcaQR": {
+      "type": "image-banner",
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "remove_from_mobile": false,
+        "remove_from_desktop": true,
+        "image": "shopify://shop_images/491.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "top-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "rich_text_fB4cB3": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_tnJxyq": {
+          "type": "heading",
+          "settings": {
+            "heading": "Eight diamonds. Infinite possibilities.",
+            "heading_size": "h1"
+          }
+        },
+        "heading_WX9FMG": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h1"
+          }
+        },
+        "text_a4qLHw": {
+          "type": "text",
+          "settings": {
+            "text": "<p> Aura Eternal features 8 lab-grown diamonds mounted directly onto the lens — 16 total carats of brilliance framing your view of the world.<br/><br/>Each diamond is near-colorless, crystal clear, and precision cut for maximum light return.<br/><br/>Combined with Chamelo's color-changing Prismatic lens technology, Aura Eternal lets you shift your look — and your mood — instantly. Four colors. Eight diamonds. One pair of glasses.</p>"
+          }
+        },
+        "logo_Ybmhk4": {
+          "type": "logo",
+          "disabled": true,
+          "settings": {
+            "logos1": "shopify://shop_images/image_141.jpg",
+            "title1": "8 lab-grown diamonds",
+            "logos2": "shopify://shop_images/image_142.jpg",
+            "title2": "16 ct total weight",
+            "logos3": "shopify://shop_images/image_143.jpg",
+            "title3": "[E-F color | VS clarity | Excellent cut]",
+            "logos4": "shopify://shop_images/image_144.jpg",
+            "title4": "IGI certified",
+            "logos5": "shopify://shop_images/image_140.jpg",
+            "title5": "Instant color-changing lenses"
+          }
+        },
+        "button_XNnfFb": {
+          "type": "button",
+          "settings": {
+            "button_label": "shop now",
+            "button_link": "#LP-featured-product-inner",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        },
+        "buttons_LzfhaB": {
+          "type": "buttons",
+          "disabled": true,
+          "settings": {
+            "button_label1": "shop now",
+            "button_link1": "#LP-featured-product-inner",
+            "button_label2": "",
+            "svg_icon": "",
+            "button_link2": "#LP-featured-product-inner"
+          }
+        }
+      },
+      "block_order": [
+        "heading_tnJxyq",
+        "heading_WX9FMG",
+        "text_a4qLHw",
+        "logo_Ybmhk4",
+        "button_XNnfFb",
+        "buttons_LzfhaB"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "remove_from_desktop": true,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-3",
+        "full_width": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_d8Kmqk": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_J6XJjh": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Your diamonds.Your proof. Forever verified.</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_NQ4rKh": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Every Aura Eternal comes with an IGI certificate — the global standard for lab-grown diamond authentication. Each diamond is laser-inscribed with a unique identifier and QR code. Scan it to verify authenticity instantly. No guesswork. No doubt. Just proof.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_HnY3Ae": {
+          "type": "button",
+          "settings": {
+            "button_label": "shop now",
+            "button_link": "#LP-featured-product-inner",
+            "button_style_secondary": false
+          }
+        },
+        "buttons_qRTdrH": {
+          "type": "buttons",
+          "disabled": true,
+          "settings": {
+            "button_label1": "Shop now",
+            "button_link1": "#LP-featured-product-inner",
+            "button_label2": "",
+            "svg_icon": "",
+            "button_link2": "#LP-featured-product-inner"
+          }
+        }
+      },
+      "block_order": [
+        "heading_J6XJjh",
+        "text_NQ4rKh",
+        "button_HnY3Ae",
+        "buttons_qRTdrH"
+      ],
+      "disabled": true,
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Placeholder_Image_48e8deb7-3142-4b26-9ca2-830d1b7503df.jpg",
+        "border_radius": 0,
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "scheme-262eef93-4865-4a5a-ba99-c0b7074f388f",
+        "color_scheme": "scheme-262eef93-4865-4a5a-ba99-c0b7074f388f",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_UKm4nQ": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_heWmMm": {
+          "type": "heading",
+          "settings": {
+            "heading": "An unboxing worthy of the gift",
+            "heading_size": "h1"
+          }
+        },
+        "text_MhHC8a": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Aura Eternal arrives in a premium presentation box inspired by fine diamond jewelry. Inside, you'll find:<br/></p><ul><li>Your Aura Eternal glasses</li><li>Premium box</li><li>Certificate of authentication</li><li>Eternal glasses case</li></ul>",
+            "text_style": "body"
+          }
+        },
+        "caption_MMgpVz": {
+          "type": "caption",
+          "settings": {
+            "caption": "Whether you're gifting it or keeping it, the experience starts the moment you open the box.",
+            "text_style": "subtitle",
+            "text_size": "small"
+          }
+        },
+        "button_NWfMUN": {
+          "type": "button",
+          "settings": {
+            "button_label": "shop now",
+            "button_link": "#LP-featured-product-inner",
+            "button_style_secondary": false
+          }
+        },
+        "buttons_hJEpcE": {
+          "type": "buttons",
+          "disabled": true,
+          "settings": {
+            "button_label1": "Shop now",
+            "button_link1": "#LP-featured-product-inner",
+            "button_label2": "",
+            "svg_icon": "",
+            "button_link2": "#LP-featured-product-inner"
+          }
+        }
+      },
+      "block_order": [
+        "heading_heWmMm",
+        "text_MhHC8a",
+        "caption_MMgpVz",
+        "button_NWfMUN",
+        "buttons_hJEpcE"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Artboard_3_1.jpg",
+        "border_radius": 0,
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "scheme-4",
+        "color_scheme": "scheme-4",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_fV9jKN": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_CxNrLr": {
+          "type": "heading",
+          "settings": {
+            "heading": "Same brilliance. Conflict-free.",
+            "heading_size": "h1"
+          }
+        },
+        "text_RqFbim": {
+          "type": "text",
+          "settings": {
+            "text": "<p> Lab-grown diamonds are chemically, physically, and optically identical to mined diamonds. The only difference? How they're made — and what they don't leave behind.<br/><br/><strong>Conflict-free<br/></strong>No mining. No displacement. No ethical compromises.<br/><br/><strong>Sustainable<br/></strong>Grown in controlled environments with a fraction of the environmental impact.</p><p><br/><strong>Certified<br/></strong>Graded to the same standards as mined diamonds. Same 4Cs. Same scrutiny.<br/><br/><strong>Brilliant<br/></strong>Indistinguishable from mined diamonds to the naked eye — and to gemologists.<br/></p>",
+            "text_style": "body"
+          }
+        },
+        "button_8ygVXT": {
+          "type": "button",
+          "settings": {
+            "button_label": "shop now",
+            "button_link": "#LP-featured-product-inner",
+            "button_style_secondary": false
+          }
+        },
+        "buttons_HcwnDp": {
+          "type": "buttons",
+          "disabled": true,
+          "settings": {
+            "button_label1": "Shop now",
+            "button_link1": "#LP-featured-product-inner",
+            "button_label2": "",
+            "svg_icon": "",
+            "button_link2": "#LP-featured-product-inner"
+          }
+        }
+      },
+      "block_order": [
+        "heading_CxNrLr",
+        "text_RqFbim",
+        "button_8ygVXT",
+        "buttons_HcwnDp"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Aura_Eternal_67c5c5ec-4fd5-4336-9bb2-3e97e3def10f.jpg",
+        "border_radius": 0,
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "scheme-4",
+        "color_scheme": "scheme-4",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_XL8HBb": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_jjiBzV": {
+          "type": "heading",
+          "settings": {
+            "heading": "Make It Yours",
+            "heading_size": "h1"
+          }
+        },
+        "text_difw6j": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Every Aura Eternal is handmade to order. Personalize your pair by selecting your frame color, your lens, and the arms.<br/></p><p><strong>Frame:</strong> Black or White<br/><br/><strong>Lens:</strong> Calm (Crystal → Ruby → Indigo → Violet) <br/>Energy (Clear → Yellow → Red → Orange)<br/><br/><strong>Audio (Optional +$50):</strong> Add premium open-ear speakers to listen to music, take calls, and stay aware of your surroundings — no headphones required.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_jjiBzV",
+        "text_difw6j"
+      ],
+      "custom_css": [
+        ".LP_banner_main_bottom_text p {color: #c00000; font-size: 14px; line-height: 160%;}"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Frame_1000005451_9e3837ef-d335-4c96-8f39-db9792189fdd.jpg",
+        "border_radius": 12,
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "scheme-4",
+        "color_scheme": "scheme-4",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "logo_list_q9k78A": {
+      "type": "logo-list",
+      "blocks": {
+        "information_cH3fKt": {
+          "type": "information",
+          "settings": {
+            "logos": "shopify://shop_images/image_145.png",
+            "title": "IGI Certified Diamonds"
+          }
+        },
+        "information_qzbQAq": {
+          "type": "information",
+          "settings": {
+            "logos": "shopify://shop_images/image_146.png",
+            "title": "16 ct Total Weight"
+          }
+        },
+        "information_ArQAAC": {
+          "type": "information",
+          "settings": {
+            "logos": "shopify://shop_images/image_147.png",
+            "title": "1-Year Diamond Warranty"
+          }
+        },
+        "information_YTRtGx": {
+          "type": "information",
+          "settings": {
+            "logos": "shopify://shop_images/image_155_0517175b-961d-4b3b-b37d-83d4351b906c.png",
+            "title": "100% UV Protection"
+          }
+        },
+        "information_raJqmB": {
+          "type": "information",
+          "settings": {
+            "logos": "shopify://shop_images/image_156_6cca9d1b-0a38-44e7-8ee2-535ad19c5d24.png",
+            "title": "0.1s Color Change"
+          }
+        },
+        "information_9iHLeQ": {
+          "type": "information",
+          "settings": {
+            "logos": "shopify://shop_images/image_148.png",
+            "title": "Conflict-Free"
+          }
+        }
+      },
+      "block_order": [
+        "information_cH3fKt",
+        "information_qzbQAq",
+        "information_ArQAAC",
+        "information_YTRtGx",
+        "information_raJqmB",
+        "information_9iHLeQ"
+      ],
+      "disabled": true,
+      "name": "Logo List",
+      "settings": {
+        "main_background_color": "#f0f0f0",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_featured_product_YjarK7": {
+      "type": "custom-featured-product",
+      "blocks": {
+        "title_4Eq6kF": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_LKJ9zD": {
+          "type": "price",
+          "settings": {}
+        },
+        "eternal_product_list_P48ATy": {
+          "type": "eternal_product_list",
+          "settings": {
+            "main_heading_text": "Make it Eternal with 8 real diamonds:"
+          }
+        },
+        "buy_buttons_YRNEnT": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        }
+      },
+      "block_order": [
+        "title_4Eq6kF",
+        "price_LKJ9zD",
+        "eternal_product_list_P48ATy",
+        "buy_buttons_YRNEnT"
+      ],
+      "name": "Custom featured product",
+      "settings": {
+        "product": "aura-calm-black-gold-instant-color-changing-sunglasses",
+        "color_scheme": "scheme-4",
+        "secondary_background": false,
+        "title": "Limited time offer!",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "index_faqs_accordion_list_new_zmqcjU": {
+      "type": "Index-faqs-accordion-list-new",
+      "blocks": {
+        "information_7UXCnf": {
+          "type": "information",
+          "settings": {
+            "title": "How does Aura work?",
+            "infos": "<p>Built with Prismatic™ Color-changing Lenses, Aura let’s you switch between four vibrant colors, elevating your style and embracing versatility like never before.</p>"
+          }
+        },
+        "information_KJQpqN": {
+          "type": "information",
+          "settings": {
+            "title": "What can Aura be used for?",
+            "infos": "<p>Aura’s elegant, rimless square shape is perfect to wear all through the day or night. Made with the world’s first color-changing lenses, Aura was built to turn heads.</p>"
+          }
+        },
+        "information_xwznA6": {
+          "type": "information",
+          "settings": {
+            "title": "Is Aura waterproof?",
+            "infos": "<p>Aura is made with IPX-4 water resistant material, guaranteeing durability for all your activities, from an epic dance floor sesh to lounging by the pool.</p>"
+          }
+        },
+        "information_gAR6Qr": {
+          "type": "information",
+          "settings": {
+            "title": "Is Aura polarized?",
+            "infos": "<p>No, Aura is not polarized. If you’re looking for polarized glasses, check out our<a href=\"https://chamelo.com/products/dusk-lifestyle-smart-glasses-electrochromic-tint-adjustable-audio-sunglasses\">Dusk Classic</a>.</p>"
+          }
+        },
+        "information_hEkGh4": {
+          "type": "information",
+          "settings": {
+            "title": "How fast is shipping?",
+            "infos": "<p>Packages shipping to the continental United States typically arrive within 4-7 business days and are sent out from our warehouse in Tennessee. We also offer Free US and international shipping on orders over $69.</p>"
+          }
+        },
+        "information_PWKMVw": {
+          "type": "information",
+          "settings": {
+            "title": "Do you offer a guarantee?",
+            "infos": "<p>At Chamelo, we understand that things don’t always go according to plan. That’s why we offer a robust warranty policy on our products, including a 30-day money-back guarantee and a 1-year manufacturer’s warranty. View our<a href=\"https://chamelo.com/pages/returns-exchanges\">policy here</a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "information_7UXCnf",
+        "information_KJQpqN",
+        "information_xwznA6",
+        "information_gAR6Qr",
+        "information_hEkGh4",
+        "information_PWKMVw"
+      ],
+      "settings": {
+        "main_background_color": "#ffffff",
+        "main_heading_text": "FAQs",
+        "main_button_text": "Shop AURA ETERNAL",
+        "main_button_link": "#LP-featured-product-inner",
+        "main_information_text": "<p>Curious how our sunglasses work or anything else? We’d love to hear from you. Email us at <a href=\"mailto:hello@chamelo.com\" title=\"mailto:hello@chamelo.com\">hello@chamelo.com</a> or call us at. (<a href=\"tel:(646)-413-7538\" title=\"tel:(646)-413-7538\">646)-413-7538.</a></p>",
+        "main_desktop_image": "shopify://shop_images/Group_1000005413_514e2664-192a-42bf-9aee-95fedccf4f48.jpg",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "image_banner_dzE4dw",
+    "main",
+    "lp_banner_c6mJPe",
+    "index_marquee_logos_lists_new_ywWNjn",
+    "image_banner_qJ7Brf",
+    "image_banner_CDcaQR",
+    "rich_text_fB4cB3",
+    "image_with_text_d8Kmqk",
+    "image_with_text_UKm4nQ",
+    "image_with_text_fV9jKN",
+    "image_with_text_XL8HBb",
+    "logo_list_q9k78A",
+    "custom_featured_product_YjarK7",
+    "index_faqs_accordion_list_new_zmqcjU"
+  ]
+}

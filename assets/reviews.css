@@ -1,0 +1,103 @@
+.cus-reviews {
+    padding: 96px 0;
+}
+.cus-reviews .wrapper {
+    max-width: 1104px;
+    margin: 0 auto;
+}
+.cus-reviews .review-header {
+    margin-bottom: 48px;
+}
+.cus-reviews .review_title {
+    font-size: 56px;
+    line-height: 1.05;
+    font-family: 'TT Norms Pro Trial Variable';
+    font-weight: 700;
+    text-transform: initial;
+    letter-spacing: -0.01em;
+    color: #000000;
+    text-align: center;
+    margin: 0;
+}
+.cus-reviews .jdgm-rev-widg__summary-inner {
+    position: relative;
+}
+.cus-reviews .jdgm-rev-widg__summary-inner .jdgm-all-reviews__summary-average {
+    color: #000;
+    position: absolute;
+    scroll-padding-top: 0;
+    top: 50%;
+    left: 0;
+    font-size: 40px;
+    font-family: TT Norms Pro Trial Variable;
+    font-weight: 600;
+    transform: translateY(-50%);
+    line-height: 1.1 !important;
+}
+.cus-reviews .jdgm-rev-widg__summary-inner .jdgm-all-reviews__summary-text {
+    color: #000;
+}
+.cus-reviews .jdgm-all-reviews__footer .jdgm-branding-footer {
+    display: none;
+}
+.cus-reviews .jdgm-rev__rating .jdgm-star {
+    padding: 0 14px 0 0 !important;
+    margin-right: 2px !important;
+}
+.cus-reviews .jdgm-rev__header .jdgm-rev__prod-link-prefix::before {
+    content: unset !important;
+}
+.cus-reviews .jdgm-rev__reply .jdgm-rev__replier-wrapper,
+.cus-reviews .jdgm-rev__reply .jdgm-rev__reply-content {
+    color: #000000;
+}
+.cus-reviews .jdgm-all-reviews-page__load-more-wrapper .jdgm-btn {
+    padding: 14px 70px;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 1279px) {
+    .cus-reviews .wrapper {
+        max-width: 860px;
+    }
+}
+@media screen and (max-width: 990px) {
+    .cus-reviews .wrapper {
+        max-width: 660px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .cus-reviews .review-header {
+        max-width: 280px;
+        margin: 0 auto 32px;
+    }
+    .cus-reviews .review_title {
+        font-size: 40px;
+        line-height: 1;
+    }
+    .cus-reviews {
+        padding: 32px 0 56px;
+    }
+    .cus-reviews .jdgm-rev-widg__summary {
+        display: flex;
+        /* justify-content: center; */
+    }
+    .cus-reviews .jdgm-rev-widg__summary-stars,
+    .cus-reviews .jdgm-rev-widg__summary-text {
+        width: fit-content;
+    }
+    .cus-reviews .jdgm-review-widget--medium .jdgm-write-rev-link, 
+    .cus-reviews .jdgm-review-widget--medium .jdgm-ask-question-btn {
+        max-width: 100%;
+        margin: 0;
+    }
+    .cus-reviews .jdgm-all-reviews__summary {
+        justify-content: center;
+    }
+    .cus-reviews .jdgm-rev-widg__summary-inner .jdgm-all-reviews__summary-average {
+        font-size: 32px;
+    }
+    .cus-reviews .jdgm-all-reviews-page__load-more-wrapper .jdgm-btn {
+        padding: 14px 35px;
+    }
+}

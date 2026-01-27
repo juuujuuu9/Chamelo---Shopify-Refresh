@@ -1,0 +1,151 @@
+<style>
+.LP_header_main {
+  padding-top: {{ section.settings.padding_top }}px;
+  padding-bottom: {{ section.settings.padding_bottom }}px;
+}
+</style>
+
+{% if section.settings.logo_desktop != blank or section.settings.main_button_link != blank or section.settings.main_button_text != blank %}
+  <div class="LP_header_main LP_header_main_{{ section.id }} {% if section.settings.sticky_header == true %} sticky_header {% endif %}" style="background-color: {{ section.settings.bg_color }}">
+    <div class="page-width">
+      <div class="LP_header_inner">
+        <div class="LP_header_logo_parent">
+          {% if section.settings.logo_desktop != blank %}
+            <div class="LP_header_logo_desktop LP_header_logo small-hide">
+              <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
+                {{
+                  section.settings.logo_desktop | 
+                  image_url: width: img.width | 
+                  image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                  fetchpriority: 'auto', 
+                  class:'LP_header_desktop_logo'
+                }}
+              </a>
+            </div>
+          {% endif %}
+          {% if section.settings.logo_mobile != blank %}
+            <div class="LP_header_logo_mobile LP_header_logo large-up-hide medium-hide">
+              <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
+                {{
+                  section.settings.logo_mobile | 
+                  image_url: width: img.width | 
+                  image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                  fetchpriority: 'auto', 
+                  class:'LP_header_mobile_logo'
+                }}
+              </a>
+            </div>
+            {% else %}
+            <div class="LP_header_logo_mobile LP_header_logo large-up-hide medium-hide">
+              <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
+                {{
+                  section.settings.logo_desktop | 
+                  image_url: width: img.width | 
+                  image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                  fetchpriority: 'auto', 
+                  class:'LP_header_mobile_logo'
+                }}
+              </a>
+            </div>
+          {% endif %}
+        </div>
+        {% if section.settings.main_button_link != blank or section.settings.main_button_text != blank %}
+          <div class="LP_header_button_parent">
+            <a class="LP_header_button button button_white_new" href="{{ section.settings.main_button_link }}">
+              {{ section.settings.main_button_text }}
+            </a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+<style>
+  .LP_header_main.sticky_header { position: fixed; width: 100%; z-index: 9; top: 0; }
+  .LP_header_inner { position: relative; }
+  .LP_header_button_parent { margin: 0 0 0 auto; width: fit-content; }
+  .LP_header_button_parent a { padding: 10.25px 31.25px; font-size: 14px; letter-spacing: 0.01em; min-height: unset; min-width: unset; }
+  .LP_header_logo_parent { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+  .LP_header_logo_parent img { width: 100%; object-fit: cover; display: block; }
+  .LP_header_logo_desktop { max-width: 159px; width: 100%; height: 21px; }
+  .LP_header_logo_mobile { max-width: 139.29px; height: 18px; }
+
+  @media (max-width: 749px){
+    .LP_header_main { padding: 12px 0; }
+    .LP_header_button_parent a { padding: 10px; font-size: 12px; }
+    .LP_header_logo_parent { left: 0; transform: translate(0); top: 7px; }
+  }
+</style>
+  
+{% schema %}
+  {
+    "name": "LP Header",
+    "class": "LP_header",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "sticky_header",
+        "label": "Make Sticky Header",
+        "default": true
+      },
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Add Background Color",
+        "default": "#000000"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo_desktop",
+        "label": "Add Desktop Logo"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo_mobile",
+        "label": "Add Mobile Logo"
+      },
+      {
+        "type": "text",
+        "id": "main_button_text",
+        "label": "Add Main Button Text",
+        "default": "Shop now"
+      },
+      {
+        "type": "url",
+        "id": "main_button_link",
+        "label": "Add Main Button Link",
+        "default": "/"
+      },
+      {
+        "type": "header",
+        "content": "t:sections.all.padding.section_padding_heading"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 16
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 16
+      }
+    ],
+    "presets": [
+      {
+        "name": "LP Header",
+      }
+    ]
+  }
+{% endschema %}

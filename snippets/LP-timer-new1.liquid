@@ -1,0 +1,61 @@
+<span class="text" id="timernew">
+    <span id="days">&nbsp;&nbsp;</span>
+  <span id="hours"></span>
+  <span id="minutes"></span>
+  <span id="seconds"></span>
+  </span>
+
+<script>
+//   function makeTimer() {
+//   date1 = new Date('{{- timer_end_date -}}');
+// date2 = new Date();
+// console.log(date1, date2);
+//     var timeLeft = Date.parse(date1) - Date.parse(new Date());
+// var milli_secs = date1.getTime() - date2.getTime();
+// // Convert the milli seconds to Days
+// var days = milli_secs / (1000 * 3600 * 24);
+// var hours = Math.trunc(days*24);
+// var minutes = Math.floor( (timeLeft/1000/60) % 60 );
+// var seconds =  Math.floor(timeLeft % (1000*60)/ 1000);
+// // console.log('days', days, hours);
+// 		if (hours < "10") { hours = "0" + hours; }
+// 			if (minutes < "10") { minutes = "0" + minutes; }
+// 			 if (seconds < "10") { seconds = "0" + seconds; }
+//   			$("#hours").html(hours + "<span>HR:</span>");
+//     $("#minutes").html(minutes + "<span>MIN:</span>");
+//      $("#seconds").html(seconds + "<span>SEC</span>");
+//     if(hours == 00 && minutes == 00){
+//            document.querySelector('.timer_main_new').style.display="none";
+//          }
+			
+// 	}
+// 	setInterval(function() { makeTimer(); }, 1000);
+
+
+  let targetdateandtime=new Date("{{- timer_end_date -}}");
+        let updatetimer =()=>{
+            let today=new Date()
+            let diff = targetdateandtime.getTime() - today.getTime()
+            let days = Math.floor(diff / (1000*60*60*24))
+            let hours = Math.floor(diff % (1000*60*60*24)/ (1000*60*60))
+            let min = Math.floor(diff % (1000*60*60)/ (1000*60))
+            let seconds =  Math.floor(diff % (1000*60)/ 1000)
+            let btn = document.getElementById('btn')
+            console.log("fdays", days)
+            if(days == 0){
+              btn.innerHTML=`OFFER ENDS IN ${hours}h:${min}m:${seconds}s`
+            }
+            // else if(days == 1){
+            //   btn.innerHTML=`offer ends in 1d ${hours}h:${min}m:${seconds}s`
+            // }
+            else{
+              btn.innerHTML=`OFFER ENDS IN ${days}d ${hours}h:${min}m:${seconds}s`   
+            }
+            if(diff <=0){
+                clearInterval(timer)
+                btn.innerHTML='OOPS!! OFFER HAS BEEN ENDED!!'
+            }
+        }
+     let timer =  setInterval(updatetimer,1000)
+
+</script>

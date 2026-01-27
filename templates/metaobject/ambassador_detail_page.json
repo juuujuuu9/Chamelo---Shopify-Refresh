@@ -1,0 +1,140 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero_banner_JBTFP9": {
+      "type": "hero-banner",
+      "blocks": {
+        "media_item_LrnYcg": {
+          "type": "media_item",
+          "repeater": "{{ metaobject.banner.value.ambassador_banner_images.value }}",
+          "settings": {
+            "video": "{{ block.repeater.video.value }}",
+            "desktop_image": "{{ block.repeater.desktop_image.value }}",
+            "mobile_image": "{{ block.repeater.mobile_image.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "media_item_LrnYcg"
+      ],
+      "name": "Custom hero Banner",
+      "settings": {
+        "facebook_url": "https://www.facebook.com/",
+        "instagram_url": "https://www.instagram.com/",
+        "tiktok_url": "https://www.tiktok.com/about?lang=en-GB",
+        "twitter_url": "",
+        "is_overlay": false,
+        "desktop_image_aspect_ratio": 1.7,
+        "mobile_image_aspect_ratio": 1.2,
+        "enable_social_share": true,
+        "social_icon_alignment": "left",
+        "heading": "{{ metaobject.banner.value.heading.value }}",
+        "content": "{{ metaobject.banner.value.description | metafield_tag }}",
+        "text_alignment": "left",
+        "image_alignment": "right",
+        "desktop_text_color": "",
+        "desktop_background_color": "",
+        "mobile_text_color": "",
+        "mobile_background_color": "",
+        "button_label": "{{ metaobject.banner.value.button_text.value }}",
+        "button_url": "{{ metaobject.banner.value.button_link.value }}",
+        "desktop_button_text_color": "",
+        "desktop_button_background_color": "#103262",
+        "mobile_button_text_color": "",
+        "mobile_button_background_color": "#103262",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_left": 56,
+        "padding_right": 56,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 0
+      }
+    },
+    "product_slider_with_info_4yizMV": {
+      "type": "product-slider-with-info",
+      "blocks": {
+        "product_dbzAqw": {
+          "type": "product",
+          "repeater": "{{ metaobject.ambassador_product_s.value }}",
+          "settings": {
+            "product": "{{ block.repeater.product.value }}",
+            "star_icon": "{{ block.repeater.star_icon.value }}",
+            "star_message": "{{ block.repeater.start_message.value }}",
+            "title": "{{ block.repeater.custom_title.value }}",
+            "description": "<p>{{ block.repeater.description | metafield_tag }}</p>",
+            "icon": "{{ block.repeater.trust_badge_icon.value }}",
+            "message": "{{ block.repeater.trust_badge_message.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "product_dbzAqw"
+      ],
+      "name": "Product Slider with Info",
+      "settings": {}
+    },
+    "featured_products_meCQEn": {
+      "type": "featured-products",
+      "name": "Featured Products",
+      "settings": {
+        "ambassador_image": "{{ metaobject.ambassador_profile_products.value.image.value }}",
+        "ambassador_heading": "{{ metaobject.ambassador_profile_products.value.heading.value }}",
+        "ambassador_description": "{{ metaobject.ambassador_profile_products.value.description | metafield_tag }}",
+        "main_background_color": "#ffffff",
+        "featured_products": "{{ metaobject.ambassador_profile_products.value.featured_product.value }}",
+        "products_to_show": 6,
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "padding_top": 48,
+        "padding_bottom": 48,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "promotional_videos_hkH4a7": {
+      "type": "promotional-videos",
+      "blocks": {
+        "celebs_item_list_Dt38A3": {
+          "type": "celebs_item_list",
+          "repeater": "{{ metaobject.promotional_videos.value }}",
+          "settings": {
+            "video_or_image": "{{ block.repeater.video.value }}",
+            "main_author_text": "{{ block.repeater.author_text.value }}",
+            "main_information_text": "{{ block.repeater.information_text.value }}",
+            "main_redirection_link": "{{ block.repeater.redirection_link.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "celebs_item_list_Dt38A3"
+      ],
+      "name": "Promotional Videos",
+      "settings": {
+        "main_background_color": "#000000",
+        "main_heading_text": "Real Chamelo love",
+        "main_padding_top": 40,
+        "main_padding_bottom": 40,
+        "main_padding_top_mobile": 32,
+        "main_padding_bottom_mobile": 32
+      }
+    }
+  },
+  "order": [
+    "hero_banner_JBTFP9",
+    "product_slider_with_info_4yizMV",
+    "featured_products_meCQEn",
+    "promotional_videos_hkH4a7"
+  ]
+}

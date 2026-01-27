@@ -1,0 +1,318 @@
+<style>
+  {% if section.settings.bg_color_desktop != blank %}
+    .LP_people_review_main { background-color: {{ section.settings.bg_color_desktop }}; }
+  {% endif %}
+
+  @media (max-width: 749px){
+    {% if section.settings.bg_color_mobile != blank %}
+      .LP_people_review_main { background-color: {{ section.settings.bg_color_mobile }}; }
+    {% endif %}
+
+    {% if section.settings.bg_effect_mobile != blank %}
+      .LP_people_review_main:before { content: ""; position:absolute; background-image: url({{ section.settings.bg_effect_mobile | img_url:'master' }}); background-size: cover;  width: 100%; height: 100%; bottom: 0; right: 0; }
+    {% endif %}
+  }
+</style>
+
+{% if section.settings.main_review_image != blank or section.settings.main_review_text != blank or section.settings.main_heading_text != blank or section.settings.bottom_review_image != blank or section.settings.review_message != blank or section.settings.review_author_name != blank or section.settings.bottom_eyewear_image != blank or section.settings.bottom_review_text != blank %}
+  <div class="LP_people_review_main LP_people_review_main_{{ section.id }}">
+    <div class="page-width">
+      <div class="LP_people_review_inner">
+        {% if section.settings.main_review_image != blank or section.settings.main_review_text != blank or section.settings.main_heading_text != blank %}
+          <div class="LP_people_review_heading_part">
+            {% if section.settings.main_review_image != blank or section.settings.main_review_text != blank %}
+              <div class="LP_people_heading_review_image_text">
+                {% if section.settings.main_review_image != blank %}
+                  <div class="LP_people_heading_review_image small-hide">
+                    {{
+                      section.settings.main_review_image | 
+                      image_url: width: img.width | 
+                      image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                      fetchpriority: 'auto', 
+                      class:'Review_image_new'
+                    }}
+                  </div>
+                {% endif %}
+                {% if section.settings.main_review_image_mobile != blank %}
+                  <div class="LP_people_heading_review_image large-up-hide medium-hide">
+                    {{
+                      section.settings.main_review_image_mobile | 
+                      image_url: width: img.width | 
+                      image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                      fetchpriority: 'auto', 
+                      class:'Review_image_new'
+                    }}
+                  </div>
+                {% endif %}
+                {% if section.settings.main_review_text != blank %}
+                  <div class="LP_people_heading_review_text">
+                    <p>
+                      {{ section.settings.main_review_text }}
+                    </p>
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+            {% if section.settings.main_heading_text != blank %}
+              <div class="LP_people_review_main_heading_text Common_title_new">
+                <h2>
+                  {{ section.settings.main_heading_text }}
+                </h2>
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+        <div class="LP_people_review_inner_main">
+          <div class="LP_people_review_slider swiper">
+            <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+              {% if block.settings.video != blank %}
+                  <div class="LP_people_review_video_slide swiper-slide play_icon_new">
+                    <svg class="play_icon" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g filter="url(#filter0_b_10646_12738)">
+                      <rect width="40" height="40" rx="20" fill="white" fill-opacity="0.12"/>
+                      <path d="M15 11.25V28.75L30 20L15 11.25Z" fill="white"/>
+                      </g>
+                      <defs>
+                      <filter id="filter0_b_10646_12738" x="-23" y="-23" width="86" height="86" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                      <feGaussianBlur in="BackgroundImageFix" stdDeviation="11.5"/>
+                      <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_10646_12738"/>
+                      <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_10646_12738" result="shape"/>
+                      </filter>
+                      </defs>
+                      </svg>
+                    
+                    {{ block.settings.video | video_tag: image_size: 'master', controls: false, autoplay: false, loop: true }}
+                    <div class="LP_people_review_video_preview_image"> 
+                      {{
+                        block.settings.video.preview_image | 
+                        image_url: width: img.width | 
+                        image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                        fetchpriority: 'auto'
+                      }}
+                    </div>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+            <div class="swiper-scrollbar"></div>
+          </div>
+        </div>
+        {% if section.settings.bottom_review_image != blank or section.settings.review_message != blank or section.settings.review_author_name != blank or section.settings.bottom_eyewear_image != blank or section.settings.bottom_review_text != blank %}
+          <div class="LP_people_review_bottom_part">
+            {% if section.settings.bottom_review_image != blank %}
+              <div class="LP_people_bottom_review_image">
+                {{
+                  section.settings.bottom_review_image | 
+                  image_url: width: img.width | 
+                  image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                  fetchpriority: 'auto', 
+                  class:'bottom_review_image_new'
+                }}
+              </div>
+            {% endif %}
+            {% if section.settings.review_message != blank %}
+              <div class="LP_people_bottom_review_message">
+                {{ section.settings.review_message }}
+              </div>
+            {% endif %}
+            {% if section.settings.review_author_name != blank %}
+              <div class="LP_people_bottom_review_author_name">
+                <p>
+                  {{ section.settings.review_author_name }}
+                </p>
+              </div>
+            {% endif %}
+            {% if section.settings.bottom_eyewear_image != blank or section.settings.bottom_review_text != blank %}
+              <div class="LP_people_bottom_review_eyewear_image_text_parent">
+                {% if section.settings.bottom_eyewear_image != blank %}
+                  <div class="LP_people_bottom_review_eyewear_image">
+                    {{
+                      section.settings.bottom_eyewear_image | 
+                      image_url: width: img.width | 
+                      image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                      fetchpriority: 'auto', 
+                      class:'bottom_eyewear_image_new'
+                    }}
+                  </div>
+                {% endif %}
+                {% if section.settings.bottom_review_text != blank %}
+                  <div class="LP_people_bottom_review_eyewear_image_text">
+                    {{ section.settings.bottom_review_text }}
+                    <a href="{{ section.settings.bottom_product_text_link }}">
+                      {{ section.settings.bottom_product_text }}
+                    </a>
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+<style>
+  .LP_people_review_main { padding: 96px 0 32px; position: relative; }
+  .LP_people_heading_review_image_text { display: flex; justify-content: center; gap: 16px; align-items: center; }
+  .LP_people_heading_review_image { max-width: 64px; width: 100%; }
+  .LP_people_heading_review_image img, .LP_people_bottom_review_image img, .LP_people_bottom_review_eyewear_image img { object-fit: cover; height: 100% !important; width: 100%; display: block; }
+  .LP_people_heading_review_text p { margin: 0; font-family: var(--font-mono-regular-family); color: #000; font-size: 12px; line-height: 120%; text-transform: uppercase; }
+  .LP_people_review_main_heading_text { padding-top: 20px; text-align: center; }
+  .LP_people_review_main_heading_text h2 { color: #000; }
+  .LP_people_review_main_heading_text h2 br { display: none; }
+  .LP_people_review_inner_main { padding-top: 48px; }
+  .LP_people_review_bottom_part { padding-top: 72px; text-align: center; max-width: 590px; width: 100%; margin: 0 auto; }
+  .LP_people_bottom_review_image { max-width: 104px; width: 100%; margin: 0 auto; }
+  .LP_people_bottom_review_message { padding-top: 32px; }
+  .LP_people_bottom_review_message h3 { color: #000; margin: 0; font-family: var(--font-body-family); font-size: 32px; font-weight: 600; line-height: 110%;}
+  .LP_people_bottom_review_author_name { padding-top: 32px; }
+  .LP_people_bottom_review_author_name p { color: #000; margin: 0; letter-spacing: 0px; text-transform: uppercase;  font-family: var(--font-body-family); font-size: 16px; font-weight: 600; line-height: 125%; }
+  .LP_people_bottom_review_eyewear_image_text_parent { padding-top: 16px; display: flex; align-items: center; justify-content: center; gap: 12px; }
+  .LP_people_bottom_review_eyewear_image { max-width: 65px; width: 100%; height: 27px; }
+  .LP_people_bottom_review_eyewear_image_text { display: flex; align-items: center; gap: 4px; }
+  .LP_people_bottom_review_eyewear_image_text p { margin: 0; font-family: var(--font-mono-regular-family); color: #000; font-size: 12px; line-height: 120%; text-transform: uppercase; }
+  .LP_people_bottom_review_eyewear_image_text a { margin: 0; font-family: var(--font-mono-regular-family); color: #000; font-size: 12px; line-height: 120%; text-transform: uppercase; font-weight: 600; text-decoration: underline; color: #000; }
+  .LP_people_review_slider { padding-bottom: 22px; }
+  .LP_people_review_slider .swiper-scrollbar { left: 0; background-color: rgba(0,0,0,0.15); border-radius: 0; bottom: 0; width: 100%; height: 2px; }
+  .LP_people_review_slider .swiper-scrollbar-drag { background-color: rgba(0,0,0); display: block; border-radius: 0; }
+  .LP_people_review_video_slide { aspect-ratio: 0.60807; position: relative; }
+  .LP_people_review_video_slide video { width: 100%; height: 100% !important; object-fit: cover; display: block; }
+  .LP_people_review_video_slide .play_icon { z-index: 1; cursor: pointer; backdrop-filter: blur(11.5px); border-radius: 50%; width: 40px; height: 40px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+  .LP_people_review_video_slide.active .LP_people_review_video_preview_image { display: none; }
+  
+  .LP_people_review_video_preview_image { width: 100%; height: 100%; top: 0; left: 0; position: absolute; }
+  .LP_people_review_video_preview_image img { width: 100%; height: 100% !important; display: block; object-fit: cover; }
+
+  *::-webkit-media-controls-panel { display: none!important; -webkit-appearance: none !important; }
+  .media-controls-container { display: none !important; }
+  
+  @media (max-width:749px){
+    .LP_people_review_main { padding: 48px 0 60px; }
+    .LP_people_review_bottom_part { display: none; }
+    .LP_people_review_main_heading_text h2 { line-height: 1; }
+    .LP_people_heading_review_text p, .LP_people_review_main_heading_text h2 { color: #FFF; }
+    .LP_people_review_slider .swiper-scrollbar { background-color: rgba(255,255,255,0.15); }
+    .LP_people_review_slider .swiper-scrollbar-drag { background-color: rgba(255,255,255); }
+    .LP_people_review_inner_main { padding-top: 20px; }
+    .LP_people_review_heading_part { position: relative; }
+  }
+
+  @media (max-width: 480px){
+    .LP_people_review_main .page-width { padding: 0 !important; }
+    .LP_people_heading_review_image_text { gap: 8px; }
+    .LP_people_review_heading_part { padding: 0 20px; }
+    .LP_people_review_main_heading_text h2 br { display: block; }
+    .LP_people_review_video_slide { aspect-ratio: 0.59708; }
+    .LP_people_review_slider { padding: 0 20px 22px; }
+    .LP_people_review_slider .swiper-scrollbar { width: calc(100% - 40px); left: 20px; }
+  }
+
+</style>
+  
+{% schema %}
+  {
+    "name": "LP People Review New",
+    "class": "LP_people_review",
+    "settings": [
+      {
+        "type": "color",
+        "id": "bg_color_desktop",
+        "label": "Add Background Color - Desktop",
+        "default": "#F6F6F6"
+      },
+      {
+        "type": "color",
+        "id": "bg_color_mobile",
+        "label": "Add Background Color - Mobile",
+        "default": "#000"
+      },
+      {
+        "type": "image_picker",
+        "id": "bg_effect_mobile",
+        "label": "Add Mobile Background Effect"
+      },
+      {
+        "type": "image_picker",
+        "id": "main_review_image",
+        "label": "Add Main Review Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "main_review_image_mobile",
+        "label": "Add Main Review Image - Mobile"
+      },
+      {
+        "type": "textarea",
+        "id": "main_review_text",
+        "label": "Add Main Review Text",
+        "default": "Rated 4.7 • 9,201 reviews"
+      },
+      {
+        "type": "textarea",
+        "id": "main_heading_text",
+        "label": "Add Main Heading Text",
+        "default": "Real people real reviews"
+      },
+      {
+        "type": "image_picker",
+        "id": "bottom_review_image",
+        "label": "Add Bottom Review Image"
+      },
+      {
+        "type": "richtext",
+        "id": "review_message",
+        "label": "Add Review Message",
+        "default": "<h3>I get tons of compliments. The sound on these is crisp and clear for music and when answering phone calls. 10 out of 10! battery last a long time too!</h3>"
+      },
+      {
+        "type": "text",
+        "id": "review_author_name",
+        "label": "Add Review Author name",
+        "default": "jeancarlo"
+      },
+      {
+        "type": "image_picker",
+        "id": "bottom_eyewear_image",
+        "label": "Add Eyewear Image"
+      },
+      {
+        "type": "textarea",
+        "id": "bottom_review_text",
+        "label": "Add Bottom Review Text",
+        "default": "<p>Reviewing</p>"
+      },
+      {
+        "type": "text",
+        "id": "bottom_product_text",
+        "label": "Add Product Name",
+        "default": "Music Shield"
+      },
+      {
+        "type": "url",
+        "id": "bottom_product_text_link",
+        "label": "Add Product Text Link"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "video",
+        "name": "Video",
+        "settings": [
+          {
+            "type": "video",
+            "id": "video",
+            "label": "Add Video"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "LP People Review New",
+      }
+    ]
+  }
+{% endschema %}

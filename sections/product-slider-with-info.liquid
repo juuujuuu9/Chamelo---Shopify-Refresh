@@ -1,0 +1,231 @@
+{{ 'product-slider-with-info.css' | asset_url | stylesheet_tag }}
+<div class="container">
+  <div class="tw-bg-[#F8F6F6]">
+    <div class="page-width">
+      <div class="product-slider-with-info-swiper swiper tw-pb-4">
+        <div class="swiper-wrapper">
+          {%- for block in section.blocks -%}
+            <div class="swiper-slide product-slider-with-info product-slider-with-info-{{ block.id }}">
+              {%- assign product = block.settings.product -%}
+              {%- assign product_information = block.settings -%}
+
+              <!-- Product Title -->
+              <div class="tw-text-black tw-font-[700] tw-text-[24px] tw-py-5 tw-pt-8 md:tw-py-10 md:tw-text-[40px]">
+                {%- assign product_heading_lable = product.title | append: ' : ' | append: product.metafields.custom.product_color_detail_text -%}
+                   {{ product_information.label | default: product_heading_lable }}
+              </div>
+
+              <!-- Product Content Grid -->
+              <div class="tw-grid md:tw-grid-cols-2 tw-gap-4">
+                <!-- Product Image with Navigation -->
+                <div class="tw-relative">
+                  <div class=" tw-order-1 md:tw-order-1 md:tw-max-w-[446px] md:tw-max-h-[364px] tw-ml-auto tw-mr-auto  tw-overflow-hidden">
+                    {% if product.featured_image %}
+                    {%- render 'Shopify-responsive-image',
+                      image: product.featured_image,
+                      image_class: 'slider-image tw-w-full tw-h-auto'
+                    -%}
+
+                    {% else %}
+
+                      {{ 'product-1' | placeholder_svg_tag }}
+                      
+                    {% endif %}
+
+                    <!-- Desktop Navigation Arrows (beside image) -->
+                    <div class="desktop-navigation-arrows tw-hidden md:tw-block">
+                                              <div class="custom-button-next tw-absolute tw-top-1/2 tw-right-[5px] tw-transform tw-translate-y-[-50%] tw-bg-white tw-rounded-full tw-flex tw-items-center tw-justify-center tw-shadow-lg tw-z-10 tw-h-[52px] tw-w-[52px]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none">
+                          <path d="M51.4596 26.0003C51.4596 11.9401 40.0616 0.541992 26.0013 0.541992C11.9411 0.541992 0.542969 11.9401 0.542969 26.0003C0.542969 40.0606 11.9411 51.4587 26.0013 51.4587C40.0616 51.4587 51.4596 40.0606 51.4596 26.0003Z" stroke="black" stroke-width="1.08333"/>
+                          <path d="M30.5184 27.0827H17.332V24.9161H30.5184L24.7074 19.1051L26.2392 17.5732L34.6654 25.9994L26.2392 34.4256L24.7074 32.8937L30.5184 27.0827Z" fill="black"/>
+                        </svg>
+                      </div>
+                                              <div class="custom-button-prev tw-absolute tw-top-1/2 tw-left-[5px] tw-transform tw-translate-y-[-50%] tw-bg-white tw-rounded-full tw-flex tw-items-center tw-justify-center tw-shadow-lg tw-z-10 tw-h-[52px] tw-w-[52px]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none">
+                          <path d="M0.540363 26.0003C0.540363 11.9401 11.9384 0.541992 25.9987 0.541992C40.0589 0.541992 51.457 11.9401 51.457 26.0003C51.457 40.0606 40.0589 51.4587 25.9987 51.4587C11.9384 51.4587 0.540363 40.0606 0.540363 26.0003Z" stroke="black" stroke-width="1.08333"/>
+                          <path d="M21.4816 27.0827H34.668V24.9161H21.4816L27.2926 19.1051L25.7608 17.5732L17.3346 25.9994L25.7608 34.4256L27.2926 32.8937L21.4816 27.0827Z" fill="black"/>
+                        </svg>
+                      </div>
+                    </div>
+
+                    <!-- Mobile Navigation Arrows (left side below image) -->
+                    <div class="mobile-navigation-arrows tw-block md:tw-hidden tw-flex tw-justify-start tw-gap-4 tw-mt-[20px] tw-mb-[14px] md:tw-mt-0 md:tw-mb-0">
+                      <div class="custom-button-prev tw-bg-white tw-rounded-full tw-w-[48px] tw-h-[48px] tw-flex tw-items-center tw-justify-center tw-shadow-lg tw-cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none">
+                          <path d="M0.540363 26.0003C0.540363 11.9401 11.9384 0.541992 25.9987 0.541992C40.0589 0.541992 51.457 11.9401 51.457 26.0003C51.457 40.0606 40.0589 51.4587 25.9987 51.4587C11.9384 51.4587 0.540363 40.0606 0.540363 26.0003Z" stroke="black" stroke-width="1.08333"/>
+                          <path d="M21.4816 27.0827H34.668V24.9161H21.4816L27.2926 19.1051L25.7608 17.5732L17.3346 25.9994L25.7608 34.4256L27.2926 32.8937L21.4816 27.0827Z" fill="black"/>
+                        </svg>
+                      </div>
+                      <div class="custom-button-next tw-bg-white tw-rounded-full tw-flex tw-items-center tw-justify-center tw-shadow-lg tw-cursor-pointer tw-h-[48px] tw-w-[48px]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none">
+                          <path d="M51.4596 26.0003C51.4596 11.9401 40.0616 0.541992 26.0013 0.541992C11.9411 0.541992 0.542969 11.9401 0.542969 26.0003C0.542969 40.0606 11.9411 51.4587 26.0013 51.4587C40.0616 51.4587 51.4596 40.0606 51.4596 26.0003Z" stroke="black" stroke-width="1.08333"/>
+                          <path d="M30.5184 27.0827H17.332V24.9161H30.5184L24.7074 19.1051L26.2392 17.5732L34.6654 25.9994L26.2392 34.4256L24.7074 32.8937L30.5184 27.0827Z" fill="black"/>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Product Information -->
+                <div class="tw-order-2 md:tw-order-2 tw-flex tw-items-center">
+                  <div class="md:tw-ml-10 xl:tw-mx-auto xl:tw-w-[450px] tw-w-full">
+                    <!-- Rating and Social Proof -->
+                     <div class="tw-flex tw-items-center tw-gap-3">
+                      <div class="tw-flex tw-items-center">
+                        <span class="tw-text-black tw-text-[20px]"> 
+                          {% if product_information.star_icon %}
+                            <img src="{{ product_information.star_icon | image_url: width: 20 }}" alt="{{ product_information.star_icon.alt }}" width="66" height="12">
+                          {% endif %}
+                        </span>
+                      </div>
+                      <span class="tw-text-gray-500 tw-text-[12px] tw-font-[400]">{{ product_information.star_message   }}</span>
+                    </div> 
+
+                    <!-- Main Title -->
+                    <div class="">
+                     <h4 class="tw-text-black tw-font-[700] tw-text-[24px] tw-py-2 md:tw-py-[16px] md:tw-text-[31px] tw-leading-none"> {{ product_information.title }} </h4>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="tw-text-black tw-font-[400] tw-text-[16px] tw-mb-6">
+                      {{ product_information.description }}
+                    </div>
+
+                    <!-- Features List -->
+                    {% comment %} <div class="tw-space-y-3 tw-mb-6">
+                      <div class="tw-flex tw-items-center tw-gap-3">
+                        <span class="tw-text-black tw-text-[16px]">✓</span>
+                        <span class="tw-text-black tw-font-[400] tw-text-[16px]"
+                          >Immerse yourself in crystal-clear open-ear audio</span
+                        >
+                      </div>
+                      <div class="tw-flex tw-items-center tw-gap-3">
+                        <span class="tw-text-black tw-text-[16px]">✓</span>
+                        <span class="tw-text-black tw-font-[400] tw-text-[16px]"
+                          >Adjust your lens tint to match any light condition</span
+                        >
+                      </div>
+                      <div class="tw-flex tw-items-center tw-gap-3">
+                        <span class="tw-text-black tw-text-[16px]">✓</span>
+                        <span class="tw-text-black tw-font-[400] tw-text-[16px]"
+                          >Sweat-proof and ridiculously comfortable</span
+                        >
+                      </div>
+                    </div> {% endcomment %}
+
+                    <!-- CTA Button -->
+                    <div class="tw-text-black tw-font-[400] tw-text-[16px] tw-bg-black tw-text-center tw-max-w-[450px] tw-py-[14px] tw-my-6">
+                      <a class="tw-text-white tw-font-[700] tw-block tw-uppercase" href="{{ product.url }}">SHOP {{ product_information.label | default: product.title }} NOW</a>
+                    </div>
+
+                    {% if product_information.message %}
+                    <!-- Guarantee -->
+                    <div class="tw-text-[16px] tw-flex tw-items-center tw-gap-[12px] tw-justify-center tw-text-black tw-my-6">
+                      <div class="tw-block">
+                        {%- if product_information.icon -%}
+                          <img
+                            src="{{ product_information.icon | image_url: width: 12 }}"
+                            alt="{{ product_information.icon.alt }}"
+                            width="12"
+                            height="12"
+                          >
+                        {%- endif -%}
+                      </div>
+                      <div class="tw-block tw-text-[12px] tw-text-gray-500">
+                        {{ product_information.message  }}
+                      </div>
+                    </div>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+
+        <!-- Pagination -->
+        {% comment %} <div class="swiper-pagination"></div> {% endcomment %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const productSliderSwiper = new Swiper('.product-slider-with-info-swiper', {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      navigation: {
+        nextEl: '.custom-button-next',
+        prevEl: '.custom-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        768: {
+          spaceBetween: 40,
+        },
+      },
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Product Slider with Info",
+  "tag": "section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "image_picker",
+          "id": "star_icon",
+          "label": "Star icon"
+        },
+        {
+          "type": "text",
+          "id": "star_message",
+          "label": "Star Message"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Trust Badge Icon"
+        },
+        {
+          "type": "text",
+          "id": "message",
+          "label": "Trust Badge Message"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Slider with Info",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

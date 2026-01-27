@@ -1,0 +1,367 @@
+{%- if section.blocks.size > 0 -%}
+  <div class="Page_our_story_products_slider_main_new Page_our_story_products_slider_main_new_{{ section.id }}" style="{% if section.settings.main_desktop_background_color != blank %}background: {{ section.settings.main_desktop_background_color }};{% endif %}">
+    {%- if section.settings.main_mobile_background_color != blank -%}
+      <style>
+        @media(min-width:0px) and (max-width:749px){
+          .Page_our_story_products_slider_main_new_{{ section.id }}{
+            background: {{ section.settings.main_mobile_background_color }} !important;
+          }
+        }
+      </style>
+    {%- endif -%}
+    <div class="Page_our_story_products_slider_inner_new">
+      {%- if section.blocks.size > 0 -%}
+        <div class="Page_our_story_products_slider_maindesktop_new Desktop_only_new">
+          <div class="Page_our_story_products_slider_innerdesktop_new">
+            {%- if section.blocks.size > 0 -%}
+              <div class="Page_our_story_products_slider_innerdesktop_mainboxs_new">                  
+                <div class="Page_our_story_products_slider_innerdesktop_innerboxs_new">
+                  {%- if section.blocks.size > 0 -%}
+                    <div class="Page_our_story_products_slider_innerdesktop_innerboxs_mainleft_new">
+                      <div class="Page_our_story_products_slider_innerdesktop_innerboxs_innerleft_main_new">
+                        {%- for block in section.blocks -%}
+                          {%- if block.settings.main_desktop_video != blank or block.settings.main_desktop_image != blank -%}
+                            <div class="Page_our_story_products_slider_innerdesktop_innerboxs_innerleft_new Page_our_image_{{ forloop.index }}">
+                              {%- if block.settings.main_desktop_video != blank -%}
+                                <div class="Page_our_story_products_slider_innerdesktop_innerboxs_innerleft_videoimage_new">
+                                  {{ block.settings.main_desktop_video | video_tag: class:'desktop_image_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                                </div>
+                              {%- else -%}  
+                                {%- if block.settings.main_desktop_image != blank -%}
+                                  <div class="Page_our_story_products_slider_innerdesktop_innerboxs_innerleft_videoimage_new">
+                                    {{
+                                      block.settings.main_desktop_image | 
+                                      image_url: width: img.width | 
+                                      image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                      fetchpriority: 'auto', 
+                                      class:'desktop_image_new'
+                                    }}
+                                  </div>
+                                {%- endif -%}
+                              {%- endif -%}
+                            </div>
+                          {%- endif -%}
+                        {% endfor %}
+                      </div>
+                    </div>
+                  {%- endif -%}
+                  {%- if section.blocks.size > 0 -%}
+                    <div class="Page_our_story_products_slider_innerdesktop_innerboxs_mainright_new">
+                      <div class="Page_our_story_products_slider_innerdesktop_innerboxs_innerright_new_main_new">
+                        {%- for block in section.blocks -%}
+                          {%- if block.settings.title != blank or block.settings.main_information_text != blank or block.settings.main_product_list != blank -%}
+                            <div class="Page_our_story_products_slider_innerdesktop_innerboxs_innerright_new Page_our_story_products_{{ forloop.index }}">
+                              <div class="Page_our_story_products_slider_innerdesktop_innerboxs_innerright_in_new">
+                                {%- if block.settings.title != blank -%}
+                                  <div class="Page_our_story_products_slider_innerdesktop_innerboxs_innerright_maintitle_new">
+                                    <div class="Common_title_new Page_our_story_products_slider_innerdesktop_innerboxs_innerright_innertitle_new">
+                                      <h2>{{ block.settings.title }}</h2>
+                                    </div>
+                                  </div>
+                                {%- endif -%}
+                                {%- if block.settings.main_information_text != blank -%}
+                                  <div class="Page_our_story_products_slider_innerdesktop_innerboxs_innerright_maininfos_new">
+                                    <div class="Page_our_story_products_slider_innerdesktop_innerboxs_innerright_innerinfos_new">
+                                      {{ block.settings.main_information_text }}
+                                    </div>
+                                  </div>
+                                {%- endif -%}
+                                {%- if block.settings.main_product_list != blank -%}
+                                  <div class="Page_our_story_products_slider_innerdesktop_innerboxs_innerright_mainlists_new">
+                                    <div class="Page_our_story_products_slider_innerdesktop_innerboxs_innerright_innerlists_new">
+                                      <div class="swiper Page_our_story_products_desktop_slider">
+                                        <div class="swiper-wrapper">
+                                          {%- for Main_product_list in block.settings.main_product_list -%}
+                                            {%- if Main_product_list.featured_image != blank -%}
+                                              <div class="swiper-slide Page_our_story_products_slider_innerdesktop_innerboxs_innerright_innerlists_mainitem_new">
+                                                <div class="Page_our_story_products_slider_innerdesktop_innerboxs_innerright_innerlists_inneritem_new">
+                                                  {%- if Main_product_list.featured_image != blank -%}
+                                                    <div class="Page_our_story_products_slider_innerdesktop_innerboxs_innerright_innerlists_inneritem_mainimage_new">
+                                                      <a href="{{ Main_product_list.url }}">
+                                                        <div class="Page_our_story_products_slider_innerdesktop_innerboxs_innerright_innerlists_inneritem_innerimage_new">
+                                                          {% if Main_product_list.metafields.custom.product_thumb_image != blank %}
+                                                            {{
+                                                              Main_product_list.metafields.custom.product_thumb_image.value | 
+                                                              image_url: width: img.width | 
+                                                              image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                                              fetchpriority: 'auto', 
+                                                              class:'Product_image_new'
+                                                            }}
+                                                          {% else %}
+                                                            {{
+                                                              Main_product_list.featured_image | 
+                                                              image_url: width: img.width | 
+                                                              image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                                              fetchpriority: 'auto', 
+                                                              class:'Product_image_new'
+                                                            }}
+                                                          {% endif %}
+                                                        </div>
+                                                      </a>
+                                                    </div>
+                                                  {%- endif -%}
+                                                  {%- if Main_product_list.featured_image != blank -%}
+                                                    <div class="Page_our_story_products_slider_innerdesktop_innerboxs_innerright_innerlists_inneritem_mainlinks_new">
+                                                      <a href="{{ Main_product_list.url }}">
+                                                        <div class="Page_our_story_products_slider_innerdesktop_innerboxs_innerright_innerlists_inneritem_innerlinks_new">
+                                                          Shop Now
+                                                        </div>
+                                                      </a>
+                                                    </div>
+                                                  {%- endif -%}
+                                                </div>  
+                                              </div>
+                                            {%- endif -%}  
+                                          {%- endfor -%}
+                                        </div>
+                                        <div class="swiper-button-prev"><svg width="36" height="37" viewBox="0 0 36 37" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="36" height="35.667" rx="17.8335" transform="matrix(-1 0 0 1 36 0.666016)" fill="#F6F6F6"/><path d="M14.871 19.2495L24 19.2495L24 17.7495L14.871 17.7495L18.894 13.7265L17.8335 12.666L12 18.4995L17.8335 24.333L18.894 23.2725L14.871 19.2495Z" fill="black"/></svg></div>
+                                        <div class="swiper-button-next"><svg width="36" height="37" viewBox="0 0 36 37" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="0.666016" width="36" height="35.667" rx="17.8335" fill="#F6F6F6"/><path d="M21.129 19.2495L12 19.2495L12 17.7495L21.129 17.7495L17.106 13.7265L18.1665 12.666L24 18.4995L18.1665 24.333L17.106 23.2725L21.129 19.2495Z" fill="black"/></svg></div>
+                                        <div class="swiper-pagination"></div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                {%- endif -%}
+                              </div>
+                            </div>
+                          {%- endif -%}
+                        {%- endfor -%}
+                      </div>
+                    </div>
+                  {%- endif -%}
+                </div>                                    
+              </div>                                    
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endif -%}
+      {%- if section.blocks.size > 0 -%}
+        <div class="Page_our_story_products_slider_mainmobile_new Mobile_only_new">
+          <div class="Page_our_story_products_slider_innermobile_new">
+            {%- for block in section.blocks -%}
+              {%- if block.settings.title != blank or block.settings.main_mobile_video != blank or block.settings.main_mobile_image != blank or block.settings.main_information_text != blank or block.settings.main_product_list != blank -%}
+                <div class="Page_our_story_products_slider_innermobile_mainboxs_new">
+                  <div class="Page_our_story_products_slider_innermobile_innerboxs_new">
+                    {%- if block.settings.title != blank -%}
+                      <div class="Page_our_story_products_slider_innermobile_innerboxs_maintitle_new">
+                        <div class="Common_title_new Page_our_story_products_slider_innermobile_innerboxs_innertitle_new">
+                          <h2>{{ block.settings.title }}</h2>
+                        </div>
+                      </div>
+                    {%- endif -%}
+                    {%- if block.settings.main_mobile_video != blank or block.settings.main_mobile_image != blank -%}
+                      <div class="Page_our_story_products_slider_innermobile_innerboxs_mainboths_new">
+                        <div class="Page_our_story_products_slider_innermobile_innerboxs_innerboths_new">
+                          {%- if block.settings.main_mobile_video != blank -%}
+                            <div class="Page_our_story_products_slider_innermobile_innerboxs_innerboths_videoimage_new">
+                              {{ block.settings.main_mobile_video | video_tag: class:'mobile_image_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                            </div>
+                          {%- else -%}  
+                            {%- if block.settings.main_mobile_image != blank -%}
+                              <div class="Page_our_story_products_slider_innermobile_innerboxs_innerboths_videoimage_new">
+                                {{
+                                  block.settings.main_mobile_image | 
+                                  image_url: width: img.width | 
+                                  image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                  fetchpriority: 'auto', 
+                                  class:'mobile_image_new'
+                                }}
+                              </div>
+                            {%- endif -%}
+                          {%- endif -%}
+                        </div>
+                      </div>
+                    {%- endif -%}
+                    {%- if block.settings.main_information_text != blank -%}
+                      <div class="Page_our_story_products_slider_innermobile_innerboxs_maininfos_new">
+                        <div class="Page_our_story_products_slider_innermobile_innerboxs_innerinfos_new">
+                          {{ block.settings.main_information_text }}
+                        </div>
+                      </div>
+                    {%- endif -%}
+                    {%- if block.settings.main_product_list != blank -%}
+                      <div class="Page_our_story_products_slider_innermobile_innerboxs_mainlists_new">
+                        <div class="Page_our_story_products_slider_innermobile_innerboxs_innerlists_new">
+                          {%- if block.settings.main_details_text != blank -%}
+                            <div class="Page_our_story_products_slider_innermobile_innerboxs_innerlists_maintexts_new">
+                              <div class="Page_our_story_products_slider_innermobile_innerboxs_innerlists_innertexts_new">
+                                {{ block.settings.main_details_text }}
+                              </div>
+                            </div>
+                          {%- endif -%}
+                          {%- if block.settings.main_product_list != blank -%}
+                            <div class="Page_our_story_products_slider_innermobile_innerboxs_innerlists_mainloops_new">
+                              <div class="Page_our_story_products_slider_innermobile_innerboxs_innerlists_innerloops_new">
+                                <div class="swiper Page_our_story_products_mobile_slider">
+                                  <div class="swiper-wrapper">
+                                    {%- for Main_product_list in block.settings.main_product_list -%}
+                                      {%- if Main_product_list.featured_image != blank -%}
+                                        <div class="swiper-slide Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_innerlist_innerproduct_mainboxs_new Page_our_story_products_slider_innermobile_innerboxs_innerlists_innerloops_mainboxs_new">
+                                          <a href="{{ Main_product_list.url }}">
+                                            <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_innerlist_innerproduct_innerboxs_new">
+                                              {% if Main_product_list.metafields.custom.product_thumb_image != blank %}
+                                                <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_innerlist_innerproduct_innerboxs_mainimage_new">
+                                                  <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_innerlist_innerproduct_innerboxs_innerimage_new">
+                                                    {{
+                                                      Main_product_list.metafields.custom.product_thumb_image | 
+                                                      image_url: width: img.width | 
+                                                      image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                                      fetchpriority: 'auto', 
+                                                      class:'Product_image_new'
+                                                    }}
+                                                  </div> 
+                                                </div> 
+                                              {% else %}
+                                                {%- if Main_product_list.featured_image != blank -%}
+                                                  <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_innerlist_innerproduct_innerboxs_mainimage_new">
+                                                    <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_innerlist_innerproduct_innerboxs_innerimage_new">
+                                                      {% if Main_product_list.metafields.custom.product_thumb_image != blank %}
+                                                        {{
+                                                          Main_product_list.metafields.custom.product_thumb_image.value | 
+                                                          image_url: width: img.width | 
+                                                          image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                                          fetchpriority: 'auto', 
+                                                          class:'Product_image_new'
+                                                        }}
+                                                      {% else %}
+                                                        {{
+                                                          Main_product_list.featured_image | 
+                                                          image_url: width: img.width | 
+                                                          image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                                          fetchpriority: 'auto', 
+                                                          class:'Product_image_new'
+                                                        }}
+                                                      {% endif %}
+                                                    </div>
+                                                  </div>
+                                                {%- endif -%}
+                                              {%- endif -%}
+                                              {%- if Main_product_list.title != blank or Main_product_list.price != blank -%}
+                                                <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_innerlist_innerproduct_innerboxs_mainboths_new">
+                                                  <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_innerlist_innerproduct_innerboxs_innerboths_new">
+                                                    {%- if Main_product_list.title != blank -%}
+                                                      <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_innerlist_innerproduct_innerboxs_innerboths_title_new">
+                                                        <h4>{{ Main_product_list.title }}</h4>
+                                                      </div>
+                                                    {%- endif -%}
+                                                    {%- if Main_product_list.price != blank -%}
+                                                      <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_innerlist_innerproduct_innerboxs_innerboths_price_new">
+                                                        {% render 'price', product: Main_product_list, price_class: '', show_compare_at_price: true %}
+                                                      </div>
+                                                    {%- endif -%}
+                                                    <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_innerlist_innerproduct_innerboxs_innerboths_button_new">
+                                                      Shop Now
+                                                    </div>  
+                                                  </div>
+                                                </div>
+                                              {%- endif -%}
+                                            </div>
+                                          </a>
+                                        </div>
+                                      {%- endif -%}  
+                                    {%- endfor -%}
+                                  </div>
+                                  <div class="swiper-button-prev"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.52301 7.5664L13.6663 7.5664L13.6663 5.89974L3.52301 5.89974L7.99301 1.42974L6.81467 0.251404L0.333008 6.73307L6.81467 13.2147L7.99301 12.0364L3.52301 7.5664Z" fill="black" /></svg></div>
+                                  <div class="swiper-button-next"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.81 7.5664L0.666667 7.5664L0.666667 5.89974L10.81 5.89974L6.34 1.42974L7.51833 0.251404L14 6.73307L7.51833 13.2147L6.34 12.0364L10.81 7.5664Z" fill="black"/></svg></div>
+                                </div>
+                              </div>
+                            </div>
+                          {%- endif -%}
+                        </div>
+                      </div>
+                    {%- endif -%}
+                  </div>
+                </div>
+              {%- endif -%}  
+            {%- endfor -%} 
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Our Story Products Slider",
+    "class": "Page_our_story_products_slider_new",
+    "max_blocks": 2,
+    "settings": [
+      {
+        "type": "color",
+        "id": "main_desktop_background_color",
+        "label": "Add Main Desktop Background Color",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "main_mobile_background_color",
+        "label": "Add Main Mobile Background Color",
+        "default": "#F6F6F6"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "information",
+        "name": "Information",
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "title",
+            "label": "Add Main Heading Text",
+            "default": "Lorem ipsum dolor sit amet consectetur"
+          },
+          {
+            "type": "richtext",
+            "id": "main_information_text",
+            "label": "Add Main Information Text",
+            "default": "<p>Lorem ipsum dolor sit amet consectetur. Sed tincidunt sodales viverra non viverra ut. Lorem ipsum dolor sit amet consectetur.</p>"
+          },
+          {
+            "type": "video",
+            "id": "main_desktop_video",
+            "label": "Add Main Desktop Video"
+          },
+          {
+            "type": "video",
+            "id": "main_mobile_video",
+            "label": "Add Main Mobile Video"
+          },
+          {
+            "type": "image_picker",
+            "id": "main_desktop_image",
+            "label": "Add Main Desktop Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "main_mobile_image",
+            "label": "Add Main Mobile Image"
+          },
+          {
+            "type": "textarea",
+            "id": "main_details_text",
+            "label": "Add Main Details Text",
+            "default": "Shop Lorem Ipsum Dolor"
+          },
+          {
+            "type": "product_list",
+            "id": "main_product_list",
+            "label": "Add Main Product List"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Our Story Products Slider",
+        "blocks": [
+          {
+            "type": "information"
+          },
+          {
+            "type": "information"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

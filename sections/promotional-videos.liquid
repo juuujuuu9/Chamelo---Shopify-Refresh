@@ -1,0 +1,336 @@
+{% style %}
+
+.Index_object_tabs_details_main_new--{{  section.id }}{
+  padding-top: {{ section.settings.main_padding_top_mobile }}px;
+  padding-bottom: {{ section.settings.main_padding_bottom_mobile }}px;
+}
+
+@media (min-width: 768px) {
+  .Index_object_tabs_details_main_new--{{  section.id }}{
+    padding-top: {{ section.settings.main_padding_top }}px;
+    padding-bottom: {{ section.settings.main_padding_bottom }}px;
+  }
+}
+
+{% endstyle %}
+
+
+{%- if section.settings.main_review_image != blank or section.settings.main_review_text != blank or section.settings.main_heading_text != blank or section.settings.main_button_link != blank -%}
+  <div class="Index_object_tabs_details_main_new Index_object_tabs_details_main_new--{{  section.id }}" style="background: {{ section.settings.main_background_color }};">
+    <div class="Index_object_tabs_details_inner_new">
+      {%- if section.settings.main_review_image != blank or section.settings.main_review_text != blank or section.settings.main_heading_text != blank -%}
+        <div class="page-width">
+          <div class="Index_object_tabs_details_mainboths_new">
+            <div class="Index_object_tabs_details_innerboths_new">
+              {% comment %} {%- if section.settings.main_review_image != blank or section.settings.main_review_text != blank -%}
+                <div class="Index_object_tabs_details_innerboths_mainreview_new">
+                  <div class="Index_object_tabs_details_innerboths_innerreview_new">
+                    {%- if section.settings.main_review_image != blank -%}
+                      <div class="Index_object_tabs_details_innerboths_innerreview_image_new">
+                        {{
+                          section.settings.main_review_image | 
+                          image_url: width: img.width | 
+                          image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                          fetchpriority: 'auto', 
+                          class:'Review_image_new'
+                        }}
+                      </div>
+                    {%- endif -%}
+                    {%- if section.settings.main_review_text != blank -%}
+                      <div class="Index_object_tabs_details_innerboths_innerreview_texts_new">
+                        {{ section.settings.main_review_text }}
+                      </div>
+                    {%- endif -%}
+                  </div>
+                </div>
+              {%- endif -%} {% endcomment %}
+              {%- if section.settings.main_heading_text != blank or section.settings.main_heading_mobile_text != blank -%}
+                <div class="Index_object_tabs_details_innerboths_maintitle_new">
+                  <div class="Common_title_new Index_object_tabs_details_innerboths_innertitle_new">
+                    <h2 class="Desktop_only_new !tw-text-[40px]">{{ section.settings.main_heading_text }}</h2>
+                    <h2 class="Mobile_only_new">{{ section.settings.main_heading_text }}</h2>
+                  </div>
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
+      {%- endif -%}
+      <div class="Index_object_tabs_details_maintabs_new">
+        <div class="Index_object_tabs_details_innertabs_new Tabs_common_main_new">
+          <div class="page-width">
+           
+          </div>
+          <div class="Index_object_tabs_details_innertabs_mainlists_new">
+            <div class="Index_object_tabs_details_innertabs_innerlists_new">
+              <div class="tab">
+                {%- assign tab_celebs_item_selections = shop.metaobjects.tab_celebs_item_selections -%}
+                {%- paginate shop.metaobjects.tab_celebs_item_selections.values by 1000 -%}
+                  {%- for tab_celebs_item_selections in tab_celebs_item_selections.values -%}
+                    {%- if tab_celebs_item_selections.celebs_item_list.value != blank -%}                        
+                      <div class="tabcontent tab_detail_1_open" style="display:block;">
+                        <div class="Index_object_tabs_details_innertabs_innerlists_tabs_1_new">
+                          <div class="Index_object_tabs_details_innertabs_innerlists_tabs_1_loops_new">
+                            <div class="swiper Index_tabs_celebs_slider-video">
+                              <div class="swiper-wrapper 1 tw-justify-evenly">
+                                {%- for block in section.blocks -%}
+                                  {%- if block.settings.video_or_image != blank or block.settings.main_author_text != blank or block.settings.main_information_text != blank -%}
+                                    <div class="swiper-slide Index_object_tabs_details_innertabs_innerlists_tabs_1_loops_mainboxs_new">
+                                      {%- if block.settings.main_redirection_link != blank -%}
+                                        <a href="{{ block.settings.main_redirection_link }}">
+                                      {%- endif -%} 
+                                          <div class="Index_object_tabs_details_innertabs_innerlists_tabs_1_loops_innerboxs_new">
+                                            {%- if block.settings.video_or_image != blank -%}
+                                              <div class="Index_object_tabs_details_innertabs_innerlists_tabs_1_loops_innerboxs_mainstatic_new">
+                                                <div class="Index_object_tabs_details_innertabs_innerlists_tabs_1_loops_innerboxs_innerstatic_new">
+                                                  {%- if block.settings.video_or_image contains "files" -%}
+                                                    <div class="Index_object_tabs_details_innertabs_innerlists_tabs_1_loops_innerboxs_innerstatic_imagevideo_new">
+                                                      {{
+                                                        block.settings.video_or_image | 
+                                                        image_url: width: img.width | 
+                                                        image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                                        fetchpriority: 'auto', 
+                                                        class:'Static_image_new'
+                                                      }}
+                                                    </div>
+                                                  {%- else -%}
+                                                    <div class="mute_video_main_new">
+                                                      <div class="mute_video active">
+                                                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                          <g clip-path="url(#clip0_225_11037)">
+                                                          <path d="M32 0L54.6306 9.36937L64 32L54.6306 54.6306L32 64L9.36937 54.6306L0 32L9.36937 9.36937L32 0Z" fill="white"/>
+                                                          <path d="M41.3335 32H46.6668" stroke="#000" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                                          <path d="M39.5337 25.3332L44.1337 22.6665" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                                          <path d="M39.5337 38.6665L44.1337 41.3332" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                                          <path d="M36.0002 45.3332L26.0002 37.9998H20.0002C19.2929 37.9998 18.6146 37.7189 18.1145 37.2188C17.6144 36.7187 17.3335 36.0404 17.3335 35.3332V28.6665C17.3335 27.9593 17.6144 27.281 18.1145 26.7809C18.6146 26.2808 19.2929 25.9998 20.0002 25.9998H26.0002L36.0002 18.6665V45.3332Z" stroke="#000000" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="square"/>
+                                                          </g>
+                                                          <defs>
+                                                          <clipPath id="clip0_225_11037">
+                                                          <rect width="64" height="64" fill="white"/>
+                                                          </clipPath>
+                                                          </defs>
+                                                        </svg>
+                                                      </div>
+                                                      <div class="unmute_video">
+                                                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                          <g clip-path="url(#clip0_67_10281)">
+                                                          <path d="M32 0L54.6306 9.36937L64 32L54.6306 54.6306L32 64L9.36937 54.6306L0 32L9.36937 9.36937L32 0Z" fill="white"/>
+                                                          <path d="M38.8705 35.2023L38.3395 35.732L39.3988 36.794L39.9298 36.2643L38.8705 35.2023ZM41.0806 27.2864L40.7004 26.64L39.4075 27.4004L39.7877 28.0469L41.0806 27.2864ZM42.6014 38.9381L42.0728 39.4702L43.137 40.5273L43.6656 39.9952L42.6014 38.9381ZM45.2702 23.9204L44.8573 23.2943L43.6051 24.1202L44.0181 24.7463L45.2702 23.9204ZM17.3335 34.3333H16.5835H17.3335ZM20.0002 25V24.25V25ZM26.0002 25V25.75H26.2457L26.4437 25.6048L26.0002 25ZM36.0002 17.6667H36.7502V16.1866L35.5566 17.0619L36.0002 17.6667ZM36.7502 32.3333V31.5833H35.2502V32.3333H36.7502ZM36.0002 44.3333L35.5567 44.9381L36.7502 45.8133V44.3333H36.0002ZM29.777 38.8399L29.1722 38.3963L28.2852 39.606L28.89 40.0495L29.777 38.8399ZM17.4698 44.4697L16.9395 45L18.0002 46.0607L18.5305 45.5303L17.4698 44.4697ZM46.5305 17.5303L47.0608 17L46.0002 15.9393L45.4698 16.4697L46.5305 17.5303ZM39.9298 36.2643C41.0899 35.1072 41.8324 33.5974 42.0407 31.9722L40.5529 31.7815C40.3869 33.0768 39.795 34.2801 38.8705 35.2023L39.9298 36.2643ZM42.0407 31.9722C42.249 30.347 41.9113 28.6987 41.0806 27.2864L39.7877 28.0469C40.4498 29.1725 40.7189 30.4862 40.5529 31.7815L42.0407 31.9722ZM43.6656 39.9952C45.739 37.9079 47.0304 35.1703 47.3226 32.2428L45.83 32.0938C45.572 34.6784 44.4319 37.0953 42.6014 38.9381L43.6656 39.9952ZM47.3226 32.2428C47.6149 29.3152 46.8901 26.3764 45.2702 23.9204L44.0181 24.7463C45.4482 26.9146 46.0881 29.5092 45.83 32.0938L47.3226 32.2428ZM26.0002 36.25H20.0002V37.75H26.0002V36.25ZM20.0002 36.25C19.4918 36.25 19.0043 36.0481 18.6449 35.6886L17.5842 36.7493C18.225 37.39 19.094 37.75 20.0002 37.75V36.25ZM18.6449 35.6886C18.2854 35.3292 18.0835 34.8417 18.0835 34.3333H16.5835C16.5835 35.2395 16.9435 36.1085 17.5842 36.7493L18.6449 35.6886ZM18.0835 34.3333V27.6667H16.5835V34.3333H18.0835ZM18.0835 27.6667C18.0835 27.1583 18.2854 26.6708 18.6449 26.3114L17.5842 25.2507C16.9435 25.8915 16.5835 26.7605 16.5835 27.6667H18.0835ZM18.6449 26.3114C19.0043 25.9519 19.4918 25.75 20.0002 25.75V24.25C19.094 24.25 18.225 24.61 17.5842 25.2507L18.6449 26.3114ZM20.0002 25.75H26.0002V24.25H20.0002V25.75ZM26.4437 25.6048L36.4437 18.2715L35.5566 17.0619L25.5566 24.3952L26.4437 25.6048ZM35.2502 17.6667V27H36.7502V17.6667H35.2502ZM35.2502 32.3333V44.3333H36.7502V32.3333H35.2502ZM36.4437 43.7285L29.777 38.8399L28.89 40.0495L35.5567 44.9381L36.4437 43.7285ZM18.5305 45.5303L46.5305 17.5303L45.4698 16.4697L17.4698 44.4697L18.5305 45.5303Z" fill="#000000"/>
+                                                          </g>
+                                                          <defs>
+                                                          <clipPath id="clip0_67_10281">
+                                                          <rect width="64" height="64" fill="white"/>
+                                                          </clipPath>
+                                                          </defs>
+                                                        </svg>
+                                                      </div>
+                                                    </div>
+                                                    <div class="Index_object_tabs_details_innertabs_innerlists_tabs_1_loops_innerboxs_innerstatic_imagevideo_new play_icon_new">
+                                                      <svg class="play_icon" width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg"><g filter="url(#filter0_b_9207_1128)"><rect width="56" height="56" rx="28" fill="white" fill-opacity="0.12"/><path d="M21 15.75V40.25L42 28L21 15.75Z" fill="white"/></g><defs><filter id="filter0_b_9207_1128" x="-23" y="-23" width="102" height="102" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feGaussianBlur in="BackgroundImageFix" stdDeviation="11.5"/><feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_9207_1128"/><feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_9207_1128" result="shape"/></filter></defs></svg>
+  
+                                                        {% if block.settings.video_or_image.sources[1].url != blank %}
+                                                        {% assign video_url =  block.settings.video_or_image.sources[1].url  %}
+                                                      {% elsif  block.settings.video_or_image.sources[0].url != blank %}
+                                                        {% assign video_url =  block.settings.video_or_image.sources[0].url  %}
+                                                      {% elsif  block.settings.video_or_image.sources[2].url != blank %}
+                                                        {% assign video_url =  block.settings.video_or_image.sources[2].url  %}
+                                                      {% endif %}
+                                                      <video playsinline="playsinline" loop="loop" preload="metadata" poster="{{ block.settings.video_or_image.preview_image | image_url}}" video_url="{{ video_url }}"></video>
+                                                    </div>
+                                                  {%- endif -%}
+                                                </div>
+                                              </div>
+                                            {%- endif -%}
+                                            {%- if block.settings.main_author_text != blank or block.settings.main_information_text != blank -%}
+                                              <div class="Index_object_tabs_details_innertabs_innerlists_tabs_1_loops_innerboxs_mainoverlay_new">
+                                                <div class="Index_object_tabs_details_innertabs_innerlists_tabs_1_loops_innerboxs_inneroverlay_new">
+                                                  {%- if block.settings.main_author_text != blank -%}
+                                                    <div class="Index_object_tabs_details_innertabs_innerlists_tabs_1_loops_innerboxs_inneroverlay_title_new">
+                                                      {{ celebs_item_list.main_author_text.value }}<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.73366 15L4.46699 12.8667L2.06699 12.3333L2.30033 9.86667L0.666992 8L2.30033 6.13333L2.06699 3.66667L4.46699 3.13333L5.73366 1L8.00033 1.96667L10.267 1L11.5337 3.13333L13.9337 3.66667L13.7003 6.13333L15.3337 8L13.7003 9.86667L13.9337 12.3333L11.5337 12.8667L10.267 15L8.00033 14.0333L5.73366 15ZM7.30033 10.3667L11.067 6.6L10.1337 5.63333L7.30033 8.46667L5.86699 7.06667L4.93366 8L7.30033 10.3667Z" fill="white"/></svg>
+                                                    </div>  
+                                                  {%- endif -%}
+                                                  {%- if block.settings.main_information_text != blank -%}
+                                                    <div class="Index_object_tabs_details_innertabs_innerlists_tabs_1_loops_innerboxs_inneroverlay_infos_new">
+                                                      {{ block.settings.main_information_text | metafield_tag }}
+                                                    </div>  
+                                                  {%- endif -%}
+                                                </div>
+                                              </div>
+                                            {%- endif -%}
+                                          </div>
+                                      {%- if block.settings.main_redirection_link != blank -%}
+                                        </a>
+                                      {%- endif -%}
+                                    </div>
+                                  {%- endif -%}
+                                {%- endfor -%}
+                              </div>
+                              <div class="swiper-scrollbar"></div>
+                              <div class="swiper-button-next swiper-button-next-video"></div>
+                              <div class="swiper-button-prev swiper-button-prev-video"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    {%- endif -%}
+                  {%- endfor -%}
+                {%- endpaginate -%}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page-width">
+        {%- if section.settings.main_button_text != blank and section.settings.main_button_link != blank -%}
+          <div class="Index_object_tabs_details_mainbutton_new Desktop_only_new">
+          </div>
+        {%- endif -%}
+        {%- if section.settings.main_button_text != blank and section.settings.main_button_link != blank -%}
+          <div class="Index_object_tabs_details_mainbutton_new Mobile_only_new">
+            <div class="Index_object_tabs_details_innerbutton_new">
+              <a href="{{ section.settings.main_button_link }}" class="button button_border_new">
+                {{ section.settings.main_button_text }}  
+              </a>
+            </div>
+          </div>
+        {%- endif -%}
+      </div>  
+    </div>
+  </div>
+{%- endif -%}
+
+<script>
+// Initialize Swiper for promotional videos
+document.addEventListener('DOMContentLoaded', function() {
+  if (document.querySelector('.Index_tabs_celebs_slider-video')) {
+    new Swiper('.Index_tabs_celebs_slider-video', {
+      loop: false,
+      grabCursor: false,
+      spaceBetween: 16,
+      slidesPerGroup: 1,
+      slidesPerView: 1.1,
+      watchSlidesProgress: true,
+      draggable: true,
+      autoHeight: false,
+      watchOverflow: true,
+      threshold: 10,
+      mousewheel: {
+        forceToAxis: true
+      },
+      observer: true,
+      observeParents: true,
+      scrollbar: {
+        el: ".swiper-scrollbar"
+      },
+      breakpoints: {
+          768: {
+            slidesPerView: 2.1,
+            spaceBetween: 16,
+          },
+          1024: {
+            slidesPerView: 3.1,
+            spaceBetween: 16,
+          },
+        },
+      navigation: {
+        nextEl: ".swiper-button-next-video",
+        prevEl: ".swiper-button-prev-video",
+      }
+    });
+  }
+});
+</script>
+
+{% schema %}
+  {
+    "name": "Index Object Tabs Details",
+    "class": "Index_object_tabs_details_new",
+    "settings": [
+      {
+        "type": "color",
+        "id": "main_background_color",
+        "label": "Background Color"
+      },
+      {
+        "type": "image_picker",
+        "id": "main_review_image",
+        "label": "Review Image"
+      },
+      {
+        "type": "textarea",
+        "id": "main_heading_text",
+        "label": "Heading Text",
+        "default": "Real Chamelo love"
+      },
+      {
+        "type": "range",
+        "id": "main_padding_top",
+        "label": "Padding Top",
+        "default": 0,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "main_padding_bottom",
+        "label": "Padding Bottom",
+        "default": 0,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "main_padding_top_mobile",
+        "label": "Padding Top Mobile",
+        "default": 0,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "main_padding_bottom_mobile",
+        "label": "Padding Bottom Mobile",
+        "default": 0,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      }
+    ],
+    "blocks": [
+      {
+        "type": "celebs_item_list",
+        "name": "Celebs Item List",
+        "settings": [
+          {
+            "type": "video",
+            "id": "video_or_image",
+            "label": "Video or Image"
+          },
+          {
+            "type": "text",
+            "id": "main_author_text",
+            "label": "Author Text"
+          },
+          {
+            "type": "text",
+            "id": "main_information_text",
+            "label": "Information Text"
+          },
+          {
+            "type": "url",
+            "id": "main_redirection_link",
+            "label": "Redirection Link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Index Object Tabs Details"
+      }
+    ]
+  }
+{% endschema %}

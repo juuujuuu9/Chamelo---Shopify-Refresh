@@ -1,0 +1,175 @@
+{%- if product.metafields.custom.product_in_the_press_desktop_image_or_video != blank -%}
+  <div class="Index_image_logos_slider_main_new Product_image_logos_slider_main_new" style="background: {{ section.settings.main_background_color }};">
+    <div class="Index_image_logos_slider_inner_new">
+      <div class="Index_image_logos_slider_sides_new">
+        {%- if product.metafields.custom.product_in_the_press_desktop_image_or_video != blank -%}
+          <div class="Index_image_logos_slider_sides_mainleft_new">
+            <div class="Index_image_logos_slider_sides_innerleft_new">
+              {%- if product.metafields.custom.product_in_the_press_desktop_image_or_video.value != blank -%}
+                <div class="Desktop_only_new">
+                  {%- if product.metafields.custom.product_in_the_press_desktop_image_or_video.value contains "files" -%}
+                    <div class="Index_image_logos_slider_sides_innerleft_videoimage_new">
+                      {{
+                        product.metafields.custom.product_in_the_press_desktop_image_or_video.value | 
+                        image_url: width: img.width | 
+                        image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                        fetchpriority: 'auto', 
+                        class:'Static_image_new'
+                      }}
+                    </div>
+                  {%- else -%}
+                    <div class="Index_image_logos_slider_sides_innerleft_videoimage_new">
+                      {{ product.metafields.custom.product_in_the_press_desktop_image_or_video.value | video_tag: class:'Static_video_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                    </div>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endif -%}
+        {%- if section.settings.main_heading_text != blank or section.blocks.size > 0 -%}
+          <div class="Index_image_logos_slider_sides_mainright_new">
+            <div class="Index_image_logos_slider_sides_innerright_new">
+              {%- if section.settings.main_heading_text != blank -%}
+                <div class="Index_image_logos_slider_sides_innerright_maintitle_new">
+                  <div class="Index_image_logos_slider_sides_innerright_innertitle_new">
+                    <h4>{{ section.settings.main_heading_text }}</h4>
+                  </div>
+                </div>
+              {%- endif -%}
+              {%- if section.blocks.size > 0 -%}
+                <div class="Index_image_logos_slider_sides_innerright_mainloops_new Desktop_only_new">
+                  <div class="Index_image_logos_slider_sides_innerright_innerloops_new">
+                    {%- for block in section.blocks -%}
+                      {%- if block.settings.title != blank and block.settings.logos != blank -%}
+                        <div class="Index_image_logos_slider_sides_innerright_innerloops_mainboxs_new">
+                          <div class="Index_image_logos_slider_sides_innerright_innerloops_innerboxs_new">
+                            {%- if block.settings.title != blank -%}
+                              <div class="Index_image_logos_slider_sides_innerright_innerloops_innerboxs_maininfos_new">
+                                <div class="Index_image_logos_slider_sides_innerright_innerloops_innerboxs_innerinfos_new">
+                                  {{ block.settings.title }}
+                                </div>
+                              </div>
+                            {%- endif -%}
+                            {%- if block.settings.logos != blank -%}
+                              <div class="Index_image_logos_slider_sides_innerright_innerloops_innerboxs_mainimage_new">
+                                <div class="Index_image_logos_slider_sides_innerright_innerloops_innerboxs_innerimage_new">
+                                  {{
+                                    block.settings.logos | 
+                                    image_url: width: img.width | 
+                                    image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                    fetchpriority: 'auto', 
+                                    class:'Logo_image_new'
+                                  }}
+                                </div>
+                              </div>
+                            {%- endif -%}
+                          </div>
+                        </div>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </div>
+                </div>
+              {%- endif -%}
+              {%- if section.blocks.size > 0 -%}
+                <div class="Index_image_logos_slider_sides_innerright_mainloops_new Mobile_only_new">
+                  <div class="Index_image_logos_slider_sides_innerright_innerloops_new">
+                    <div class="swiper Index_image_logos_slider">
+                      <div class="swiper-wrapper">
+                        {%- for block in section.blocks -%}
+                          {%- if block.settings.title != blank and block.settings.logos != blank -%}
+                            <div class="swiper-slide Index_image_logos_slider_sides_innerright_innerloops_mainboxs_new">
+                              <div class="Index_image_logos_slider_sides_innerright_innerloops_innerboxs_new">
+                                {%- if block.settings.title != blank -%}
+                                  <div class="Index_image_logos_slider_sides_innerright_innerloops_innerboxs_maininfos_new">
+                                    <div class="Index_image_logos_slider_sides_innerright_innerloops_innerboxs_innerinfos_new">
+                                      {{ block.settings.title }}
+                                    </div>
+                                  </div>
+                                {%- endif -%}
+                                {%- if block.settings.logos != blank -%}
+                                  <div class="Index_image_logos_slider_sides_innerright_innerloops_innerboxs_mainimage_new">
+                                    <div class="Index_image_logos_slider_sides_innerright_innerloops_innerboxs_innerimage_new">
+                                      {{
+                                        block.settings.logos | 
+                                        image_url: width: img.width | 
+                                        image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                        fetchpriority: 'auto', 
+                                        class:'Logo_image_new'
+                                      }}
+                                    </div>
+                                  </div>
+                                {%- endif -%}
+                              </div>
+                            </div>
+                          {%- endif -%}
+                        {%- endfor -%}
+                      </div>
+                      <div class="swiper-pagination"></div>
+                    </div>
+                  </div>
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+{%- endif -%}  
+
+{% schema %}
+  {
+    "name": "Product Image Logos Slide",
+    "class": "Product_image_logos_slider_new",
+    "settings": [
+      {
+        "type": "color",
+        "id": "main_background_color",
+        "label": "Add Main Background Color"
+      },
+      {
+        "type": "textarea",
+        "id": "main_heading_text",
+        "label": "Add Main Heading Text",
+        "default": "In The Press"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "information",
+        "name": "Information",
+        "limit": 3,
+        "settings": [
+          {
+            "type": "richtext",
+            "id": "title",
+            "label": "Add Main Heading Text",
+            "default": "<p>“Lorem Ipsum is simply dummy text of the printing and typesetting industry.”</p>"
+          },
+          {
+            "type": "image_picker",
+            "id": "logos",
+            "label": "Add Main Custom Image"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product Image Logos Slide",
+        "blocks": [
+          {
+            "type": "information"
+          },
+          {
+            "type": "information"
+          },
+          {
+            "type": "information"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

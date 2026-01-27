@@ -1,0 +1,261 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "index_top_slideshow_slide_new_8ViGg3": {
+      "type": "Index-top-slideshow-slide-new",
+      "blocks": {
+        "information_CDkTVz": {
+          "type": "information",
+          "settings": {
+            "main_desktop_video": "shopify://files/videos/-5a4a-4629-ac4e-62b92716ab4c_f6cfb413-32ca-4c6b-959d-651daba8bd48.mp4",
+            "main_mobile_video": "shopify://files/videos/-5a4a-4629-ac4e-62b92716ab4c_f6cfb413-32ca-4c6b-959d-651daba8bd48.mp4",
+            "main_review_text": "Rated 4.7 • 9,201 reviews",
+            "title": "Be different.\n<br>See different.",
+            "main_information_text": "",
+            "main_button_text": "",
+            "main_button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "information_CDkTVz"
+      ],
+      "custom_css": [],
+      "settings": {
+        "class-name": "Page_about_index_top_slideshow",
+        "main_background_color": "#efefef"
+      }
+    },
+    "index_marquee_logos_lists_new_P8hXe4": {
+      "type": "Index-marquee-logos-lists-new",
+      "blocks": {
+        "information_6ncpyP": {
+          "type": "information",
+          "settings": {
+            "main_custom_image": "shopify://shop_images/image_140.png"
+          }
+        },
+        "information_LhBYJ4": {
+          "type": "information",
+          "settings": {
+            "main_custom_image": "shopify://shop_images/image_138_3af8cccb-9d20-4796-b8aa-490c1f49ccf5.png"
+          }
+        },
+        "information_Q9brdr": {
+          "type": "information",
+          "settings": {
+            "main_custom_image": "shopify://shop_images/image_133_4c40a763-ab8d-4279-89df-571b155c84e7.png"
+          }
+        },
+        "information_J9KwM9": {
+          "type": "information",
+          "settings": {
+            "main_custom_image": "shopify://shop_images/image_139.png"
+          }
+        },
+        "information_fXmYDH": {
+          "type": "information",
+          "settings": {}
+        },
+        "information_88gzax": {
+          "type": "information",
+          "settings": {}
+        },
+        "information_Jr8hyN": {
+          "type": "information",
+          "settings": {}
+        },
+        "information_nHxcMW": {
+          "type": "information",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "information_6ncpyP",
+        "information_LhBYJ4",
+        "information_Q9brdr",
+        "information_J9KwM9",
+        "information_fXmYDH",
+        "information_88gzax",
+        "information_Jr8hyN",
+        "information_nHxcMW"
+      ],
+      "disabled": true,
+      "settings": {
+        "main_background_color": "#ffffff"
+      }
+    },
+    "index_details_with_popup_new_xQJD4E": {
+      "type": "Index-details-with-popup-new",
+      "settings": {
+        "class-name": "Page_about_index_details_popup",
+        "main_background_color": "",
+        "main_Author_text": "",
+        "main_detail_text": "At Chamelo, we believe that your glasses should be as flexible and adaptable as you are. With two breakthrough lens options, electronic tint-adjustable lenses and Prismatic™ color-changing lenses, Chamelo is redefining what eyewear can do—offering you the ultimate in comfort, style, and personal expression.",
+        "main_button_text": "",
+        "main_button_link": "/",
+        "main_desktop_video": "shopify://files/videos/-591b-4170-842f-f97a9bf2fa09.mp4",
+        "main_mobile_video": "shopify://files/videos/-591b-4170-842f-f97a9bf2fa09.mp4",
+        "main_heading_text": "Chamelo™ Lenses",
+        "main_information_text": "<p>The world’s first glasses that let you instantly switch between four different hues, all with a simple touch.</p>"
+      }
+    },
+    "index_image_with_texts_new_qNe3yw": {
+      "type": "Index-image-with-texts-new",
+      "settings": {
+        "class-name": "Page_about_img_text",
+        "main_background_color": "#ffffff",
+        "main_outer_image": "shopify://shop_images/Linked_Path_Group.svg",
+        "main_inside_image": "shopify://shop_images/Vector_10.svg",
+        "main_desktop_image": "shopify://shop_images/Frame_1000005475.png",
+        "main_mobile_image": "shopify://shop_images/Screenshot_2024-09-15_at_11.02.59_PM_2.png",
+        "main_heading_text": "By Stephon <br>Marbury",
+        "main_information_text": "<p>Two-time NBA All-Star, Stephon Marbury, is bringing his passionate and unconventional spirit to Chamelo Eyewear as the Chief Brand Officer.</p><p><strong>’Our eyewear isn’t just unique; it’s revolutionary.</strong> With our patented technology, you can personalize your glasses to fit your style and your life.’</p>",
+        "main_custom_image": "shopify://shop_images/Stephon-Signature-Black.png"
+      }
+    },
+    "index_tabs_banner_product_new_XMThGX": {
+      "type": "Index-tabs-banner-product-new",
+      "blocks": {
+        "information_fm4iLD": {
+          "type": "information",
+          "settings": {
+            "title": "Tint-adjustable",
+            "main_desktop_video": "shopify://files/videos/-432f-477d-80c8-28b789f7af44 (1).mov",
+            "main_mobile_video": "shopify://files/videos/-432f-477d-80c8-28b789f7af44 (1).mov",
+            "main_details_text": "Electronic Tint-adjustable Lenses",
+            "main_heading_text": "Change tint in less than 0.1 seconds",
+            "main_information_text": "<p>Choose your exact lens tint using touch tint slider, automatic tint control, and even app-enabled tint controls.</p>",
+            "main_button_text": "Learn More",
+            "main_button_link": "/",
+            "main_product_list": [
+              "music-shield-fire-lenses-sports-smart-glasses-electrochromic-tint-adjustable-changing-audio-sunglasses",
+              "falcon-obsidian-frames-alpha-blue-lenses-sports-smart-glasses-electrochromic-automatic-tint-adjustable-sunglasses",
+              "dusk-lifestyle-smart-glasses-electrochromic-tint-adjustable-audio-sunglasses",
+              "dusk-lite-lifestyle-smart-glasses-electrochromic-tint-adjustable-sunglasses"
+            ]
+          }
+        },
+        "information_yCMmxE": {
+          "type": "information",
+          "settings": {
+            "title": "Color-Changing",
+            "main_desktop_video": "shopify://files/videos/-591b-4170-842f-f97a9bf2fa09.mp4",
+            "main_mobile_video": "shopify://files/videos/-591b-4170-842f-f97a9bf2fa09.mp4",
+            "main_details_text": "Prismatic™ Color-Changing Lenses",
+            "main_heading_text": "A color for every mood",
+            "main_information_text": "<p>The world’s first glasses that let you instantly switch between four different hues, all with a simple touch.</p>",
+            "main_button_text": "Learn More",
+            "main_button_link": "/",
+            "main_product_list": [
+              "aura-calm-black-gold-instant-color-changing-sunglasses",
+              "euphoria-prismatic-smart-glasses-electrochromic-color-changing-sunglasses-energy"
+            ]
+          }
+        }
+      },
+      "block_order": [
+        "information_fm4iLD",
+        "information_yCMmxE"
+      ],
+      "settings": {
+        "main_background_color": "#ffffff",
+        "main_details_text": "The Technology",
+        "main_heading_text": "Vision meets innovation",
+        "main_information_text": "<p>Our glasses are produced using a <strong>state-of-the-art Japanese manufacturing process,</strong> built with unparalleled precision and quality.</p>"
+      }
+    },
+    "index_image_logos_slider_new_FwJ6Ge": {
+      "type": "Index-image-logos-slider-new",
+      "blocks": {
+        "information_mdd8L8": {
+          "type": "information",
+          "settings": {
+            "title": "<p>“With a commitment to pushing boundaries and redefining the eyewear landscape, Chamelo is poised to revolutionize the industry.”</p>",
+            "logos": "shopify://shop_images/image_124.png"
+          }
+        },
+        "information_993bJF": {
+          "type": "information",
+          "settings": {
+            "title": "<p>“Former NBA All-Star Stephon Marbury is looking to revolutionize the eyewear industry with a new brand rooted in technology.”</p>",
+            "logos": "shopify://shop_images/image_137_5c66c00c-0249-4041-bd80-ebf60ea51ffb.png"
+          }
+        },
+        "information_9jaY8G": {
+          "type": "information",
+          "settings": {
+            "title": "<p>“They’re a unique and innovative piece of gear...it could make some waves in the eyewear industry.”</p>",
+            "logos": "shopify://shop_images/image_152.png"
+          }
+        }
+      },
+      "block_order": [
+        "information_mdd8L8",
+        "information_993bJF",
+        "information_9jaY8G"
+      ],
+      "settings": {
+        "main_background_color": "",
+        "main_desktop_image": "shopify://shop_images/Screenshot_2024-07-26_at_12.54.10_PM_1.png",
+        "main_heading_text": "In The Press"
+      }
+    },
+    "index_featured_collection_new_b7hxcq": {
+      "type": "Index-featured-collection-new",
+      "settings": {
+        "main_background_color": "#f6f6f6",
+        "main_heading_text": "Shop bestsellers",
+        "main_information_text": "<p>Explore our most popular styles</p>",
+        "main_button_text": "Shop All",
+        "main_button_link": "shopify://collections/best-sellers",
+        "main_collection_products": "best-sellers",
+        "products_to_show": 30,
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none"
+      }
+    },
+    "index_object_tabs_details_new_iKEbQH": {
+      "type": "Index-object-tabs-details-new",
+      "disabled": true,
+      "settings": {
+        "main_background_color": "rgba(0,0,0,0)",
+        "main_review_text": "Rated 4.7 • 9,201 reviews",
+        "main_heading_text": "Real Chamelo love",
+        "main_heading_mobile_text": "Real life <br>Chamelo love",
+        "main_button_text": "Read All Reviews",
+        "main_button_link": "/"
+      }
+    },
+    "index_object_table_detail_new_7mMyRq": {
+      "type": "Index-object-table-detail-new",
+      "disabled": true,
+      "settings": {
+        "main_background_color": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "index_top_slideshow_slide_new_8ViGg3",
+    "index_marquee_logos_lists_new_P8hXe4",
+    "index_details_with_popup_new_xQJD4E",
+    "index_image_with_texts_new_qNe3yw",
+    "index_tabs_banner_product_new_XMThGX",
+    "index_image_logos_slider_new_FwJ6Ge",
+    "index_featured_collection_new_b7hxcq",
+    "index_object_tabs_details_new_iKEbQH",
+    "index_object_table_detail_new_7mMyRq"
+  ]
+}

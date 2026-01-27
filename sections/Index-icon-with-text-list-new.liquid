@@ -1,0 +1,155 @@
+{%- if section.blocks.size > 0 or section.settings.main_heading_text != blank -%}
+  <div class="Index_icon_with_text_list_main_new" style="background: {{ section.settings.main_background_color }};">
+    <div class="Index_icon_with_text_list_backleft_new" style="background: {{ section.settings.inner_background_color }};">
+
+    </div>
+    <div class="Index_icon_with_text_list_backtop_new" style="background: {{ section.settings.inner_background_color }};">
+
+    </div>
+    <div class="Index_icon_with_text_list_backright_new" style="background: {{ section.settings.inner_background_color }};">
+
+    </div>
+    <div class="Index_icon_with_text_list_backbottom_new" style="background: {{ section.settings.inner_background_color }};">
+
+    </div>
+    <div class="page-width">
+      <div class="Index_icon_with_text_list_inner_new">
+        {%- if section.blocks.size > 0 or section.settings.main_heading_text != blank -%}
+          <div class="Index_icon_with_text_list_mainsides_new">
+            <div class="Index_icon_with_text_list_innersides_new">
+              {%- if section.settings.main_heading_text != blank -%}
+                <div class="Index_icon_with_text_list_innersides_mainleft_new">
+                  <div class="Common_title_new Index_icon_with_text_list_innersides_innerleft_new">
+                    <h2>{{ section.settings.main_heading_text }}</h2>
+                  </div>
+                </div>
+              {%- endif -%}
+              {%- if section.blocks.size > 0 -%}
+                <div class="Index_icon_with_text_list_innersides_mainright_new">
+                  <div class="Index_icon_with_text_list_innersides_innerright_new">
+                    {%- for block in section.blocks -%}
+                      {%- if block.settings.icons != blank or block.settings.title != blank or block.settings.infos != blank -%}
+                        <div class="Index_icon_with_text_list_innersides_innerright_mainboxs_new">
+                          <div class="Index_icon_with_text_list_innersides_innerright_innerboxs_new">
+                            {%- if block.settings.icons != blank -%}
+                              <div class="Index_icon_with_text_list_innersides_innerright_innerboxs_mainimage_new">
+                                <div class="Index_icon_with_text_list_innersides_innerright_innerboxs_innerimage_new">
+                                  {{
+                                    block.settings.icons | 
+                                    image_url: width: img.width | 
+                                    image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                    fetchpriority: 'auto', 
+                                    class:'Icon_image_new'
+                                  }}
+                                </div>
+                              </div>
+                            {%- endif -%}
+                            {%- if block.settings.title != blank -%}
+                              <div class="Index_icon_with_text_list_innersides_innerright_innerboxs_maintitle_new">
+                                <div class="Index_icon_with_text_list_innersides_innerright_innerboxs_innertitle_new">
+                                  {{ block.settings.title }}
+                                </div>
+                              </div>
+                            {%- endif -%}
+                            {%- if block.settings.infos != blank or block.settings.infos_mobile != blank -%}
+                              <div class="Index_icon_with_text_list_innersides_innerright_innerboxs_maininfos_new">
+                                <div class="Index_icon_with_text_list_innersides_innerright_innerboxs_innerinfos_new {% if block.settings.infos_mobile != blank %}Desktop_only_new{% endif %}">
+                                  {{ block.settings.infos }}
+                                </div>
+                                {% if block.settings.infos_mobile != blank %}
+                                  <div class="Index_icon_with_text_list_innersides_innerright_innerboxs_innerinfos_new Mobile_only_new">
+                                    {{ block.settings.infos_mobile }}
+                                  </div>
+                                {% endif %}
+                              </div>
+                            {%- endif -%}
+                          </div>  
+                        </div>
+                      {%- endif -%}  
+                    {%- endfor -%}  
+                  </div>
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endif -%}  
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Index Icon With Text List",
+    "class": "Index_icon_with_text_list_new",
+    "settings": [
+      {
+        "type": "color",
+        "id": "main_background_color",
+        "label": "Add Main Background Color"
+      },
+      {
+        "type": "color",
+        "id": "inner_background_color",
+        "label": "Add Inner Background Color",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "textarea",
+        "id": "main_heading_text",
+        "label": "Add Main Heading Text",
+        "default": "Upgrade your shades with confidence"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "information",
+        "name": "Information",
+        "limit": 4,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "icons",
+            "label": "Add Main Custom Image"
+          },
+          {
+            "type": "textarea",
+            "id": "title",
+            "label": "Add Main Heading Text",
+            "default": "Heading"
+          },
+          {
+            "type": "richtext",
+            "id": "infos",
+            "label": "Add Main Details Text",
+            "default": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>"
+          },
+          {
+            "type": "richtext",
+            "id": "infos_mobile",
+            "label": "Add Main Details Mobile Text"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Index Icon With Text List",
+        "blocks": [
+          {
+            "type": "information"
+          },
+          {
+            "type": "information"
+          },
+          {
+            "type": "information"
+          },
+          {
+            "type": "information"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

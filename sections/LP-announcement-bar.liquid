@@ -1,0 +1,72 @@
+{% if section.blocks.size > 0 %}
+  <div class="LP_announcement_bar_main LP_announcement_bar_main_{{ section.id }}" style="background-color: {{ section.settings.main_background_color }}">
+    <div class="LP_annoucement_bar_marquee">
+          <span>
+            {% for block in section.blocks %}
+              {% if block.settings.text != blank %}
+                <div class="LP_annoucement_bar_text">
+                  {{ block.settings.text }}
+                </div>
+              {% endif %}
+            {% endfor %}
+          </span>
+        </div>
+  </div>
+{% endif %}
+
+<style>
+  .LP_announcement_bar_main { padding: 8px 0; }
+  .LP_annoucement_bar_marquee { width: 100%;  overflow: hidden; white-space: nowrap; line-height: 0;}
+  .LP_annoucement_bar_marquee span { display: flex; align-items: center; justify-content: center; }
+  .LP_annoucement_bar_text { padding: 0 23px; }
+  .LP_annoucement_bar_text:first-child { display: none; }
+  .LP_annoucement_bar_text p { margin: 0; font-family: var(--font-mono-regular-family); font-size: 12px; font-weight: 400; line-height: 12px; letter-spacing: 0px; text-transform: uppercase; color: #000; }
+
+  @media (max-width: 749px){
+    .LP_announcement_bar_main { padding: 5.63px 0 6.37px; }
+    .LP_annoucement_bar_text:first-child { display: block; }
+    .LP_annoucement_bar_text { padding: 0 16px; }
+    .LP_annoucement_bar_text p { font-size: 11px; color: #010101; }
+    
+  }
+
+</style>
+
+{% schema %}
+  {
+    "name": "LP Announcement bar",
+    "class": "LP_announcement_bar",
+    "settings": [
+      {
+        "type": "color",
+        "id": "main_background_color",
+        "label": "Add Main background Color",
+        "default": "#000000"
+      },
+    ],
+    "blocks": [
+      {
+        "type": "marquee-text",
+        "name": "Marquee Text",
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "text",
+            "label": "Add Text",
+            "default": "<p>black Friday sale</p>"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "LP Announcement bar", 
+        "blocks": [
+          {
+            "type": "marquee-text",
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

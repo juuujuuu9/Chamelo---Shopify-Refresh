@@ -1,0 +1,705 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "custom_banner_GBfJAF": {
+      "type": "custom-banner",
+      "disabled": true,
+      "custom_css": [
+        ".custom-banner__text {bottom: 0% !important;}"
+      ],
+      "name": "BOXING DAY - Custom Banner",
+      "settings": {
+        "title": "<p>Our Black Friday Sale is live.</p>",
+        "description": "<p>Our Black Friday Sale is live.</p>",
+        "desktop_image": "shopify://shop_images/Main_Banner_BoxingDay_Desktop_2x_5ff779b9-a75d-4729-a1c3-fcda1f12fe29.webp",
+        "mobile_image": "shopify://shop_images/Main_Banner_BoxingDay_Mobile_2x_010a0b95-0604-488e-9851-d983001fa267.webp",
+        "button_text": "SHOP NOW",
+        "button_text_url": "shopify://collections/sale",
+        "button_text_color": "#ffffff",
+        "button_text_bg": "#4d007d"
+      }
+    },
+    "index_top_text_with_video_new_nHMwph": {
+      "type": "Index-top-text-with-video-new",
+      "disabled": true,
+      "name": "AROZA - Index Top Text With Photo - Aroza",
+      "settings": {
+        "main_background_color": "#ffffff",
+        "main_review_image": "shopify://shop_images/review-5_f4e7318b-2352-4285-9367-4f483c0102ec.svg",
+        "main_review_text": "OVER 100,000+ PAIRS SOLD",
+        "main_heading_text": "Meet Aroza. <br> Next-Gen Goggles.",
+        "main_information_text": "<p>The world's first goggles that let you control the tint. Switch between three tint levels at the touch of a button. No more swapping lenses.</p>",
+        "main_button_text": "SHOP AROZA NOW",
+        "main_button_link": "shopify://products/aroza-first-goggles-with-instant-electronic-tint-control",
+        "main_left_custom_image": "shopify://shop_images/465112282_2701106193409113_2235945206511118872_n_1_1.jpg",
+        "main_left_heading_text": "Time’s Best Inventions Of 2024",
+        "main_left_details_text": "<p>Voted one of <a href=\"https://time.com/7094864/chamelo-lens-technology/\" target=\"_blank\" title=\"https://time.com/7094864/chamelo-lens-technology/\">Time Magazine’s</a> Best Inventions of 2024, we’re here to redefine what eyewear can do.</p>",
+        "main_desktop_video": "shopify://files/videos/Main_header.mp4",
+        "main_mobile_video": "shopify://files/videos/Main_header.mp4",
+        "main_product_title_text": "",
+        "main_product_tags_text": "",
+        "main_product_button_text": "",
+        "main_product_redirect_link": "shopify://products/shield-deposit"
+      }
+    },
+    "index_top_text_with_video_new_KKTDxV": {
+      "type": "Index-top-text-with-video-new",
+      "name": "Index Top Text With Photo - The Bomb",
+      "settings": {
+        "main_background_color": "#ffffff",
+        "main_review_image": "shopify://shop_images/review-5_f4e7318b-2352-4285-9367-4f483c0102ec.svg",
+        "main_review_text": "OVER 100,000+ PAIRS SOLD",
+        "main_heading_text": "Champion-Grade\nVision Starts Here.",
+        "main_information_text": "<p>Designed with undisputed champ Alycia “The Bomb” Baumgardner. Manual tint. Zero distractions.<br/></p>",
+        "main_button_text": "SHOP THE BOMB NOW",
+        "main_button_link": "shopify://products/the-bomb-by-alycia-baumgardner-instant-tint-control-sports-glasses",
+        "main_left_custom_image": "shopify://shop_images/465112282_2701106193409113_2235945206511118872_n_1_1.jpg",
+        "main_left_heading_text": "Time’s Best Inventions Of 2024",
+        "main_left_details_text": "<p>Voted one of <a href=\"https://time.com/7094864/chamelo-lens-technology/\" target=\"_blank\" title=\"https://time.com/7094864/chamelo-lens-technology/\">Time Magazine’s</a> Best Inventions of 2024, we’re here to redefine what eyewear can do.</p>",
+        "main_desktop_image": "shopify://shop_images/Alycia_Baumgardner_Main.webp",
+        "main_mobile_image": "shopify://shop_images/Alycia_Baumgardner_Main.webp",
+        "main_product_title_text": "",
+        "main_product_tags_text": "",
+        "main_product_button_text": "",
+        "main_product_redirect_link": "shopify://products/shield-deposit"
+      }
+    },
+    "index_top_text_with_video_new_zByapb": {
+      "type": "Index-top-text-with-video-new",
+      "disabled": true,
+      "name": "Index Top Text With Video - Aura Audio_En",
+      "settings": {
+        "main_background_color": "#ffffff",
+        "main_review_image": "shopify://shop_images/review-5_f4e7318b-2352-4285-9367-4f483c0102ec.svg",
+        "main_review_text": "OVER 100,000+ PAIRS SOLD",
+        "main_heading_text": "Instant tint + Immersive sound— All in One.",
+        "main_information_text": "<p>Aura Audio brings next-level smart eyewear with instant Prismatic™ color-changing lenses and built-in open-ear audio.</p>",
+        "main_button_text": "SHOP AURA AUDIO NOW",
+        "main_button_link": "shopify://products/aura-audio-calm-black-gold-instant-color-changing-sunglasses",
+        "main_left_custom_image": "shopify://shop_images/465112282_2701106193409113_2235945206511118872_n_1_1.jpg",
+        "main_left_heading_text": "Time’s Best Inventions Of 2024",
+        "main_left_details_text": "<p>Voted one of <a href=\"https://time.com/7094864/chamelo-lens-technology/\" target=\"_blank\" title=\"https://time.com/7094864/chamelo-lens-technology/\">Time Magazine’s</a> Best Inventions of 2024, we’re here to redefine what eyewear can do.</p>",
+        "main_desktop_video": "shopify://files/videos/Aura_Audio_1212_En.mp4",
+        "main_mobile_video": "shopify://files/videos/Aura_Audio_1212_En.mp4",
+        "main_product_title_text": "",
+        "main_product_tags_text": "",
+        "main_product_button_text": "",
+        "main_product_redirect_link": "shopify://products/shield-deposit"
+      }
+    },
+    "index_top_text_with_video_new_Jh7fWh": {
+      "type": "Index-top-text-with-video-new",
+      "disabled": true,
+      "name": "Index Top Text With Video - Aura Audio",
+      "settings": {
+        "main_background_color": "#ffffff",
+        "main_review_image": "shopify://shop_images/review-5_f4e7318b-2352-4285-9367-4f483c0102ec.svg",
+        "main_review_text": "OVER 100,000+ PAIRS SOLD",
+        "main_heading_text": "Prismatic™ Lenses +\nSpeakers & Mics =\nAura Audio",
+        "main_information_text": "<p>Aura Audio brings next-level smart eyewear with instant Prismatic™ color-changing lenses and built-in open-ear audio.</p>",
+        "main_button_text": "SHOP AURA AUDIO NOW",
+        "main_button_link": "shopify://products/aura-audio-calm-black-gold-instant-color-changing-sunglasses",
+        "main_left_custom_image": "shopify://shop_images/465112282_2701106193409113_2235945206511118872_n_1_1.jpg",
+        "main_left_heading_text": "Time’s Best Inventions Of 2024",
+        "main_left_details_text": "<p>Voted one of <a href=\"https://time.com/7094864/chamelo-lens-technology/\" target=\"_blank\" title=\"https://time.com/7094864/chamelo-lens-technology/\">Time Magazine’s</a> Best Inventions of 2024, we’re here to redefine what eyewear can do.</p>",
+        "main_desktop_video": "shopify://files/videos/Aura_Audio_12122.mp4",
+        "main_mobile_video": "shopify://files/videos/Aura_Audio_1212.mp4",
+        "main_product_title_text": "",
+        "main_product_tags_text": "",
+        "main_product_button_text": "",
+        "main_product_redirect_link": "shopify://products/shield-deposit"
+      }
+    },
+    "custom_banner_LE7Cbt": {
+      "type": "custom-banner",
+      "disabled": true,
+      "custom_css": [
+        ".custom-banner__text {bottom: 0% !important;}"
+      ],
+      "name": "Custom Banner",
+      "settings": {
+        "title": "<p>Our Black Friday Sale is live.</p>",
+        "description": "<p>Our Black Friday Sale is live.</p>",
+        "desktop_image": "shopify://shop_images/Main_Banner_1212_Desktop.webp",
+        "mobile_image": "shopify://shop_images/Main_Banner_1212_Mobile.webp",
+        "button_text": "SHOP NOW",
+        "button_text_url": "shopify://collections/sale",
+        "button_text_color": "#ffffff",
+        "button_text_bg": "#4d007d"
+      }
+    },
+    "custom_banner_DHJF66": {
+      "type": "custom-banner",
+      "disabled": true,
+      "name": "Custom Banner",
+      "settings": {
+        "title": "<p>Our Cyber Week Sale is live.</p>",
+        "description": "<p>Our Cyber Week Sale is live.</p>",
+        "desktop_image": "shopify://shop_images/Main_Banner_ZURIX_Desktop.png",
+        "mobile_image": "shopify://shop_images/Main_Banner_ZURIX_Mobile.png",
+        "button_text": "SHOP NOW",
+        "button_text_url": "shopify://collections/sale",
+        "button_text_color": "#ffffff",
+        "button_text_bg": "#163abd"
+      }
+    },
+    "index_top_text_with_video_new_wGyCbi": {
+      "type": "Index-top-text-with-video-new",
+      "disabled": true,
+      "custom_css": [
+        ".Index_top_text_with_video_sides_innerleft_innerdetail_maininfos_new,.Index_top_text_with_video_sides_innerleft_innersides_innertexts_maininfos_new {color: #000;}"
+      ],
+      "settings": {
+        "main_background_color": "#ffffff",
+        "main_review_image": "shopify://shop_images/review-5_f4e7318b-2352-4285-9367-4f483c0102ec.svg",
+        "main_review_text": "OVER 100,000+ CUSTOMERS",
+        "main_heading_text": "Our Labor Day Sale is Live",
+        "main_information_text": "<p>It's our final sale of the the summer. This weekend only:<br/><strong>- Up to $100 off select styles<br/>- 30% off bundles </strong></p>",
+        "main_button_text": "Shop the Sale",
+        "main_button_link": "shopify://collections/sale",
+        "main_left_custom_image": "shopify://shop_images/465112282_2701106193409113_2235945206511118872_n_1_1.jpg",
+        "main_left_heading_text": "Time’s Best Inventions Of 2024",
+        "main_left_details_text": "<p>Voted one of <a href=\"https://time.com/7094864/chamelo-lens-technology/\" target=\"_blank\" title=\"https://time.com/7094864/chamelo-lens-technology/\">Time Magazine’s</a> Best Inventions of 2024, we’re here to redefine what eyewear can do.</p>",
+        "main_desktop_image": "shopify://shop_images/Chamelo-Stephon-May-2024-36_1.png",
+        "main_mobile_image": "shopify://shop_images/Chamelo-Stephon-May-2024-36_1.png",
+        "main_product_title_text": "",
+        "main_product_tags_text": "",
+        "main_product_button_text": "",
+        "main_product_redirect_link": "shopify://collections/sale"
+      }
+    },
+    "custom_product_carousel_CzWkGG": {
+      "type": "custom-product-carousel",
+      "disabled": true,
+      "name": "Custom Product Carousel",
+      "settings": {
+        "main_heading_text": "Shop bestsellers",
+        "main_information_text": "<p>Explore our most popular styles</p>",
+        "main_button_text": "Shop All",
+        "main_button_link": "/",
+        "main_collection_products": "best-sellers",
+        "products_to_show": 5,
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none"
+      }
+    },
+    "index_top_slideshow_slide_new_8ViGg3": {
+      "type": "Index-top-slideshow-slide-new",
+      "blocks": {
+        "information_CDkTVz": {
+          "type": "information",
+          "settings": {
+            "main_desktop_image": "shopify://shop_images/1_2.png",
+            "main_mobile_image": "shopify://shop_images/Sale_Banner_Home_Mobile.png",
+            "main_review_text": "HAPPENING NOW",
+            "title": "Early Black Friday Sale",
+            "main_information_text": "<p>Upgrade Your Shades With Exclusive Early Deals</p>",
+            "main_information_text_mob": "<p>Our best-selling sports sunglasses now come in a limited edition Red, White and Blue hue</p>",
+            "main_button_text": "shop now",
+            "main_button_link": "shopify://collections/shop-all"
+          }
+        },
+        "information_cHTEwR": {
+          "type": "information",
+          "settings": {
+            "main_review_text": "Rated 4.7 • 9,201 reviews",
+            "title": "Just in time<br>for Paris",
+            "main_information_text": "<p>Our best-selling sports sunglasses now come in a limited edition Red, White and Blue hue</p>",
+            "main_information_text_mob": "<p>Our best-selling sports sunglasses now come in a limited edition Red, White and Blue hue</p>",
+            "main_button_text": "Shop All",
+            "main_button_link": "/"
+          }
+        }
+      },
+      "block_order": [
+        "information_CDkTVz",
+        "information_cHTEwR"
+      ],
+      "disabled": true,
+      "settings": {
+        "class-name": "",
+        "main_background_color": "#efefef"
+      }
+    },
+    "index_marquee_logos_lists_new_P8hXe4": {
+      "type": "Index-marquee-logos-lists-new",
+      "blocks": {
+        "information_6ncpyP": {
+          "type": "information",
+          "settings": {
+            "main_custom_image": "shopify://shop_images/image_140.png"
+          }
+        },
+        "information_LhBYJ4": {
+          "type": "information",
+          "settings": {
+            "main_custom_image": "shopify://shop_images/image_138_3af8cccb-9d20-4796-b8aa-490c1f49ccf5.png"
+          }
+        },
+        "information_Q9brdr": {
+          "type": "information",
+          "settings": {
+            "main_custom_image": "shopify://shop_images/image_133_4c40a763-ab8d-4279-89df-571b155c84e7.png"
+          }
+        },
+        "information_J9KwM9": {
+          "type": "information",
+          "settings": {
+            "main_custom_image": "shopify://shop_images/image_132_3ce69df1-c7a1-4c11-8edf-4d51c93c79a9.png"
+          }
+        },
+        "information_fXmYDH": {
+          "type": "information",
+          "settings": {
+            "main_custom_image": "shopify://shop_images/image_140.png"
+          }
+        },
+        "information_88gzax": {
+          "type": "information",
+          "settings": {
+            "main_custom_image": "shopify://shop_images/image_138_3af8cccb-9d20-4796-b8aa-490c1f49ccf5.png"
+          }
+        },
+        "information_Jr8hyN": {
+          "type": "information",
+          "settings": {
+            "main_custom_image": "shopify://shop_images/image_133_4c40a763-ab8d-4279-89df-571b155c84e7.png"
+          }
+        },
+        "information_nHxcMW": {
+          "type": "information",
+          "settings": {
+            "main_custom_image": "shopify://shop_images/image_132_3ce69df1-c7a1-4c11-8edf-4d51c93c79a9.png"
+          }
+        },
+        "information_PYNeGy": {
+          "type": "information",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "information_6ncpyP",
+        "information_LhBYJ4",
+        "information_Q9brdr",
+        "information_J9KwM9",
+        "information_fXmYDH",
+        "information_88gzax",
+        "information_Jr8hyN",
+        "information_nHxcMW",
+        "information_PYNeGy"
+      ],
+      "settings": {
+        "main_background_color": "#ffffff"
+      }
+    },
+    "index_details_with_popup_new_xQJD4E": {
+      "type": "Index-details-with-popup-new",
+      "settings": {
+        "class-name": "",
+        "main_background_color": "",
+        "main_custom_image": "shopify://shop_images/Vector_c4ea7aff-051d-4cfd-ae03-f0e439864c82.svg",
+        "main_Author_text": "By Stephon Marbury",
+        "main_detail_text": "Game-changing, performance-enhancing, and mood-boosting sunglasses. Made with next-gen <span>Chamelo™ lenses</span>, created to help you see better.",
+        "main_button_text": "Learn More",
+        "main_button_link": "shopify://pages/about-us",
+        "main_desktop_video": "shopify://files/videos/-591b-4170-842f-f97a9bf2fa09.mp4",
+        "main_mobile_video": "shopify://files/videos/-591b-4170-842f-f97a9bf2fa09.mp4",
+        "main_heading_text": "Chamelo™ Lenses",
+        "main_information_text": "<p>All our eyewear changes tint or color instantly, either manually, automatically or both. We empower wearers to see beyond 20/20, revolutionizing the way people experience the world.</p>"
+      }
+    },
+    "index_featured_collection_new_b7hxcq": {
+      "type": "Index-featured-collection-new",
+      "settings": {
+        "main_background_color": "#f6f6f6",
+        "main_heading_text": "Shop bestsellers",
+        "main_information_text": "<p>Explore our most popular styles</p>",
+        "main_button_text": "Shop All",
+        "main_button_link": "shopify://collections/best-sellers",
+        "main_collection_products": "best-sellers",
+        "products_to_show": 30,
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none"
+      }
+    },
+    "index_featured_collection_new_cQnJ63": {
+      "type": "Index-featured-collection-new",
+      "disabled": true,
+      "settings": {
+        "main_background_color": "#f6f6f6",
+        "main_heading_text": "Shop bundles",
+        "main_information_text": "<p>Explore our most popular styles</p>",
+        "main_button_text": "Shop All",
+        "main_button_link": "shopify://collections/holiday-bundles",
+        "main_collection_products": "holiday-bundles",
+        "products_to_show": 9,
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none"
+      }
+    },
+    "index_collection_scroll_new_c8gAen": {
+      "type": "Index-collection-scroll-new",
+      "blocks": {
+        "information_Dpdqc9": {
+          "type": "information",
+          "settings": {
+            "main_svg_code_desktop": "shopify://shop_images/2334.svg",
+            "main_svg_code_mobile": "shopify://shop_images/134w3.svg",
+            "title": "Sport",
+            "main_information_text": "<p>Tint-changing performance sunglasses</p>",
+            "main_mp4_video": "shopify://files/videos/Sport Rev3.mp4",
+            "main_mp4_mobile_video": "shopify://files/videos/Sport Rev3.mp4",
+            "main_button_text": "Shop Sport",
+            "main_button_link": "https://www.chamelo.com/collections/shop-all#sport",
+            "main_thumbnail_image": "shopify://shop_images/Frame_1000005268.png"
+          }
+        },
+        "information_nFRtmJ": {
+          "type": "information",
+          "settings": {
+            "main_svg_code_desktop": "shopify://shop_images/1234.svg",
+            "main_svg_code_mobile": "shopify://shop_images/1e22.svg",
+            "title": "Lifestyle",
+            "main_information_text": "<p>Tint-changing lenses for  everyday style</p>",
+            "main_mp4_video": "shopify://files/videos/Lifestyle Rev2.mp4",
+            "main_mp4_mobile_video": "shopify://files/videos/Lifestyle Rev2.mp4",
+            "main_button_text": "Shop Lifestyle",
+            "main_button_link": "https://www.chamelo.com/collections/shop-all#lifestyle",
+            "main_thumbnail_image": "shopify://shop_images/Frame_1000006143_1424f493-2182-4b83-aa78-5de8c2a7dd40.png"
+          }
+        },
+        "information_E8DX8C": {
+          "type": "information",
+          "settings": {
+            "main_svg_code_desktop": "shopify://shop_images/131.svg",
+            "main_svg_code_mobile": "shopify://shop_images/13.svg",
+            "title": "Prismatic",
+            "main_information_text": "<p>The world’s first color changing sunglasses</p>",
+            "main_mp4_video": "shopify://files/videos/Prismatic Rev3.mp4",
+            "main_mp4_mobile_video": "shopify://files/videos/Prismatic Rev3.mp4",
+            "main_button_text": "Shop Prismatic",
+            "main_button_link": "https://www.chamelo.com/collections/shop-all#prismatic",
+            "main_thumbnail_image": "shopify://shop_images/Frame_1000006142.png"
+          }
+        }
+      },
+      "block_order": [
+        "information_Dpdqc9",
+        "information_nFRtmJ",
+        "information_E8DX8C"
+      ],
+      "settings": {
+        "main_background_color": "",
+        "main_heading_text": "Shop by collection",
+        "main_button_text": "Shop All",
+        "main_button_link": "shopify://collections/shop-all"
+      }
+    },
+    "index_mobile_sticky_prods_new_nrzMPe": {
+      "type": "Index-mobile-sticky-prods-new",
+      "disabled": true,
+      "settings": {
+        "main_background_color": "#f6f6f6",
+        "main_back_custom_image": "shopify://shop_images/Component_457.jpg",
+        "main_product_title_text": "Prime",
+        "main_product_tags_text": "New",
+        "main_product_static_image": "shopify://shop_images/Frame_1000005539.png",
+        "main_product_button_text": "Shop Now",
+        "main_product_redirect_link": "shopify://products/prime-fire-lenses-sports-smart-glasses-electrochromic-tint-adjustable-changing-sunglasses"
+      }
+    },
+    "index_image_over_product_new_RnAzNn": {
+      "type": "Index-image-over-product-new",
+      "disabled": true,
+      "settings": {
+        "main_background_color": "#efefef",
+        "main_desktop_image": "shopify://shop_images/3._1.png",
+        "main_mobile_image": "shopify://shop_images/Screenshot_2025-02-28_at_6.41.47_PM.png",
+        "main_product_select": "aura-rx-black-prismatic-smart-glasses-electrochromic-color-changing-sunglasses-old"
+      }
+    },
+    "index_image_with_texts_new_qNe3yw": {
+      "type": "Index-image-with-texts-new",
+      "settings": {
+        "class-name": "",
+        "main_background_color": "#f6f6f6",
+        "main_outer_image": "shopify://shop_images/Linked_Path_Group.svg",
+        "main_inside_image": "shopify://shop_images/Vector_10.svg",
+        "main_desktop_image": "shopify://shop_images/prismatic-thum.jpg",
+        "main_mobile_image": "shopify://shop_images/prismatic-thum.jpg",
+        "main_heading_text": "By Stephon <br>Marbury",
+        "main_information_text": "<p>Two-time NBA All-Star, Stephon Marbury, is bringing his passionate and unconventional spirit to Chamelo Eyewear as the Chief Brand Officer.</p><p><strong>’Our eyewear isn’t just unique; it’s revolutionary.</strong> With our patented technology, you can personalize your glasses to fit your style and your life.'</p>",
+        "main_custom_image": "shopify://shop_images/Stephon-Signature-Black.png"
+      }
+    },
+    "index_object_tabs_details_new_iKEbQH": {
+      "type": "Index-object-tabs-details-new",
+      "settings": {
+        "main_background_color": "rgba(0,0,0,0)",
+        "main_review_text": "Rated 4.7 • 9,201 reviews",
+        "main_heading_text": "Real Chamelo love",
+        "main_heading_mobile_text": "Real life <br>Chamelo love",
+        "main_button_text": "",
+        "main_button_link": "/"
+      }
+    },
+    "index_tabs_banner_product_new_LrAQxU": {
+      "type": "Index-tabs-banner-product-new",
+      "blocks": {
+        "information_E9d8MU": {
+          "type": "information",
+          "settings": {
+            "title": "Tint-adjustable",
+            "main_desktop_video": "shopify://files/videos/-432f-477d-80c8-28b789f7af44 (1).mov",
+            "main_mobile_video": "shopify://files/videos/-432f-477d-80c8-28b789f7af44 (1).mov",
+            "main_details_text": "Eclipse™ Tint-adjustable Lenses",
+            "main_heading_text": "Change tint in less than 0.1 seconds",
+            "main_information_text": "<p>Choose your exact lens tint using touch tint slider, automatic tint control, and even app-enabled tint controls.</p>",
+            "main_button_text": "Learn More",
+            "main_button_link": "shopify://pages/innovation",
+            "main_product_list": [
+              "music-shield-fire-lenses-sports-smart-glasses-electrochromic-tint-adjustable-changing-audio-sunglasses",
+              "falcon-obsidian-frames-alpha-blue-lenses-sports-smart-glasses-electrochromic-automatic-tint-adjustable-sunglasses",
+              "dusk-lifestyle-smart-glasses-electrochromic-tint-adjustable-audio-sunglasses",
+              "dusk-lite-lifestyle-smart-glasses-electrochromic-tint-adjustable-sunglasses"
+            ]
+          }
+        },
+        "information_BnWtzx": {
+          "type": "information",
+          "settings": {
+            "title": "Color-Changing",
+            "main_desktop_video": "shopify://files/videos/-591b-4170-842f-f97a9bf2fa09.mp4",
+            "main_mobile_video": "shopify://files/videos/-591b-4170-842f-f97a9bf2fa09.mp4",
+            "main_details_text": "Prismatic™ Color-Changing Lenses",
+            "main_heading_text": "A color for every mood",
+            "main_information_text": "<p>The world’s first glasses that let you instantly switch between four different hues, all with a simple touch.</p>",
+            "main_button_text": "Learn More",
+            "main_button_link": "shopify://pages/innovation",
+            "main_product_list": [
+              "aura-calm-black-gold-instant-color-changing-sunglasses",
+              "euphoria-prismatic-smart-glasses-electrochromic-color-changing-sunglasses-energy"
+            ]
+          }
+        }
+      },
+      "block_order": [
+        "information_E9d8MU",
+        "information_BnWtzx"
+      ],
+      "settings": {
+        "main_background_color": "#ffffff",
+        "main_details_text": "The Technology",
+        "main_heading_text": "Vision meets innovation",
+        "main_information_text": "<p>Our glasses are produced using a <strong>state-of-the-art Japanese manufacturing process,</strong> built with unparalleled precision and quality.</p>"
+      }
+    },
+    "index_object_table_detail_new_7mMyRq": {
+      "type": "Index-object-table-detail-new",
+      "settings": {
+        "main_background_color": "#ffffff"
+      }
+    },
+    "index_image_logos_slider_new_FwJ6Ge": {
+      "type": "Index-image-logos-slider-new",
+      "blocks": {
+        "information_mdd8L8": {
+          "type": "information",
+          "settings": {
+            "title": "<p>“With a commitment to pushing boundaries and redefining the eyewear landscape, Chamelo is poised to revolutionize the industry.”</p>",
+            "logos": "shopify://shop_images/image_124_721acf8e-a554-4d1d-b2b2-ef748d15f2f1.png"
+          }
+        },
+        "information_993bJF": {
+          "type": "information",
+          "settings": {
+            "title": "<p>“Former NBA All-Star Stephon Marbury is looking to revolutionize the eyewear industry with a new brand rooted in technology.”</p>",
+            "logos": "shopify://shop_images/image_154_6233ec64-25ab-4f2b-b005-4f9448b57d7e.png"
+          }
+        },
+        "information_9jaY8G": {
+          "type": "information",
+          "settings": {
+            "title": "<p>“They’re a unique and innovative piece of gear...it could make some waves in the eyewear industry.”</p>",
+            "logos": "shopify://shop_images/image_152.png"
+          }
+        }
+      },
+      "block_order": [
+        "information_mdd8L8",
+        "information_993bJF",
+        "information_9jaY8G"
+      ],
+      "settings": {
+        "main_background_color": "",
+        "main_desktop_image": "shopify://shop_images/Screenshot_2024-07-26_at_12.54.10_PM_1.png",
+        "main_heading_text": "In The Press"
+      }
+    },
+    "index_faqs_accordion_list_new_BekFwy": {
+      "type": "Index-faqs-accordion-list-new",
+      "blocks": {
+        "information_UtLFNP": {
+          "type": "information",
+          "settings": {
+            "title": "How is Chamelo different?",
+            "infos": "<p>At Chamelo, our goal is to pioneer a new era in the eyewear industry by fusing state-of-the-art technology with cutting-edge style. All our eyewear changes tint or color instantly, either manually, automatically or both. We empower wearers to see beyond 20/20, revolutionizing the way people experience the world.</p>"
+          }
+        },
+        "information_THhVUa": {
+          "type": "information",
+          "settings": {
+            "title": "What’s the difference between the collections?",
+            "infos": "<p>While everyday pair of Chamelo sunglasses is made with revolutionary tech, we have 3 collections at that all serve a different purpose. </p><ul><li><a href=\"https://www.chamelo.com/collections/shop-all#sport\" title=\"https://www.chamelo.com/collections/shop-all#sport\">Sport</a>: Tint-changing performance sunglasses</li><li><a href=\"https://www.chamelo.com/collections/shop-all#lifestyle\" title=\"https://www.chamelo.com/collections/shop-all#lifestyle\">Lifestyle</a>: Tint-changing lenses for  everyday style</li><li><a href=\"https://www.chamelo.com/collections/shop-all#prismatic\" title=\"https://www.chamelo.com/collections/shop-all#prismatic\">Prismatic</a>: The world’s first color changing sunglasses</li></ul><p>Not sure which one’s right for you? Shop all styles <a href=\"https://www.chamelo.com/collections/shop-all\" title=\"https://www.chamelo.com/collections/shop-all\">here</a>.</p>"
+          }
+        },
+        "information_MaVqeJ": {
+          "type": "information",
+          "settings": {
+            "title": "Which pair of glasses is right for me?",
+            "infos": "<p>Depends what you plan on using them for! For those intense workouts or outdoor adventures, check out our tint-adjustable <a href=\"https://www.chamelo.com/collections/shop-all#sport\" title=\"https://www.chamelo.com/collections/shop-all#sport\">Sport</a> collection. If you’re looking to turn heads with a pair of our color-changing glasses, you’ll love the <a href=\"https://www.chamelo.com/collections/shop-all#prismatic\" title=\"https://www.chamelo.com/collections/shop-all#prismatic\">Prismatic</a> collection. And if you just want a versatile pair of shades that go with every look, our <a href=\"https://www.chamelo.com/collections/shop-all#lifestyle\" title=\"https://www.chamelo.com/collections/shop-all#lifestyle\">Lifestyle</a> glasses are exactly what you need.</p>"
+          }
+        },
+        "information_UQpKaL": {
+          "type": "information",
+          "settings": {
+            "title": "What is the technology behind Chamelo?",
+            "infos": "<p>Chamelo leverages liquid crystal film technology to create next-generation smart eyewear. All our eyewear changes tint or color instantly, either manually, automatically or both. Whether navigating the bright conditions of an outdoor adventure or looking to elevate your personal style, we’ve got a pair for you.</p>"
+          }
+        },
+        "information_F7GiJj": {
+          "type": "information",
+          "settings": {
+            "title": "Do you offer prescription lenses?",
+            "infos": "<p>Not yet! However, we’ve heard your feedback and we are working hard to bring prescription Chamelo lenses to you soon.</p>"
+          }
+        },
+        "information_eKPFVw": {
+          "type": "information",
+          "settings": {
+            "title": "Do you offer a warranty/Guarantee?",
+            "infos": "<p>Yes, at Chamelo we understand that things don’t always go according to plan. That’s why we offer a robust warranty policy on our products, including a 30-day money-back guarantee and a 1-year manufacturer’s warranty. View our policy <a href=\"/pages/returns-exchanges\" title=\"Returns & Exchanges\">here</a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "information_UtLFNP",
+        "information_THhVUa",
+        "information_MaVqeJ",
+        "information_UQpKaL",
+        "information_F7GiJj",
+        "information_eKPFVw"
+      ],
+      "settings": {
+        "main_background_color": "#ffffff",
+        "main_heading_text": "FAQs",
+        "main_button_text": "Read All Faqs",
+        "main_button_link": "/",
+        "main_information_text": "",
+        "main_desktop_image": "shopify://shop_images/Chamelo-Olympics-Day_1-5_1.png",
+        "main_outer_image": "shopify://shop_images/Vector.svg",
+        "main_inside_image": "shopify://shop_images/Vectoree.svg",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "index_icon_with_text_list_new_TmEjYE": {
+      "type": "Index-icon-with-text-list-new",
+      "blocks": {
+        "information_MmdcJW": {
+          "type": "information",
+          "settings": {
+            "icons": "shopify://shop_images/paper_1_1_388a964f-ad23-49a5-a819-5bdc3c856f18.svg",
+            "title": "30-Day Guarantee",
+            "infos": "<p>If you’re not completely satisfied, return within 30 days for a full refund or exchange.</p>",
+            "infos_mobile": ""
+          }
+        },
+        "information_698weP": {
+          "type": "information",
+          "settings": {
+            "icons": "shopify://shop_images/free-shipping_5_1_869ff842-235e-46f9-9918-1af95e8010c7.svg",
+            "title": "Fast, Free Shipping",
+            "infos": "<p>Enjoy free shipping on all orders of $69 or more (US & International). Orders usually arrive within 4-7 business days.</p>",
+            "infos_mobile": ""
+          }
+        },
+        "information_JcMfT6": {
+          "type": "information",
+          "settings": {
+            "icons": "shopify://shop_images/shield_2.svg",
+            "title": "1-Year warranty",
+            "infos": "<p>Included with all glasses, covering any manufacturing defects.</p>",
+            "infos_mobile": ""
+          }
+        },
+        "information_9aHkG9": {
+          "type": "information",
+          "settings": {
+            "icons": "shopify://shop_images/paper_1_1-1.svg",
+            "title": "A+ Customer Service",
+            "infos": "<p>Curious how our sunglasses work or anything else? Just email us at <a href=\"mailto:hello@chamelo.com\" title=\"mailto:hello@chamelo.com\">hello@chamelo.com</a></p>",
+            "infos_mobile": "<p>Got a question about our glasses? Just email us at <a href=\"mailto:hello@chamelo.com\" title=\"mailto:hello@chamelo.com\">hello@chamelo.com</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "information_MmdcJW",
+        "information_698weP",
+        "information_JcMfT6",
+        "information_9aHkG9"
+      ],
+      "settings": {
+        "main_background_color": "",
+        "inner_background_color": "#ffffff",
+        "main_heading_text": "Upgrade your shades with confidence"
+      }
+    }
+  },
+  "order": [
+    "custom_banner_GBfJAF",
+    "index_top_text_with_video_new_nHMwph",
+    "index_top_text_with_video_new_KKTDxV",
+    "index_top_text_with_video_new_zByapb",
+    "index_top_text_with_video_new_Jh7fWh",
+    "custom_banner_LE7Cbt",
+    "custom_banner_DHJF66",
+    "index_top_text_with_video_new_wGyCbi",
+    "custom_product_carousel_CzWkGG",
+    "index_top_slideshow_slide_new_8ViGg3",
+    "index_marquee_logos_lists_new_P8hXe4",
+    "index_details_with_popup_new_xQJD4E",
+    "index_featured_collection_new_b7hxcq",
+    "index_featured_collection_new_cQnJ63",
+    "index_collection_scroll_new_c8gAen",
+    "index_mobile_sticky_prods_new_nrzMPe",
+    "index_image_over_product_new_RnAzNn",
+    "index_image_with_texts_new_qNe3yw",
+    "index_object_tabs_details_new_iKEbQH",
+    "index_tabs_banner_product_new_LrAQxU",
+    "index_object_table_detail_new_7mMyRq",
+    "index_image_logos_slider_new_FwJ6Ge",
+    "index_faqs_accordion_list_new_BekFwy",
+    "index_icon_with_text_list_new_TmEjYE"
+  ]
+}

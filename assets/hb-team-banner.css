@@ -1,0 +1,191 @@
+.hb_team_banner {
+    position: relative;
+    width: 100%;
+}
+.hb_team_banner img {
+    width: 100%;
+    height: 100% !important; 
+    display: block;
+}
+.hb_team_banner svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.hb_team_banner .page-width {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.hb_team_banner_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 18.3% 0 19.46%;
+    z-index: 2;
+}
+.hb_team_banner_content {
+    max-width: 494px;
+    position: relative;
+    z-index: 1;
+}
+.hb_team_banner_title {
+    font-family: 'TT Norms Pro Trial Variable';
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0 0 16px;
+}
+.hb_team_banner_para {
+    font-family: 'TT Norms Pro Trial Variable';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.25;
+    text-align: center;
+    color: #FFFFFF;
+    letter-spacing: 0px;
+    margin: 0 auto 32px;
+    max-width: 389px;
+}
+.hb_team_banner .hb_team_banner_btn {
+    display: flex; 
+    max-width: 256px;
+    margin: 0 auto;
+}
+.hb_team_banner_image {
+    position: absolute;
+    overflow: hidden;
+}
+.hb_team_banner_image.hb_banner_image_1 {
+    width: 9.514%;
+    height: 21.192%;
+    top: 4.3%;
+    left: 25.6%;
+}
+.hb_team_banner_image.hb_banner_image_2 {
+    width: 14.028%;
+    height: 30.728%;
+    right: 15%;
+    top: 10%;
+}
+.hb_team_banner_image.hb_banner_image_3 {
+    width: 19.376%;
+    height: 30.464%;
+    bottom: 14%;
+    right: 6.5%;
+}
+.hb_team_banner_image.hb_banner_image_4 {
+    width: 19.931%;
+    height: 24.503%;
+    bottom: 8%;
+    left: 16.3%;
+}
+.hb_team_banner_image.hb_banner_image_5 {
+    width: 14.862%;
+    height: 25.299%;
+    top: 31.2%;
+    left: 6.9%;
+}
+.hb_team_banner .hb_banner_gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+}
+.hb_banner_mobile_gradient {
+    display: none;
+}
+.hb_team_banner .hb_banner_gradient {
+    display: none !important;
+}
+@media screen and (max-width:1279px) {
+    .hb_team_banner_image.hb_banner_image_2 {
+        right: 12%;
+    }
+}
+@media screen and (max-width:990px) {
+    .hb_team_banner_content {
+        max-width: 390px;
+    }
+    .hb_team_banner_title {
+        font-size: 45px;
+    }
+    .hb_team_banner_para {
+        font-size: 15px;
+        max-width: 360px;
+    }
+    .hb_team_banner_image.hb_banner_image_4 {
+        bottom: 7%;
+        left: 11.3%;
+    }
+}
+@media screen and (max-width:767px) {
+    .hb_team_banner_wrapper {
+        padding: 55.6% 0 69.18%;
+    }
+    .hb_team_banner_title {
+        font-size: 40px;
+        margin: 0 0 16px;
+    }
+    .hb_team_banner_para {
+        font-size: 16px;
+        max-width: 92.9%;
+        margin: 0 auto 24px;
+    }
+    .hb_team_banner .hb_team_banner_btn {
+        max-width: 205px;
+        min-width: 205px;
+    }
+    .hb_team_banner_image.hb_banner_image_5 {
+        display: none;
+    }
+    .hb_team_banner_content {
+        max-width: 336px;
+    }
+    .hb_team_banner_image.hb_banner_image_1 {
+        width: 24.534%;
+        height: 13.016%;
+        top: 6.5%;
+        left: 8.6%;
+    }
+    .hb_team_banner_image.hb_banner_image_1 img {
+        object-fit: cover;
+        object-position: top;
+    }
+    .hb_team_banner_image.hb_banner_image_2 {
+        width: 22.4%;
+        height: 15.24%;
+        right: 16%;
+        top: 8.9%;
+    }
+    .hb_team_banner_image.hb_banner_image_4 {
+        bottom: 11.7%;
+        left: 8.5%;
+        width: 41.604%;
+        height: 16.826%;
+    }
+    .hb_team_banner_image.hb_banner_image_4 img {
+        object-fit: cover;
+    }
+    .hb_team_banner_image.hb_banner_image_3 {
+        width: 26.934%;
+        bottom: 7%;
+        right: 7.8%;
+        height: 14.288%;
+    }
+    .hb_banner_mobile_gradient {
+        display: block;
+    }
+    .hb_banner_disktop_gradient {
+        display: none;
+    }
+   
+    
+}

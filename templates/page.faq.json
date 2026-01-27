@@ -1,0 +1,225 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "class-name": "",
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "faq_page_section_v2_tcxmtp": {
+      "type": "Faq_page_section_V2",
+      "blocks": {
+        "information_yWxzDk": {
+          "type": "information",
+          "settings": {
+            "faq_category": "Product",
+            "title": "How is Chamelo different?",
+            "infos": "<p>At Chamelo, our goal is to pioneer a new era in the eyewear industry by fusing state-of-the-art technology with cutting-edge style. All our eyewear changes tint or color instantly, either manually, automatically or both. We empower wearers to see beyond 20/20, revolutionizing the way people experience the world.</p>"
+          }
+        },
+        "information_qBBYJy": {
+          "type": "information",
+          "settings": {
+            "faq_category": "Product",
+            "title": "What’s the difference between the three collections?",
+            "infos": "<p>While everyday pair of Chamelo sunglasses is made with revolutionary tech, we have 3 collections at that all serve a different purpose. </p><ul><li>Sport: Tint-changing performance sunglasses</li><li>Everyday: Tint-changing lenses for  everyday style</li><li>Prismatic: The world’s first color changing sunglasses</li></ul><p>Not sure which one’s right for you? Shop all styles <a href=\"/collections/shop-all\" title=\"Shop All\">here.</a></p>"
+          }
+        },
+        "information_qBKWtm": {
+          "type": "information",
+          "settings": {
+            "faq_category": "Product",
+            "title": "Which pair of glasses is right for me?",
+            "infos": "<p>Depends on what you plan to use them for!</p><p><br/>For those intense workouts or outdoor adventures, check out our tint-adjustable <a href=\"/collections/sport\" title=\"Sport\">Sport </a>collection. If you’re looking to turn heads with a pair of our color-changing glasses, you’ll love the<a href=\"/collections/prismatic-collection\" title=\"Prismatic™\"> Prismatic</a> collection. And if you just want a versatile pair of shades that go with every look, our Everyday glasses are exactly what you need.</p>"
+          }
+        },
+        "information_y6XV9P": {
+          "type": "information",
+          "settings": {
+            "faq_category": "Product",
+            "title": "What is the technology behind Chamelo?",
+            "infos": "<p>Chamelo leverages liquid crystal film technology to create next-generation smart eyewear. All our eyewear changes tint or color instantly, either manually, automatically or both. Whether navigating the bright conditions of an outdoor adventure or looking to elevate your personal style, we’ve got a pair for you.</p>"
+          }
+        },
+        "information_rkPnwi": {
+          "type": "information",
+          "settings": {
+            "faq_category": "Product",
+            "title": "Do you offer prescription lenses?",
+            "infos": "<p>Not yet! However, we’ve heard your feedback and we are working hard to bring prescription Chamelo lenses to you soon. Sign up for our newsletter <a href=\"https://www.chamelo.com/pages/faq/#footer-main-id\" title=\"https://www.chamelo.com/pages/faq/#footer-main-id\">here</a> to stay up to date on all future launches. </p>"
+          }
+        },
+        "information_C7nRMf": {
+          "type": "information",
+          "settings": {
+            "faq_category": "Product",
+            "title": "Do you offer a warranty/guarante?",
+            "infos": "<p>Yes, at Chamelo we understand that things don’t always go according to plan. That’s why we offer a robust warranty policy on our products, including a 30-day money-back guarantee and a 1-year manufacturer’s warranty. View our policy <a href=\"https://form.typeform.com/to/b3H5PydK?typeform-source=www.chamelo.com\" title=\"https://form.typeform.com/to/b3H5PydK?typeform-source=www.chamelo.com\">here.</a></p>"
+          }
+        },
+        "information_MEQeDb": {
+          "type": "information",
+          "settings": {
+            "faq_category": "shipping",
+            "title": "What is your shipping policy?",
+            "infos": "<p>By finalizing your payment and submitting an order to us (Chamelo), you accept certain terms and conditions regarding the shipping and delivery of your order. Those are outlined in further detail below.</p><ul><li>Packing/processing can take an average of 3-5 business days (Texas warehouse; U.S. orders) or 1-2 business days (Shenzhen warehouse; international orders).</li><li>Package arrival varies on the delivery address. The package arrival date can be anywhere from 2-15 days post-processing. Specific estimations are outlined in the ‘When will my order arrive?’ question.</li><li>Our team at Chamelo is not responsible for any shipping delays, including delays caused by peak holiday seasons, non-business days, severe weather, or other circumstances.</li><li>Some countries apply customs fees, taxes, and other additional cost. These fees are your responsibility (the customer) and not Chamelo’s responsibility. We suggest contacting your local customs office if you are unsure of any potential fees or repercussions for not paying fees on time.</li></ul>"
+          }
+        },
+        "information_AHQwWj": {
+          "type": "information",
+          "settings": {
+            "faq_category": "shipping",
+            "title": "Do you ship outside the U.S.?",
+            "infos": "<p>Yes, we ship to almost every country, including Canada, EU/UK, Australia, and New Zealand. We also ship to Singapore, Hong Kong, Japan, China, Thailand, Malaysia, and Indonesia.</p><p>If your country is not listed above, we encourage you to email our team at hello@chamelo.com so that we can provide further clarification.</p>"
+          }
+        },
+        "information_n3NcQq": {
+          "type": "information",
+          "settings": {
+            "faq_category": "shipping",
+            "title": "The shipping address on my order is  incorrect, how do I fix this?",
+            "infos": "<p>If your package has not left our warehouse yet, please immediately email <a href=\"#\" title=\"#\">hello@chamelo.com</a> so that our team can try to fix the incorrect address.</p><p>However, if your package has left our warehouse, then our team has minimal impact on correcting your order’s shipping address. We recommend that you contact the carrier directly.</p>"
+          }
+        },
+        "information_NgABjR": {
+          "type": "information",
+          "settings": {
+            "faq_category": "shipping",
+            "title": "When will my order arrive?",
+            "infos": "<p>Your order’s arrival date largely depends on its delivery location, as well as any outside influences (peak holiday seasons, weekend availability, severe weather, etc.). However, below, we have condensed order arrival estimations.</p><ul><li>United States: Packing and processing can take 3-5 business days; arrival can be anywhere from 2-5 business days after shipment.</li><li>Canada: Packing and processing can take 1-2 business days; arrival can be anywhere between 5-8 business days, although the average Canadian shipping time is 7 business days.</li><li>EU/UK: Packing and processing can take 1-2 business days. Packages that are shipped to the UK and most European countries usually arrive 4-13 business days afterward.</li><li>Australia/New Zealand: Packing and processing can take 1-2 business days. If shipping to Australia or New Zealand, than your package will usually arrive 3-14 business days later.</li><li>Asia: Packing and processing can take 1-2 business days. Packages sent to Asia (Singapore, Hong Kong, Japan, China, Thailand, Malaysia and Indonesia) usually arrive 1-15 business after shipment.</li></ul><p>Please note that the above are estimations and Chamelo is not to be held to these standards.<br/><br/>All timelines stated above are dependent upon item availability and orders with unavailable items may be put on hold until restocking occurs. If insufficient inventory is available to fulfill an order, our support team will reach out immediately to provide assistance with exchanging to another similar product or refunding the order.<br/><br/><a href=\"https://chamelo.com/products/veil-modern-tint-adjustable-cateye-sunglasses?_pos=2&_psq=ve&_ss=e&_v=1.0\" title=\"https://chamelo.com/products/veil-modern-tint-adjustable-cateye-sunglasses?_pos=2&_psq=ve&_ss=e&_v=1.0\">Veil</a> is currently out of stock and will ship once inventory is replenished in mid-February.</p>"
+          }
+        },
+        "information_AFYtEC": {
+          "type": "information",
+          "settings": {
+            "faq_category": "shipping",
+            "title": "Can you help with order tracking?",
+            "infos": "<p>Once we pack your order and it leaves our warehouse, you will receive an email from us with your tracking number. If you lost your tracking number, or you did not receive one, please email <a href=\"#\" title=\"#\">hello@chamelo.com</a> for assistance.</p><p>However, if you want more information about your package after it has left our warehouse, then please be aware that our team will have the same tracking information as you. We recommend that you try to contact the carrier directly.</p>"
+          }
+        },
+        "information_UAYhQ6": {
+          "type": "information",
+          "settings": {
+            "faq_category": "shipping",
+            "title": "Can I cancel my order?",
+            "infos": "<p>Depending on the status of your order, we encourage you to email hello@chamelo.com for assistance. If the order has been processed and left the warehouse, then we are unable to cancel your Chamelo purchase.</p>"
+          }
+        },
+        "information_daUrjg": {
+          "type": "information",
+          "settings": {
+            "faq_category": "shipping",
+            "title": "What do I do if my package was lost or stolen?",
+            "infos": "<p>At Chamelo, we are not responsible for lost or stolen packages nor packages delayed in transit. We recommend that you reach out to your carrier.</p>"
+          }
+        },
+        "information_PTAePN": {
+          "type": "information",
+          "settings": {
+            "faq_category": "warranty",
+            "title": "What is your warranty policy?",
+            "infos": "<p>At Chamelo, we understand that things don’t always go according to plan. That’s why we offer a robust 1-year manufacturer’s warranty.</p><ul><li>All Chamelo products are covered under our 1-year manufacturer’s warranty</li><li>The warranty lifespan is 1 year from your product’sshipping date</li><li>The warranty applies to manufacturing defects in materials and workmanship under normal and careful use</li><li>This warranty does not protect accidental damage, water damage, or loss of product</li></ul><p>You can view the full warranty and its specifications <a href=\"https://form.typeform.com/to/b3H5PydK?typeform-source=www.chamelo.com\" title=\"https://form.typeform.com/to/b3H5PydK?typeform-source=www.chamelo.com\">here.</a></p>"
+          }
+        },
+        "information_CwBkPK": {
+          "type": "information",
+          "settings": {
+            "faq_category": "warranty",
+            "title": "How do I initiate a warranty claim?",
+            "infos": "<p>Before initiating a warranty claim with Chamelo, it’s essential to check that your product’s warranty was registered within 30 days of the shipping date.</p><p>If the warranty is valid, then you can email our team at hello@chamelo.com with 2-3 clear photos, and a video that accurately portrays the issue.</p><p>Our team will send you a prepaid shipping label for your defective product if your claim is approved.</p><p>Once the product is received and inspected, we will send a replacement and email you when it has been dispatched.</p>"
+          }
+        },
+        "information_ddrAj8": {
+          "type": "information",
+          "settings": {
+            "faq_category": "warranty",
+            "title": "What if my product is defective?",
+            "infos": "<p>If your product is defective from manufacturing and/or workmanship, then it can be replaced under our 1-year manufacturer’s warranty.</p><p>For the warranty to be valid, it must be registered within the first 30 days of your product’s shipping date.</p>"
+          }
+        },
+        "information_Bhj3pT": {
+          "type": "information",
+          "settings": {
+            "faq_category": "warranty",
+            "title": "Does my warranty expire?",
+            "infos": "<p>Yes, your warranty expires a year after your Chamelo product’s shipping date.</p><p>Please view all of our warranty details <a href=\"/pages/warranty-registration\" title=\"Warranty Registration\">here</a>.</p>"
+          }
+        },
+        "information_naVnDn": {
+          "type": "information",
+          "settings": {
+            "faq_category": "returns",
+            "title": "What is your return policy?",
+            "infos": "<p>We offer a robust warranty policy on our products, including a 30-day money-back guarantee and a 1-year manufacturer’s warranty. View our full policy <a href=\"/pages/returns-exchanges\" title=\"Returns & Exchanges\">here.</a></p>"
+          }
+        },
+        "information_acAYxJ": {
+          "type": "information",
+          "settings": {
+            "faq_category": "returns",
+            "title": "How do I initiate a return?",
+            "infos": "<p>To initiate a return, please email <a href=\"#\" title=\"#\">hello@chamelo.com</a> within the 30-day timeframe. Returns must include all accessories and original packing.</p><ul><li>For non-quality-related claims, the buyer is responsible for return shipping costs.</li><li>For quality-related claims, Chamelo will refund or reimburse return shipping costs.</li></ul>"
+          }
+        },
+        "information_Bkeeke": {
+          "type": "information",
+          "settings": {
+            "faq_category": "returns",
+            "title": "When will I receive my refund?",
+            "infos": "<p>You will receive a refund at Chamelo’s discretion if your return meets our return policy, including complying within the 30-day window and returning all accessories plus original packaging.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "information_yWxzDk",
+        "information_qBBYJy",
+        "information_qBKWtm",
+        "information_y6XV9P",
+        "information_rkPnwi",
+        "information_C7nRMf",
+        "information_MEQeDb",
+        "information_AHQwWj",
+        "information_n3NcQq",
+        "information_NgABjR",
+        "information_AFYtEC",
+        "information_UAYhQ6",
+        "information_daUrjg",
+        "information_PTAePN",
+        "information_CwBkPK",
+        "information_ddrAj8",
+        "information_Bhj3pT",
+        "information_naVnDn",
+        "information_acAYxJ",
+        "information_Bkeeke"
+      ],
+      "settings": {
+        "section_color_scheme": "scheme-4",
+        "faq_main_title": "Frequently Asked Questions",
+        "left_panel_title": "Jump to a section",
+        "left_panel_bottomcontent": "<p>If our FAQs don’t  answer your question, email us at <a href=\"mailto:hello@chamelo.com\" title=\"mailto:hello@chamelo.com\">hello@chamelo.com</a> or give us a call at <a href=\"tel:6464137538\" title=\"tel:6464137538\">(646)-413-7538</a>.</p>",
+        "padding_top": 56,
+        "padding_bottom": 96,
+        "faq_category_1": "Product",
+        "faq_category_2": "shipping",
+        "faq_category_3": "warranty",
+        "faq_category_4": "returns"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "faq_page_section_v2_tcxmtp"
+  ]
+}

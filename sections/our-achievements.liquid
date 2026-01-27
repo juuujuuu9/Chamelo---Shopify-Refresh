@@ -1,0 +1,105 @@
+{{ "our-achievements.css" | asset_url | stylesheet_tag }}
+
+
+{%- assign pressItemSection = shop.metaobjects.press_award_section -%}
+{%- for pressItemData in pressItemSection.values -%}
+  <div class="hb_our_achievements">
+      {%- if pressItemData.main_image_mobile != blank -%}
+          <div class="hb_our_achievements__mobile-img">
+              <img src="{{ pressItemData.main_image_mobile |  image_url: width: "1000x" }}" alt="">
+          </div>
+      {%- endif -%}
+      <div class="page-width">
+        <div class="hb_our_achievements__wrapper">
+            {%- if pressItemData.main_title != blank or pressItemData.top_right_text != blank -%}
+              <div class="hb_our_achievements__content">
+                  {%- if pressItemData.main_title != blank  -%}
+                      <h1 class="hb_our_achievements__title">{{ pressItemData.main_title }}</h1>
+                  {%- endif -%}
+                  {%- if pressItemData.top_right_text != blank  -%}
+                      <div class="hb_our_achievements__text richtext">{{ pressItemData.top_right_text | metafield_tag }}</div>
+                  {%- endif -%}
+                </div>
+            {%- endif -%}
+            <div class="hb_logo mobile">
+              <div class="hb_logo__grids" js-logo-marquee>
+                  <span>
+                    {%- for pressAwardImage in pressItemData.award_image.value -%}
+                      <div class="hb_logo__item">
+                        <img src="{{ pressAwardImage | image_url: width: "1000x" }}" alt="">
+                      </div>
+                    {%- endfor -%}
+                    {%- for pressAwardImage in pressItemData.award_image.value -%}
+                      <div class="hb_logo__item">
+                        <img src="{{ pressAwardImage | image_url: width: "1000x" }}" alt="">
+                      </div>
+                    {%- endfor -%}
+                  </span>
+              </div>
+            </div>
+            <div class="hb_our_achievements__grid">
+              <div class="hb_our_achievements__alpha">
+                  {%- for pressItem in pressItemData.press.value -%}
+                      {%- if pressItem.image != blank or pressItem.quote != blank or pressItem.link_text != blank -%}
+                          <div class="hb_our_achievements__item">
+                              <div class="hb_our_achievements__inner">
+                                  {%- if pressItem.image != blank -%}
+                                      <div class="hb_our_achievements__block-img" style="width:{{ pressItem.image_width }}px">
+                                          <img src="{{ pressItem.image |  image_url: width: "500x" }}" alt="">
+                                      </div>
+                                  {%- endif -%}
+                                  {%- if pressItem.quote != blank -%}
+                                      <div class="hb_our_achievements__text">{{ pressItem.quote | metafield_tag }}</div>
+                                  {%- endif -%}     
+                                  {%- if pressItem.link_text != blank -%}
+                                      <a href="{{ pressItem.link_url }}" target="_blank" class="hb_our_achievements__btn">{{ pressItem.link_text }}</a>
+                                  {%- endif -%}  
+                              </div>   
+                          </div>
+                      {%- endif -%}
+                  {%- endfor -%}
+              </div>
+              {%- if pressItemData.main_image_desktop != blank -%}
+                  <div class="hb_our_achievements__beta">
+                      <img src="{{ pressItemData.main_image_desktop |  image_url: width: "1000x" }}" alt="">
+                  </div>
+              {%- endif -%}
+            </div>
+        </div>
+      </div>
+      {%- if pressItemData.award_title -%}
+        <div class="hb_logo desktop">
+          <div class="page-width">
+            {%- if pressItemData.award_title  != blank -%}
+              <h3 class="hb_logo__title">{{ pressItemData.award_title }}</h3>
+            {%- endif -%}
+            <div class="hb_logo__grid">
+              {%- for pressAwardImage in pressItemData.award_image.value -%}
+                {%- if pressAwardImage != blank -%}
+                  <div class="hb_logo__item">
+                      <img src="{{ pressAwardImage| image_url: width: "1000x" }}" alt="">
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          </div>
+        </div>
+      {%- endif -%}
+  </div>
+{%- endfor -%}
+
+<script>
+ 
+</script>
+
+{% schema %}
+  {
+    "name": "Our Achievements",
+    "settings": [],
+    "presets": [
+      {
+        "name": "Our Achievements"
+      }
+    ]
+  }
+{% endschema %}

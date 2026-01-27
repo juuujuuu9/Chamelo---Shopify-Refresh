@@ -1,0 +1,59 @@
+<div class="product_review_main_new" id="Reviews" data-section="{{ section.id }}" style="background: {{ section.settings.main_background_color }};">
+  <div class="page-width">
+    <div class="product_review_inner_new">
+      {%- if section.settings.main_heading_text != blank or section.settings.main_information_text != blank -%}
+        <div class="product_review_title_main_new">
+          {%- if section.settings.main_information_text != blank -%}
+            <div class="product_review_subtitle_new">
+              {{ section.settings.main_information_text }}
+            </div>
+          {%- endif -%}
+          {%- if section.settings.main_heading_text != blank -%}
+            <div class="Common_title_new product_review_title_new">
+              <h2>{{ section.settings.main_heading_text }}</h2>
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+      <div class="product_review_widget_new">
+        <!-- Start of Judge.me code --> 
+          <div id='judgeme_product_reviews' class='jdgm-widget jdgm-review-widget' data-id='{{ product.id }}'> 
+            {{ product.metafields.judgeme.widget }} 
+          </div> 
+        <!-- End of Judge.me code -->
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Product Review",
+    "class": "product_review_new",
+    "settings": [
+      {
+        "type": "color",
+        "id": "main_background_color",
+        "label": "Add Main Background Color",
+        "default": "#F6F6F6"
+      },
+      {
+        "type": "textarea",
+        "id": "main_heading_text",
+        "label": "Add Main Heading Text",
+        "default": "Hear from our<br>happy customers"
+      },
+      {
+        "type": "richtext",
+        "id": "main_information_text",
+        "label": "Add Main Information Text",
+        "default": "<p>Reviews</p>"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product Review"
+      }
+    ]
+  }
+{% endschema %}

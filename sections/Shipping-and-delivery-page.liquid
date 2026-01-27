@@ -1,0 +1,191 @@
+{% if section.settings.main_background_color != blank or section.settings.main_heading_text != blank or section.settings.main_information_text != blank or section.blocks.size > 0 %}
+  <div class="Shipping_and_delivery_main" style="background-color: {{ section.settings.main_background_color }}">
+    <div class="page-width">
+      <div class="Shipping_and_delivery_inner">
+        {% if section.settings.main_heading_text != blank or section.settings.main_information_text != blank %}
+          <div class="Shipping_and_delivery_main_heading_information_main">
+            {% if section.settings.main_heading_text != blank %}
+              <div class="Shipping_and_delivery_main_heading_text Common_title_new">
+                <h2>
+                  {{ section.settings.main_heading_text  }}
+                </h2>
+              </div>
+            {% endif %}
+            {% if section.settings.main_information_text != blank %}
+              <div class="Shipping_and_delivery_main_information_text">
+                {{ section.settings.main_information_text }}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+        {% if section.blocks.size > 0 %}
+          <div class="Shipping_and_delivery_texts_main">
+            <div class="Shipping_and_delivery_texts_inner">
+              {% for block in section.blocks %}
+                {% if block.type == "accordian-block" %}
+                  {% if block.settings.accordian_title_text != blank or block.settings.accordian_information_text != blank %}
+                    <div class="Shipping_and_delivery_accordian_main">
+                      {% if block.settings.accordian_title_text != blank %}
+                        <div class="Shipping_and_delivery_accordian_title_main">
+                          <div class="Shipping_and_delivery_accordian_title">
+                            <h6>
+                              {{ block.settings.accordian_title_text }}
+                            </h6>
+                          </div>
+                          <div class="close accordian_icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><g clip-path="url(#clip0_3787_23291)"><path d="M8 1.33203V14.6654" stroke="#000000" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/><path d="M14.6668 8H1.3335" stroke="#000000" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/></g><defs><clipPath id="clip0_3787_23291"><rect width="16" height="16" fill="white"/></clipPath></defs></svg>
+                          </div>
+                          <div class="open accordian_icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M18.3337 10H1.66699" stroke="black" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
+                            </svg>
+                          </div>
+                        </div>
+                      {% endif %}
+                      {% if block.settings.accordian_information_text != blank  %}
+                        <div class=Shipping_and_delivery_accordian_information_main>
+                          {{ block.settings.accordian_information_text }}
+                        </div>
+                      {% endif %}  
+                    </div>
+                  {% endif %}
+                {% endif %}
+                {% if block.type == "sub-heading-description" %}
+                  {% if block.settings.sub_heading_text != blank or block.settings.sub_description != blank %}
+                    <div class="Shipping_and_delivery_sub_heading_description_main">
+                      {% if block.settings.sub_heading_text != blank %}
+                        <div class="Shipping_and_delivery_sub_heading">
+                          <h4>
+                            {{ block.settings.sub_heading_text }}
+                          </h4>
+                        </div>
+                      {% endif %}
+                      {% if block.settings.sub_description != blank %}
+                        <div class="Shipping_and_delivery_sub_description">
+                          {{ block.settings.sub_description }}
+                        </div>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+<style>
+  .Shipping_and_delivery_main { padding: 64px 0 164px; }
+  .Shipping_and_delivery_inner { max-width: 800px; width: 100%; margin: 0 auto; }
+  .Shipping_and_delivery_main_heading_information_main { padding-bottom: 40px; border-bottom: 1px solid rgba(0, 0, 0, 0.15);}
+  .Shipping_and_delivery_main_heading_text h2 { color: #000; }
+  .Shipping_and_delivery_main_information_text { padding-top: 32px; }
+  .Shipping_and_delivery_accordian_main { padding: 24px 0; border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
+  .Shipping_and_delivery_accordian_title_main { display: flex; align-items: center; gap: 20px; justify-content: space-between; cursor: pointer; }
+  .Shipping_and_delivery_accordian_title h6 { font-size: 20px; margin: 0; line-height: 110%; font-weight: 500; color: #000000; }
+  .Shipping_and_delivery_accordian_title_main .accordian_icon { width: 20px; height: 20px; } 
+  .Shipping_and_delivery_accordian_title_main .accordian_icon svg { display: block; width: 100%; height: 100%; }
+  .Shipping_and_delivery_accordian_title_main .accordian_icon.open { display: none; }
+  .Shipping_and_delivery_accordian_information_main { display: none; }
+  .Shipping_and_delivery_accordian_main:first-child .accordian_icon.open { display: block; }
+  .Shipping_and_delivery_accordian_main:first-child .accordian_icon.close { display: none; }
+  .Shipping_and_delivery_accordian_main:first-child .Shipping_and_delivery_accordian_information_main { display: block; }
+  .Shipping_and_delivery_accordian_information_main, .Shipping_and_delivery_sub_description { padding-top: 16px; }
+  .Shipping_and_delivery_accordian_information_main p:not(:first-child) { padding-top: 12px; }
+  .Shipping_and_delivery_accordian_information_main *, .Shipping_and_delivery_sub_description *,
+  .Shipping_and_delivery_main_information_text * { color: #000; font-size: 16px; line-height: 128%; font-weight: 400; margin: 0; }
+  .Shipping_and_delivery_sub_description a { text-decoration: none; }
+  .Shipping_and_delivery_sub_heading_description_main:last-child { border-bottom: none; padding-bottom: 0; }
+  .Shipping_and_delivery_sub_heading_description_main { padding: 40px 0 24px; border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
+  .Shipping_and_delivery_sub_heading h4 { font-size: 32px; line-height: 110%; font-weight: 600; color: #000; margin: 0; }
+
+  @media (max-width: 749px){
+    .Shipping_and_delivery_main { padding: 42px 0 9px; }
+    .Shipping_and_delivery_main_heading_information_main { padding-bottom: 32px; }
+    .Shipping_and_delivery_main_information_text { padding-top: 16px; }
+    Shipping_and_delivery_sub_heading_description_main { padding: 32px 0 20px; }
+    .Shipping_and_delivery_sub_heading h4 { font-size: 24px; font-weight: 700; }
+    .Shipping_and_delivery_accordian_main { padding: 20px 0; }
+  }
+</style>
+  
+{% schema %}
+  {
+    "name": "Shipping and Delivery",
+    "class": "Shipping_and_delivery",
+    "settings": [
+      {
+        "type": "color",
+        "id": "main_background_color",
+        "label": "Add Main Background Color",
+        "default": "#FFF",
+      },
+      {
+        "type": "textarea",
+        "id": "main_heading_text",
+        "label": "Add Main Heading Text",
+        "default": "Shipping & delivery"
+      },
+      {
+        "type": "textarea",
+        "id": "main_information_text",
+        "label": "Add Main Information Text",
+        "default": "<p>By finalizing your payment and submitting an order on the Chamelo website, you accept the following terms and conditions regarding the shipping and delivery of your order.</p>"
+      },
+    ],
+    "blocks": [
+      {
+        "type": "sub-heading-description",
+        "name": "Sub Heading description",
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "sub_heading_text",
+            "label": "Add Sub Heading Text",
+            "default": "Order tracking and more"
+          },
+          { 
+            "type": "richtext",
+            "id": "sub_description",
+            "label": "Add Sub Description",
+            "default": "<p>Once your Chamelo order is packed and leaves our warehouse, you will receive an email from us with your tracking number so you can keep an eye on the progress of your order.</p>"
+          },
+        ]
+      },
+      {
+        "type": "accordian-block",
+        "name": "Accordian Block",
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "accordian_title_text",
+            "label": "Add Accordian Title text",
+            "default": "US shipping"
+          },
+          {
+            "type": "richtext",
+            "id": "accordian_information_text",
+            "label": "Add Accordian Information text",
+            "default": "<p>Packages shipping to the continental United States are usually sent from our Tennessee warehouse. Orders that are shipped from Tennessee are typically packed within 1-2 business days of placement, excluding weekends and public holidays. However, during the peak holiday season or during Black Friday and Cyber Monday sales, please allow 3-5 business days for your order to be packed and processed.</p><p>In the US, packages usually arrive 2-5 business days after they are shipped, but occasionally can take longer — especially during Black Friday and Cyber Monday sales. The average shipping time in the continental United States is 4 business days, but may take up to 5-10 days during Black Friday and Cyber Monday.</p><p>If an item you have selected is not in our Tennessee warehouse, it will be shipped from our Shenzhen warehouse. Please note, we cannot control processing delays in customs or additional delivery time to locations outside of metro areas. Once your order arrives in the US, most shipments are sent through UPS Ground. The carrier always depends on the size of your order and your location.</p>"
+          },
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Shipping and Delivery",
+        "blocks": [
+          {
+            "type": "accordian-block"
+          },
+          {
+            "type": "sub-heading-description"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

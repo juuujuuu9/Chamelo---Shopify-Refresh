@@ -1,0 +1,451 @@
+{%- if section.settings.main_details_text != blank or section.settings.main_heading_text != blank or section.settings.main_static_mp4_video != blank or section.settings.main_static_desktop_image != blank or section.settings.main_static_mobile_image != blank or section.settings.inner_heading_text != blank or section.settings.main_overlay_desktop_image != blank or section.settings.main_overlay_mobile_image != blank or section.settings.main_mobile_information_text_1 != blank or section.settings.main_bottom_mp4_video != blank or section.settings.main_bottom_desktop_image != blank or section.settings.main_bottom_mobile_image != blank or section.settings.main_desktop_information_text_1 != blank or section.settings.main_desktop_information_text_2 != blank or section.settings.main_mobile_information_text_2 != blank or section.settings.main_button_link != blank -%}
+  <div class="Page_our_story_brands_details_main_new" style="background: {{ section.settings.main_background_color }};">
+    <div class="page-width">
+      <div class="Page_our_story_brands_details_inner_new">
+        {%- if section.settings.main_details_text != blank or section.settings.main_heading_text != blank -%}
+          <div class="Page_our_story_brands_details_mainboths_new">
+            <div class="Page_our_story_brands_details_innerboths_new">
+              {%- if section.settings.main_details_text != blank -%}
+                <div class="Page_our_story_brands_details_innerboths_mainlists_new">
+                  <div class="Page_our_story_brands_details_innerboths_innerlists_new">
+                    {{ section.settings.main_details_text }}
+                  </div>
+                </div>
+              {%- endif -%}
+              {%- if section.settings.main_heading_text != blank -%}
+                <div class="Page_our_story_brands_details_innerboths_maintitle_new">
+                  <div class="Common_title_new Page_our_story_brands_details_innerboths_innertitle_new">
+                    <h2>{{ section.settings.main_heading_text }}</h2>
+                  </div>
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endif -%}
+        {%- if section.settings.main_static_mp4_video != blank or section.settings.main_static_desktop_image != blank or section.settings.main_static_mobile_image != blank or section.settings.inner_heading_text != blank or section.settings.main_overlay_desktop_image != blank or section.settings.main_overlay_mobile_image != blank or section.settings.main_mobile_information_text_1 != blank -%}
+          <div class="Page_our_story_brands_details_maindetail_new">
+            <div class="Page_our_story_brands_details_innerdetail_new">
+              {%- if section.settings.main_static_mp4_video != blank or section.settings.main_static_desktop_image != blank or section.settings.main_static_mobile_image != blank -%}
+                <div class="Page_our_story_brands_details_innerdetail_mainstatic_new">
+                  <div class="Page_our_story_brands_details_innerdetail_innerstatic_new">
+                    {%- if section.settings.main_static_mp4_video != blank -%}
+                      <div class="Page_our_story_brands_details_innerdetail_innerstatic_videoimage_new">
+                        {{ section.settings.main_static_mp4_video | video_tag: class: 'Custom_video_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                      </div>
+                    {% else %}  
+                      {%- if section.settings.main_static_desktop_image != blank and section.settings.main_static_mobile_image != blank -%}
+                        <div class="Page_our_story_brands_details_innerdetail_innerstatic_videoimage_new">
+                          {%- if section.settings.main_static_desktop_image != blank -%}
+                            {{
+                              section.settings.main_static_desktop_image | 
+                              image_url: width: img.width | 
+                              image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                              fetchpriority: 'auto', 
+                              class:'desktop_image_new'
+                            }}
+                          {%- endif -%}
+                          {%- if section.settings.main_static_mobile_image != blank -%}
+                            {{
+                              section.settings.main_static_mobile_image | 
+                              image_url: width: img.width | 
+                              image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                              fetchpriority: 'auto', 
+                              class:'mobile_image_new'
+                            }}
+                          {%- endif -%}
+                        </div>
+                      {%- endif -%}
+                    {%- endif -%}
+                  </div>
+                </div>
+              {%- endif -%}
+              {%- if section.settings.inner_heading_text != blank or section.settings.main_overlay_desktop_image != blank or section.settings.main_overlay_mobile_image != blank or section.settings.main_mobile_information_text_1 != blank -%}
+                <div class="Page_our_story_brands_details_innerdetail_mainoverlay_new">
+                  <div class="Page_our_story_brands_details_innerdetail_inneroverlay_new">
+                    {%- if section.settings.inner_heading_text != blank -%}
+                      <div class="Page_our_story_brands_details_innerdetail_inneroverlay_maintitle_new Mobile_only_new">
+                        <div class="Page_our_story_brands_details_innerdetail_inneroverlay_innertitle_new">
+                          {{ section.settings.inner_heading_text }}
+                        </div>
+                      </div>
+                    {%- endif -%}
+                    {%- if section.settings.main_overlay_desktop_image != blank and section.settings.main_overlay_mobile_image != blank -%}
+                      <div class="Page_our_story_brands_details_innerdetail_inneroverlay_mainimage_new youtube_video_popup">
+                        <div class="Page_our_story_brands_details_innerdetail_inneroverlay_innerimage_new">
+                          {%- if section.settings.main_overlay_desktop_image != blank -%}
+                            {{
+                              section.settings.main_overlay_desktop_image | 
+                              image_url: width: img.width | 
+                              image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                              fetchpriority: 'auto', 
+                              class:'desktop_image_new'
+                            }}
+                          {%- endif -%}
+                          {%- if section.settings.main_overlay_mobile_image != blank -%}
+                            {{
+                              section.settings.main_overlay_mobile_image | 
+                              image_url: width: img.width | 
+                              image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                              fetchpriority: 'auto', 
+                              class:'mobile_image_new'
+                            }}
+                          {%- endif -%}
+                        </div>
+                        {%- if section.settings.main_overlay_youtube_video != blank -%}
+                          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g filter="url(#filter0_b_10221_5881)"><rect width="48" height="48" rx="24" fill="white" fill-opacity="0.12"/><path d="M18 13.5V34.5L36 24L18 13.5Z" fill="white"/></g><defs><filter id="filter0_b_10221_5881" x="-23" y="-23" width="94" height="94" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feGaussianBlur in="BackgroundImageFix" stdDeviation="11.5"/><feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_10221_5881"/><feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_10221_5881" result="shape"/></filter></defs></svg>
+                        {%- endif -%}
+                      </div>
+                    {%- endif -%}
+                    {%- if section.settings.main_mobile_information_text_1 != blank -%}
+                      <div class="Page_our_story_brands_details_innerdetail_inneroverlay_maininfos_new Mobile_only_new">
+                        <div class="Page_our_story_brands_details_innerdetail_inneroverlay_innerinfos_new">
+                          {{ section.settings.main_mobile_information_text_1 }}
+                        </div>
+                      </div>
+                    {%- endif -%}
+                  </div>
+                </div>
+              {%- endif -%}  
+            </div>
+          </div>
+        {%- endif -%}
+        {%- if section.settings.main_bottom_mp4_video != blank or section.settings.main_bottom_desktop_image != blank or section.settings.main_bottom_mobile_image != blank or section.settings.inner_heading_text != blank or section.settings.main_desktop_information_text_1 != blank or section.settings.main_desktop_information_text_2 != blank or section.settings.main_mobile_information_text_2 != blank -%}
+          <div class="Page_our_story_brands_details_mainsides_new">
+            <div class="Page_our_story_brands_details_innersides_new">
+              {%- if section.settings.main_bottom_mp4_video != blank or section.settings.main_bottom_desktop_image != blank or section.settings.main_bottom_mobile_image != blank -%}
+                <div class="Page_our_story_brands_details_innersides_mainleft_new">
+                  <div class="Page_our_story_brands_details_innersides_mainleft_in_new">
+                    <div class="Page_our_story_brands_details_innersides_innerleft_new">
+                      {%- if section.settings.main_bottom_mp4_video != blank -%}
+                        <div class="Page_our_story_brands_details_innersides_innerleft_videoimage_new">
+                          {{ section.settings.main_bottom_mp4_video | video_tag: class: 'Custom_video_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                        </div>
+                      {% else %}  
+                        {%- if section.settings.main_bottom_desktop_image != blank and section.settings.main_bottom_mobile_image != blank -%}
+                          <div class="Page_our_story_brands_details_innersides_innerleft_videoimage_new">
+                            {%- if section.settings.main_bottom_desktop_image != blank -%}
+                              {{
+                                section.settings.main_bottom_desktop_image | 
+                                image_url: width: img.width | 
+                                image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                fetchpriority: 'auto', 
+                                class:'desktop_image_new'
+                              }}
+                            {%- endif -%}
+                            {%- if section.settings.main_bottom_mobile_image != blank -%}
+                              {{
+                                section.settings.main_bottom_mobile_image | 
+                                image_url: width: img.width | 
+                                image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                fetchpriority: 'auto', 
+                                class:'mobile_image_new'
+                              }}
+                            {%- endif -%}
+                          </div>
+                        {%- endif -%}
+                      {%- endif -%}
+                    </div>
+                    {%- if section.settings.main_product_selected != blank -%}
+                      <div class="Page_our_story_brands_details_innersides_mainleft_mainproduct_new" style="top: {{ section.settings.Main_dots_top_side }}%; left: {{ section.settings.Main_dots_left_side }}%;">
+                        <div class="Page_our_story_brands_details_innersides_mainleft_innerproduct_new">
+                          <div class="Page_our_story_brands_details_innersides_mainleft_innerproduct_dotsicon_new">
+                            <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <circle cx="12.5" cy="12.5" r="5.5" fill="white" fill-opacity="0.3"/>
+                              <circle cx="12.5" cy="12.5" r="7.5" fill="white"/>
+                            </svg>
+                          </div>  
+                          {%- if section.settings.main_product_selected != blank -%}
+                            {%- assign product = section.settings.main_product_selected -%}
+                            <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_innerlist_innerproduct_mainboxs_new Page_our_story_brands_details_innersides_mainleft_innerproduct_width_new">
+                              <a href="{{ product.url }}">
+                                <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_innerlist_innerproduct_innerboxs_new">
+                                  {% if product.metafields.custom.product_thumb_image != blank %}
+                                    <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_innerlist_innerproduct_innerboxs_mainimage_new">
+                                      <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_innerlist_innerproduct_innerboxs_innerimage_new">
+                                        {{
+                                          product.metafields.custom.product_thumb_image | 
+                                          image_url: width: img.width | 
+                                          image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                          fetchpriority: 'auto', 
+                                          class:'Product_image_new'
+                                        }}
+                                      </div> 
+                                    </div> 
+                                  {% else %}
+                                    {%- if product.featured_image != blank -%}
+                                      <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_innerlist_innerproduct_innerboxs_mainimage_new">
+                                        <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_innerlist_innerproduct_innerboxs_innerimage_new">
+                                          {{
+                                            product.featured_image | 
+                                            image_url: width: img.width | 
+                                            image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                            fetchpriority: 'auto', 
+                                            class:'Product_image_new'
+                                          }}
+                                        </div>
+                                      </div>
+                                    {%- endif -%}
+                                  {%- endif -%}
+                                  {%- if product.title != blank or product.price != blank -%}
+                                    <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_innerlist_innerproduct_innerboxs_mainboths_new">
+                                      <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_innerlist_innerproduct_innerboxs_innerboths_new">
+                                        {%- if product.title != blank -%}
+                                          <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_innerlist_innerproduct_innerboxs_innerboths_title_new">
+                                            <h4>{{ product.title }}</h4>
+                                          </div>
+                                        {%- endif -%}
+                                        {%- if product.price != blank -%}
+                                          <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_innerlist_innerproduct_innerboxs_innerboths_price_new">
+                                            {% render 'price', product: product, price_class: '', show_compare_at_price: true %}
+                                          </div>
+                                        {%- endif -%}
+                                        <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_innerlist_innerproduct_innerboxs_innerboths_button_new">
+                                          Shop Now
+                                        </div>  
+                                      </div>
+                                    </div>
+                                  {%- endif -%}
+                                </div>
+                              </a>
+                            </div>
+                          {%- endif -%}
+                        </div>
+                      </div>
+                    {%- endif -%}
+                  </div>
+                </div>
+              {%- endif -%}
+              {%- if section.settings.inner_heading_text != blank or section.settings.main_desktop_information_text_1 != blank or section.settings.main_desktop_information_text_2 != blank or section.settings.main_mobile_information_text_2 != blank -%}
+                <div class="Page_our_story_brands_details_innersides_mainright_new">
+                  <div class="Page_our_story_brands_details_innersides_innerright_new">
+                    {%- if section.settings.inner_heading_text != blank -%}
+                      <div class="Page_our_story_brands_details_innersides_innerright_maintitle_new Desktop_only_new">
+                        <div class="Page_our_story_brands_details_innersides_innerright_innertitle_new">
+                          {{ section.settings.inner_heading_text }}
+                        </div>
+                      </div>
+                    {%- endif -%}
+                    {%- if section.settings.main_desktop_information_text_1 != blank or section.settings.main_desktop_information_text_2 != blank -%}
+                      <div class="Page_our_story_brands_details_innersides_innerright_maintexts_new Desktop_only_new">
+                        <div class="Page_our_story_brands_details_innersides_innerright_innertexts_new">
+                          {%- if section.settings.main_desktop_information_text_1 != blank -%}
+                            <div class="Page_our_story_brands_details_innersides_innerright_innertexts_maininfos_new">
+                              <div class="Page_our_story_brands_details_innersides_innerright_innertexts_innerinfos_new">
+                                {{ section.settings.main_desktop_information_text_1 }}
+                              </div>
+                            </div>
+                          {%- endif -%}
+                          {%- if section.settings.main_desktop_information_text_2 != blank -%}
+                            <div class="Page_our_story_brands_details_innersides_innerright_innertexts_maininfos_new">
+                              <div class="Page_our_story_brands_details_innersides_innerright_innertexts_innerinfos_new">
+                                {{ section.settings.main_desktop_information_text_2 }}
+                              </div>
+                            </div>
+                          {%- endif -%}
+                        </div>
+                      </div>
+                    {%- endif -%}
+                    {%- if section.settings.main_mobile_information_text_2 != blank -%}
+                      <div class="Page_our_story_brands_details_innersides_innerright_maininfos_new Mobile_only_new">
+                        <div class="Page_our_story_brands_details_innersides_innerright_innerinfos_new">
+                          {{ section.settings.main_mobile_information_text_2 }}
+                        </div>
+                      </div>
+                    {%- endif -%}
+                  </div>
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endif -%}
+        {%- if section.settings.main_button_text != blank and section.settings.main_button_link != blank -%}
+          <div class="Page_our_story_brands_details_mainbutton_new Mobile_only_new">
+            <div class="Page_our_story_brands_details_innerbutton_new">
+              <a href="{{ section.settings.main_button_link }}" class="button">
+                {{ section.settings.main_button_text }}  
+              </a>
+            </div>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+    {%- if section.settings.main_overlay_youtube_video != blank -%}
+      {%- assign video_id = section.settings.main_overlay_youtube_video.id -%}
+      {%- assign loop = '&loop=1&playlist=' | append: video_id -%}
+      <div class="youtube_video_overlay_new"></div>
+      <div class="youtube_video_new">
+        <div class="youtube_video_inner_new">
+          <div class="youtube_video_close_new">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_3855_58903)">
+            <path d="M19.0703 4.92889L4.92818 19.071" stroke="#2D4256" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
+            <path d="M19.0718 19.071L4.92969 4.92889" stroke="#2D4256" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
+            </g>
+            <defs>
+            <clipPath id="clip0_3855_58903">
+            <rect width="24" height="24" fill="white"/>
+            </clipPath>
+            </defs>
+            </svg>
+          </div>
+          <div class="videowrapper">
+            <iframe
+              src="https://www.youtube.com/embed/{{ video_id }}?enablejsapi=1&autoplay=0{{ loop }}"
+              class="js-youtube youtube_video"
+              allow="encrypted-media"
+              allowfullscreen
+              border="0"
+            >
+            </iframe>
+          </div>
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Our Story Brands Details",
+    "class": "Page_our_story_brands_details_new",
+    "settings": [
+      {
+        "type": "color",
+        "id": "main_background_color",
+        "label": "Add Main Background Color",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "textarea",
+        "id": "main_details_text",
+        "label": "Add Main Details Text",
+        "default": "Behind The Brand"
+      },
+      {
+        "type": "textarea",
+        "id": "main_heading_text",
+        "label": "Add Main Heading Text",
+        "default": "Brought to you by NBA All-Star Stephon Marbury"
+      },
+      {
+        "type": "video",
+        "id": "main_static_mp4_video",
+        "label": "Add Main Static MP4 Video"
+      },
+      {
+        "type": "image_picker",
+        "id": "main_static_desktop_image",
+        "label": "Add Main Static Desktop Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "main_static_mobile_image",
+        "label": "Add Main Static Mobile Image"
+      },
+      {
+        "type": "textarea",
+        "id": "inner_heading_text",
+        "label": "Add Inner Heading Text",
+        "default": "Marbury lives at the intersection of sports, fashion, and technology."
+      },
+      {
+        "type": "image_picker",
+        "id": "main_overlay_desktop_image",
+        "label": "Add Main Overlay Desktop Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "main_overlay_mobile_image",
+        "label": "Add Main Overlay Mobile Image"
+      },
+      {
+        "type": "richtext",
+        "id": "main_mobile_information_text_1",
+        "label": "Add Main Mobile Information Text-1",
+        "default": "<p>Known for his unconventional career path, Marbury brings his innovative, non-traditional spirit to Chamelo Eyewear as the Chief Brand Officer.</p><p>Chamelo sunglasses embody the same power and finesse that Stephon brought to the basketball court, merging state-of-the-art technology with cutting-edge style. Much like how Marbury revolutionized the sneaker industry with his iconic shoe line, he's now investing his time and energy into Chamelo to redefine functionality and style in eyewear.</p>"
+      },
+      {
+        "type": "video_url",
+        "id": "main_overlay_youtube_video",
+        "label": "Add Main Overlay Youtube Video",
+        "default": "https://youtu.be/K4TOrB7at0Y?si=qeGNdNmN9hq6xLoD",
+        "accept": ["youtube"]
+      },
+      {
+        "type": "video",
+        "id": "main_bottom_mp4_video",
+        "label": "Add Main Bottom MP4 Video"
+      },
+      {
+        "type": "image_picker",
+        "id": "main_bottom_desktop_image",
+        "label": "Add Main Bottom Desktop Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "main_bottom_mobile_image",
+        "label": "Add Main Bottom Mobile Image"
+      },
+      {
+        "type": "range",
+        "id": "Main_dots_top_side",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "%",
+        "label": "Select Main Dots Top Side",
+        "default": 30
+      },
+      {
+        "type": "range",
+        "id": "Main_dots_left_side",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "%",
+        "label": "Select Main Dots Left Side",
+        "default": 30
+      },
+      {
+        "type": "product",
+        "id": "main_product_selected",
+        "label": "Add Main Product Selected"
+      },
+      {
+        "type": "richtext",
+        "id": "main_desktop_information_text_1",
+        "label": "Add Main Desktop Information Text-1",
+        "default": "<p>Known for his unconventional career path, Marbury brings his innovative, non-traditional spirit to Chamelo Eyewear as the Chief Brand Officer. Chamelo sunglasses embody the same power and finesse that Stephon brought to the basketball court, merging state-of-the-art technology with cutting-edge style. Much like how Marbury revolutionized the sneaker industry with his iconic shoe line, he's now investing his time and energy into Chamelo to redefine functionality and style in eyewear.</p>"
+      },
+      {
+        "type": "richtext",
+        "id": "main_desktop_information_text_2",
+        "label": "Add Main Desktop Information Text-2",
+        "default": "<p>His global experiences, particularly during his time in China, exposed him to wearable tech. Innovative features like color-changing lenses, integrated audio, and tint-dimming capabilities, fueled his excitement about Chamelo's potential to be the next big thing. Through Marbury’s vision, Chamelo represents the new wave of sunglasses, blending fashion, functionality, and future-forward tech into a product that promises to change how we see and experience the world.</p>"
+      },
+      {
+        "type": "richtext",
+        "id": "main_mobile_information_text_2",
+        "label": "Add Main Mobile Information Text-2",
+        "default": "<p>His global experiences, particularly during his time in China, exposed him to wearable tech. Innovative features like color-changing lenses, integrated audio, and tint-dimming capabilities, fueled his excitement about Chamelo's potential to be the next big thing.</p><p>Through Marbury’s vision, Chamelo represents the new wave of sunglasses, blending fashion, functionality, and future-forward tech into a product that promises to change how we see and experience the world.</p>"
+      },
+      {
+        "type": "text",
+        "id": "main_button_text",
+        "label": "Add Main Button Text",
+        "default": "Shop Bestsellers"
+      },
+      {
+        "type": "url",
+        "id": "main_button_link",
+        "label": "Add Main Button Link",
+        "default": "/"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Our Story Brands Details"
+      }
+    ]
+  }
+{% endschema %}

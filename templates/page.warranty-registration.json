@@ -1,0 +1,46 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "warranty_registration_banner_wT7Par": {
+      "type": "warranty-registration-banner",
+      "settings": {
+        "title": "Register your warranty",
+        "text": "<p>Thank you for purchasing from Chamelo.🕶️</p><p>To register your Chamelo product, simply click on the button below.</p>",
+        "btn_text": "register my product",
+        "btn_url": "https://form.typeform.com/to/b3H5PydK?typeform-source=www.chamelo.com",
+        "sub_title": "1-year warranty",
+        "sub_text": "<p>Our 1-year manufacturer’s warranty covers any manufacturing defects. View our full policy <a href=\"/pages/returns-exchanges\" title=\"Returns & Exchanges\">here</a> for more details.</p>"
+      }
+    },
+    "index_featured_collection_new_b7hxcq": {
+      "type": "Index-featured-collection-new",
+      "settings": {
+        "main_background_color": "#f6f6f6",
+        "main_heading_text": "Complete your kit",
+        "main_information_text": "<p>Explore our most popular styles</p>",
+        "main_button_text": "Shop All",
+        "main_button_link": "shopify://collections/best-sellers",
+        "main_collection_products": "best-sellers",
+        "products_to_show": 30,
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none"
+      }
+    }
+  },
+  "order": [
+    "warranty_registration_banner_wT7Par",
+    "index_featured_collection_new_b7hxcq"
+  ]
+}

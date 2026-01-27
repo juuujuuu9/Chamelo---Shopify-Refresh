@@ -1,0 +1,188 @@
+
+.media_courage .wrapper {
+    display: flex;
+}
+.media_courage .W-half {
+    width: 50%;
+}
+.media_courage__image_and_video {
+    position: relative;
+    padding-bottom: 107%;
+    height: 100%;
+}
+.media_courage__mobile_image_new {
+    display: none;
+}
+.media_courage .media_courage__desktop_image_new {
+    width: 100%;
+    height: 100% !important;
+    object-fit: cover;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.media_courage__Logo_image_new {
+    max-width: 133px;
+    width: auto;
+}
+.media_courage .beta {
+    position: relative;
+    padding: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+.media_courage__title {
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700; 
+    line-height: 1.25; 
+    text-transform: uppercase;
+    margin: 0;
+    padding-bottom: 56px;
+    letter-spacing: 0;
+}
+.media_courage__contents-text {
+    margin: 0 0 20px; 
+}
+.media_courage__contents-text p {
+    margin: 0;
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: 0; 
+}
+.media_courage__logo {
+    display: flex;
+    justify-content: center;
+}
+.media_courage__content {
+    margin-bottom: 56px;
+}
+.media_courage__content:last-child {
+    margin-bottom: 0;
+}
+.media_courage .swiper-wrapper {
+    display: block !important;
+}
+.media_courage__shadow-mobile {
+    display: none;
+    height: 100%;
+}
+.media_courage__shadow {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+.media_courage__destop_shadow {
+    height: 100%;
+}
+.media_courage__shadow svg {
+    width: 100%;
+    height: 100%;
+}
+.media_courage .swiper-container {
+    max-width: 443px; 
+    margin: 0 auto; 
+}  
+
+@media screen and (max-width: 1439px) {
+    .media_courage__title {
+        padding-bottom: 20px;
+    }
+    .media_courage__contents-text p {
+        font-size: 20px;
+    }
+    .media_courage__content {
+        margin-bottom: 45px;
+    }
+}
+@media screen and (max-width: 990px) {
+    .media_courage .beta {
+        padding: 56px 20px;
+    }
+    .media_courage__contents-text p {
+        font-size: 16px;
+    }
+    .media_courage__content {
+        margin-bottom: 32px; 
+    }
+    .media_courage__Logo_image_new {
+        max-width: 100px;
+        min-height: 28px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .media_courage .wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+    .media_courage .swiper-wrapper {
+        display: flex !important;
+    }
+    .media_courage .W-half {
+        width: 100%;
+    }
+    .media_courage__contents-text {
+        margin: 0 0 24px; 
+    }
+    .media_courage__contents-text p {
+        font-size: 20px;
+    }
+    .media_courage .swiper-container {
+        overflow: hidden;
+        position: relative;
+        max-width: 450px;
+        margin: 0 auto;
+    }
+    .media_courage__title {
+        padding-bottom: 24px; 
+    } 
+    .media_courage__image_and_video {
+        padding-bottom: 80%;
+    }
+    .media_courage__shadow-mobile {
+        display: block;
+    }
+    .media_courage__destop_shadow {
+        display: none;
+    }
+    .media_courage .swiper.mySwiper.js-media-courage.swiper-initialized.swiper-horizontal.swiper-backface-hidden {
+        padding-bottom: 32px;
+    }
+    .media_courage .swiper-pagination.js-media-courage-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+        height: 20px;
+        bottom: 0;
+        top: unset;
+    } 
+    .media_courage .swiper-pagination-bullet.swiper-pagination-bullet-active {
+        max-width: 24px;
+        width: 100%;
+        height: 3px;
+        border-radius: 12px;
+        background: #ffffff;
+    }
+    .media_courage .swiper-pagination-bullet {
+        max-width: 8px;
+        height: 3px;
+        border-radius: 12px;
+        overflow: hidden; 
+        background: #D9D9D966;
+        margin: 0 2px !important; 
+    } 
+    .media_courage .beta {
+        padding: 57px 20px 51px;
+    }
+}
+
+@media screen and (max-width: 480px) {  
+    .media_courage .swiper-container {
+        max-width: 335px;
+    }
+}

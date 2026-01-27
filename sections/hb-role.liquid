@@ -1,0 +1,65 @@
+{{"hb-role.css" |  asset_url |  stylesheet_tag}}
+
+{%- assign openRoles = shop.metaobjects.open_roles -%}
+{%- for openRoleData in openRoles.values -%}
+  <div id="open-job-roles" class="hb_role-section">
+      <div class="page-width">
+          <div class="hb_role__wraper">
+              <div class="hb_role__header">
+                  {% if openRoleData.title  != blank%}
+                    <h2 class="hb_role_section_title">
+                        {{ openRoleData.title }}
+                    </h2>
+                  {% endif %}
+                  {% if openRoleData.text != blank %}
+                    <div class="hb_role_section_text">
+                        {{ openRoleData.text | metafield_tag }}
+                    </div>
+                  {% endif %}
+              </div>
+              {%- for jobDetails in openRoleData.roles_job_detail.value -%}
+                  <div class="hb_role__container">
+                      <div class="hb_role_content_title_wrap">
+                          {% if jobDetails.sub_title != blank %}
+                            <h3 class="hb_role__emp_name">{{ jobDetails.sub_title }}</h3>
+                          {% endif %}
+                          {% if  jobDetails.timinig != blank or jobDetails.location != blank  %}
+                            <div class="hb_content_mobile_text">
+                              <div class="hb_role_content_text">{{ jobDetails.timinig }} </div>
+                                <div class="hb_role_dot">.</div>
+                                <div class="hb_role_content_text">{{ jobDetails.location }}</div>
+                            </div>
+                          {% endif %}
+                      </div>
+                        {% if jobDetails.timinig != blank or jobDetails.location != blank %}
+                          <div class="hb_role_content_text hb_mobile_none">{{ jobDetails.timinig }}</div>
+                          <div class="hb_role_content_text hb_mobile_none">{{ jobDetails.location }}</div>
+                        {% endif %}
+                        {%- if jobDetails.button_label != blank -%}
+                          <a href="{{ jobDetails.button_link }}" class="hb_role__btn">
+                          {{ jobDetails.button_label }}
+                            <span class="hb_role_section_arrow">
+                                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.33647 2.84L1.17647 10L0 8.82353L7.16 1.66353L0.849412 1.66353L0.849412 0H10V9.15059H8.33647V2.84Z" fill="white"/>
+                                </svg>
+                            </span>
+                          </a>
+                        {%- endif -%}
+                  </div>
+              {%- endfor -%}
+          </div>
+      </div>
+  </div>
+{%- endfor -%}
+
+{% schema %}
+  {
+    "name": "Role Section",
+    "settings": [],
+    "presets": [
+      {
+        "name": "Role Section"
+      }
+    ]
+  }
+{% endschema %}

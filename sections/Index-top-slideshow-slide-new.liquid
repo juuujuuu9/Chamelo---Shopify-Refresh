@@ -1,0 +1,223 @@
+{%- if section.blocks.size > 0 -%}
+  <div class="Index_top_slideshow_slide_main_new {{ section.settings.class-name }}" style="background: {{ section.settings.main_background_color }};">
+    <div class="Index_top_slideshow_slide_inner_new">
+      <div class="Index_top_slideshow_slide_loops_new">
+        <div class="swiper Index_top_slideshow_slider">
+          <div class="swiper-wrapper">
+            {%- for block in section.blocks -%}
+              {%- if block.settings.main_desktop_video != blank or block.settings.main_mobile_video != blank or block.settings.main_desktop_image != blank or block.settings.main_mobile_image != blank or block.settings.main_review_image != blank or block.settings.main_review_text != blank or block.settings.title != blank or block.settings.main_information_text != blank  or block.settings.main_button_link != blank -%}
+                <div class="swiper-slide Index_top_slideshow_slide_loops_mainboxs_new">
+                  <div class="Index_top_slideshow_slide_loops_innerboxs_new">
+                    {%- if block.settings.main_desktop_video != blank or block.settings.main_mobile_video != blank or block.settings.main_desktop_image != blank or block.settings.main_mobile_image != blank -%}
+                      <div class="Index_top_slideshow_slide_loops_innerboxs_mainboths_new">
+                        <div class="Index_top_slideshow_slide_loops_innerboxs_innerboths_new">
+                          {%- if block.settings.main_desktop_video != blank and block.settings.main_mobile_video != blank -%}
+                            <div class="Index_top_slideshow_slide_loops_innerboxs_innerboths_videoimage_new">
+                              {%- if block.settings.main_desktop_video != blank -%}
+                                {{ block.settings.main_desktop_video | video_tag: class:'desktop_image_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                              {%- endif -%}
+                              {%- if block.settings.main_mobile_video != blank -%}
+                                {{ block.settings.main_mobile_video | video_tag: class:'mobile_image_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                              {%- endif -%}
+                            </div>
+                          {% else %}  
+                            {%- if block.settings.main_desktop_image != blank and block.settings.main_mobile_image != blank -%}
+                              <div class="Index_top_slideshow_slide_loops_innerboxs_innerboths_videoimage_new">
+                                {%- if block.settings.main_desktop_image != blank -%}
+                                  {{
+                                    block.settings.main_desktop_image | 
+                                    image_url: width: img.width | 
+                                    image_tag: widths: '1296, 1512, 1728, 1944, 2048', 
+                                    fetchpriority: 'auto', 
+                                    class:'desktop_image_new'
+                                  }}
+                                {%- endif -%}
+                                {%- if block.settings.main_mobile_image != blank -%}
+                                  {{
+                                    block.settings.main_mobile_image | 
+                                    image_url: width: img.width | 
+                                    image_tag: widths: '1296, 1512, 1728, 1944, 2048', 
+                                    fetchpriority: 'auto', 
+                                    class:'mobile_image_new'
+                                  }}
+                                {%- endif -%}
+                              </div>
+                            {%- endif -%}
+                          {%- endif -%}
+                        </div>
+                      </div>
+                    {%- endif -%}
+                    {%- if block.settings.main_review_image != blank or block.settings.main_review_text != blank or block.settings.title != blank or block.settings.main_information_text != blank  or block.settings.main_button_link != blank -%}
+                      <div class="Index_top_slideshow_slide_loops_innerboxs_mainoverlay_new">
+                        <div class="Index_top_slideshow_slide_loops_innerboxs_inneroverlay_new">
+                          {%- if block.settings.main_review_image != blank or block.settings.main_review_text != blank -%}
+                            <div class="Index_top_slideshow_slide_loops_innerboxs_inneroverlay_mainboths_new">
+                              <div class="Index_top_slideshow_slide_loops_innerboxs_inneroverlay_innerboths_new">
+                                {%- if block.settings.main_review_image != blank -%}
+                                  <div class="Index_top_slideshow_slide_loops_innerboxs_inneroverlay_innerboths_image_new">
+                                    {{
+                                      block.settings.main_review_image | 
+                                      image_url: width: img.width | 
+                                      image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                      fetchpriority: 'auto', 
+                                      class:'Review_image_new'
+                                    }}
+                                  </div>
+                                {%- endif -%}
+                                {%- if block.settings.main_review_text != blank -%}
+                                  <div class="Index_top_slideshow_slide_loops_innerboxs_inneroverlay_innerboths_texts_new">
+                                    {{ block.settings.main_review_text }}
+                                  </div>
+                                {%- endif -%}
+                              </div>
+                            </div>
+                          {%- endif -%}
+                          {%- if block.settings.title != blank -%}
+                            <div class="Index_top_slideshow_slide_loops_innerboxs_inneroverlay_maintitle_new">
+                              <div class="Common_title_new Index_top_slideshow_slide_loops_innerboxs_inneroverlay_innertitle_new">
+                                <h2>{{ block.settings.title }}</h2>
+                              </div>
+                            </div>
+                          {%- endif -%}
+                          {%- if block.settings.main_information_text != blank -%}
+                            <div class="Index_top_slideshow_slide_loops_innerboxs_inneroverlay_maininfos_new info-text-desktop">
+                              <div class="Index_top_slideshow_slide_loops_innerboxs_inneroverlay_innerinfos_new">
+                                {{ block.settings.main_information_text }}
+                              </div>
+                            </div>
+                          {%- endif -%}
+                          {%- if block.settings.main_information_text_mob != blank -%}
+                            <div class="Index_top_slideshow_slide_loops_innerboxs_inneroverlay_maininfos_new info-text-mob">
+                              <div class="Index_top_slideshow_slide_loops_innerboxs_inneroverlay_innerinfos_new">
+                                {{ block.settings.main_information_text_mob }}
+                              </div>
+                            </div>
+                          {%- endif -%}
+                          {%- if block.settings.main_button_text != blank and block.settings.main_button_link != blank -%}
+                            <div class="Index_top_slideshow_slide_loops_innerboxs_inneroverlay_mainbutton_new">
+                              <div class="Index_top_slideshow_slide_loops_innerboxs_inneroverlay_innerbutton_new">
+                                <a href="{{ block.settings.main_button_link }}" class="button button_white_new">
+                                  {{ block.settings.main_button_text }}  
+                                </a>
+                              </div>
+                            </div>
+                          {%- endif -%}
+                        </div>
+                      </div>
+                    {%- endif -%}
+                  </div>
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+{%- endif -%} 
+
+{% schema %}
+  {
+    "name": "Index Top Slideshow Slide",
+    "class": "Index_top_slideshow_slide_new",
+    "settings": [
+      {
+        "type": "text",
+        "id": "class-name",
+        "label": "Class Name"
+      },
+      {
+        "type": "color",
+        "id": "main_background_color",
+        "label": "Add Main Background Color",
+        "default": "#EFEFEF"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "information",
+        "name": "Information",
+        "settings": [
+          {
+            "type": "video",
+            "id": "main_desktop_video",
+            "label": "Add Main Desktop Video"
+          },
+          {
+            "type": "video",
+            "id": "main_mobile_video",
+            "label": "Add Main Mobile Video"
+          },
+          {
+            "type": "image_picker",
+            "id": "main_desktop_image",
+            "label": "Add Main Desktop Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "main_mobile_image",
+            "label": "Add Main Mobile Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "main_review_image",
+            "label": "Add Main Review Image"
+          },
+          {
+            "type": "textarea",
+            "id": "main_review_text",
+            "label": "Add Main Review Text",
+            "default": "Rated 4.7 • 9,201 reviews"
+          },
+          {
+            "type": "textarea",
+            "id": "title",
+            "label": "Add Main Heading Text",
+            "default": "Just in time<br>for Paris"
+          },
+          {
+            "type": "richtext",
+            "id": "main_information_text",
+            "label": "Add Main Information Text",
+            "default": "<p>Our best-selling sports sunglasses now come in a limited edition Red, White and Blue hue</p>"
+          },
+          {
+            "type": "richtext",
+            "id": "main_information_text_mob",
+            "label": "Add Main Information Text (mob)",
+            "default": "<p>Our best-selling sports sunglasses now come in a limited edition Red, White and Blue hue</p>"
+          },
+          {
+            "type": "text",
+            "id": "main_button_text",
+            "label": "Add Main Button Text",
+            "default": "Shop All"
+          },
+          {
+            "type": "url",
+            "id": "main_button_link",
+            "label": "Add Main Button Link",
+            "default": "/"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Index Top Slideshow Slide",
+        "blocks": [
+          {
+            "type": "information"
+          },
+          {
+            "type": "information"
+          },
+          {
+            "type": "information"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

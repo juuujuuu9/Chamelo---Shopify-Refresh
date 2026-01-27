@@ -1,0 +1,198 @@
+{%- if product.metafields.custom.product_lens_lists_adjust_selections.value != blank -%}
+  {%- assign product_lens_lists_adjust_selections = product.metafields.custom.product_lens_lists_adjust_selections.value -%}
+  {%- if product_lens_lists_adjust_selections.main_video_or_image_desktop.value != blank or product_lens_lists_adjust_selections.main_video_or_image_mobile.value != blank -%}
+    <div class="Product_object_lens_lists_main_new" style="background: {{ section.settings.main_background_color }};">
+      <div class="Product_object_lens_lists_inner_new">
+        <div class="Product_object_lens_lists_detail_new">
+          {%- if product_lens_lists_adjust_selections.main_video_or_image_desktop.value != blank and product_lens_lists_adjust_selections.main_video_or_image_mobile.value != blank -%}
+            {%- if product_lens_lists_adjust_selections.main_video_or_image_desktop.value != blank -%}
+              <div class="Product_object_lens_lists_detail_mainstatic_new Desktop_only_new">
+                <div class="Product_object_lens_lists_detail_innerstatic_new">
+                  {%- if product_lens_lists_adjust_selections.main_video_or_image_desktop.value contains "files" -%}
+                    <div class="Product_object_lens_lists_detail_innerstatic_imagevideo_new">
+                      {{
+                        product_lens_lists_adjust_selections.main_video_or_image_desktop.value | 
+                        image_url: width: img.width | 
+                        image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                        fetchpriority: 'auto', 
+                        class:'Static_image_new'
+                      }}
+                    </div>
+                  {%- else -%}
+                    <div class="Product_object_lens_lists_detail_innerstatic_imagevideo_new">
+                      {{ product_lens_lists_adjust_selections.main_video_or_image_desktop.value | video_tag: class:'Static_video_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                    </div>
+                  {%- endif -%}
+                </div>
+              </div>
+            {%- endif -%}
+            {%- if product_lens_lists_adjust_selections.main_video_or_image_mobile.value != blank -%}
+              <div class="Product_object_lens_lists_detail_mainstatic_new Mobile_only_new">
+                <div class="Product_object_lens_lists_detail_innerstatic_new">
+                  {%- if product_lens_lists_adjust_selections.main_video_or_image_mobile.value contains "files" -%}
+                    <div class="Product_object_lens_lists_detail_innerstatic_imagevideo_new">
+                      {{
+                        product_lens_lists_adjust_selections.main_video_or_image_mobile.value | 
+                        image_url: width: img.width | 
+                        image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                        fetchpriority: 'auto', 
+                        class:'Static_image_new'
+                      }}
+                    </div>
+                  {%- else -%}
+                    <div class="Product_object_lens_lists_detail_innerstatic_imagevideo_new">
+                      {{ product_lens_lists_adjust_selections.main_video_or_image_mobile.value | video_tag: class:'Static_video_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                    </div>
+                  {%- endif -%}
+                </div>
+              </div>
+            {%- endif -%}
+          {%- endif -%}
+          {%- if product_lens_lists_adjust_selections.main_lens_lists_image_desktop.value != blank or product_lens_lists_adjust_selections.main_lens_lists_image_mobile.value != blank -%}
+            <div class="Product_object_lens_lists_detail_mainoverlay_new">
+              <div class="Product_object_lens_lists_detail_inneroverlay_new Tabs_common_main_new">
+                {%- if product_lens_lists_adjust_selections.main_lens_lists_image_desktop.value != blank and product_lens_lists_adjust_selections.main_lens_lists_image_mobile.value != blank -%}
+                  <div class="Product_object_lens_lists_detail_inneroverlay_mainboths_new">
+                    <div class="Product_object_lens_lists_detail_inneroverlay_innerboths_new">
+                      {%- if product_lens_lists_adjust_selections.main_lens_lists_image_desktop.value != blank -%}
+                        {%- for main_lens_lists_image_desktop in product_lens_lists_adjust_selections.main_lens_lists_image_desktop.value -%}
+                          {%- if main_lens_lists_image_desktop contains "files" -%}
+                            <div class="tabcontent tab_{{ block.id | replace: '-', '_' }}_{{ forloop.index0 }}_open"{% if forloop.first %} style="display:block;"{% endif %}>
+                              <div class="Product_object_lens_lists_detail_inneroverlay_innerboths_mainimage_new Desktop_only_new">
+                                <div class="Product_object_lens_lists_detail_inneroverlay_innerboths_innerimage_new">
+                                  {{
+                                    main_lens_lists_image_desktop | 
+                                    image_url: width: img.width | 
+                                    image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                    fetchpriority: 'auto', 
+                                    class:'Static_image_new'
+                                  }}
+                                </div>
+                                {%- if product_lens_lists_adjust_selections.main_lens_lists_overlay_text.value != blank -%}
+                                  <div class="Product_object_lens_lists_detail_inneroverlay_innerboths_mainimage_infos_new">
+                                    {{ product_lens_lists_adjust_selections.main_lens_lists_overlay_text.value[forloop.index0] }}
+                                  </div>  
+                                {%- endif -%}
+                              </div>
+                            </div>
+                          {%- endif -%}
+                        {%- endfor -%}
+                      {%- endif -%}
+                      {%- if product_lens_lists_adjust_selections.main_lens_lists_image_mobile.value != blank -%}
+                        {%- for main_lens_lists_image_mobile in product_lens_lists_adjust_selections.main_lens_lists_image_mobile.value -%}
+                          {%- if main_lens_lists_image_mobile contains "files" -%}
+                            <div class="tabcontent tab_{{ block.id | replace: '-', '_' }}_{{ forloop.index0 }}_open"{% if forloop.first %} style="display:block;"{% endif %}>
+                              <div class="Product_object_lens_lists_detail_inneroverlay_innerboths_mainimage_new Mobile_only_new">
+                                <div class="Product_object_lens_lists_detail_inneroverlay_innerboths_innerimage_new">
+                                  {{
+                                    main_lens_lists_image_mobile | 
+                                    image_url: width: img.width | 
+                                    image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                    fetchpriority: 'auto', 
+                                    class:'Static_image_new'
+                                  }}
+                                </div>
+                                {%- if product_lens_lists_adjust_selections.main_lens_lists_overlay_text.value != blank -%}
+                                  <div class="Product_object_lens_lists_detail_inneroverlay_innerboths_mainimage_infos_new">
+                                    {{ product_lens_lists_adjust_selections.main_lens_lists_overlay_text.value[forloop.index0] }}
+                                  </div>  
+                                {%- endif -%}
+                              </div>
+                            </div>
+                          {%- endif -%}
+                        {%- endfor -%}
+                      {%- endif -%}
+                    </div>
+                  </div>
+                {%- endif -%}
+                {%- if product_lens_lists_adjust_selections.main_heading_text_common.value != blank or product_lens_lists_adjust_selections.main_information_text_desktop.value != blank or product_lens_lists_adjust_selections.main_information_text_mobile.value != blank -%}
+                  <div class="Product_object_lens_lists_detail_inneroverlay_mainsides_new">
+                    <div class="Product_object_lens_lists_detail_inneroverlay_innersides_new">
+                      {%- if product_lens_lists_adjust_selections.main_heading_text_common.value != blank or product_lens_lists_adjust_selections.main_information_text_desktop.value != blank or product_lens_lists_adjust_selections.main_information_text_mobile.value != blank -%}
+                        <div class="Product_object_lens_lists_detail_inneroverlay_innersides_mainleft_new">
+                          <div class="Product_object_lens_lists_detail_inneroverlay_innersides_innerleft_new">
+                            {%- if product_lens_lists_adjust_selections.main_heading_text_common.value != blank -%}
+                              <div class="Product_object_lens_lists_detail_inneroverlay_innersides_innerleft_maintitle_new">
+                                <div class="Common_title_new Product_object_lens_lists_detail_inneroverlay_innersides_innerleft_innertitle_new">
+                                  <h2>{{ product_lens_lists_adjust_selections.main_heading_text_common }}</h2>
+                                </div>
+                              </div>
+                            {%- endif -%}
+                            {%- if product_lens_lists_adjust_selections.main_information_text_desktop.value != blank -%}
+                              <div class="Product_object_lens_lists_detail_inneroverlay_innersides_innerleft_maininfos_new Desktop_only_new">
+                                <div class="Product_object_lens_lists_detail_inneroverlay_innersides_innerleft_innerinfos_new">
+                                  {{ product_lens_lists_adjust_selections.main_information_text_desktop | metafield_tag }}
+                                </div>
+                              </div>
+                            {%- endif -%}
+                            {%- if product_lens_lists_adjust_selections.main_information_text_mobile.value != blank -%}
+                              <div class="Product_object_lens_lists_detail_inneroverlay_innersides_innerleft_maininfos_new Mobile_only_new">
+                                <div class="Product_object_lens_lists_detail_inneroverlay_innersides_innerleft_innerinfos_new">
+                                  {{ product_lens_lists_adjust_selections.main_information_text_mobile | metafield_tag }}
+                                </div>
+                              </div>
+                            {%- endif -%}
+                          </div>  
+                        </div>
+                      {%- endif -%}
+                      {%- if product_lens_lists_adjust_selections.main_lens_lists_color_round_image.value != blank -%}
+                        <div class="Product_object_lens_lists_detail_inneroverlay_innersides_mainright_new">
+                          <div class="Product_object_lens_lists_detail_inneroverlay_innersides_innerright_new">
+                            <div class="Product_object_lens_lists_detail_inneroverlay_innersides_innerright_mainloop_new">
+                              <div class="tab common_tab_new">
+                                {%- for Main_lens_lists_color_round_image in product_lens_lists_adjust_selections.main_lens_lists_color_round_image.value -%}
+                                  {%- if Main_lens_lists_color_round_image != blank -%}
+                                    {%- if Main_lens_lists_color_round_image contains "files" -%}
+                                      <button class="tablinks Tabs_common_inner_new{% if forloop.first %} active{% endif %}" tab_id="tab_{{ block.id | replace: '-', '_' }}_{{ forloop.index0 }}">
+                                        <div class="Product_object_lens_lists_detail_inneroverlay_innersides_innerright_innerloop_new">
+                                          {{
+                                            Main_lens_lists_color_round_image | 
+                                            image_url: width: img.width | 
+                                            image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                            fetchpriority: 'auto', 
+                                            class:'Static_image_new'
+                                          }}
+                                        </div>
+                                      </button>
+                                    {%- endif -%}
+                                  {%- endif -%}
+                                {%- endfor -%} 
+                              </div>
+                            </div>
+                            <div class="Product_object_lens_lists_detail_inneroverlay_innersides_innerright_maintext_new">
+                              <p>Tap To Change Lens Color</p>
+                            </div>  
+                          </div>
+                        </div>
+                      {%- endif -%}  
+                    </div>
+                  </div>
+                {%- endif -%}
+              </div>
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  {%- endif -%}
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Product Object Lens Lists",
+    "class": "Product_object_lens_lists_new",
+    "settings": [
+      {
+        "type": "color",
+        "id": "main_background_color",
+        "label": "Add Main Background Color",
+        "default": "#EFEFEF"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product Object Lens Lists"
+      }
+    ]
+  }
+{% endschema %}

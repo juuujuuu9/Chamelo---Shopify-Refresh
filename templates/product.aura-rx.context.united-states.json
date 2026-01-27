@@ -1,0 +1,89 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "product.aura-rx.json",
+  "context": {
+    "market": "united-states"
+  },
+  "sections": {
+    "main": {
+      "settings": {},
+      "blocks": {
+        "custom_text_with_style_xEKPU": {
+          "type": "custom-text-with-style",
+          "disabled": false,
+          "settings": {
+            "title": "Made to order (Rx) - shipping timeline is 1 month.",
+            "header-b86b4a3d3701bbbbb05a9bfccc7c7166": null,
+            "font_size": 16,
+            "line_height": 1.4,
+            "font_weight": "400",
+            "text_align": "center",
+            "text_transform": "none",
+            "header-9a9719531efa0fe2907fd06b853b7cd1": null,
+            "text_color": "#000000",
+            "background_color": "rgba(0,0,0,0)",
+            "header-0c3fba72cec704a413267936badae5cc": null,
+            "margin_top": 0,
+            "margin_bottom": 0,
+            "padding_top": 0,
+            "padding_bottom": 0,
+            "padding_left": 0,
+            "padding_right": 0,
+            "header-1d6c5b908e10b33c6de39d68c5f7b633": null,
+            "border_radius": 0,
+            "border_width": 0,
+            "border_color": "#000000",
+            "border_style": "none",
+            "box_shadow_blur": 0,
+            "box_shadow_spread": 0,
+            "box_shadow_color": "#0000001a",
+            "header-27d0e19214c22a2610d3304cbfdcc2e1": null,
+            "enable_strike_out_rich_text": false,
+            "strike_out_color": "#999999",
+            "strike_out_opacity": 0.7,
+            "text_underline": false,
+            "text_italic": false,
+            "text_shadow_blur": 0,
+            "text_shadow_color": "#0000004d",
+            "header-e1e63911b7a96321b551f9aa036b6299": null,
+            "mobile_font_size": 14,
+            "mobile_margin_top": 0,
+            "mobile_margin_bottom": 0
+          }
+        }
+      },
+      "block_order": [
+        "custom_review_TbRJPn",
+        "custom_count_tag_text_EV9rrm",
+        "title",
+        "meta_short_description_J3LqfR",
+        "object_size_and_fit_bbka8f",
+        "meta_stitch_product_list_jwAydH",
+        "variant_picker",
+        "meta_popular_product_list_8cygQ8",
+        "icon_text_column_popup_RLJDQF",
+        "meta_real_life_items_EJ3gn9",
+        "buy_buttons",
+        "custom_text_with_style_xEKPU",
+        "afterpay_on_site_messaging_payments_messaging_RxX4Fe",
+        "banner_f8PQVt",
+        "prescription_lenses_FDh9EK",
+        "refund_guaranteed_text_jrgkw3",
+        "order_reveive_days_detail_BCNA93",
+        "meta_object_tabs_list_96tzAh",
+        "meta_accordions_list_mfgYUw",
+        "video_with_texts_detail_KTkwjW",
+        "logo_list_slider_kVW4Le",
+        "white_logo_list_slider_QfC8ae"
+      ]
+    }
+  }
+}

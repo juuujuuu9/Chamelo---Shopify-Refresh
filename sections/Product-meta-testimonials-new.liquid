@@ -1,0 +1,194 @@
+{%- if product.metafields.custom.product_testimonial_review_list_selections.value != blank -%}
+  <div class="Product_meta_testimonials_main_new" style="background: {{ section.settings.main_background_color }};">
+    <div class="page-width">
+      <div class="Product_meta_testimonials_inner_new">
+        {%- if section.settings.main_outer_image != blank and section.settings.main_inside_image != blank -%}
+          <div class="Product_meta_testimonials_maincustom_new Desktop_only_new">
+            <div class="Product_meta_testimonials_innercustom_new">
+              {%- if section.settings.main_outer_image != blank -%}
+                <div class="Product_meta_testimonials_innercustom_mainouter_new">
+                  <div class="Product_meta_testimonials_innercustom_innerouter_new spin">
+                    {{
+                      section.settings.main_outer_image | 
+                      image_url: width: img.width | 
+                      image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                      fetchpriority: 'auto', 
+                      class:'Icon_image_new'
+                    }}
+                  </div>
+                </div>
+              {%- endif -%}
+              {%- if section.settings.main_inside_image != blank -%}
+                <div class="Product_meta_testimonials_innercustom_maininside_new">
+                  <div class="Product_meta_testimonials_innercustom_innerinside_new">
+                    {{
+                      section.settings.main_inside_image | 
+                      image_url: width: img.width | 
+                      image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                      fetchpriority: 'auto', 
+                      class:'Icon_image_new'
+                    }}
+                  </div>
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endif -%} 
+        {%- if product.metafields.custom.product_testimonial_review_list_selections.value != blank -%}
+          <div class="Product_meta_testimonials_mainsides_new">
+            <div class="Product_meta_testimonials_innersides_new">
+              {%- if product.metafields.custom.product_testimonial_review_list_selections.value != blank -%}
+                <div class="Product_meta_testimonials_innersides_mainleft_new">
+                  <div class="Product_meta_testimonials_innersides_innerleft_new">
+                    <div thumbsSlider class="swiper Product_meta_testimonials_thumb_slider">
+                      <div class="swiper-wrapper">
+                        {%- for product_testimonial_review_list_selections in product.metafields.custom.product_testimonial_review_list_selections.value -%}
+                          {%- if product_testimonial_review_list_selections.main_video_or_image_desktop.value != blank and product_testimonial_review_list_selections.main_video_or_image_mobile.value != blank -%}
+                            <div class="swiper-slide Product_meta_testimonials_innersides_innerleft_mainboxs_new">
+                              <div class="Product_meta_testimonials_innersides_innerleft_innerboxs_new">
+                                {%- if product_testimonial_review_list_selections.main_video_or_image_desktop.value != blank -%}
+                                  <div class="Product_meta_testimonials_innersides_innerleft_innerboxs_mainstatic_new Desktop_only_new">
+                                    <div class="Product_meta_testimonials_innersides_innerleft_innerboxs_innerstatic_new">
+                                      {%- if product_testimonial_review_list_selections.main_video_or_image_desktop.value contains "files" -%}
+                                        <div class="Product_meta_testimonials_innersides_innerleft_innerboxs_innerstatic_imagevideo_new">
+                                          {{
+                                            product_testimonial_review_list_selections.main_video_or_image_desktop.value | 
+                                            image_url: width: img.width | 
+                                            image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                            fetchpriority: 'auto', 
+                                            class:'Static_image_new'
+                                          }}
+                                        </div>
+                                      {%- else -%}
+                                        <div class="Product_meta_testimonials_innersides_innerleft_innerboxs_innerstatic_imagevideo_new">
+                                          {{ product_testimonial_review_list_selections.main_video_or_image_desktop.value | video_tag: class:'Static_video_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                                        </div>
+                                      {%- endif -%}
+                                    </div>
+                                  </div>
+                                {%- endif -%}
+                                {%- if product_testimonial_review_list_selections.main_video_or_image_mobile.value != blank -%}
+                                  <div class="Product_meta_testimonials_innersides_innerleft_innerboxs_mainstatic_new Mobile_only_new">
+                                    <div class="Product_meta_testimonials_innersides_innerleft_innerboxs_innerstatic_new">
+                                      {%- if product_testimonial_review_list_selections.main_video_or_image_mobile.value contains "files" -%}
+                                        <div class="Product_meta_testimonials_innersides_innerleft_innerboxs_innerstatic_imagevideo_new">
+                                          {{
+                                            product_testimonial_review_list_selections.main_video_or_image_mobile.value | 
+                                            image_url: width: img.width | 
+                                            image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                            fetchpriority: 'auto', 
+                                            class:'Static_image_new'
+                                          }}
+                                        </div>
+                                      {%- else -%}
+                                        <div class="Product_meta_testimonials_innersides_innerleft_innerboxs_innerstatic_imagevideo_new">
+                                          {{ product_testimonial_review_list_selections.main_video_or_image_mobile.value | video_tag: class:'Static_video_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                                        </div>
+                                      {%- endif -%}
+                                    </div>
+                                  </div>
+                                {%- endif -%}
+                              </div>
+                            </div>
+                          {%- endif -%}
+                        {%- endfor -%}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {%- endif -%}
+              {%- if product.metafields.custom.product_testimonial_review_list_selections.value != blank -%}
+                <div class="Product_meta_testimonials_innersides_mainright_new">
+                  <div class="Product_meta_testimonials_innersides_innerright_new">
+                    <div class="swiper Product_meta_testimonials_slider">
+                      <div class="swiper-wrapper">
+                        {%- for product_testimonial_review_list_selections in product.metafields.custom.product_testimonial_review_list_selections.value -%}
+                          {%- if product_testimonial_review_list_selections.main_information_text.value != blank and product_testimonial_review_list_selections.main_author_text.value != blank -%}
+                            <div class="swiper-slide Product_meta_testimonials_innersides_innerright_mainboxs_new">
+                              <div class="Product_meta_testimonials_innersides_innerright_innerboxs_new">
+                                {%- if product_testimonial_review_list_selections.main_information_text.value != blank -%}
+                                  <div class="Product_meta_testimonials_innersides_innerright_innerboxs_maindetail_new">
+                                    <div class="Product_meta_testimonials_innersides_innerright_innerboxs_innerdetail_new">
+                                      <div class="Product_meta_testimonials_innersides_innerright_innerboxs_innerdetail_icons_new">
+                                        <svg width="84" height="15" viewBox="0 0 84 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                          <path d="M7.50962 12.1333C7.58907 12.0854 7.68854 12.0854 7.76799 12.1333L12.0756 14.7332C12.2649 14.8474 12.4984 14.6777 12.4482 14.4623L11.3051 9.56228C11.284 9.47191 11.3147 9.37729 11.3849 9.31653L15.191 6.0193C15.3581 5.8745 15.2688 5.59994 15.0484 5.58124L10.037 5.15608C9.94463 5.14824 9.86416 5.0899 9.82798 5.00453L7.86899 0.382423C7.78284 0.179166 7.49477 0.179166 7.40863 0.382423L5.44964 5.00453C5.41345 5.0899 5.33298 5.14824 5.24059 5.15608L0.229214 5.58124C0.00885749 5.59994 -0.0804951 5.8745 0.0866543 6.0193L3.89276 9.31653C3.9629 9.37729 3.99361 9.47191 3.97252 9.56228L2.82941 14.4623C2.77917 14.6777 3.01273 14.8474 3.20206 14.7332L7.50962 12.1333Z" fill="white"/>
+                                          <path d="M24.5096 12.1333C24.5891 12.0854 24.6885 12.0854 24.768 12.1333L29.0756 14.7332C29.2649 14.8474 29.4984 14.6777 29.4482 14.4623L28.3051 9.56228C28.284 9.47191 28.3147 9.37729 28.3849 9.31653L32.191 6.0193C32.3581 5.8745 32.2688 5.59994 32.0484 5.58124L27.037 5.15608C26.9446 5.14824 26.8642 5.0899 26.828 5.00453L24.869 0.382423C24.7828 0.179166 24.4948 0.179166 24.4086 0.382423L22.4496 5.00453C22.4135 5.0899 22.333 5.14824 22.2406 5.15608L17.2292 5.58124C17.0089 5.59994 16.9195 5.8745 17.0867 6.0193L20.8928 9.31653C20.9629 9.37729 20.9936 9.47191 20.9725 9.56228L19.8294 14.4623C19.7792 14.6777 20.0127 14.8474 20.2021 14.7332L24.5096 12.1333Z" fill="white"/>
+                                          <path d="M41.5096 12.1333C41.5891 12.0854 41.6885 12.0854 41.768 12.1333L46.0756 14.7332C46.2649 14.8474 46.4984 14.6777 46.4482 14.4623L45.3051 9.56228C45.284 9.47191 45.3147 9.37729 45.3849 9.31653L49.191 6.0193C49.3581 5.8745 49.2688 5.59994 49.0484 5.58124L44.037 5.15608C43.9446 5.14824 43.8642 5.0899 43.828 5.00453L41.869 0.382423C41.7828 0.179166 41.4948 0.179166 41.4086 0.382423L39.4496 5.00453C39.4135 5.0899 39.333 5.14824 39.2406 5.15608L34.2292 5.58124C34.0089 5.59994 33.9195 5.8745 34.0867 6.0193L37.8928 9.31653C37.9629 9.37729 37.9936 9.47191 37.9725 9.56228L36.8294 14.4623C36.7792 14.6777 37.0127 14.8474 37.2021 14.7332L41.5096 12.1333Z" fill="white"/>
+                                          <path d="M58.5096 12.1333C58.5891 12.0854 58.6885 12.0854 58.768 12.1333L63.0756 14.7332C63.2649 14.8474 63.4984 14.6777 63.4482 14.4623L62.3051 9.56228C62.284 9.47191 62.3147 9.37729 62.3849 9.31653L66.191 6.0193C66.3581 5.8745 66.2688 5.59994 66.0484 5.58124L61.037 5.15608C60.9446 5.14824 60.8642 5.0899 60.828 5.00453L58.869 0.382423C58.7828 0.179166 58.4948 0.179166 58.4086 0.382423L56.4496 5.00453C56.4135 5.0899 56.333 5.14824 56.2406 5.15608L51.2292 5.58124C51.0089 5.59994 50.9195 5.8745 51.0867 6.0193L54.8928 9.31653C54.9629 9.37729 54.9936 9.47191 54.9725 9.56228L53.8294 14.4623C53.7792 14.6777 54.0127 14.8474 54.2021 14.7332L58.5096 12.1333Z" fill="white"/>
+                                          <path d="M75.5096 12.1333C75.5891 12.0854 75.6885 12.0854 75.768 12.1333L80.0756 14.7332C80.2649 14.8474 80.4984 14.6777 80.4482 14.4623L79.3051 9.56228C79.284 9.47191 79.3147 9.37729 79.3849 9.31653L83.191 6.0193C83.3581 5.8745 83.2688 5.59994 83.0484 5.58124L78.037 5.15608C77.9446 5.14824 77.8642 5.0899 77.828 5.00453L75.869 0.382423C75.7828 0.179166 75.4948 0.179166 75.4086 0.382423L73.4496 5.00453C73.4135 5.0899 73.333 5.14824 73.2406 5.15608L68.2292 5.58124C68.0089 5.59994 67.9195 5.8745 68.0867 6.0193L71.8928 9.31653C71.9629 9.37729 71.9936 9.47191 71.9725 9.56228L70.8294 14.4623C70.7792 14.6777 71.0127 14.8474 71.2021 14.7332L75.5096 12.1333Z" fill="white"/>
+                                        </svg>
+                                      </div>
+                                      {%- if product_testimonial_review_list_selections.main_information_text.value != blank -%}
+                                        <div class="Product_meta_testimonials_innersides_innerright_innerboxs_innerdetail_infos_new">
+                                          {{ product_testimonial_review_list_selections.main_information_text | metafield_tag }}
+                                        </div>
+                                      {%- endif -%}  
+                                    </div>  
+                                  </div>
+                                {%- endif -%}
+                                {%- if product_testimonial_review_list_selections.main_author_text.value != blank -%}
+                                  <div class="Product_meta_testimonials_innersides_innerright_innerboxs_mainboths_new">
+                                    <div class="Product_meta_testimonials_innersides_innerright_innerboxs_innerboths_new">
+                                      {%- if product_testimonial_review_list_selections.main_author_text.value != blank -%}
+                                        <div class="Product_meta_testimonials_innersides_innerright_innerboxs_innerboths_title_new">
+                                          <h5>{{ product_testimonial_review_list_selections.main_author_text }}</h5>
+                                        </div>
+                                      {%- endif -%}
+                                      <div class="Product_meta_testimonials_innersides_innerright_innerboxs_innerboths_texts_new">
+                                        <svg width="12" height="17" viewBox="0 0 12 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.24501 0.5H8.65234L11.871 8.5L8.65234 16.5H3.24501L0 8.5L3.24501 0.5ZM10.9039 8.16111L8.13464 1.27778H5.93536L4.88217 8.16111H10.9039ZM4.1036 8.16111L5.1568 1.27778H3.7612L0.968987 8.16111H4.1036ZM1.00954 8.93889H4.11798L5.13939 15.7222H3.76106L1.00954 8.93889ZM8.13464 15.7222H5.91767L4.89626 8.93889H10.8637L8.13464 15.7222Z" fill="white"/></svg>{{ section.settings.main_verified_text }}
+                                      </div>  
+                                    </div>  
+                                  </div>
+                                {%- endif -%}
+                              </div>
+                            </div>
+                          {%- endif -%}
+                        {%- endfor -%}
+                      </div>
+                      <div class="swiper-pagination"></div>
+                    </div>
+                  </div>
+                </div>
+              {%- endif -%}  
+            </div>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Product Meta Testimonials",
+    "class": "Product_meta_testimonials_new",
+    "settings": [
+      {
+        "type": "color",
+        "id": "main_background_color",
+        "label": "Add Main Background Color"
+      },
+      {
+        "type": "image_picker",
+        "id": "main_outer_image",
+        "label": "Add Main Outer Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "main_inside_image",
+        "label": "Add Main Inside Image"
+      },
+      {
+        "type": "text",
+        "id": "main_verified_text",
+        "label": "Add Main Verified Text",
+        "default": "Verified Review"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product Meta Testimonials"
+      }
+    ]
+  }
+{% endschema %}

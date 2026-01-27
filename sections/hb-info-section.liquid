@@ -1,0 +1,80 @@
+{{ "hb-info-section.css" | asset_url | stylesheet_tag}}
+
+<div class="hb_info-section">
+    <div class="page-width">
+        <div class="hb_info_wrapper">
+          {%- if section.settings.section_header != blank -%}
+            <h2 class="hb_info_title">
+                {{ section.settings.section_header }}
+            </h2>
+          {%- endif -%}
+            <div class="hb_info__card-section">
+                    {%- for block in section.blocks -%}
+                        <div class="hb_info-card__container">
+                            <div class="hb-info__card">
+                                {%- if block.settings.card_number != blank -%}
+                                    <div class="hb_info-card__number">
+                                        {{ block.settings.card_number }}
+                                    </div>
+                                {%- endif -%}
+                                <div class="hb_info_card_content">
+                                  {%- if block.settings.Card_title != blank -%}
+                                      <h3 class="hb_info-card__title">
+                                          {{ block.settings.Card_title }}
+                                      </h3>
+                                  {%- endif -%}
+                                  {%- if block.settings.card_pera != blank -%}
+                                      <div class="hb_info-card__pera">
+                                          {{ block.settings.card_pera }}
+                                      </div>
+                                  {%- endif -%}
+                                </div>
+                            </div>
+                        </div>
+                    {%- endfor -%}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Info section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_header",
+        "label": "Title"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Info Section",
+        "type": "info_section",
+        "settings": [
+            {
+              "type": "number",
+              "id": "card_number",
+              "label": "Number"
+            },
+            {
+              "type": "text",
+              "id": "Card_title",
+              "label": "Title"
+            },
+            {
+              "type": "textarea",
+              "id": "card_pera",
+              "label": "Text"
+            }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Info Section"
+      }
+    ]
+  }
+{% endschema %}

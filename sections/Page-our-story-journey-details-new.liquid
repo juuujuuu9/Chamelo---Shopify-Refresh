@@ -1,0 +1,228 @@
+{%- if section.blocks.size > 0 or section.settings.main_heading_text != blank -%}
+  <div class="Page_our_story_journey_details_main_new" style="background: {{ section.settings.main_background_color }};">
+    <div class="page-width">
+      <div class="Page_our_story_journey_details_inner_new">
+        {%- if section.settings.main_heading_text != blank -%}
+          <div class="Page_our_story_journey_details_maintitle_new">
+            <div class="Common_title_new Page_our_story_journey_details_innertitle_new">
+              <h2>{{ section.settings.main_heading_text }}</h2>
+            </div>
+          </div>
+        {%- endif -%}
+        {%- if section.blocks.size > 0 -%}
+          <div class="Page_our_story_journey_details_mainsides_new">
+            <div class="Page_our_story_journey_details_innersides_new">
+              {%- if section.blocks.size > 0 -%}
+                <div class="Page_our_story_journey_details_innersides_mainleft_new">
+                  <div class="Page_our_story_journey_details_innersides_innerleft_new">
+                    <div class="Page_our_story_journey_details_innersides_innerleft_mainlines_new">
+                      <div class="Page_our_story_journey_details_innersides_innerleft_innerlines_new">
+                        <div class="Page_our_story_journey_details_innersides_innerleft_innerlines_icons_new Desktop_only_new">
+
+                        </div>
+                        <div class="Page_our_story_journey_details_innersides_innerleft_innerlines_icons_new Mobile_only_new">
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="Page_our_story_journey_details_innersides_innerleft_mainloops_new">
+                      <div class="Page_our_story_journey_details_innersides_innerleft_innerloops_new">
+                        {%- for block in section.blocks -%}
+                          {%- if block.settings.main_details_text != blank -%}
+                            <div class="Page_our_story_journey_details_innersides_innerleft_innerloops_mainboxs_new">
+                              <div class="Page_our_story_journey_details_innersides_innerleft_innerloops_innerboxs_new">
+                                <a href="#{{ block.settings.main_details_text | handleize }}"{% if forloop.first %} class="active"{% endif %}>{{ block.settings.main_details_text }}</a>
+                              </div>
+                            </div>
+                          {%- endif -%}  
+                        {%- endfor -%}  
+                      </div>
+                    </div>
+                  </div>  
+                </div>
+              {%- endif -%}
+              {%- if section.blocks.size > 0 -%}
+                <div class="Page_our_story_journey_details_innersides_mainright_new">
+                  <div class="Page_our_story_journey_details_innersides_innerright_new">
+                    {%- for block in section.blocks -%}
+                      {%- if block.settings.main_years_text != blank or block.settings.main_desktop_video != blank or block.settings.main_mobile_video != blank or block.settings.main_desktop_image != blank or block.settings.main_mobile_image != blank or block.settings.title != blank or block.settings.main_information_text != blank -%}
+                        <div class="Page_our_story_journey_details_innersides_innerright_mainboxs_new" id="{{ block.settings.main_details_text | handleize }}">
+                          <div class="Page_our_story_journey_details_innersides_innerright_innerboxs_new">
+                            {%- if block.settings.main_years_text != blank -%}
+                              <div class="Page_our_story_journey_details_innersides_innerright_innerboxs_mainyears_new">
+                                <div class="Page_our_story_journey_details_innersides_innerright_innerboxs_inneryears_new">
+                                  {{ block.settings.main_years_text }}
+                                </div>
+                              </div>
+                            {%- endif -%}
+                            {%- if block.settings.title != blank -%}
+                              <div class="Page_our_story_journey_details_innersides_innerright_innerboxs_maintitle_new Mobile_only_new">
+                                <div class="Page_our_story_journey_details_innersides_innerright_innerboxs_innertitle_new">
+                                  <h3>{{ block.settings.title }}</h3>
+                                </div>
+                              </div>
+                            {%- endif -%}
+                            {%- if block.settings.main_desktop_video != blank or block.settings.main_mobile_video != blank or block.settings.main_desktop_image != blank or block.settings.main_mobile_image != blank -%}
+                              <div class="Page_our_story_journey_details_innersides_innerright_innerboxs_mainstatic_new">
+                                <div class="Page_our_story_journey_details_innersides_innerright_innerboxs_innerstatic_new">
+                                  {%- if block.settings.main_desktop_video != blank and block.settings.main_mobile_video != blank -%}
+                                    <div class="Page_our_story_journey_details_innersides_innerright_innerboxs_innerstatic_videoimage_new">
+                                      {%- if block.settings.main_desktop_video != blank -%}
+                                        {{ block.settings.main_desktop_video | video_tag: class:'desktop_image_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                                      {%- endif -%}
+                                      {%- if block.settings.main_mobile_video != blank -%}
+                                        {{ block.settings.main_mobile_video | video_tag: class:'mobile_image_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                                      {%- endif -%}
+                                    </div>
+                                  {% else %}  
+                                    {%- if block.settings.main_desktop_image != blank and block.settings.main_mobile_image != blank -%}
+                                      <div class="Page_our_story_journey_details_innersides_innerright_innerboxs_innerstatic_videoimage_new">
+                                        {%- if block.settings.main_desktop_image != blank -%}
+                                          {{
+                                            block.settings.main_desktop_image | 
+                                            image_url: width: img.width | 
+                                            image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                            fetchpriority: 'auto', 
+                                            class:'desktop_image_new'
+                                          }}
+                                        {%- endif -%}
+                                        {%- if block.settings.main_mobile_image != blank -%}
+                                          {{
+                                            block.settings.main_mobile_image | 
+                                            image_url: width: img.width | 
+                                            image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                            fetchpriority: 'auto', 
+                                            class:'mobile_image_new'
+                                          }}
+                                        {%- endif -%}
+                                      </div>
+                                    {%- endif -%}
+                                  {%- endif -%}
+                                </div>
+                              </div>
+                            {%- endif -%}
+                            {%- if block.settings.title != blank or block.settings.main_information_text != blank -%}
+                              <div class="Page_our_story_journey_details_innersides_innerright_innerboxs_maintexts_new">
+                                <div class="Page_our_story_journey_details_innersides_innerright_innerboxs_innertexts_new">
+                                  {%- if block.settings.title != blank -%}
+                                    <div class="Page_our_story_journey_details_innersides_innerright_innerboxs_innertexts_maintitle_new Desktop_only_new">
+                                      <div class="Page_our_story_journey_details_innersides_innerright_innerboxs_innertexts_innertitle_new">
+                                        <h3>{{ block.settings.title }}</h3>
+                                      </div>
+                                    </div>
+                                  {%- endif -%}
+                                  {%- if block.settings.main_information_text != blank -%}
+                                    <div class="Page_our_story_journey_details_innersides_innerright_innerboxs_innertexts_maininfos_new">
+                                      <div class="Page_our_story_journey_details_innersides_innerright_innerboxs_innertexts_innerinfos_new">
+                                        {{ block.settings.main_information_text }}
+                                      </div>
+                                    </div>
+                                  {%- endif -%}
+                                </div>
+                              </div>
+                            {%- endif -%}
+                          </div>
+                        </div>
+                      {%- endif -%}  
+                    {%- endfor -%}
+                  </div>  
+                </div>
+              {%- endif -%}
+            </div>  
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+{%- endif -%}   
+
+{% schema %}
+  {
+    "name": "Our Story Journey Details",
+    "class": "Page_our_story_journey_details_new",
+    "settings": [
+      {
+        "type": "color",
+        "id": "main_background_color",
+        "label": "Add Main Background Color"
+      },
+      {
+        "type": "textarea",
+        "id": "main_heading_text",
+        "label": "Add Main Heading Text",
+        "default": "The journey to now"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "information",
+        "name": "Information",
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "main_details_text",
+            "label": "Add Main Details Text",
+            "default": "Lorem Ipsum"
+          },
+          {
+            "type": "text",
+            "id": "main_years_text",
+            "label": "Add Main Years Text",
+            "default": "June 2000"
+          },
+          {
+            "type": "video",
+            "id": "main_desktop_video",
+            "label": "Add Main Desktop Video"
+          },
+          {
+            "type": "video",
+            "id": "main_mobile_video",
+            "label": "Add Main Mobile Video"
+          },
+          {
+            "type": "image_picker",
+            "id": "main_desktop_image",
+            "label": "Add Main Desktop Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "main_mobile_image",
+            "label": "Add Main Mobile Image"
+          },
+          {
+            "type": "textarea",
+            "id": "title",
+            "label": "Add Main Heading Text",
+            "default": "Lorem ipsum dolor sit amet, consectetur elited do eiusmod."
+          },
+          {
+            "type": "richtext",
+            "id": "main_information_text",
+            "label": "Add Main Information Text",
+            "default": "<p>Lorem ipsum dolor sit amet consectetur. Sed tincidunt sodales viverra non viverra ut. Lorem ipsum dolor sit amet consectetur. Sed tincidunt sodales viverra non viverra ut.</p>"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Our Story Journey Details",
+        "blocks": [
+          {
+            "type": "information"
+          },
+          {
+            "type": "information"
+          },
+          {
+            "type": "information"
+          },
+          {
+            "type": "information"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

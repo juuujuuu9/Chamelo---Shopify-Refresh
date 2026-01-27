@@ -1,0 +1,126 @@
+{% comment %}
+  Renders product variant options
+
+  Accepts:
+  - product: {Object} product object.
+  - option: {Object} current product_option object.
+  - block: {Object} block object.
+  - picker_type: {String} type of picker to dispay
+
+
+  Usage:
+  {% render 'product-variant-options',
+    product: product,
+    option: option,
+    block: block
+    picker_type: picker_type
+  %}
+{% endcomment %}
+{%- liquid
+  assign product_form_id = 'product-form-' | append: section.id
+-%}
+
+{%- for value in option.values -%}
+  {%- liquid
+    assign swatch_focal_point = null
+    if value.swatch.image
+      assign image_url = value.swatch.image | image_url: width: 50
+      assign swatch_value = 'url(' | append: image_url | append: ')'
+      assign swatch_focal_point = value.swatch.image.presentation.focal_point
+    elsif value.swatch.color
+      assign swatch_value = 'rgb(' | append: value.swatch.color.rgb | append: ')'
+    else
+      assign swatch_value = null
+    endif
+
+    assign option_disabled = true
+    if value.available
+      assign option_disabled = false
+    endif
+  -%}
+
+  {%- capture input_id -%}
+    {{ section.id }}-{{ option.position }}-{{ forloop.index0 -}}
+  {%- endcapture -%}
+
+  {%- capture input_name -%}
+    {{ option.name }}-{{ option.position }}
+  {%- endcapture -%}
+
+  {%- capture input_dataset -%}
+    data-product-url="{{ value.product_url }}"
+    data-option-value-id="{{ value.id }}"
+  {%- endcapture -%}
+
+  {%- capture label_unavailable -%}
+    <span class="visually-hidden label-unavailable">
+      {{- 'products.product.variant_sold_out_or_unavailable' | t -}}
+    </span>
+  {%- endcapture -%}
+
+  {%- if picker_type == 'swatch' -%}
+    {%- capture help_text -%}
+      <span class="visually-hidden">{{ value | escape }}</span>
+      {{ label_unavailable }}
+    {%- endcapture -%}
+    {%
+      render 'swatch-input',
+      id: input_id,
+      name: input_name,
+      value: value | escape,
+      swatch: value.swatch,
+      product_form_id: product_form_id,
+      checked: value.selected,
+      visually_disabled: option_disabled,
+      shape: block.settings.swatch_shape,
+      help_text: help_text,
+      additional_props: input_dataset
+    %}
+  {%- elsif picker_type == 'button' -%}
+    <input
+      type="radio"
+      id="{{ input_id }}"
+      name="{{ input_name | escape }}"
+      value="{{ value | escape }}"
+      form="{{ product_form_id }}"
+      {% if value.selected %}
+        checked
+      {% endif %}
+      {% if option_disabled %}
+        class="disabled"
+      {% endif %}
+      {{ input_dataset }}
+    >
+    <label for="{{ input_id }}">
+      {%- assign Value_handle = value | handleize -%}
+      {%- if Value_handle == 'with-audio' -%}
+        <span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 16.0001H6.252C6.018 16.0001 5.901 16.0001 5.802 16.0101C5.3423 16.0559 4.91261 16.2594 4.58595 16.586C4.25928 16.9127 4.05577 17.3424 4.01 17.8021C4 17.9011 4 18.0181 4 18.2521C4 18.5321 4 18.6721 4.012 18.7831C4.07005 19.3016 4.3284 19.7768 4.73193 20.1075C5.13546 20.4382 5.65223 20.5981 6.172 20.5531C6.282 20.5431 6.42 20.5161 6.694 20.4611L6.99 20.4011C7.37 20.3261 7.561 20.2881 7.721 20.2261C8.04322 20.1016 8.32772 19.8959 8.54678 19.6288C8.76584 19.3617 8.91199 19.0424 8.971 18.7021C9 18.5321 9 18.3381 9 17.9511V9.2791C9 7.7091 9 6.9251 9.453 6.3721C9.907 5.8191 10.676 5.6651 12.216 5.3571L14.216 4.9571C16.429 4.5141 17.536 4.2931 18.268 4.8931C19 5.4931 19 6.6221 19 8.8791V9.0001M19 9.0001V14.0001M19 9.0001L9 11.0001M19 14.0001V15.9501C19 16.3391 19 16.5321 18.97 16.7021C18.9112 17.0422 18.7653 17.3613 18.5466 17.6284C18.3279 17.8955 18.0438 18.1014 17.722 18.2261C17.561 18.2881 17.371 18.3261 16.99 18.4021L16.694 18.4621C16.42 18.5161 16.283 18.5441 16.171 18.5531C15.6514 18.5978 15.1349 18.4378 14.7316 18.1071C14.3283 17.7765 14.0701 17.3014 14.012 16.7831C14 16.6731 14 16.5331 14 16.2531C14 16.0181 14 15.9011 14.01 15.8021C14.0558 15.3424 14.2593 14.9127 14.5859 14.586C14.9126 14.2594 15.3423 14.0559 15.802 14.0101C15.901 14.0001 16.018 14.0001 16.252 14.0001H19Z" stroke="black"/></svg></span>
+      {%- elsif Value_handle == 'without-audio' -%}
+        <span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 16.0001H6.252C6.018 16.0001 5.901 16.0001 5.802 16.0101C5.3423 16.0559 4.91261 16.2594 4.58595 16.586C4.25928 16.9127 4.05577 17.3424 4.01 17.8021C4 17.9011 4 18.0181 4 18.2521C4 18.5321 4 18.6721 4.012 18.7831C4.07005 19.3016 4.3284 19.7768 4.73193 20.1075C5.13546 20.4382 5.65223 20.5981 6.172 20.5531C6.282 20.5431 6.42 20.5161 6.694 20.4611L6.99 20.4011C7.37 20.3261 7.561 20.2881 7.721 20.2261C8.04322 20.1016 8.32772 19.8959 8.54678 19.6288C8.76584 19.3617 8.91199 19.0424 8.971 18.7021C9 18.5321 9 18.3381 9 17.9511V9.2791C9 7.7091 9 6.9251 9.453 6.3721C9.907 5.8191 10.676 5.6651 12.216 5.3571L14.216 4.9571C16.429 4.5141 17.536 4.2931 18.268 4.8931C19 5.4931 19 6.6221 19 8.8791V9.0001M19 9.0001V14.0001M19 9.0001L9 11.0001M19 14.0001V15.9501C19 16.3391 19 16.5321 18.97 16.7021C18.9112 17.0422 18.7653 17.3613 18.5466 17.6284C18.3279 17.8955 18.0438 18.1014 17.722 18.2261C17.561 18.2881 17.371 18.3261 16.99 18.4021L16.694 18.4621C16.42 18.5161 16.283 18.5441 16.171 18.5531C15.6514 18.5978 15.1349 18.4378 14.7316 18.1071C14.3283 17.7765 14.0701 17.3014 14.012 16.7831C14 16.6731 14 16.5331 14 16.2531C14 16.0181 14 15.9011 14.01 15.8021C14.0558 15.3424 14.2593 14.9127 14.5859 14.586C14.9126 14.2594 15.3423 14.0559 15.802 14.0101C15.901 14.0001 16.018 14.0001 16.252 14.0001H19Z" stroke="black"/><line x1="21.6567" y1="20.3635" x2="3.65669" y2="3.36351" stroke="black"/></svg></span>
+      {%- endif -%}  
+      {{ value -}}
+      {{ label_unavailable }}
+    </label>
+  {%- elsif picker_type == 'dropdown' or picker_type == 'swatch_dropdown' -%}
+    <option
+      id="{{ input_id }}"
+      value="{{ value | escape }}"
+      {% if value.selected %}
+        selected="selected"
+      {% endif %}
+      {% if swatch_value and picker_type == 'swatch_dropdown' %}
+        data-option-swatch-value="{{ swatch_value }}"
+        {% if swatch_focal_point %}
+          data-option-swatch-focal-point="{{ swatch_focal_point }}"
+        {% endif %}
+      {% endif %}
+      {{ input_dataset }}
+    >
+      {% if option_disabled -%}
+        {{- 'products.product.value_unavailable' | t: option_value: value -}}
+      {%- else -%}
+        {{- value -}}
+      {%- endif %}
+    </option>
+  {%- endif -%}
+{%- endfor -%}

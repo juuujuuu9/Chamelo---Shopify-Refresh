@@ -1,0 +1,292 @@
+{%- if product.metafields.custom.product_faqs_accordions != blank %}
+  <div class="Index_faqs_accordion_list_main_new Product_faqs_accordions_main_new {{ product.title | handleize }}_faq_new" id="FAQs" style="background: {{ section.settings.main_background_color }};">
+    <div class="page-width">
+      <div class="Index_faqs_accordion_list_inner_new">
+        <div class="Index_faqs_accordion_list_sides_new">
+          {%- if product.metafields.custom.product_faqs_accordions != blank %}
+            <div class="Index_faqs_accordion_list_sides_mainboths_new">
+              <div class="Index_faqs_accordion_list_sides_innerboths_new">
+                {%- if section.settings.main_heading_text != blank -%}
+                  <div class="Index_faqs_accordion_list_sides_innerboths_maintitle_new">
+                    <div class="Common_title_new Index_faqs_accordion_list_sides_innerboths_innertitle_new">
+                      <h2>{{ section.settings.main_heading_text }}</h2>
+                    </div>
+                  </div>
+                {%- endif -%}
+                {%- if product.metafields.custom.product_faqs_accordions.value.question_1.value != blank -%}
+                  {%- assign features = product.metafields.custom.product_faqs_accordions.value -%}
+                  <div class="Index_faqs_accordion_list_sides_innerboths_mainloops_new">
+                    <div class="Index_faqs_accordion_list_sides_innerboths_innerloops_new">
+                      <div class="accordion">
+                        <ul class="list-unstyled">
+                          {%- for i in (1..10) -%}
+                            {%- assign Question = 'question_' | append: forloop.index -%}
+                            {%- assign Answer = 'answer_' | append: forloop.index -%}
+                            {%- if features[Question].value != blank and features[Answer].value != blank -%}
+                              <li {% if forloop.first %} class="open" {% endif %}>
+                                {%- if features[Question].value != blank -%}
+                                  <div class="question">
+                                    <h4>{{ features[Question].value }}</h4>
+                                  </div>
+                                {%- endif -%}
+                                {%- if features[Answer].value != blank -%}
+                                  <div class="answer" {% if forloop.first %}style="display:block;"{% endif %}>
+                                    {{ features[Answer] | metafield_tag }}
+                                  </div>
+                                {%- endif -%}
+                              </li>
+                            {%- endif -%}
+                          {%- endfor -%}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                {%- endif -%}
+                {%- if section.settings.main_button_text != blank and section.settings.main_button_link != blank -%}
+                  <div class="Index_faqs_accordion_list_sides_innerboths_mainbutton_new">
+                    <div class="Index_faqs_accordion_list_sides_innerboths_innerbutton_new">
+                      <a href="{{ section.settings.main_button_link }}" class="button">
+                        {{ section.settings.main_button_text }}  
+                      </a>
+                    </div>
+                  </div>
+                {%- endif -%}
+                {%- if product.metafields.custom.product_faqs_accordions.value.section_button_url.value and product.metafields.custom.product_faqs_accordions.value.section_button_text.value != blank -%}
+                  <div class="Index_faqs_accordion_list_sides_innerboths_mainbutton_new">
+                    <div class="Index_faqs_accordion_list_sides_innerboths_innerbutton_new">
+                      <a href="{{ product.metafields.custom.product_faqs_accordions.value.section_button_url.value }}" class="button">
+                        {{ product.metafields.custom.product_faqs_accordions.value.section_button_text.value }}  
+                      </a>
+                    </div>
+                  </div>
+                {%- endif -%}
+                {%- if section.settings.main_information_text != blank -%}
+                  <div class="Index_faqs_accordion_list_sides_innerboths_maininfos_new">
+                    <div class="Index_faqs_accordion_list_sides_innerboths_innerinfos_new">
+                      {{ section.settings.main_information_text }}
+                    </div>
+                  </div>
+                {%- endif -%}
+              </div>
+            </div>
+          {%- endif -%}
+          {%- if product.metafields.custom.product_faq_desktop_image_or_video != blank or product.metafields.custom.product_faq_mobile_image_or_video != blank -%}
+            <div class="Index_faqs_accordion_list_sides_maindesktop_new">
+              <div class="Index_faqs_accordion_list_sides_innerdesktop_new">
+                <div class="Index_faqs_accordion_list_sides_innerdesktop_boths_new">
+
+                  {%- if product.metafields.custom.product_faq_desktop_image_or_video.value != blank -%}
+                    <div class="Desktop_only_new">
+                      {%- if product.metafields.custom.product_faq_desktop_image_or_video.value contains "files" -%}
+                        <div class="Index_faqs_accordion_list_sides_innerdesktop_boths_videoimage_new">
+                          {{
+                            product.metafields.custom.product_faq_desktop_image_or_video.value | 
+                            image_url: width: img.width | 
+                            image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                            fetchpriority: 'auto', 
+                            class:'Static_image_new'
+                          }}
+                        </div>
+                      {%- else -%}
+                        <div class="Index_faqs_accordion_list_sides_innerdesktop_boths_videoimage_new">
+                          {{ product.metafields.custom.product_faq_desktop_image_or_video.value | video_tag: class:'Static_video_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                        </div>
+                      {%- endif -%}
+                    </div>
+                  {%- endif -%}
+
+                  {%- if product.metafields.custom.product_faq_mobile_image_or_video.value != blank -%}
+                    <div class="Mobile_only_new">
+                      {%- if product.metafields.custom.product_faq_mobile_image_or_video.value contains "files" -%}
+                        <div class="Index_faqs_accordion_list_sides_innerdesktop_boths_videoimage_new">
+                          {{
+                            product.metafields.custom.product_faq_mobile_image_or_video.value | 
+                            image_url: width: img.width | 
+                            image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                            fetchpriority: 'auto', 
+                            class:'Static_image_new'
+                          }}
+                        </div>
+                      {%- else -%}
+                        <div class="Index_faqs_accordion_list_sides_innerdesktop_boths_videoimage_new">
+                          {{ product.metafields.custom.product_faq_mobile_image_or_video.value | video_tag: class:'Static_video_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                        </div>
+                      {%- endif -%}
+                    </div>
+                  {%- endif -%}
+                </div>
+                {%- if product.metafields.custom.product_faq_outer_image.value != blank and product.metafields.custom.product_faq_inside_image.value != blank -%}
+                  <div class="Index_faqs_accordion_list_sides_innerdesktop_maincustom_new">
+                    <div class="Index_faqs_accordion_list_sides_innerdesktop_innercustom_new">
+                      {%- if product.metafields.custom.product_faq_outer_image.value != blank -%}
+                        <div class="Index_faqs_accordion_list_sides_innerdesktop_innercustom_mainouter_new">
+                          <div class="Index_faqs_accordion_list_sides_innerdesktop_innercustom_innerouter_new spin">
+                            {{
+                              product.metafields.custom.product_faq_outer_image.value | 
+                              image_url: width: img.width | 
+                              image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                              fetchpriority: 'auto', 
+                              class:'Static_image_new'
+                            }}
+                          </div>
+                        </div>
+                      {%- endif -%}
+                      {%- if product.metafields.custom.product_faq_inside_image.value != blank -%}
+                        <div class="Index_faqs_accordion_list_sides_innerdesktop_innercustom_maininside_new">
+                          <div class="Index_faqs_accordion_list_sides_innerdesktop_innercustom_innerinside_new">
+                            {{
+                              product.metafields.custom.product_faq_inside_image.value | 
+                              image_url: width: img.width | 
+                              image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                              fetchpriority: 'auto', 
+                              class:'Icon_image_new'
+                            }}
+                          </div>
+                        </div>
+                      {%- endif -%}
+                    </div>
+                  </div>
+                {%- else -%}
+                  {%- if section.settings.main_outer_image != blank and section.settings.main_inside_image != blank -%}
+                    <div class="Index_faqs_accordion_list_sides_innerdesktop_maincustom_new">
+                      <div class="Index_faqs_accordion_list_sides_innerdesktop_innercustom_new">
+                        {%- if section.settings.main_outer_image != blank -%}
+                          <div class="Index_faqs_accordion_list_sides_innerdesktop_innercustom_mainouter_new">
+                            <div class="Index_faqs_accordion_list_sides_innerdesktop_innercustom_innerouter_new spin">
+                              {{
+                                section.settings.main_outer_image | 
+                                image_url: width: img.width | 
+                                image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                fetchpriority: 'auto', 
+                                class:'Icon_image_new'
+                              }}
+                            </div>
+                          </div>
+                        {%- endif -%}
+                        {%- if section.settings.main_inside_image != blank -%}
+                          <div class="Index_faqs_accordion_list_sides_innerdesktop_innercustom_maininside_new">
+                            <div class="Index_faqs_accordion_list_sides_innerdesktop_innercustom_innerinside_new">
+                              {{
+                                section.settings.main_inside_image | 
+                                image_url: width: img.width | 
+                                image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                fetchpriority: 'auto', 
+                                class:'Icon_image_new'
+                              }}
+                            </div>
+                          </div>
+                        {%- endif -%}
+                      </div>
+                    </div>
+                  {%- endif -%}
+                {%- endif -%}
+              </div>
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+{%- endif -%}  
+
+{% schema %}
+  {
+    "name": "Product FAQs Accordions",
+    "class": "Product_faqs_accordions_new",
+    "settings": [
+      {
+        "type": "color",
+        "id": "main_background_color",
+        "label": "Add Main Background Color",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "header",
+        "content": "==== Left Side Detail ===="
+      },
+      {
+        "type": "textarea",
+        "id": "main_heading_text",
+        "label": "Add Main Heading Text",
+        "default": "FAQs"
+      },
+      {
+        "type": "text",
+        "id": "main_button_text",
+        "label": "Add Main Button Text",
+        "default": "Read All Faqs"
+      },
+      {
+        "type": "url",
+        "id": "main_button_link",
+        "label": "Add Main Button Link",
+        "default": "/"
+      },
+      {
+        "type": "richtext",
+        "id": "main_information_text",
+        "label": "Add Main Information Text",
+        "default": "<p>Curious how our sunglasses work or anything else?<br>We’d love to hear from you. Email us at hello@chamelo.com or call us at (646)-413-7538.</p>"
+      },
+      {
+        "type": "header",
+        "content": "==== Right Side Detail ===="
+      },
+      {
+        "type": "image_picker",
+        "id": "main_outer_image",
+        "label": "Add Main Outer Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "main_inside_image",
+        "label": "Add Main Inside Image"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "information",
+        "name": "Information",
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "title",
+            "label": "Add Main Question Text",
+            "default": "Lorem Ipsum is simply dummy text?"
+          },
+          {
+            "type": "richtext",
+            "id": "infos",
+            "label": "Add Main Answer Text",
+            "default": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product FAQs Accordions",
+        "blocks": [
+          {
+            "type": "information"
+          },
+          {
+            "type": "information"
+          },
+          {
+            "type": "information"
+          },
+          {
+            "type": "information"
+          },
+          {
+            "type": "information"
+          },
+          {
+            "type": "information"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

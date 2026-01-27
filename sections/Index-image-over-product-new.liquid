@@ -1,0 +1,157 @@
+{%- if section.settings.main_desktop_video != blank or section.settings.main_mobile_video != blank or section.settings.main_desktop_image != blank or section.settings.main_mobile_image != blank or section.settings.main_product_select != blank -%}
+  <div class="Index_image_over_product_main_new" style="background: {{ section.settings.main_background_color }};">
+    <div class="Index_image_over_product_inner_new">
+      {%- if section.settings.main_desktop_video != blank or section.settings.main_mobile_video != blank or section.settings.main_desktop_image != blank or section.settings.main_mobile_image != blank -%}
+        <div class="Index_image_over_product_mainboths_new">
+          <div class="Index_image_over_product_innerboths_new">
+            {%- if section.settings.main_desktop_video != blank and section.settings.main_mobile_video != blank -%}
+              <div class="Index_image_over_product_innerboths_videoimage_new">
+                {%- if section.settings.main_desktop_video != blank -%}
+                  {{ section.settings.main_desktop_video | video_tag: class:'desktop_image_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                {%- endif -%}
+                {%- if section.settings.main_mobile_video != blank -%}
+                  {{ section.settings.main_mobile_video | video_tag: class:'mobile_image_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                {%- endif -%}
+              </div>
+            {% else %}  
+              {%- if section.settings.main_desktop_image != blank and section.settings.main_mobile_image != blank -%}
+                <div class="Index_image_over_product_innerboths_videoimage_new">
+                  {%- if section.settings.main_desktop_image != blank -%}
+                    {{
+                      section.settings.main_desktop_image | 
+                      image_url: width: img.width | 
+                      image_tag: widths: '1296, 1512, 1728, 1944, 2048', 
+                      fetchpriority: 'auto', 
+                      class:'desktop_image_new'
+                    }}
+                  {%- endif -%}
+                  {%- if section.settings.main_mobile_image != blank -%}
+                    {{
+                      section.settings.main_mobile_image | 
+                      image_url: width: img.width | 
+                      image_tag: widths: '1296, 1512, 1728, 1944, 2048', 
+                      fetchpriority: 'auto', 
+                      class:'mobile_image_new'
+                    }}
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endif -%}
+      {%- if section.settings.main_product_select != blank -%}
+        {%- assign product_overlay = section.settings.main_product_select -%}
+        <div class="Index_image_over_product_mainoverlay_new">
+          
+          <div class="Index_image_over_product_inneroverlay_new">
+            <a href="{{ product_overlay.url }}">
+              <div class="Index_image_over_product_inneroverlay_detail_new">
+                {%- if product_overlay.featured_image != blank or product_overlay.metafields.custom.product_thumb_image != blank -%}
+                  <div class="Index_image_over_product_inneroverlay_detail_mainimage_new">
+                    <div class="Index_image_over_product_inneroverlay_detail_innerimage_new">
+                      {% if product_overlay.metafields.custom.product_thumb_image != blank %}
+                        {{
+                          product_overlay.metafields.custom.product_thumb_image | 
+                          image_url: width: img.width | 
+                          image_tag: widths: '1296, 1512, 1728, 1944, 2048', 
+                          fetchpriority: 'auto', 
+                          class:'Product_image_new'
+                        }}
+                      {% else %}
+                        {{
+                          product_overlay.featured_image | 
+                          image_url: width: img.width | 
+                          image_tag: widths: '1296, 1512, 1728, 1944, 2048', 
+                          fetchpriority: 'auto', 
+                          class:'Product_image_new'
+                        }}
+                      {% endif %}
+                    </div>
+                    {%- if product_overlay.metafields.custom.product_grid_custom_tag_text != blank -%}
+                      {%- assign product_grid_custom_tag_text = product_overlay.metafields.custom.product_grid_custom_tag_text | handleize -%}
+                      <div class="Index_image_over_product_inneroverlay_detail_mainimage_customtag_new custom_badge_{{ product_grid_custom_tag_text }}_new">
+                        {{ product_overlay.metafields.custom.product_grid_custom_tag_text }}
+                      </div>
+                    {%- endif -%}  
+                  </div>
+                {%- endif -%}
+                {%- if product_overlay.title != blank or product_overlay.metafields.custom.product_grid_short_description != blank -%}
+                  <div class="Index_image_over_product_inneroverlay_detail_mainboths_new">
+                    <div class="Index_image_over_product_inneroverlay_detail_innerboths_new">
+                      {%- if product_overlay.title != blank -%}
+                        <div class="Index_image_over_product_inneroverlay_detail_innerboths_title_new">
+                          <h4>{{ product_overlay.title }}</h4>
+                        </div>
+                      {%- endif -%}
+                      {%- if product_overlay.metafields.custom.product_grid_short_description != blank -%}
+                        <div class="Index_image_over_product_inneroverlay_detail_innerboths_infos_new">
+                          {{ product_overlay.metafields.custom.product_grid_short_description | metafield_tag }}
+                        </div>
+                      {%- endif -%}
+                      {%- if product_overlay.price != blank -%}
+                        <div class="Index_image_over_product_inneroverlay_detail_innerboths_price_new">
+                          {% render 'price', product: product_overlay, price_class: '', show_compare_at_price: true %}
+                        </div>
+                      {%- endif -%}
+                    </div>
+                  </div>
+                {%- endif -%}
+                <div class="Index_image_over_product_inneroverlay_detail_mainbutton_new Desktop_only_new">
+                  <div class="Index_image_over_product_inneroverlay_detail_innerbutton_new">
+                    Shop Now<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.5002 4.22726L1.89327 12.8342L0.479061 11.42L9.08596 2.81305L1.50012 2.81305L1.50012 0.813353H12.4999V11.8131L10.5002 11.8131V4.22726Z" fill="black"/></svg>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      {%- endif -%}  
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Index Image Over Product",
+    "class": "Index_image_over_product_new",
+    "settings": [
+      {
+        "type": "color",
+        "id": "main_background_color",
+        "label": "Add Main Background Color",
+        "default": "#EFEFEF"
+      },
+      {
+        "type": "video",
+        "id": "main_desktop_video",
+        "label": "Add Main Desktop Video"
+      },
+      {
+        "type": "video",
+        "id": "main_mobile_video",
+        "label": "Add Main Mobile Video"
+      },
+      {
+        "type": "image_picker",
+        "id": "main_desktop_image",
+        "label": "Add Main Desktop Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "main_mobile_image",
+        "label": "Add Main Mobile Image"
+      },
+      {
+        "type": "product",
+        "id": "main_product_select",
+        "label": "Add Main Product Select"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Index Image Over Product"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,272 @@
+{%- if section.blocks.size > 0 or section.settings.main_details_text != blank or section.settings.main_heading_text != blank or section.settings.main_information_text != blank or section.settings.main_button_link != blank -%}
+  <div class="Page_our_story_technology_list_main_new" style="background: {{ section.settings.main_background_color }};">
+    <div class="Page_our_story_technology_list_inner_new">
+      {%- if section.settings.main_details_text != blank or section.settings.main_heading_text != blank or section.settings.main_information_text != blank or section.settings.main_button_link != blank -%}
+        <div class="Page_our_story_technology_list_mainsides_new">
+          <div class="page-width">          
+            <div class="Page_our_story_technology_list_innersides_new">
+              {%- if section.settings.main_details_text != blank or section.settings.main_heading_text != blank -%}
+                <div class="Page_our_story_technology_list_innersides_mainleft_new">
+                  <div class="Page_our_story_technology_list_innersides_innerleft_new">
+                    {%- if section.settings.main_details_text != blank -%}
+                      <div class="Page_our_story_technology_list_innersides_innerleft_mainlists_new">
+                        <div class="Page_our_story_technology_list_innersides_innerleft_innerlists_new">
+                          {{ section.settings.main_details_text }}
+                        </div>
+                      </div>
+                    {%- endif -%}
+                    {%- if section.settings.main_heading_text != blank -%}
+                      <div class="Page_our_story_technology_list_innersides_innerleft_maintitle_new">
+                        <div class="Common_title_new Page_our_story_technology_list_innersides_innerleft_innertitle_new">
+                          <h2>{{ section.settings.main_heading_text }}</h2>
+                        </div>
+                      </div>
+                    {%- endif -%}
+                  </div>
+                </div>
+              {%- endif -%}
+              {%- if section.settings.main_information_text != blank or section.settings.main_button_link != blank -%}
+                <div class="Page_our_story_technology_list_innersides_mainright_new">
+                  <div class="Page_our_story_technology_list_innersides_innerright_new">
+                    {%- if section.settings.main_information_text != blank -%}
+                      <div class="Page_our_story_technology_list_innersides_innerright_maininfos_new">
+                        <div class="Page_our_story_technology_list_innersides_innerright_innerinfos_new">
+                          {{ section.settings.main_information_text }}
+                        </div>
+                      </div>
+                    {%- endif -%}
+                    {%- if section.settings.main_button_text != blank and section.settings.main_button_link != blank -%}
+                      <div class="Page_our_story_technology_list_innersides_innerright_mainbutton_new Desktop_only_new">
+                        <div class="Page_our_story_technology_list_innersides_innerright_innerbutton_new">
+                          <a href="{{ section.settings.main_button_link }}">
+                            <span>{{ section.settings.main_button_text }}</span><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.8137 3.60129L2.20675 12.2082L0.792538 10.794L9.39944 2.18707L1.8136 2.18707L1.8136 0.187376H12.8134V11.1871L10.8137 11.1871V3.60129Z" fill="black"/></svg>
+                          </a>
+                        </div>
+                      </div>
+                    {%- endif -%}
+                  </div>
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
+      {%- endif -%}
+      {%- if section.blocks.size > 0 -%}
+        <div class="Page_our_story_technology_list_mainloops_new">
+          <div class="Page_our_story_technology_list_innerloops_new">
+            <div class="swiper Page_our_story_technology_list_slider">
+              <div class="swiper-wrapper">
+                {%- for block in section.blocks -%}
+                  {%- if block.settings.main_mp4_video != blank or block.settings.main_desktop_image != blank or block.settings.main_mobile_image != blank or block.settings.main_detail_text != blank -%}
+                    <div class="swiper-slide Page_our_story_technology_list_innerloops_mainboxs_new Page_our_story_technology_list_innerloops_mainboxs_new_{{ block.id }}"{% if block.settings.main_width_text != blank %} style="width: {{ block.settings.main_width_text }}px;"{% endif %}>
+                      {%- if block.settings.main_mobile_width_text != blank -%}
+                        <style>
+                          @media(min-width:0px) and (max-width:749px){
+                            .Page_our_story_technology_list_innerloops_mainboxs_new_{{ block.id }}{
+                              width: {{ block.settings.main_mobile_width_text }}px !important;
+                            }
+                          }
+                        </style>
+                      {%- endif -%}
+                      <div class="Page_our_story_technology_list_innerloops_innerboxs_new">
+                        {%- if block.settings.main_mp4_video != blank or block.settings.main_desktop_image != blank or block.settings.main_mobile_image != blank -%}
+                          <div class="Page_our_story_technology_list_innerloops_innerboxs_mainboths_new">
+                            <div class="Page_our_story_technology_list_innerloops_innerboxs_innerboths_new Page_our_story_technology_list_innerloops_innerboxs_innerboths_new_{{ block.id }}"{% if block.settings.main_height_text != blank %} style="height: {{ block.settings.main_height_text }}px;"{% endif %}>
+                              {%- if block.settings.main_mobile_height_text != blank -%}
+                                <style>
+                                  @media(min-width:0px) and (max-width:749px){
+                                    .Page_our_story_technology_list_innerloops_innerboxs_innerboths_new_{{ block.id }}{
+                                      height: {{ block.settings.main_mobile_height_text }}px !important;
+                                    }
+                                  }
+                                </style>
+                              {%- endif -%}
+                              {%- if block.settings.main_mp4_video != blank -%}
+                                <div class="Page_our_story_technology_list_innerloops_innerboxs_innerboths_videoimage_new">
+                                  {{ block.settings.main_mp4_video | video_tag: class: 'Custom_video_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                                </div>
+                              {% else %}  
+                                {%- if block.settings.main_desktop_image != blank and block.settings.main_mobile_image != blank -%}
+                                  <div class="Page_our_story_technology_list_innerloops_innerboxs_innerboths_videoimage_new">
+                                    {%- if block.settings.main_desktop_image != blank -%}
+                                      {{
+                                        block.settings.main_desktop_image | 
+                                        image_url: width: img.width | 
+                                        image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                        fetchpriority: 'auto', 
+                                        class:'desktop_image_new'
+                                      }}
+                                    {%- endif -%}
+                                    {%- if block.settings.main_mobile_image != blank -%}
+                                      {{
+                                        block.settings.main_mobile_image | 
+                                        image_url: width: img.width | 
+                                        image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                        fetchpriority: 'auto', 
+                                        class:'mobile_image_new'
+                                      }}
+                                    {%- endif -%}
+                                  </div>
+                                {%- endif -%}
+                              {%- endif -%}
+                            </div>
+                          </div>
+                        {%- endif -%}
+                        {%- if block.settings.main_detail_text != blank -%}
+                          <div class="Page_our_story_technology_list_innerloops_innerboxs_maininfos_new">
+                            <div class="Page_our_story_technology_list_innerloops_innerboxs_innerinfos_new">
+                              {{ block.settings.main_detail_text }}
+                            </div>
+                          </div>
+                        {%- endif -%}
+                      </div>
+                    </div>
+                  {%- endif -%}
+                {%- endfor -%}
+              </div>
+              <div class="swiper-scrollbar"></div>
+            </div>
+          </div>
+        </div>
+      {%- endif -%}
+      {%- if section.settings.main_button_text != blank and section.settings.main_button_link != blank -%}
+        <div class="Page_our_story_technology_list_mainbutton_new Mobile_only_new">
+          <div class="page-width">          
+            <div class="Page_our_story_technology_list_innerbutton_new">
+              <a href="{{ section.settings.main_button_link }}" class="button">
+                {{ section.settings.main_button_text }}  
+              </a>
+            </div>
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+{%- endif -%}  
+
+{% schema %}
+  {
+    "name": "Our Story Technology List",
+    "class": "Page_our_story_technology_list_new",
+    "settings": [
+      {
+        "type": "color",
+        "id": "main_background_color",
+        "label": "Add Main Background Color",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "textarea",
+        "id": "main_details_text",
+        "label": "Add Main Details Text",
+        "default": "Our Technology"
+      },
+      {
+        "type": "textarea",
+        "id": "main_heading_text",
+        "label": "Add Main Heading Text",
+        "default": "Built with unparalleled precision and quality"
+      },
+      {
+        "type": "richtext",
+        "id": "main_information_text",
+        "label": "Add Main Information Text",
+        "default": "<p>With two revolutionary lens options, electronic tint-adjustable lenses and Prismatic™ color-changing lenses, Chamelo is redefining what eyewear can do.</p>"
+      },
+      {
+        "type": "text",
+        "id": "main_button_text",
+        "label": "Add Main Button Text",
+        "default": "Learn More"
+      },
+      {
+        "type": "url",
+        "id": "main_button_link",
+        "label": "Add Main Button Link",
+        "default": "/"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "information",
+        "name": "Information",
+        "settings": [
+          {
+            "type": "video",
+            "id": "main_mp4_video",
+            "label": "Add Main MP4 Video"
+          },
+          {
+            "type": "image_picker",
+            "id": "main_desktop_image",
+            "label": "Add Main Desktop Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "main_mobile_image",
+            "label": "Add Main Mobile Image"
+          },
+          {
+            "type": "richtext",
+            "id": "main_detail_text",
+            "label": "Add Main Detail Text",
+            "default": "<p>Lorem ipsum dolor <strong>consectetur elited do eiusmod</strong></p>"
+          },
+          {
+            "type": "text",
+            "id": "main_width_text",
+            "label": "Add Main Desktop Width Text",
+            "default": "389",
+            "info": "For EX: 300 ETC..."
+          },
+          {
+            "type": "text",
+            "id": "main_height_text",
+            "label": "Add Main Desktop Height Text",
+            "default": "484",
+            "info": "For EX: 300 ETC..."
+          },
+          {
+            "type": "text",
+            "id": "main_mobile_width_text",
+            "label": "Add Main Mobile Width Text",
+            "default": "389",
+            "info": "For EX: 300 ETC..."
+          },
+          {
+            "type": "text",
+            "id": "main_mobile_height_text",
+            "label": "Add Main Mobile Height Text",
+            "default": "484",
+            "info": "For EX: 300 ETC..."
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Our Story Technology List",
+        "blocks": [
+          {
+            "type": "information"
+          },
+          {
+            "type": "information"
+          },
+          {
+            "type": "information"
+          },
+          {
+            "type": "information"
+          },
+          {
+            "type": "information"
+          },
+          {
+            "type": "information"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

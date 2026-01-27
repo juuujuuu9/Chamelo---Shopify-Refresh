@@ -1,0 +1,121 @@
+<color-swatch>
+  <div class="color-swatch-list-wrapper" >
+    {%- if hb_product.metafields.custom.product_color_stitch_list != blank -%}
+      <div class="product-swatcher-wrapper">
+        {% assign stitcher_products = hb_product.metafields.custom.product_color_stitch_list.value.choose_products %}
+        {% assign products_length = '' %}
+        {% for stitcher_color in stitcher_products.value %}
+          
+          {% if show_full_variant == false and forloop.index > 3 %}
+            {% assign products_length = forloop.length %}
+            {% break %}
+          {% endif %}
+           
+          {%- if stitcher_color.metafields.custom.product_color_icon.value != blank -%}
+            {%- if stitcher_color.metafields.custom.product_color_icon.value contains "files" -%}
+              <div data-product-handle="{{ stitcher_color.handle }}"  js-color-swatch
+                  data-product-id= {{ stitcher_color.id }}
+                    class="color-swatch-item {% if hb_product.id == stitcher_color.id %} active{% endif %}">
+                    <div js-hb-color-swatch-img class="color-swatch-img" 
+
+                      {% if stitcher_color.metafields.custom.product_grid_primary_image != blank %} 
+                      data-img-src-value="{{ stitcher_color.metafields.custom.product_grid_primary_image | image_url: width: 533 }}"
+                      {% else %} 
+                      data-img-src-value="{{ stitcher_color.featured_image | img_url: 'master' }}"
+                      {% endif %}
+                      
+                      data-new-product-url="{{ stitcher_color.url }}"
+                      data-product-id="{{ stitcher_color.id }}"
+                      data-title="{{ stitcher_color.title }}"
+                      data-price="{{ stitcher_color.price | money_without_trailing_zeros }}" 
+
+                      {%- if stitcher_color.metafields.custom.collection_product_grid_hover_image_or_video.value contains "files" -%}
+                      data-collection-hover-image="{{ stitcher_color.metafields.custom.collection_product_grid_hover_image_or_video | image_url: width: 533 }}" 
+                      {% else %} 
+                      {% if stitcher_color.metafields.custom.collection_product_grid_hover_image_or_video.value.sources[1].url != blank %}
+                        {% assign collection_hover_video_url =  stitcher_color.metafields.custom.collection_product_grid_hover_image_or_video.value.sources[1].url  %}
+                      {% elsif  stitcher_color.metafields.custom.collection_product_grid_hover_image_or_video.value.sources[0].url != blank %}
+                        {% assign collection_hover_video_url =  stitcher_color.metafields.custom.collection_product_grid_hover_image_or_video.value.sources[0].url  %}
+                      {% elsif  stitcher_color.metafields.custom.collection_product_grid_hover_image_or_video.value.sources[2].url != blank %}
+                        {% assign collection_hover_video_url =  stitcher_color.metafields.custom.collection_product_grid_hover_image_or_video.value.sources[2].url  %}
+                      {% endif %}
+                      data-collection-hover-video="{{ scollection_hover_video_url }}" 
+                      data-collection-hover-video-poster="{{ stitcher_color.metafields.custom.collection_product_grid_hover_image_or_video.value.preview_image | image_url}}" 
+
+                      {% endif %}
+
+
+                      data-full-hover-image="{{ stitcher_color.metafields.custom.product_grid_hover_image_or_video | image_url: width: 533  }}"
+                      style="background-image: url('{{ stitcher_color.metafields.custom.product_color_icon.value | img_url: '80' }}');"
+                      {% assign video_url = '' %} 
+                      {% if stitcher_color.metafields.custom.product_grid_hover_image_or_video.value.sources[1].url != blank %}
+                        {% assign video_url = stitcher_color.metafields.custom.product_grid_hover_image_or_video.value.sources[1].url %}
+                      {% elsif stitcher_color.metafields.custom.product_grid_hover_image_or_video.value.sources[0].url != blank %}
+                        {% assign video_url = stitcher_color.metafields.custom.product_grid_hover_image_or_video.value.sources[0].url %}
+                      {% elsif stitcher_color.metafields.custom.product_grid_hover_image_or_video.value.sources[2].url != blank %}
+                        {% assign video_url = stitcher_color.metafields.custom.product_grid_hover_image_or_video.value.sources[2].url %}
+                      {% endif %}
+                      
+                      {% if video_url == blank %}
+                        data-poster="{{ stitcher_color.metafields.custom.product_grid_hover_image_or_video.value.preview_image | image_url}}" 
+                        {% else %}
+                        data-video-url="{{ video_url }}"
+                        data-poster="{{ stitcher_color.metafields.custom.product_grid_hover_image_or_video.value.preview_image | image_url}}" 
+                      {% endif %} 
+                      
+                      data-product-description='{{ stitcher_color.metafields.custom.product_grid_short_description | metafield_tag }}' 
+                      data-compare-price="{{ stitcher_color.compare_at_price | money_without_trailing_zeros }}"
+
+                      {% if product.metafields.custom.product_thumb_image != blank %}            
+                        data-compare-product-image="{{ stitcher_color.metafields.custom.product_thumb_image | image_url: width: img.width }}"
+                      {% else %}
+                        data-compare-product-image="{{ stitcher_color.featured_image | image_url: width: img.width }}"
+                      {% endif %}
+
+                      {%- if stitcher_color.metafields.custom.product_compare_styles_features_lists_selections.value != blank -%}
+                      data-compare-product-details='
+                              <div class="Product_meta_compare_list_maintable_innerloops_innerboxs_innerlists_new">
+                                {%- for product_compare_styles_features_lists_selections in stitcher_color.metafields.custom.product_compare_styles_features_lists_selections.value -%}
+                                  {%- if product_compare_styles_features_lists_selections.main_icon_image.value != blank or product_compare_styles_features_lists_selections.main_icon_detail_text.value != blank -%}
+                                    <div class="Product_meta_compare_list_maintable_innerloops_innerboxs_innerlists_mainboxs_new">
+                                      <div class="Product_meta_compare_list_maintable_innerloops_innerboxs_innerlists_innerboxs_new">
+                                        {%- if product_compare_styles_features_lists_selections.main_icon_image.value != blank -%}
+                                          {%- if product_compare_styles_features_lists_selections.main_icon_image.value contains "files" -%}
+                                            <div class="Product_meta_compare_list_maintable_innerloops_innerboxs_innerlists_innerboxs_icons_new {% if product_compare_styles_features_lists_selections.main_icon_image.value != blank and product_compare_styles_features_lists_selections.main_icon_detail_text.value == blank %} blank_icons_only_new {% endif %}">
+                                              {{
+                                                product_compare_styles_features_lists_selections.main_icon_image.value | 
+                                                image_url: width: img.width | 
+                                                image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                                fetchpriority: 'auto', 
+                                                class:'Static_icon_image_new'
+                                              }}
+                                            </div>
+                                          {%- endif -%} 
+                                        {%- endif -%}
+                                        {%- if product_compare_styles_features_lists_selections.main_icon_detail_text.value != blank -%}
+                                          <div class="Product_meta_compare_list_maintable_innerloops_innerboxs_innerlists_innerboxs_title_new">
+                                            {{ product_compare_styles_features_lists_selections.main_icon_detail_text | metafield_tag }}
+                                          </div>
+                                        {%- endif -%}
+                                      </div>
+                                    </div>
+                                  {%- endif -%}  
+                                {%- endfor -%}  
+                              </div>'
+                        {%- endif -%}
+                >
+                </div>
+                </div>
+            {%- endif -%}  
+          {%- endif -%}  
+
+        {%- endfor -%}
+
+        {% if show_full_variant == false and products_length != blank %}
+          <span class="hb_extra-variant-count">+{{ products_length | minus: 3 }}</span>
+        {% endif %}
+
+      </div>
+    {%- endif -%}
+  </div>
+</color-swatch> 

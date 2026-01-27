@@ -1,0 +1,53 @@
+{{ 'contact-detail.css' | asset_url | stylesheet_tag }}
+<div class="contact-details">
+  <div class="page-width">
+    <div class="contact-details-inner">
+    {% if section.settings.heading != blank %}
+    <div class="Common_title_new">
+      <h2>{{ section.settings.heading }}</h2>
+    </div>
+      {% endif %}
+     {% if section.settings.description != blank %}
+    <div class="short-description">{{ section.settings.description }}</div>
+       {% endif %}
+    {% if section.settings.contactimg != blank or section.settings.contactimg_url != blank %}
+    <div class="contact-img">
+      <a target="_blank" href="{{ section.settings.contactimg_url }}"><img src="{{ section.settings.contactimg | img_url:'master' }}"/></a>
+    </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Contact Details",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      },
+      {
+        "type": "richtext",
+        "id": "description",
+        "label": "Short Description"
+      },  
+      {
+        "type": "image_picker",
+        "id": "contactimg",
+        "label": "Contact Image"
+      }, 
+      {
+        "type": "url",
+        "id": "contactimg_url",
+        "label": "Contact Image Link",
+        "default": "/"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Contact Details"
+      }
+    ]
+  }
+{% endschema %}

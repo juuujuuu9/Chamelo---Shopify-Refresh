@@ -1,0 +1,44 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "product.new-bundles.json",
+  "context": {
+    "market": "united-states"
+  },
+  "sections": {
+    "main": {
+      "settings": {},
+      "blocks": {},
+      "block_order": [
+        "custom_review_TbRJPn",
+        "custom_count_tag_text_EV9rrm",
+        "title",
+        "meta_short_description_J3LqfR",
+        "object_size_and_fit_bbka8f",
+        "meta_stitch_product_list_jwAydH",
+        "variant_picker",
+        "meta_popular_product_list_8cygQ8",
+        "icon_text_column_popup_RLJDQF",
+        "meta_real_life_items_WUA8XQ",
+        "buy_buttons",
+        "afterpay_on_site_messaging_payments_messaging_YM9YYB",
+        "banner_daFNhM",
+        "order_reveive_days_detail_BCNA93",
+        "refund_guaranteed_text_jrgkw3",
+        "rebuy_personalization_engine_rebuy_widget_zjPe6q",
+        "meta_object_tabs_list_96tzAh",
+        "meta_accordions_list_mfgYUw",
+        "video_with_texts_detail_p78AAK",
+        "logo_list_slider_kVW4Le",
+        "white_logo_list_slider_QfC8ae"
+      ]
+    }
+  }
+}

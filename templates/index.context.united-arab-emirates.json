@@ -1,0 +1,36 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "index.json",
+  "context": {
+    "market": "united-arab-emirates"
+  },
+  "sections": {},
+  "order": [
+    "custom_banner_GBfJAF",
+    "index_top_text_with_video_new_wGyCbi",
+    "custom_product_carousel_CzWkGG",
+    "index_top_slideshow_slide_new_8ViGg3",
+    "index_marquee_logos_lists_new_P8hXe4",
+    "index_details_with_popup_new_xQJD4E",
+    "index_featured_collection_new_b7hxcq",
+    "index_featured_collection_new_cQnJ63",
+    "index_collection_scroll_new_c8gAen",
+    "index_mobile_sticky_prods_new_nrzMPe",
+    "index_image_over_product_new_RnAzNn",
+    "index_image_with_texts_new_qNe3yw",
+    "index_object_tabs_details_new_iKEbQH",
+    "index_tabs_banner_product_new_LrAQxU",
+    "index_object_table_detail_new_7mMyRq",
+    "index_image_logos_slider_new_FwJ6Ge",
+    "index_faqs_accordion_list_new_BekFwy",
+    "index_icon_with_text_list_new_TmEjYE"
+  ]
+}

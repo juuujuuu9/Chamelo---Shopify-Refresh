@@ -1,0 +1,223 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "class-name": "",
+        "padding_top": 28,
+        "padding_bottom": 0
+      }
+    },
+    "hero_banner_mqHAgD": {
+      "type": "hero-banner",
+      "blocks": {
+        "media_item_9EGN6X": {
+          "type": "media_item",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Ambassador_Main_Page_web.png",
+            "mobile_image": "shopify://shop_images/Mobile.png"
+          }
+        }
+      },
+      "block_order": [
+        "media_item_9EGN6X"
+      ],
+      "name": "Custom hero Banner",
+      "settings": {
+        "facebook_url": "https://www.facebook.com/",
+        "instagram_url": "https://www.instagram.com/",
+        "tiktok_url": "https://www.tiktok.com/about?lang=en-GB",
+        "twitter_url": "",
+        "is_overlay": true,
+        "desktop_image_aspect_ratio": 2,
+        "mobile_image_aspect_ratio": 1.8,
+        "enable_social_share": true,
+        "social_icon_alignment": "center",
+        "heading": "CHAMELO AMBASSADORS",
+        "content": "<p>Make your dad, grad, husband or yourself summer ready Core to who we are—our partners help us build better tools to unlock real solutions for everyday, active people and those reaching for the highest level</p>",
+        "text_alignment": "center",
+        "image_alignment": "right",
+        "desktop_text_color": "",
+        "desktop_background_color": "",
+        "mobile_text_color": "",
+        "mobile_background_color": "",
+        "button_label": "Shop All",
+        "button_url": "shopify://pages/about-us",
+        "desktop_button_text_color": "",
+        "desktop_button_background_color": "#103262",
+        "mobile_button_text_color": "",
+        "mobile_button_background_color": "#103262",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 56,
+        "padding_right": 56,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 0
+      }
+    },
+    "ambassador_list_F9TG6C": {
+      "type": "ambassador-list",
+      "blocks": {
+        "ambassador_ibam6z": {
+          "type": "ambassador",
+          "settings": {
+            "image": "shopify://shop_images/stephon-malbury.jpg",
+            "title": "Stephen Marbury",
+            "sub_title": "Basketball player",
+            "button_link": "shopify://metaobjects/ambassador_detail_page/stephen-marbury"
+          }
+        },
+        "ambassador_EfiTnR": {
+          "type": "ambassador",
+          "settings": {
+            "image": "shopify://shop_images/jose-reyes.jpg",
+            "title": "Jose Reyes",
+            "sub_title": "Baseball Player",
+            "button_link": ""
+          }
+        },
+        "ambassador_QTrALT": {
+          "type": "ambassador",
+          "settings": {
+            "image": "shopify://shop_images/geraldo-perdomo.jpg",
+            "title": "Geraldo Perdomo",
+            "sub_title": "Baseball Player",
+            "button_link": "shopify://metaobjects/ambassador_detail_page/geraldo-perdomo"
+          }
+        },
+        "ambassador_kWF3YB": {
+          "type": "ambassador",
+          "settings": {
+            "image": "shopify://shop_images/alain-ngalani.jpg",
+            "title": "Alain Ngalani",
+            "sub_title": "Mixed Martial Artist",
+            "button_link": "shopify://metaobjects/ambassador_detail_page/alain-ngalani"
+          }
+        },
+        "ambassador_N9C9MD": {
+          "type": "ambassador",
+          "settings": {
+            "image": "shopify://shop_images/harry-loasby.jpg",
+            "title": "Loasby",
+            "sub_title": "Cross-Country & Track Athlete",
+            "button_link": "shopify://metaobjects/ambassador_detail_page/harry-loasby"
+          }
+        },
+        "ambassador_FqbTK8": {
+          "type": "ambassador",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/harry-loasby.jpg",
+            "title": "MR1",
+            "sub_title": "Musician",
+            "button_link": "shopify://metaobjects/ambassador_detail_page/mr-1"
+          }
+        },
+        "ambassador_69ewUT": {
+          "type": "ambassador",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/alain-ngalani.jpg",
+            "title": " Alycia Baumgardner",
+            "sub_title": "",
+            "button_link": "shopify://metaobjects/ambassador_detail_page/alycia-baumgardner"
+          }
+        }
+      },
+      "block_order": [
+        "ambassador_ibam6z",
+        "ambassador_EfiTnR",
+        "ambassador_QTrALT",
+        "ambassador_kWF3YB",
+        "ambassador_N9C9MD",
+        "ambassador_FqbTK8",
+        "ambassador_69ewUT"
+      ],
+      "name": "Ambassador list",
+      "settings": {
+        "columns_desktop": 3,
+        "columns_mobile": 2
+      }
+    },
+    "index_faqs_accordion_list_new_qXLEhJ": {
+      "type": "Index-faqs-accordion-list-new",
+      "blocks": {
+        "information_XkBRan": {
+          "type": "information",
+          "settings": {
+            "title": "Lorem Ipsum is simply dummy text?",
+            "infos": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>"
+          }
+        },
+        "information_zAYqdC": {
+          "type": "information",
+          "settings": {
+            "title": "Lorem Ipsum is simply dummy text?",
+            "infos": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>"
+          }
+        },
+        "information_9dVCdL": {
+          "type": "information",
+          "settings": {
+            "title": "Lorem Ipsum is simply dummy text?",
+            "infos": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>"
+          }
+        },
+        "information_zWHmAt": {
+          "type": "information",
+          "settings": {
+            "title": "Lorem Ipsum is simply dummy text?",
+            "infos": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>"
+          }
+        },
+        "information_LJ3WKT": {
+          "type": "information",
+          "settings": {
+            "title": "Lorem Ipsum is simply dummy text?",
+            "infos": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>"
+          }
+        },
+        "information_WGKNGt": {
+          "type": "information",
+          "settings": {
+            "title": "Lorem Ipsum is simply dummy text?",
+            "infos": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "information_XkBRan",
+        "information_zAYqdC",
+        "information_9dVCdL",
+        "information_zWHmAt",
+        "information_LJ3WKT",
+        "information_WGKNGt"
+      ],
+      "name": "Index FAQs Accordion List",
+      "settings": {
+        "main_background_color": "#ffffff",
+        "main_heading_text": "FAQs",
+        "main_button_text": "Read All Faqs",
+        "main_button_link": "/",
+        "main_information_text": "<p>Curious how our sunglasses work or anything else?<br/>We’d love to hear from you. Email us at hello@chamelo.com or call us at (646)-413-7538.</p>",
+        "main_desktop_image": "shopify://shop_images/FAQ-stephon.jpg"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hero_banner_mqHAgD",
+    "ambassador_list_F9TG6C",
+    "index_faqs_accordion_list_new_qXLEhJ"
+  ]
+}

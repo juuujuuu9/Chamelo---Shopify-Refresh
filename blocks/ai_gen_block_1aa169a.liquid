@@ -1,0 +1,292 @@
+{% doc %}
+  @prompt
+    create a announcement  bar like rotating continuously, make background white and make text black and also add the divider line and use font-family : "TT Norms Pro Mono Trl Variable", sans-serif;, make font wight 400 and color black
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-announcement-bar-{{ ai_gen_id }} {
+    background-color: {{ block.settings.background_color }};
+    color: {{ block.settings.text_color }};
+    padding: {{ block.settings.padding }}px 0;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    font-family: "TT Norms Pro Mono Trl Variable", sans-serif;
+  }
+
+  .ai-announcement-bar-content-{{ ai_gen_id }} {
+    display: flex;
+    white-space: nowrap;
+    animation: ai-announcement-scroll-{{ ai_gen_id }} {{ block.settings.scroll_speed }}s linear infinite;
+    align-items: center;
+  }
+
+  .ai-announcement-bar-item-{{ ai_gen_id }} {
+    flex-shrink: 0;
+    padding-right: {{ block.settings.item_spacing }}px;
+    font-size: {{ block.settings.font_size }}px;
+    font-weight: 400;
+    text-transform: {{ block.settings.text_transform }};
+    letter-spacing: {{ block.settings.letter_spacing }}px;
+    display: flex;
+    align-items: center;
+  }
+
+  .ai-announcement-bar-item-{{ ai_gen_id }}:last-child {
+    padding-right: 0;
+  }
+
+  .ai-announcement-bar-divider-{{ ai_gen_id }} {
+    width: {{ block.settings.divider_width }}px;
+    height: {{ block.settings.divider_height }}px;
+    background-color: {{ block.settings.divider_color }};
+    margin: 0 {{ block.settings.divider_spacing }}px;
+    flex-shrink: 0;
+  }
+
+  @keyframes ai-announcement-scroll-{{ ai_gen_id }} {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .ai-announcement-bar-{{ ai_gen_id }}:hover .ai-announcement-bar-content-{{ ai_gen_id }} {
+    animation-play-state: {{ block.settings.pause_on_hover | default: true | ternary: 'paused', 'running' }};
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-announcement-bar-item-{{ ai_gen_id }} {
+      font-size: {{ block.settings.font_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<div 
+  class="ai-announcement-bar-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-announcement-bar-content-{{ ai_gen_id }}">
+    {% assign announcements = '' %}
+    {% if block.settings.announcement_1 != blank %}
+      {% assign announcements = announcements | append: block.settings.announcement_1 | append: '|' %}
+    {% endif %}
+    {% if block.settings.announcement_2 != blank %}
+      {% assign announcements = announcements | append: block.settings.announcement_2 | append: '|' %}
+    {% endif %}
+    {% if block.settings.announcement_3 != blank %}
+      {% assign announcements = announcements | append: block.settings.announcement_3 | append: '|' %}
+    {% endif %}
+    {% if block.settings.announcement_4 != blank %}
+      {% assign announcements = announcements | append: block.settings.announcement_4 | append: '|' %}
+    {% endif %}
+    {% if block.settings.announcement_5 != blank %}
+      {% assign announcements = announcements | append: block.settings.announcement_5 | append: '|' %}
+    {% endif %}
+    
+    {% assign announcement_array = announcements | split: '|' %}
+    
+    {% for i in (1..2) %}
+      {% for announcement in announcement_array %}
+        {% if announcement != blank %}
+          <div class="ai-announcement-bar-item-{{ ai_gen_id }}">
+            {{ announcement }}
+            {% unless forloop.last and forloop.parentloop.last %}
+              <div class="ai-announcement-bar-divider-{{ ai_gen_id }}"></div>
+            {% endunless %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Rotating announcement bar",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Announcements"
+    },
+    {
+      "type": "text",
+      "id": "announcement_1",
+      "label": "Announcement 1",
+      "default": "Free shipping on orders over $50"
+    },
+    {
+      "type": "text",
+      "id": "announcement_2",
+      "label": "Announcement 2",
+      "default": "New arrivals now available"
+    },
+    {
+      "type": "text",
+      "id": "announcement_3",
+      "label": "Announcement 3",
+      "default": "Limited time offer - 20% off"
+    },
+    {
+      "type": "text",
+      "id": "announcement_4",
+      "label": "Announcement 4"
+    },
+    {
+      "type": "text",
+      "id": "announcement_5",
+      "label": "Announcement 5"
+    },
+    {
+      "type": "header",
+      "content": "Animation"
+    },
+    {
+      "type": "range",
+      "id": "scroll_speed",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "s",
+      "label": "Scroll speed",
+      "default": 30
+    },
+    {
+      "type": "checkbox",
+      "id": "pause_on_hover",
+      "label": "Pause on hover",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "min": 5,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Vertical padding",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size",
+      "default": 14
+    },
+    {
+      "type": "select",
+      "id": "text_transform",
+      "label": "Text transform",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "uppercase",
+          "label": "Uppercase"
+        },
+        {
+          "value": "lowercase",
+          "label": "Lowercase"
+        },
+        {
+          "value": "capitalize",
+          "label": "Capitalize"
+        }
+      ],
+      "default": "none"
+    },
+    {
+      "type": "range",
+      "id": "letter_spacing",
+      "min": 0,
+      "max": 3,
+      "step": 0.1,
+      "unit": "px",
+      "label": "Letter spacing",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "item_spacing",
+      "min": 20,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Space between announcements",
+      "default": 50
+    },
+    {
+      "type": "header",
+      "content": "Divider"
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "Divider color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "divider_width",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "label": "Divider width",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "divider_height",
+      "min": 10,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Divider height",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "divider_spacing",
+      "min": 10,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Divider spacing",
+      "default": 20
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rotating announcement bar"
+    }
+  ],
+  "tag": null
+}
+{% endschema %}

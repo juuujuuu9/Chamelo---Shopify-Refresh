@@ -1,0 +1,136 @@
+<style>
+  @media (max-width: 749px){
+  {% if section.settings.bg_color_mobile != blank %}  
+     .LP_bg_image_with_text_main { background-color: {{ section.settings.bg_color_mobile }}; } 
+  {% endif %}
+  {% if section.settings.bg_effect_mobile != blank %}
+    /* .LP_bg_image_with_text_main:before { content: ''; position: absolute; background-image: url({{ section.settings.bg_effect_mobile | img_url:'master' }}); background-size: cover;  width: 100%; height: 100%; bottom: 0; right: 0; background-attachment-fixed !IMPORTANT;  } */
+  {% endif %}
+  }
+</style>
+
+{% if section.settings.bg_image_desktop != blank or section.settings.main_heading_text != blank or section.settings.person_name != blank or section.settings.signature_image != blank or section.settings.person_image_mobile != blank %}
+  <div class="LP_bg_image_with_text_main LP_bg_image_with_text_main_{{ section.id }}" style="background-image: url({{ section.settings.bg_image_desktop | img_url:'master' }});">
+    <div class="page-width">
+      <div class="LP_bg_image_with_text_inner">
+        <div class="LP_bg_image_with_text_box">
+          {% if section.settings.person_image_mobile != blank %}
+            <div class="LP_bg_image_with_text_person_image large-up-hide medium-hide">
+              {{
+                section.settings.person_image_mobile | 
+                image_url: width: img.width | 
+                image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                fetchpriority: 'auto'
+              }}
+            </div>
+          {% endif %}
+          {% if section.settings.main_heading_text != blank %}
+            <div class="LP_bg_image_with_text_main_heading_text Common_title_new">
+              {{ section.settings.main_heading_text }}
+            </div>
+          {% endif %}
+          {% if section.settings.person_name != blank %}
+            <div class="LP_bg_image_with_text_person_name">
+              <p>
+                {{ section.settings.person_name }}
+              </p>
+            </div>
+          {% endif %}
+          {% if section.settings.signature_image != blank %}
+            <div class="LP_bg_image_with_text_person_signature_image">
+              {{
+                section.settings.signature_image | 
+                image_url: width: img.width | 
+                image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                fetchpriority: 'auto'
+              }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+<style>
+  .LP_bg_image_with_text_main { display: flex; align-items: center; aspect-ratio: 2.6966; padding: 112px 0 97px; position: relative; background-repeat: no-repeat; background-size: cover; background-position: center; }
+  .LP_bg_image_with_text_main .page-width { margin: 0 0 0 auto; }
+  .LP_bg_image_with_text_inner { padding-right: 62px; }
+  .LP_bg_image_with_text_box { text-align: center; max-width: 550px; width: 100%; margin: 0 0 0 auto; }
+  .LP_bg_image_with_text_person_image { margin: 0 auto; width: 56px; aspect-ratio: 1; border-radius: 50%; margin-bottom: 24px; overflow: hidden;  }
+  .LP_bg_image_with_text_person_image img { width: 100%; height: 100% !important; display: block; object-fit: cover; }
+  .LP_bg_image_with_text_main_heading_text { padding-bottom: 40px; }
+  .LP_bg_image_with_text_main_heading_text h2, .LP_bg_image_with_text_person_name p { color: #FFF; }
+  .LP_bg_image_with_text_person_name { padding-bottom: 16px; }
+  .LP_bg_image_with_text_person_name p { margin: 0; letter-spacing: 0px; text-transform: uppercase;  font-family: var(--font-body-family); font-size: 16px; font-weight: 600; line-height: 125%; }
+  .LP_bg_image_with_text_person_signature_image { margin: 0 auto; max-width: 165.32px; width: 100%; height: 72px; }
+  .LP_bg_image_with_text_person_signature_image img { width: 100%; height: 100% !important; display: block; }
+
+  @media (max-width: 989px){
+    .LP_bg_image_with_text_inner { padding-right: 0; }
+    .LP_bg_image_with_text_box { max-width: 100%; width: 70%; }
+  }
+
+  @media (max-width: 749px){
+    .LP_bg_image_with_text_main { background-image: none !important; padding: 48px 0; }
+    .LP_bg_image_with_text_inner { padding: 0 17px; }
+    .LP_bg_image_with_text_box { width: 100%; position: relative; }
+    .LP_bg_image_with_text_main_heading_text { padding-bottom: 24px; }
+    .LP_bg_image_with_text_main_heading_text h2 { font-size: 32px; line-height: 110%; letter-spacing: 0px; }
+    .LP_bg_image_with_text_person_name { padding-bottom: 8px; }
+    .LP_bg_image_with_text_person_name p { font-size: 14px; }
+    .LP_bg_image_with_text_person_signature_image { max-width: 128.58px; height: 56px; }
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "LP BG Image with Text",
+    "class": "LP_bg_image_with_text",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "bg_image_desktop",
+        "label": "Add Background Image - Desktop"
+      },
+      {
+        "type": "textarea",
+        "id": "main_heading_text",
+        "label": "Add Main Heading Text",
+        "default": "<h2>“Our eyewear isn’t just unique; it’s revolutionary.”</h2>"
+      },
+      {
+        "type": "text",
+        "id": "person_name",
+        "label": "Add Person Name",
+        "default": "stephon marbury"
+      },
+      {
+        "type": "image_picker",
+        "id": "signature_image",
+        "label": "Add Signature Image"        
+      },
+      {
+        "type": "color",
+        "id": "bg_color_mobile",
+        "label": "Add Background Color - Mobile",
+        "default": "#000000"
+      },
+      {
+        "type": "image_picker",
+        "id": "bg_effect_mobile",
+        "label": "Add Mobile Background Effect"
+      },
+      {
+        "type": "image_picker",
+        "id": "person_image_mobile",
+        "label": "Add Person Image - Mobile"        
+      },
+    ],
+    "presets": [
+      {
+        "name": "LP BG Image with Text",
+      }
+    ]
+  }
+{% endschema %}

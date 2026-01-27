@@ -1,0 +1,114 @@
+{%- if section.settings.main_desktop_video != blank or section.settings.main_mobile_video != blank or section.settings.main_desktop_image != blank or section.settings.main_mobile_image != blank or section.settings.main_heading_text != blank or section.settings.main_information_text != blank -%}
+  <div class="Page_our_story_template_main_new" style="background: {{ section.settings.main_background_color }};">
+    <div class="Page_our_story_template_inner_new">
+      {%- if section.settings.main_desktop_video != blank or section.settings.main_mobile_video != blank or section.settings.main_desktop_image != blank or section.settings.main_mobile_image != blank -%}
+        <div class="Page_our_story_template_mainstatic_new">
+          <div class="Page_our_story_template_innerstatic_new">
+            {%- if section.settings.main_desktop_video != blank and section.settings.main_mobile_video != blank -%}
+              <div class="Page_our_story_template_innerstatic_videoimage_new">
+                {%- if section.settings.main_desktop_video != blank -%}
+                  {{ section.settings.main_desktop_video | video_tag: class:'desktop_image_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                {%- endif -%}
+                {%- if section.settings.main_mobile_video != blank -%}
+                  {{ section.settings.main_mobile_video | video_tag: class:'mobile_image_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                {%- endif -%}
+              </div>
+            {% else %}  
+              {%- if section.settings.main_desktop_image != blank and section.settings.main_mobile_image != blank -%}
+                <div class="Page_our_story_template_innerstatic_videoimage_new">
+                  {%- if section.settings.main_desktop_image != blank -%}
+                    {{
+                      section.settings.main_desktop_image | 
+                      image_url: width: img.width | 
+                      image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                      fetchpriority: 'auto', 
+                      class:'desktop_image_new'
+                    }}
+                  {%- endif -%}
+                  {%- if section.settings.main_mobile_image != blank -%}
+                    {{
+                      section.settings.main_mobile_image | 
+                      image_url: width: img.width | 
+                      image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                      fetchpriority: 'auto', 
+                      class:'mobile_image_new'
+                    }}
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endif -%}
+      {%- if section.settings.main_heading_text != blank or section.settings.main_information_text != blank -%}
+        <div class="Page_our_story_template_mainoverlay_new">
+          <div class="page-width">
+            <div class="Page_our_story_template_inneroverlay_new">
+              {%- if section.settings.main_heading_text != blank -%}
+                <div class="Page_our_story_template_inneroverlay_maintitle_new">
+                  <div class="Page_our_story_template_inneroverlay_innertitle_new">
+                    <h1>{{ section.settings.main_heading_text }}</h1>
+                  </div>
+                </div>
+              {%- endif -%}
+              {%- if section.settings.main_information_text != blank -%}
+                <div class="Page_our_story_template_inneroverlay_maininfos_new">
+                  <div class="Page_our_story_template_inneroverlay_innerinfos_new">
+                    {{ section.settings.main_information_text }}
+                  </div>
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Page Our Story Template",
+    "class": "Page_our_story_template_new",
+    "settings": [
+      {
+        "type": "color",
+        "id": "main_background_color",
+        "label": "Add Main Background Color",
+        "default": "#EFEFEF"
+      },
+      {
+        "type": "video",
+        "id": "main_desktop_video",
+        "label": "Add Main Desktop Video"
+      },
+      {
+        "type": "video",
+        "id": "main_mobile_video",
+        "label": "Add Main Mobile Video"
+      },
+      {
+        "type": "image_picker",
+        "id": "main_desktop_image",
+        "label": "Add Main Desktop Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "main_mobile_image",
+        "label": "Add Main Mobile Image"
+      },
+      {
+        "type": "textarea",
+        "id": "main_heading_text",
+        "label": "Add Main Heading Text",
+        "default": "Be different. See different."
+      },
+      {
+        "type": "richtext",
+        "id": "main_information_text",
+        "label": "Add Main Information Text",
+        "default": "<p>Our products are designed to be as functional as they are fun, offering a bold, modern look. We’re constantly innovating and developing advanced yet easy-to-use technology.</p>"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,342 @@
+{%- if section.settings.main_details_text != blank or section.settings.main_heading_text != blank or section.settings.main_information_text != blank or section.blocks.size > 0 -%}
+  <div class="Index_tabs_banner_product_main_new{% if section.blocks.size == 1 %} Product_tabs_banner_product_main_new{% endif %}" style="background: {{ section.settings.main_background_color }};">
+    <div class="page-width">
+      <div class="Index_tabs_banner_product_inner_new">
+        <div class="Index_tabs_banner_product_detail_new Tabs_common_main_new">
+          {%- if section.settings.main_details_text != blank or section.settings.main_heading_text != blank or section.settings.main_information_text != blank or section.blocks.size > 0 -%}
+            <div class="Index_tabs_banner_product_detail_mainsides_new">
+              <div class="Index_tabs_banner_product_detail_innersides_new">
+                {%- if section.settings.main_details_text != blank or section.settings.main_heading_text != blank or section.settings.main_information_text != blank -%}
+                  <div class="Index_tabs_banner_product_detail_innersides_mainleft_new">
+                    <div class="Index_tabs_banner_product_detail_innersides_innerleft_new">
+                      {%- if section.settings.main_details_text != blank -%}
+                        <div class="Index_tabs_banner_product_detail_innersides_innerleft_maintexts_new">
+                          <div class="Index_tabs_banner_product_detail_innersides_innerleft_innertexts_new">
+                            {{ section.settings.main_details_text }}
+                          </div>
+                        </div>
+                      {%- endif -%}
+                      {%- if section.settings.main_heading_text != blank -%}
+                        <div class="Index_tabs_banner_product_detail_innersides_innerleft_maintitle_new">
+                          <div class="Common_title_new Index_tabs_banner_product_detail_innersides_innerleft_innertitle_new">
+                            <h2>{{ section.settings.main_heading_text }}</h2>
+                          </div>
+                        </div>
+                      {%- endif -%}
+                      {%- if section.settings.main_information_text != blank -%}
+                        <div class="Index_tabs_banner_product_detail_innersides_innerleft_maininfos_new">
+                          <div class="Index_tabs_banner_product_detail_innersides_innerleft_innerinfos_new">
+                            {{ section.settings.main_information_text }}
+                          </div>
+                        </div>
+                      {%- endif -%}
+                    </div>
+                  </div>
+                {%- endif -%}
+                {%- if section.blocks.size > 0 -%}
+                  {%- if section.blocks.size > 1 -%}
+                    <div class="Index_tabs_banner_product_detail_innersides_mainright_new">
+                      <div class="Index_tabs_banner_product_detail_innersides_innerright_new">
+                        <div class="tab common_tab_new">
+                          {%- for block in section.blocks -%}
+                            {%- if block.settings.title != blank -%}
+                              {%- if block.settings.main_desktop_video != blank or block.settings.main_mobile_video != blank or block.settings.main_desktop_image != blank or block.settings.main_mobile_image != blank or block.settings.main_product_list != blank or block.settings.main_details_text != blank or block.settings.main_heading_text != blank or block.settings.main_information_text != blank  or block.settings.main_button_link != blank -%}
+                                <button class="tablinks Tabs_common_inner_new{% if forloop.first %} active{% endif %}" tab_id="tab_{{ block.id | replace: '-', '_' }}_{{ forloop.index0 }}">
+                                  {{ block.settings.title }}
+                                </button>  
+                              {%- endif -%}
+                            {%- endif -%}
+                          {%- endfor -%}
+                        </div>
+                      </div>
+                    </div>
+                  {%- endif -%}
+                {%- endif -%}
+              </div>
+            </div>
+          {%- endif -%}
+          {%- if section.blocks.size > 0 -%}
+            <div class="Index_tabs_banner_product_detail_mainloops_new">
+              <div class="Index_tabs_banner_product_detail_innerloops_new">
+                {%- for block in section.blocks -%}
+                  {%- if block.settings.title != blank -%}
+                    {%- if block.settings.main_desktop_video != blank or block.settings.main_mobile_video != blank or block.settings.main_desktop_image != blank or block.settings.main_mobile_image != blank or block.settings.main_product_list != blank or block.settings.main_details_text != blank or block.settings.main_heading_text != blank or block.settings.main_information_text != blank  or block.settings.main_button_link != blank -%}
+                      <div class="tabcontent tab_{{ block.id | replace: '-', '_' }}_{{ forloop.index0 }}_open"{% if forloop.first %} style="display:block;"{% endif %}>
+                        <div class="Index_tabs_banner_product_detail_innerloops_mainboxs_new">
+                          <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_new">
+                            {%- if block.settings.main_desktop_video != blank or block.settings.main_mobile_video != blank or block.settings.main_desktop_image != blank or block.settings.main_mobile_image != blank or block.settings.main_product_list != blank -%}
+                              <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_mainstatic_new">
+                                <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_new">
+                                  <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_boths_new">
+                                    {%- if block.settings.main_desktop_video != blank and block.settings.main_mobile_video != blank -%}
+                                      <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_boths_videoimage_new">
+                                        {%- if block.settings.main_desktop_video != blank -%}
+                                          {{ block.settings.main_desktop_video | video_tag: class:'desktop_image_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                                        {%- endif -%}
+                                        {%- if block.settings.main_mobile_video != blank -%}
+                                          {{ block.settings.main_mobile_video | video_tag: class:'mobile_image_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                                        {%- endif -%}
+                                      </div>
+                                    {% else %}  
+                                      {%- if block.settings.main_desktop_image != blank and block.settings.main_mobile_image != blank -%}
+                                        <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_boths_videoimage_new">
+                                          {%- if block.settings.main_desktop_image != blank -%}
+                                            {{
+                                              block.settings.main_desktop_image | 
+                                              image_url: width: img.width | 
+                                              image_tag: widths: '1296, 1512, 1728, 1944, 2048', 
+                                              fetchpriority: 'auto', 
+                                              class:'desktop_image_new'
+                                            }}
+                                          {%- endif -%}
+                                          {%- if block.settings.main_mobile_image != blank -%}
+                                            {{
+                                              block.settings.main_mobile_image | 
+                                              image_url: width: img.width | 
+                                              image_tag: widths: '1296, 1512, 1728, 1944, 2048', 
+                                              fetchpriority: 'auto', 
+                                              class:'mobile_image_new'
+                                            }}
+                                          {%- endif -%}
+                                        </div>
+                                      {%- endif -%}
+                                    {%- endif -%}
+                                  </div>
+                                  {%- if block.settings.main_product_list != blank -%}
+                                    <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_mainlist_new">
+                                      <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_innerlist_new">
+                                        <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_innerlist_button_new">
+                                          <span class="view_product"><svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_9156_364)"><path d="M8 1.64679V14.9801" stroke="white" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/><path d="M14.6663 8.31348H1.33301" stroke="white" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/></g><defs><clipPath id="clip0_9156_364"><rect width="16" height="16" fill="white" transform="translate(0 0.313477)"/></clipPath></defs></svg>View Products</span>
+                                          <span class="less_product"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_19_7105)"><path d="M12.7139 3.28662L3.28578 12.7147" stroke="white" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/><path d="M12.7142 12.7147L3.28613 3.28662" stroke="white" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/></g><defs><clipPath id="clip0_19_7105"><rect width="16" height="16" fill="white"/></clipPath></defs></svg>Hide products</span>
+                                        </div>
+                                        <div class="swiper Index_mobile_product_slider Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_innerlist_mainproduct_new">
+                                          <div class="swiper-wrapper Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_innerlist_innerproduct_new">
+                                            {%- for product in block.settings.main_product_list -%}
+                                              <div class="swiper-slide Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_innerlist_innerproduct_mainboxs_new">
+                                                <a href="{{ product.url }}">
+                                                  <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_innerlist_innerproduct_innerboxs_new">
+                                                    {% if product.metafields.custom.product_thumb_image != blank %}
+                                                      <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_innerlist_innerproduct_innerboxs_mainimage_new">
+                                                        <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_innerlist_innerproduct_innerboxs_innerimage_new">
+                                                          {{
+                                                            product.metafields.custom.product_thumb_image | 
+                                                            image_url: width: img.width | 
+                                                            image_tag: widths: '1296, 1512, 1728, 1944, 2048', 
+                                                            fetchpriority: 'auto', 
+                                                            class:'Product_image_new'
+                                                          }}
+                                                        </div> 
+                                                      </div> 
+                                                    {% else %}
+                                                      {%- if product.featured_image != blank -%}
+                                                        <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_innerlist_innerproduct_innerboxs_mainimage_new">
+                                                          <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_innerlist_innerproduct_innerboxs_innerimage_new">
+                                                            {{
+                                                              product.featured_image | 
+                                                              image_url: width: img.width | 
+                                                              image_tag: widths: '1296, 1512, 1728, 1944, 2048', 
+                                                              fetchpriority: 'auto', 
+                                                              class:'Product_image_new'
+                                                            }}
+                                                          </div>
+                                                        </div>
+                                                      {%- endif -%}
+                                                    {%- endif -%}
+                                                    {%- if product.title != blank or product.price != blank -%}
+                                                      <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_innerlist_innerproduct_innerboxs_mainboths_new">
+                                                        <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_innerlist_innerproduct_innerboxs_innerboths_new">
+                                                          {%- if product.title != blank -%}
+                                                            <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_innerlist_innerproduct_innerboxs_innerboths_title_new">
+                                                              <h4>{{ product.title }}</h4>
+                                                            </div>
+                                                          {%- endif -%}
+                                                          {%- if product.price != blank -%}
+                                                            <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_innerlist_innerproduct_innerboxs_innerboths_price_new">
+                                                              {% render 'price', product: product, price_class: '', show_compare_at_price: true %}
+                                                            </div>
+                                                          {%- endif -%}
+                                                          <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_innerstatic_innerlist_innerproduct_innerboxs_innerboths_button_new">
+                                                            Shop Now
+                                                          </div>  
+                                                        </div>
+                                                      </div>
+                                                    {%- endif -%}
+                                                  </div>
+                                                </a>
+                                              </div>
+                                            {%- endfor -%}
+                                          </div>
+                                        </div>  
+                                      </div>
+                                    </div>
+                                  {%- endif -%}
+                                </div>
+                              </div>
+                            {%- endif -%}
+                            {%- if block.settings.main_details_text != blank or block.settings.main_heading_text != blank or block.settings.main_information_text != blank  or block.settings.main_button_link != blank -%}
+                              <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_mainoverlay_new">
+                                <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_inneroverlay_new">
+                                  {%- if block.settings.main_details_text != blank -%}
+                                    <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_inneroverlay_maintexts_new">
+                                      <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_inneroverlay_innertexts_new">
+                                        {{ block.settings.main_details_text }}
+                                      </div>
+                                    </div>
+                                  {%- endif -%}
+                                  {%- if block.settings.main_heading_text != blank -%}
+                                    <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_inneroverlay_maintitle_new">
+                                      <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_inneroverlay_innertitle_new">
+                                        <h3>{{ block.settings.main_heading_text }}</h3>
+                                      </div>
+                                    </div>
+                                  {%- endif -%}
+                                  {%- if block.settings.main_information_text != blank -%}
+                                    <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_inneroverlay_maininfos_new">
+                                      <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_inneroverlay_innerinfos_new">
+                                        {{ block.settings.main_information_text }}
+                                      </div>
+                                    </div>
+                                  {%- endif -%}
+                                  {%- if block.settings.main_button_text != blank and block.settings.main_button_link != blank -%}
+                                    <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_inneroverlay_mainbutton_new">
+                                      <div class="Index_tabs_banner_product_detail_innerloops_innerboxs_inneroverlay_innerbutton_new">
+                                        <a href="{{ block.settings.main_button_link }}">
+                                          {{ block.settings.main_button_text }}<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.0211 4.21695L1.41421 12.8239L0 11.4096L8.6069 2.80274L1.02106 2.80274L1.02106 0.80304H12.0208V11.8028H10.0211V4.21695Z" fill="white"/></svg>
+                                        </a>
+                                      </div>
+                                    </div>
+                                  {%- endif -%}
+                                </div>
+                              </div>
+                            {%- endif -%}
+                          </div>
+                        </div>
+                      </div>
+                    {%- endif -%}
+                  {%- endif -%}  
+                {%- endfor -%}
+              </div>
+            </div>
+          {%- endif -%}  
+        </div>
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Index Tabs Banner Product",
+    "class": "Index_tabs_banner_product_new",
+    "settings": [
+      {
+        "type": "color",
+        "id": "main_background_color",
+        "label": "Add Main Background Color",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "textarea",
+        "id": "main_details_text",
+        "label": "Add Main Details Text",
+        "default": "The Technology"
+      },
+      {
+        "type": "textarea",
+        "id": "main_heading_text",
+        "label": "Add Main Heading Text",
+        "default": "Vision meets innovation"
+      },
+      {
+        "type": "richtext",
+        "id": "main_information_text",
+        "label": "Add Main Information Text",
+        "default": "<p>Our glasses are produced using a <strong>state-of-the-art Japanese manufacturing process,</strong> built with unparalleled precision and quality.</p>"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "information",
+        "name": "Information",
+        "limit": 2,
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "title",
+            "label": "Add Main Tab Heading Text",
+            "default": "Heading"
+          },
+          {
+            "type": "video",
+            "id": "main_desktop_video",
+            "label": "Add Main Desktop Video"
+          },
+          {
+            "type": "video",
+            "id": "main_mobile_video",
+            "label": "Add Main Mobile Video"
+          },
+          {
+            "type": "image_picker",
+            "id": "main_desktop_image",
+            "label": "Add Main Desktop Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "main_mobile_image",
+            "label": "Add Main Mobile Image"
+          },
+          {
+            "type": "textarea",
+            "id": "main_details_text",
+            "label": "Add Main Details Text",
+            "default": "Lorem Ipsum is simply dummy"
+          },
+          {
+            "type": "textarea",
+            "id": "main_heading_text",
+            "label": "Add Main Heading Text",
+            "default": "Lorem Ipsum is simply dummy text"
+          },
+          {
+            "type": "richtext",
+            "id": "main_information_text",
+            "label": "Add Main Information Text",
+            "default": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>"
+          },
+          {
+            "type": "text",
+            "id": "main_button_text",
+            "label": "Add Main Button Text",
+            "default": "Learn More"
+          },
+          {
+            "type": "url",
+            "id": "main_button_link",
+            "label": "Add Main Button Link",
+            "default": "/"
+          },
+          {
+            "type": "product_list",
+            "limit": 4,
+            "id": "main_product_list",
+            "label": "Add Main Product List"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Index Tabs Banner Product",
+        "blocks": [
+          {
+            "type": "information"
+          },
+          {
+            "type": "information"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

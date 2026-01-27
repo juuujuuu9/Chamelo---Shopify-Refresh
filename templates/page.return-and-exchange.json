@@ -1,0 +1,55 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "class-name": "",
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "policies_pages_zPKxFd": {
+      "type": "policies-pages",
+      "blocks": {
+        "heading_RAwBLH": {
+          "type": "heading",
+          "settings": {
+            "heading": "Returns & exchanges",
+            "heading_size": "h1"
+          }
+        },
+        "text_nqTKWt": {
+          "type": "text",
+          "settings": {
+            "text": "<p>At Chamelo, we understand that things don’t always go according to plan. That’s why we offer a robust warranty policy on our products, including a 30-day money-back guarantee and a 1-year manufacturer’s warranty. Here’s a run-through of each warranty policy below:</p><h3>30-day money-back guarantee</h3><p>If you’re not completely satisfied with your Chamelo product, you can return it within 30 days for a full refund or exchange. Here’s what you need to know:</p><ul><li>Products Covered: All Chamelo products and accessories</li><li>Warranty Life span: 30 days from the date of shipping</li><li>Applicability: Return for any reason</li><li>Purchased From: Chamelo.com</li><li>Exclusions: Accidental or water damage, loss of product, prescription lenses</li><li>Options: Replacement, exchange for an equal-value product, or refund</li></ul><p>Process:</p><ul><li>Returns must include all accessories and original packaging.</li><li>For non-quality-related claims, the buyer is responsible for return shipping costs.</li><li>For quality-related claims, Chamelo will refund or reimburse return shipping costs.</li></ul><p>International orders are ineligible for exchanges.<br/>Please email <a href=\"mailto:hello@chamelo.com\" title=\"mailto:hello@chamelo.com\"><strong>hello@chamelo.com</strong></a> within this timeframe, so we can resolve any issues. </p><h3>1-year manufacturer’s warranty</h3><p>Our 1-year manufacturer’s warranty covers any manufacturing defects. Here’s what you need to know:</p><ul><li>Products Covered: All Chamelo products</li><li>Warranty Lifespan: 1 year from the date of shipping</li><li>Applicability: Manufacturing defects in materials and workmanship under normal, careful use</li><li>Purchased From: Chamelo.com or Amazon</li><li>Exclusions: Accidental or water damage, loss of product</li><li>Options: One (1) replacement (refurbished or new unit)</li></ul><p>Process:</p><ul><li>Ensure your product is registered for its warranty within 30 days of the shipping date.</li><li>If a defect is found and a valid claim is received, Chamelo will either repair the product at no charge using new or refurbished parts or replace it with a new or refurbished product.</li><li>Contact <a href=\"mailto:hello@chamelo.com\" title=\"mailto:hello@chamelo.com\">hello@chamelo.com</a> with 2-3 clear photos and a video showing the issue.</li><li>Chamelo will send you a prepaid shipping label for the defective item.</li></ul><p>Additional notes:</p><ul><li>Returns must include all accessories and original packaging.</li><li>For non-quality related warranty claims, the buyer is responsible for return shipping costs.</li><li>For quality-related warranty claims, Chamelo will refund or reimburse return shipping costs.</li><li>When returning items with a prepaid shipping label provided by Chamelo, Chamelo takes responsibility for any damage or loss incurred in transit.</li><li>When returning items for non-quality issues, the buyer assumes responsibility for any damage or loss incurred in transit.</li><li>Chamelo does not provide refunds for items damaged in transit for non-quality related warranty claims.</li></ul><h3>How to action a warranty:</h3><ol><li>Email <a href=\"mailto:hello@chamelo.com\" title=\"mailto:hello@chamelo.com\">hello@chamelo.com</a> and upload 2-3 clear photos of the fault and a video showing the issue.</li><li>Chamelo will provide a prepaid shipping label to send back the defective item.</li><li>Once received and inspected, Chamelo will send a replacement and email you when it has been dispatched.</li></ol><p>The Warranty Does Not Cover:</p><ul><li>Products without sufficient proof of purchase</li><li>Non-official Chamelo products or counterfeits</li><li>Products purchased from unauthorized resellers</li><li>Items not registered within the required 30-day window</li><li>Items that have expired their warranty period</li><li>Accidental damage</li><li>Normal wear and tear</li><li>Water damage</li><li>Damages from operating the product outside its intended use</li><li>Lost or stolen products</li><li>Free products</li></ul><h3></h3>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_RAwBLH",
+        "text_nqTKWt"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "scheme-4",
+        "padding_top": 64,
+        "padding_bottom": 100
+      }
+    }
+  },
+  "order": [
+    "main",
+    "policies_pages_zPKxFd"
+  ]
+}

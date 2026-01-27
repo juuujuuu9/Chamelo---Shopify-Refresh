@@ -1,0 +1,140 @@
+{%- if section.settings.main_back_custom_video != blank or section.settings.main_back_custom_image != blank or section.settings.main_product_static_image != blank or section.settings.main_product_title_text != blank or section.settings.main_product_button_text != blank -%}
+  <div class="Index_mobile_sticky_prods_main_new" style="background: {{ section.settings.main_background_color }};">
+    <div class="Index_mobile_sticky_prods_inner_new">
+      <div class="Index_mobile_sticky_prods_detail_new">
+        {%- if section.settings.main_back_custom_video != blank or section.settings.main_back_custom_image != blank -%}
+          <div class="Index_mobile_sticky_prods_detail_mainstatic_new">
+            <div class="Index_mobile_sticky_prods_detail_innerstatic_new">
+              {%- if section.settings.main_back_custom_video != blank -%}
+                <div class="Index_mobile_sticky_prods_detail_innerstatic_videoimage_new">
+                  {{ section.settings.main_back_custom_video | video_tag: class:'custom_video_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                </div>
+              {% else %}  
+                {%- if section.settings.main_back_custom_image != blank -%}
+                  <div class="Index_mobile_sticky_prods_detail_innerstatic_videoimage_new">
+                    {{
+                      section.settings.main_back_custom_image | 
+                      image_url: width: img.width | 
+                      image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                      fetchpriority: 'auto', 
+                      class:'custom_image_new'
+                    }}
+                  </div>
+                {%- endif -%}
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endif -%}
+        {%- if section.settings.main_product_static_image != blank or section.settings.main_product_title_text != blank or section.settings.main_product_button_text != blank -%}
+          <div class="Index_mobile_sticky_prods_detail_mainoverlay_new">
+            {%- if section.settings.main_product_redirect_link != blank -%}
+              <a href="{{ section.settings.main_product_redirect_link }}">
+            {%- endif -%}
+                <div class="Index_mobile_sticky_prods_detail_inneroverlay_new">
+                  {%- if section.settings.main_product_static_image != blank -%}
+                    <div class="Index_mobile_sticky_prods_detail_inneroverlay_mainimage_new">
+                      <div class="Index_mobile_sticky_prods_detail_inneroverlay_innerimage_new">
+                        {{
+                          section.settings.main_product_static_image | 
+                          image_url: width: img.width | 
+                          image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                          fetchpriority: 'auto', 
+                          class:'Static_image_new'
+                        }}
+                      </div>
+                    </div>
+                  {%- endif -%}
+                  {%- if section.settings.main_product_title_text != blank or section.settings.main_product_button_text != blank -%}
+                    <div class="Index_mobile_sticky_prods_detail_inneroverlay_mainboths_new">
+                      <div class="Index_mobile_sticky_prods_detail_inneroverlay_innerboths_new">
+                        {%- if section.settings.main_product_title_text != blank -%}
+                          <div class="Index_mobile_sticky_prods_detail_inneroverlay_innerboths_maintitle_new">
+                            <div class="Index_mobile_sticky_prods_detail_inneroverlay_innerboths_innertitle_new">
+                              <h5>{{ section.settings.main_product_title_text }}</h5>
+                            </div>
+                          </div>
+                        {%- endif -%}
+                        {%- if section.settings.main_product_button_text != blank -%}
+                          <div class="Index_mobile_sticky_prods_detail_inneroverlay_innerboths_mainbutton_new">
+                            <div class="Index_mobile_sticky_prods_detail_inneroverlay_innerboths_innerbutton_new">
+                              {{ section.settings.main_product_button_text }}
+                            </div>
+                          </div>
+                        {%- endif -%}
+                      </div>
+                      {%- if section.settings.main_product_tags_text != blank -%}
+                        <div class="Index_mobile_sticky_prods_detail_inneroverlay_mainboths_tagstext_new">
+                          {{ section.settings.main_product_tags_text }}
+                        </div>
+                      {%- endif -%}
+                    </div>
+                  {%- endif -%}  
+                </div>
+            {%- if section.settings.main_product_redirect_link != blank -%}
+              </a>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Index Mobile Sticky Prods",
+    "class": "Index_mobile_sticky_prods_new Mobile_only_new",
+    "settings": [
+      {
+        "type": "color",
+        "id": "main_background_color",
+        "label": "Add Main Background Color",
+        "default": "#F6F6F6"
+      },
+      {
+        "type": "video",
+        "id": "main_back_custom_video",
+        "label": "Add Main Back Custom Video"
+      },
+      {
+        "type": "image_picker",
+        "id": "main_back_custom_image",
+        "label": "Add Main Back Custom Image"
+      },
+      {
+        "type": "textarea",
+        "id": "main_product_title_text",
+        "label": "Add Main Product Title Text",
+        "default": "Prime"
+      },
+      {
+        "type": "text",
+        "id": "main_product_tags_text",
+        "label": "Add Main Product Tags Text",
+        "default": "New"
+      },
+      {
+        "type": "image_picker",
+        "id": "main_product_static_image",
+        "label": "Add Main Product Static Image"
+      },
+      {
+        "type": "text",
+        "id": "main_product_button_text",
+        "label": "Add Main Product Button Text",
+        "default": "Shop Now"
+      },
+      {
+        "type": "url",
+        "id": "main_product_redirect_link",
+        "label": "Add Main Product Redirect Link",
+        "default": "/"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Index Mobile Sticky Prods"
+      }
+    ]
+  }
+{% endschema %}

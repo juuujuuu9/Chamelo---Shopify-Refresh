@@ -1,0 +1,247 @@
+{{ "hb-product-range.css" |  asset_url |  stylesheet_tag }}
+
+{% assign tint_Value = product.metafields.custom.product_page_tint_slider_value.value %}
+
+  <style>
+    .range-container {
+      position: relative;
+      width: 306px;
+    }
+    
+    .range-input {
+      width: 100%;
+      -webkit-appearance: none;
+      appearance: none;
+      border: 1px solid rgba(255, 255, 255, 0.35); 
+      background: linear-gradient(to right, rgba(255, 255, 255, 0.2) 100%, #555);
+      backdrop-filter: blur(9px);
+    
+    }
+    
+    .range-input::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 32px;
+      height: 32px;
+      background: url('data:image/svg+xml,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" transform="translate(32) rotate(90)" fill="white"/><path d="M22.1997 8L23.1997 8L23.1997 24L22.1997 24L22.1997 8Z" fill="%23080808"/><path d="M15.7998 8L16.7998 8L16.7998 24L15.7998 24L15.7998 8Z" fill="%23080808"/><path d="M9.3999 8L10.3999 8L10.3999 24L9.3999 24L9.3999 8Z" fill="%23080808"/></svg>') no-repeat center;
+      background-size: contain;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .range-input::-moz-range-thumb {
+      width: 32px;
+      height: 32px;
+      background: url('data:image/svg+xml,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" transform="translate(32) rotate(90)" fill="white"/><path d="M22.1997 8L23.1997 8L23.1997 24L22.1997 24L22.1997 8Z" fill="%23080808"/><path d="M15.7998 8L16.7998 8L16.7998 24L15.7998 24L15.7998 8Z" fill="%23080808"/><path d="M9.3999 8L10.3999 8L10.3999 24L9.3999 24L9.3999 8Z" fill="%23080808"/></svg>') no-repeat center;
+      background-size: contain;
+      border: none;
+      cursor: pointer;
+    } 
+
+    .Product_object_lens_slide_detail_inneroverlay_innerboths_innerimage_new img{
+      opacity:{{tint_Value.tint_min_value}};
+    }
+  </style>
+
+
+{%- if product.metafields.custom.product_lens_slide_adjust_selections.value != blank -%}
+  {%- assign product_lens_slide_adjust_selections = product.metafields.custom.product_lens_slide_adjust_selections.value -%}
+  {%- if product_lens_slide_adjust_selections.main_video_or_image_desktop.value != blank or product_lens_slide_adjust_selections.main_video_or_image_mobile.value != blank or product_lens_slide_adjust_selections.main_lens_slide_image_desktop.value != blank or product_lens_slide_adjust_selections.main_lens_slide_image_mobile.value != blank or product_lens_slide_adjust_selections.main_heading_text.value != blank or product_lens_slide_adjust_selections.main_information_text_desktop.value != blank or product_lens_slide_adjust_selections.main_information_text_mobile.value != blank -%}
+    <div class="Product_object_lens_slide_main_new" style="background: {{ section.settings.main_background_color }};">
+      <div class="Product_object_lens_slide_inner_new">
+        <div class="Product_object_lens_slide_detail_new">
+          {%- if product_lens_slide_adjust_selections.main_video_or_image_desktop.value != blank and product_lens_slide_adjust_selections.main_video_or_image_mobile.value != blank -%}
+            {%- if product_lens_slide_adjust_selections.main_video_or_image_desktop.value != blank -%}
+              <div class="Product_object_lens_slide_detail_mainstatic_new Desktop_only_new">
+                <div class="Product_object_lens_slide_detail_innerstatic_new">
+                  {%- if product_lens_slide_adjust_selections.main_video_or_image_desktop.value contains "files" -%}
+                    <div class="Product_object_lens_slide_detail_innerstatic_imagevideo_new">
+                      {{
+                        product_lens_slide_adjust_selections.main_video_or_image_desktop.value | 
+                        image_url: width: img.width | 
+                        image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                        fetchpriority: 'auto', 
+                        class:'Static_image_new'
+                      }}
+                    </div>
+                  {%- else -%}
+                    <div class="Product_object_lens_slide_detail_innerstatic_imagevideo_new">
+                      {{ product_lens_slide_adjust_selections.main_video_or_image_desktop.value | video_tag: class:'Static_video_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                    </div>
+                  {%- endif -%}
+                </div>
+              </div>
+            {%- endif -%}
+            {%- if product_lens_slide_adjust_selections.main_video_or_image_mobile.value != blank -%}
+              <div class="Product_object_lens_slide_detail_mainstatic_new Mobile_only_new">
+                <div class="Product_object_lens_slide_detail_innerstatic_new">
+                  {%- if product_lens_slide_adjust_selections.main_video_or_image_mobile.value contains "files" -%}
+                    <div class="Product_object_lens_slide_detail_innerstatic_imagevideo_new">
+                      {{
+                        product_lens_slide_adjust_selections.main_video_or_image_mobile.value | 
+                        image_url: width: img.width | 
+                        image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                        fetchpriority: 'auto', 
+                        class:'Static_image_new'
+                      }}
+                    </div>
+                  {%- else -%}
+                    <div class="Product_object_lens_slide_detail_innerstatic_imagevideo_new">
+                      {{ product_lens_slide_adjust_selections.main_video_or_image_mobile.value | video_tag: class:'Static_video_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                    </div>
+                  {%- endif -%}
+                </div>
+              </div>
+            {%- endif -%}
+          {%- endif -%}
+          {%- if product_lens_slide_adjust_selections.main_lens_slide_image_desktop.value != blank or product_lens_slide_adjust_selections.main_lens_slide_image_mobile.value != blank or product_lens_slide_adjust_selections.main_heading_text.value != blank or product_lens_slide_adjust_selections.main_information_text_desktop.value != blank or product_lens_slide_adjust_selections.main_information_text_mobile.value != blank -%}
+            <div class="Product_object_lens_slide_detail_mainoverlay_new">
+              <div class="Product_object_lens_slide_detail_inneroverlay_new">
+                {%- if product_lens_slide_adjust_selections.main_lens_slide_image_desktop.value != blank and product_lens_slide_adjust_selections.main_lens_slide_image_mobile.value != blank -%}
+                  <div class="Product_object_lens_slide_detail_inneroverlay_mainboths_new">
+                    <div class="Product_object_lens_slide_detail_inneroverlay_innerboths_new">
+                      {%- if product_lens_slide_adjust_selections.main_lens_slide_image_desktop.value != blank -%}
+                        {%- if product_lens_slide_adjust_selections.main_lens_slide_image_desktop.value contains "files" -%}
+                          <div class="Product_object_lens_slide_detail_inneroverlay_innerboths_mainimage_new Desktop_only_new">
+                            <div class="Product_object_lens_slide_detail_inneroverlay_innerboths_innerimage_new" js-hb-lens >
+                              {{
+                                product_lens_slide_adjust_selections.main_lens_slide_image_desktop.value | 
+                                image_url: width: img.width | 
+                                image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                fetchpriority: 'auto', 
+                                class:'Static_image_new'
+                              }}
+                            </div>
+                          </div>
+                        {%- endif -%}
+                      {%- endif -%}
+                      {%- if product_lens_slide_adjust_selections.main_lens_slide_image_mobile.value != blank -%}
+                        {%- if product_lens_slide_adjust_selections.main_lens_slide_image_mobile.value contains "files" -%}
+                          <div class="Product_object_lens_slide_detail_inneroverlay_innerboths_mainimage_new Mobile_only_new">
+                            <div class="Product_object_lens_slide_detail_inneroverlay_innerboths_innerimage_new" js-hb-lens >
+                              {{
+                                product_lens_slide_adjust_selections.main_lens_slide_image_mobile.value | 
+                                image_url: width: img.width | 
+                                image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                fetchpriority: 'auto', 
+                                class:'Static_image_new'
+                              }}
+                            </div>
+                          </div>
+                        {%- endif -%}
+                      {%- endif -%}
+                      {%- if product_lens_slide_adjust_selections.main_lens_slide_light_overlay_text.value != blank or product_lens_slide_adjust_selections.main_lens_slide_dark_overlay_text.value != blank -%}
+                        <div class="Product_object_lens_slide_detail_inneroverlay_innerboths_mainimage_infos_new">
+                          {%- if product_lens_slide_adjust_selections.main_lens_slide_light_overlay_text.value != blank -%}
+                            <span class="Light_infos_new"><span>{{ product_lens_slide_adjust_selections.main_lens_slide_light_overlay_text.value }}%-{{ product_lens_slide_adjust_selections.main_lens_slide_dark_overlay_text }}% VLT</span></span>
+                          {%- endif -%}
+                          {% comment %}
+                          {%- if product_lens_slide_adjust_selections.main_lens_slide_dark_overlay_text.value != blank -%}
+                            <span class="Dark_infos_new"><span>{{ product_lens_slide_adjust_selections.main_lens_slide_dark_overlay_text }}</span>% VTR</span>
+                          {%- endif -%}
+                          {% endcomment %}
+                        </div>  
+                      {%- endif -%}
+                    </div>
+                  </div>
+                {%- endif -%}
+                {%- if product_lens_slide_adjust_selections.main_heading_text.value != blank or product_lens_slide_adjust_selections.main_information_text_desktop.value != blank or product_lens_slide_adjust_selections.main_information_text_mobile.value != blank -%}
+                  <div class="Product_object_lens_slide_detail_inneroverlay_maintexts_new">
+                    <div class="Product_object_lens_slide_detail_inneroverlay_innertexts_new">
+                      {%- if product_lens_slide_adjust_selections.main_heading_text.value != blank -%}
+                        <div class="Product_object_lens_slide_detail_inneroverlay_innertexts_maintitle_new">
+                          <div class="Common_title_new Product_object_lens_slide_detail_inneroverlay_innertexts_innertitle_new">
+                            <h2>{{ product_lens_slide_adjust_selections.main_heading_text }}</h2>
+                          </div>
+                        </div>
+                      {%- endif -%}
+                      {%- if product_lens_slide_adjust_selections.main_information_text_desktop.value != blank -%}
+                        <div class="Product_object_lens_slide_detail_inneroverlay_innertexts_maininfos_new Desktop_only_new">
+                          <div class="Product_object_lens_slide_detail_inneroverlay_innertexts_innerinfos_new">
+                            {{ product_lens_slide_adjust_selections.main_information_text_desktop | metafield_tag }}
+                          </div>
+                        </div>
+                      {%- endif -%}
+                      {%- if product_lens_slide_adjust_selections.main_information_text_mobile.value != blank -%}
+                        <div class="Product_object_lens_slide_detail_inneroverlay_innertexts_maininfos_new Mobile_only_new">
+                          <div class="Product_object_lens_slide_detail_inneroverlay_innertexts_innerinfos_new">
+                            {{ product_lens_slide_adjust_selections.main_information_text_mobile | metafield_tag }}
+                          </div>
+                        </div>
+                      {%- endif -%}
+                    </div>  
+                  </div>
+                {%- endif -%}
+              </div> 
+              
+              <div class="Product_object__range--content">
+                <div class="Produdct_object__range--row">
+                  <span class="Product_object__ragne--icon range-icon-left">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M11 3V1M11 19V21M5.414 5.414L4 4M16.728 16.728L18.142 18.142M3 11H1M19 11H21M16.729 5.414L18.143 4M5.415 16.728L4 18.142M11 16C9.67392 16 8.40215 15.4732 7.46447 14.5355C6.52678 13.5979 6 12.3261 6 11C6 9.67392 6.52678 8.40215 7.46447 7.46447C8.40215 6.52678 9.67392 6 11 6C12.3261 6 13.5979 6.52678 14.5355 7.46447C15.4732 8.40215 16 9.67392 16 11C16 12.3261 15.4732 13.5979 14.5355 14.5355C13.5979 15.4732 12.3261 16 11 16Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+
+                  {% comment %} <input class="Product_object__range--input" type="range" value="0" step="0.01" min="0.4" max="1" js-hb-range-input > {% endcomment %}
+                    <div class="range-container">
+                      <input class="range-input" type="range" value="0" step="0.001" min={{ tint_Value.tint_min_value }} max={{ tint_Value.tint_max_value }} js-hb-range-input>
+                    </div>
+
+                  <span class="Product_object__ragne--icon range-icon-right">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 6.4V5M12 17.6V19M8.0898 8.0898L7.1 7.1M16.0096 16.0096L16.9994 16.9994M6.4 12H5M17.6 12H19M16.0103 8.0898L17.0001 7.1M8.0905 16.0096L7.1 16.9994M12 15.5C11.0717 15.5 10.1815 15.1313 9.52513 14.4749C8.86875 13.8185 8.5 12.9283 8.5 12C8.5 11.0717 8.86875 10.1815 9.52513 9.52513C10.1815 8.86875 11.0717 8.5 12 8.5C12.9283 8.5 13.8185 8.86875 14.4749 9.52513C15.1313 10.1815 15.5 11.0717 15.5 12C15.5 12.9283 15.1313 13.8185 14.4749 14.4749C13.8185 15.1313 12.9283 15.5 12 15.5Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </div>
+                <span class="Product_object__range--title">slide to adjust</span>
+              </div>
+
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  {%- endif -%}
+{%- endif -%}  
+
+<script>
+  document.querySelector('[js-hb-range-input]').addEventListener('input', (e) => {
+    const { value } = e.target;
+  const lens = document.querySelectorAll('[js-hb-lens] img');
+    const vtrValue = Number(value.replace('0.', ''));
+
+    if (vtrValue > 10 && vtrValue < 100) {
+      if (vtrValue > 70) {
+        document.querySelector('[js-vrt-large-value]').style.display = "none";
+        document.querySelector('[js-vrt-small-value]').style.display = "block";
+    } else {
+        document.querySelector('[js-vrt-small-value]').style.display = "none";
+        document.querySelector('[js-vrt-large-value]').style.display = "block";
+    }
+  }
+
+  lens.forEach(img => {
+      img.style.opacity = parseFloat(value);
+  });
+});
+</script>
+
+{% schema %}
+  {
+    "name": "Product Object Lens Slide",
+    "class": "Product_object_lens_slide_new",
+    "settings": [
+      {
+        "type": "color",
+        "id": "main_background_color",
+        "label": "Add Main Background Color",
+        "default": "#EFEFEF"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product Object Lens Slide"
+      }
+    ]
+  }
+{% endschema %}

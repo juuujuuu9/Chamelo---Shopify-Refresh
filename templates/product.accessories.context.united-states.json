@@ -1,0 +1,53 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "product.accessories.json",
+  "context": {
+    "market": "united-states"
+  },
+  "sections": {
+    "main": {
+      "settings": {},
+      "blocks": {
+        "text_custom_HX8fcV": {
+          "type": "text-custom",
+          "disabled": false,
+          "settings": {
+            "text_custom": "Free two-day shipping + guaranteed delivery in time for Christmas (US-only)",
+            "make_center": false
+          }
+        }
+      },
+      "block_order": [
+        "custom_review_TbRJPn",
+        "custom_count_tag_text_EV9rrm",
+        "title",
+        "meta_short_description_J3LqfR",
+        "object_size_and_fit_bbka8f",
+        "meta_stitch_product_list_jwAydH",
+        "variant_picker",
+        "meta_popular_product_list_8cygQ8",
+        "icon_text_column_popup_RLJDQF",
+        "buy_buttons",
+        "text_custom_HX8fcV",
+        "afterpay_on_site_messaging_payments_messaging_caxK4N",
+        "banner_n88zmY",
+        "refund_guaranteed_text_jrgkw3",
+        "order_reveive_days_detail_BCNA93",
+        "meta_object_tabs_list_96tzAh",
+        "meta_accordions_list_mfgYUw",
+        "meta_real_life_items_EJ3gn9",
+        "video_with_texts_detail_KTkwjW",
+        "logo_list_slider_kVW4Le",
+        "white_logo_list_slider_QfC8ae"
+      ]
+    }
+  }
+}

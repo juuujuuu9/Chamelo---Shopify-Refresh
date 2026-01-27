@@ -1,0 +1,11 @@
+{% assign handle = button_link | split: '/products/' | last %}
+{% assign product = all_products[handle] %}
+
+<a
+  href="{{ button_link }}"
+  class="product-form__submit button button--full-width button--primary"
+>
+  <span class="to_cart_new">
+    {{ button_text }} — {{ product.price | money_without_trailing_zeros }}
+  </span>
+</a>

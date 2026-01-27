@@ -1,0 +1,115 @@
+{% if template.suffix == 'aura-audio' %}
+    {%- if section.blocks.size > 0 -%}
+      <div class=" one--barr Header_announcement_bar_main_new {{ template.suffix }} {{ section.settings.class_name }}" style="background: {{ section.settings.main_back_color }}; color: {{ section.settings.main_text_color }};">
+        <div class="page-width">
+          <div class="Header_announcement_bar_inner_new">
+            <div class="Header_announcement_bar_allloop_new">
+              <div class="swiper{% if section.blocks.size > 1 %} Index_announcement_slider{% endif %}">
+                <div class="swiper-wrapper">
+                  {%- for block in section.blocks -%}
+                    {%- if block.settings.title != blank -%}
+                      <div class="swiper-slide Header_announcement_bar_allloop_mainboxs_new">
+                        <div class="Header_announcement_bar_allloop_innerboxs_new">
+                          {{ block.settings.title }}
+                        </div>
+                      </div>  
+                    {%- endif -%}
+                  {%- endfor -%}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <style>
+        .template-index .Header_announcement_bar_main_new{ background: {{ section.settings.main_back_color_home }} !important; color: {{ section.settings.main_text_color_home }} !important; }
+        {% if section.settings.gradient_back_color != blank %}
+          .template-index .Header_announcement_bar_main_new{ {{ section.settings.gradient_back_color }} color: {{ section.settings.gradient_text_color_home }} !important; }
+          .Header_announcement_bar_main_new{ {{ section.settings.gradient_back_color }} color: {{ section.settings.gradient_text_color_home }} !important; /*padding: 10px 0;*/ }
+          /*.Header_announcement_bar_allloop_innerboxs_new{ font-size: 16px; font-weight: 500; line-height: 16px; }*/
+        {% endif %}
+      </style>
+    {%- endif -%}  
+  {%- endif -%}
+  
+  {% schema %}
+    {
+      "name": "Specific Announcement Bar",
+      "class": "Header_announcement_bar_new",
+      "settings": [
+        {
+          "type": "color",
+          "id": "main_back_color",
+          "label": "Add Main Background Color",
+          "default": "#FFFFFF"
+        },
+        {
+          "type": "color",
+          "id": "main_text_color",
+          "label": "Add Main Text Color",
+          "default": "#000000"
+        },
+        {
+          "type": "header",
+          "content": "==== Home Page Detail ===="
+        },
+        {
+          "type": "color",
+          "id": "main_back_color_home",
+          "label": "Add Main Background Color",
+          "default": "#000000"
+        },
+        {
+          "type": "color",
+          "id": "main_text_color_home",
+          "label": "Add Main Text Color",
+          "default": "#FFFFFF"
+        },
+        {
+          "type": "header",
+          "content": "==== Gradient Background Color ===="
+        },
+        {
+          "type": "textarea",
+          "id": "gradient_back_color",
+          "label": "Add Gradient Background Color",
+          "info": "background: linear-gradient(90deg, #EEC77B 0%, #99805E 25%, #B07733 50%, #EEC77B 75%, #D3A980 100%), #D9D9D9  !important; box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25)  !important;"
+        },
+        {
+          "type": "color",
+          "id": "gradient_text_color_home",
+          "label": "Add Gradient Text Color",
+          "default": "#000"
+        },
+        {
+              "type": "text",
+              "id": "class_name",
+              "label": "For Ab test class name"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "information",
+          "name": "Information",
+          "settings": [
+            {
+              "type": "richtext",
+              "id": "title",
+              "label": "Add Main Information Text",
+              "default": "<p>Free Shipping On Orders $69+</p>"
+            }
+          ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "Specific Announcement Bar",
+          "blocks": [
+            {
+              "type": "information"
+            }
+          ]
+        }
+      ]
+    }
+  {% endschema %}

@@ -1,0 +1,40 @@
+{{ "Index-storelocator-richtext-new.css" |  asset_url |  stylesheet_tag }}
+
+<div class="Index_rich_text_store_locator_main_new">
+  <div class="page-width">
+    <div class="Index_rich_text_store_locator_main_heading">
+      <div class="Index_rich_text_store_locator_main_title Common_title_new">
+        <h2>{{ section.settings.title }}</h2>
+      </div>
+      <div class="Index_rich_text_store_locator_main_description">
+        {{ section.settings.description }}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Rich Text Store Locator",
+    "class": "Index_rich_text_store_locator_new",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Find a store near you"
+      },
+      {
+        "type": "richtext",
+        "id": "description",
+        "label": "Description"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Rich Text Store Locator",
+      }
+    ]
+  }
+{% endschema %}

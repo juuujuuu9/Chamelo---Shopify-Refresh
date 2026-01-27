@@ -1,0 +1,88 @@
+{%- if section.settings.main_information_text != blank or section.settings.main_custom_image != blank or section.settings.main_heading_text != blank -%}
+  <div class="Page_our_story_author_reviews_main_new" style="background: {{ section.settings.main_background_color }};">
+    <div class="Page_our_story_author_reviews_backleft_new" style="background: {{ section.settings.inner_background_color }};">
+
+    </div>
+    <div class="Page_our_story_author_reviews_backtop_new" style="background: {{ section.settings.inner_background_color }};">
+
+    </div>
+    <div class="Page_our_story_author_reviews_backright_new" style="background: {{ section.settings.inner_background_color }};">
+
+    </div>
+    <div class="page-width">
+      <div class="Page_our_story_author_reviews_inner_new">
+        <div class="Page_our_story_author_reviews_detail_new">
+          {%- if section.settings.main_information_text != blank -%}
+            <div class="Page_our_story_author_reviews_detail_maininfos_new">
+              <div class="Page_our_story_author_reviews_detail_innerinfos_new">
+                {{ section.settings.main_information_text }}
+              </div>
+            </div>
+          {%- endif -%}
+          {%- if section.settings.main_custom_image != blank -%}
+            <div class="Page_our_story_author_reviews_detail_mainimage_new">
+              <div class="Page_our_story_author_reviews_detail_innerimage_new">
+                {{
+                  section.settings.main_custom_image | 
+                  image_url: width: img.width | 
+                  image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                  fetchpriority: 'auto', 
+                  class:'Custom_image_new'
+                }}
+              </div>
+            </div>
+          {%- endif -%}
+          {%- if section.settings.main_heading_text != blank -%}
+            <div class="Page_our_story_author_reviews_detail_maintexts_new">
+              <div class="Page_our_story_author_reviews_detail_innertexts_new">
+                {{ section.settings.main_heading_text }}
+              </div>
+            </div>
+          {%- endif -%}
+        </div>  
+      </div>
+    </div>
+  </div>
+{%- endif -%}  
+
+{% schema %}
+  {
+    "name": "Our Story Author Reviews",
+    "class": "Page_our_story_author_reviews_new",
+    "settings": [
+      {
+        "type": "color",
+        "id": "main_background_color",
+        "label": "Add Main Background Color"
+      },
+      {
+        "type": "color",
+        "id": "inner_background_color",
+        "label": "Add Inner Background Color",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "richtext",
+        "id": "main_information_text",
+        "label": "Add Main Information Text",
+        "default": "<p>“Our eyewear isn’t just unique; it’s revolutionary. With our patented technology, you can personalize your glasses to fit your style and your life.”</p>"
+      },
+      {
+        "type": "image_picker",
+        "id": "main_custom_image",
+        "label": "Add Main Custom Image"
+      },
+      {
+        "type": "textarea",
+        "id": "main_heading_text",
+        "label": "Add Main Heading Text",
+        "default": "– Stephon Marbury"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Our Story Author Reviews"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,246 @@
+
+{%- if product.metafields.custom.product_features_tabs_item_list_selections.value != blank -%}
+  <div class="Product_object_features_main_new" id="Features" style="background: {{ section.settings.main_background_color }};">
+    <div class="page-width">
+      <div class="Product_object_features_inner_new">
+        {%- if product.metafields.custom.product_features_tabs_detail_text != blank or product.metafields.custom.product_features_tabs_heading_text != blank -%}
+          <div class="Product_object_features_mainboths_new">
+            <div class="Product_object_features_innerboths_new">
+              {%- if product.metafields.custom.product_features_tabs_detail_text != blank -%}
+                <div class="Product_object_features_innerboths_maintexts_new">
+                  <div class="Product_object_features_innerboths_innertexts_new">
+                    <h5>{{ product.metafields.custom.product_features_tabs_detail_text }}</h5>
+                  </div>
+                </div>
+              {%- endif -%}
+              {%- if product.metafields.custom.product_features_tabs_heading_text != blank -%}
+                <div class="Product_object_features_innerboths_maintitle_new">
+                  <div class="Common_title_new Product_object_features_innerboths_innertitle_new">
+                    <h2>{{ product.metafields.custom.product_features_tabs_heading_text }}</h2>
+                  </div>
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endif -%}
+        {%- if product.metafields.custom.product_features_tabs_item_list_selections.value != blank -%}
+          <div class="Product_object_features_maindesktop_new Desktop_only_new">
+            <div class="Product_object_features_innerdesktop_new Tabs_common_main_new">
+              {%- assign Title_Count = 0 -%}
+              {%- if product.metafields.custom.product_features_tabs_item_list_selections.value != blank -%}
+                <div class="Product_object_features_innerdesktop_mainleft_new">
+                  <div class="Product_object_features_innerdesktop_innerleft_new">
+                    <div class="tab common_tab_new">
+                      {%- for product_features_tabs_item_list_selections in product.metafields.custom.product_features_tabs_item_list_selections.value -%}
+                        {%- assign Title_Count = Title_Count | plus: 1 -%}
+                        {%- if product_features_tabs_item_list_selections.main_heading_text != blank -%}
+                          <button data-camera-orbit-x="{{ product_features_tabs_item_list_selections.camera_orbit_x }}" data-camera-orbit-y="{{ product_features_tabs_item_list_selections.camera_orbit_y }}" data-camera-orbit="{{ product_features_tabs_item_list_selections.camera_orbit_x }}deg {{ product_features_tabs_item_list_selections.camera_orbit_y }}deg 80%" class="tablinks Tabs_common_inner_new{% if forloop.first %} active{% endif %}" tab_id="tab_{{ block.id | replace: '-', '_' }}_{{ forloop.index0 }}">
+                            <sup>{% if Title_Count < 10 %}0{% endif %}{{ Title_Count }}</sup><span>{{ product_features_tabs_item_list_selections.main_heading_text }}</span>
+                          </button>
+                        {%- endif -%}
+                      {%- endfor -%}
+                    </div>
+                  </div>
+                </div>
+              {%- endif -%}
+              {%- assign Infos_Count = 0 -%}
+              {%- if product.metafields.custom.product_features_tabs_item_list_selections.value != blank -%}
+                <div class="Product_object_features_innerdesktop_mainright_new">
+                  <div class="Product_object_features_innerdesktop_innerright_new">
+
+                    
+                    {%- if product.metafields.custom.glb_file != blank -%}
+                      {%- render 'glb-content', item_lists: product.metafields.custom.product_features_tabs_item_list_selections.value -%}
+
+                    {% else %}
+
+                    
+                    
+                    
+                      {%- for product_features_tabs_item_list_selections in product.metafields.custom.product_features_tabs_item_list_selections.value -%}
+                        {%- assign Infos_Count = Infos_Count | plus: 1 -%}
+                        {%- if product_features_tabs_item_list_selections.main_featured_image.value != blank or product_features_tabs_item_list_selections.main_icon_image.value != blank or product_features_tabs_item_list_selections.main_heading_text.value != blank or product_features_tabs_item_list_selections.main_information_text.value != blank -%}
+                          <div class="tabcontent tab_{{ block.id | replace: '-', '_' }}_{{ forloop.index0 }}_open"{% if forloop.first %} style="display:block;"{% endif %}>
+                            <div class="Product_object_features_innerdesktop_innerright_mainboxs_new">
+                              <div class="Product_object_features_innerdesktop_innerright_innerboxs_new">
+                                {%- if product_features_tabs_item_list_selections.main_featured_image.value != blank -%}
+                                  {%- if product_features_tabs_item_list_selections.main_featured_image.value contains "files" -%}
+                                    <div class="Product_object_features_innerdesktop_innerright_innerboxs_mainstatic_new">
+                                      <div class="Product_object_features_innerdesktop_innerright_innerboxs_innerstatic_new">
+                                        {{
+                                          product_features_tabs_item_list_selections.main_featured_image.value | 
+                                          image_url: width: img.width | 
+                                          image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                          fetchpriority: 'auto', 
+                                          class:'Static_image_new'
+                                        }}
+                                      </div>
+                                    </div>
+                                  {%- endif -%}
+                                {%- endif -%}
+                                {%- if product_features_tabs_item_list_selections.main_icon_image.value != blank or product_features_tabs_item_list_selections.main_heading_text.value != blank or product_features_tabs_item_list_selections.main_information_text.value != blank -%}
+                                  <div class="Product_object_features_innerdesktop_innerright_innerboxs_mainoverlay_new" style="top: {{ product_features_tabs_item_list_selections.main_box_top_margin_space }}%; right: {{ product_features_tabs_item_list_selections.main_box_right_margin_space }}%;">
+                                    <div class="Product_object_features_innerdesktop_innerright_innerboxs_inneroverlay_new">
+                                      <div class="Product_object_features_innerdesktop_innerright_innerboxs_inneroverlay_count_new">
+                                        {% if Infos_Count < 10 %}0{% endif %}{{ Infos_Count }}
+                                      </div>
+                                      {%- if product_features_tabs_item_list_selections.main_icon_image.value != blank -%}
+                                        {%- if product_features_tabs_item_list_selections.main_icon_image.value contains "files" -%}
+                                          <div class="Product_object_features_innerdesktop_innerright_innerboxs_inneroverlay_icons_new">
+                                            {{
+                                              product_features_tabs_item_list_selections.main_icon_image.value | 
+                                              image_url: width: img.width | 
+                                              image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                              fetchpriority: 'auto', 
+                                              class:'Static_icon_image_new'
+                                            }}
+                                          </div>
+                                        {%- endif -%}
+                                      {%- endif -%}
+                                      {%- if product_features_tabs_item_list_selections.main_heading_text.value != blank -%}
+                                        <div class="Product_object_features_innerdesktop_innerright_innerboxs_inneroverlay_title_new">
+                                          {{ product_features_tabs_item_list_selections.main_heading_text }}
+                                        </div>
+                                      {%- endif -%}
+                                      {%- if product_features_tabs_item_list_selections.main_information_text.value != blank -%}
+                                        <div class="Product_object_features_innerdesktop_innerright_innerboxs_inneroverlay_infos_new">
+                                          {{ product_features_tabs_item_list_selections.main_information_text | metafield_tag }}
+                                        </div>
+                                      {%- endif -%}
+                                    </div>
+                                  </div>
+                                {%- endif -%}  
+                              </div>
+                            </div>
+                          </div>
+                        {%- endif -%}
+                      {%- endfor -%}
+                      
+                    {% endif %}
+                    
+                  </div>
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endif -%}
+        {%- assign Infos_Mobile_Count = 0 -%}
+        {%- if product.metafields.custom.product_features_tabs_item_list_selections.value != blank -%}
+          <div class="Product_object_features_mainmobile_new Mobile_only_new">
+            <div class="Product_object_features_innermobile_new">
+              {%- if product.metafields.custom.product_features_tabs_item_list_selections.value != blank -%}
+                <div class="Product_object_features_innermobile_mainloops_new">
+                  <div class="Product_object_features_innermobile_innerloops_new">
+
+                    
+                    {%- if product.metafields.custom.glb_file != blank -%}
+                       {%- render 'glb-content-mobile', item_lists: product.metafields.custom.product_features_tabs_item_list_selections.value -%}
+                    {% else %}
+
+                    
+                    
+                      
+                      <div thumbsSlider class="swiper Product_object_features_thumb_slider">
+                        <div class="swiper-wrapper">
+                          {%- for product_features_tabs_item_list_selections in product.metafields.custom.product_features_tabs_item_list_selections.value -%}
+                            {%- if product_features_tabs_item_list_selections.main_featured_image.value != blank -%}
+                              {%- if product_features_tabs_item_list_selections.main_featured_image.value contains "files" -%}
+                                <div class="swiper-slide Product_object_features_innermobile_innerloops_mainboxs_new">
+                                  <div class="Product_object_features_innermobile_innerloops_innerboxs_new">
+                                    {{
+                                      product_features_tabs_item_list_selections.main_featured_image.value | 
+                                      image_url: width: img.width | 
+                                      image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                      fetchpriority: 'auto', 
+                                      class:'Static_image_new'
+                                    }}
+                                  </div>
+                                </div>
+                              {%- endif -%}
+                            {%- endif -%}
+                          {%- endfor -%}
+                        </div>
+                      </div>
+                      
+                    {% endif %} 
+                     
+                  </div>
+                </div>
+              {%- endif -%}
+              {%- if product.metafields.custom.product_features_tabs_item_list_selections.value != blank -%}
+                <div class="Product_object_features_innermobile_mainboths_new">
+                  <div class="Product_object_features_innermobile_innerboths_new">
+                    <div class="swiper Product_object_features_slider">
+                      <div class="swiper-wrapper">
+                        {%- for product_features_tabs_item_list_selections in product.metafields.custom.product_features_tabs_item_list_selections.value -%}
+                          {%- assign Infos_Mobile_Count = Infos_Mobile_Count | plus: 1 -%}
+                          {%- if product_features_tabs_item_list_selections.main_icon_image.value != blank or product_features_tabs_item_list_selections.main_heading_text.value != blank or product_features_tabs_item_list_selections.main_information_text.value != blank -%}
+                            <div data-index="{{ forloop.index0 }}" data-camera-orbit-x="{{ product_features_tabs_item_list_selections.camera_orbit_x }}" data-camera-orbit-y="{{ product_features_tabs_item_list_selections.camera_orbit_y }}" data-camera-orbit="{{ product_features_tabs_item_list_selections.camera_orbit_x }}deg {{ product_features_tabs_item_list_selections.camera_orbit_y }}deg 80%" class="swiper-slide Product_object_features_innerdesktop_innerright_innerboxs_mainoverlay_new Product_object_features_innermobile_innerboths_mainboxs_new">
+                              <div class="Product_object_features_innerdesktop_innerright_innerboxs_inneroverlay_new">
+                                <div class="Product_object_features_innerdesktop_innerright_innerboxs_inneroverlay_count_new">
+                                  {% if Infos_Mobile_Count < 10 %}0{% endif %}{{ Infos_Mobile_Count }}
+                                </div>
+                                {%- if product_features_tabs_item_list_selections.main_icon_image.value != blank -%}
+                                  {%- if product_features_tabs_item_list_selections.main_icon_image.value contains "files" -%}
+                                    <div class="Product_object_features_innerdesktop_innerright_innerboxs_inneroverlay_icons_new">
+                                      {{
+                                        product_features_tabs_item_list_selections.main_icon_image.value | 
+                                        image_url: width: img.width | 
+                                        image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                        fetchpriority: 'auto', 
+                                        class:'Static_icon_image_new'
+                                      }}
+                                    </div>
+                                  {%- endif -%}
+                                {%- endif -%}
+                                {%- if product_features_tabs_item_list_selections.main_heading_text.value != blank -%}
+                                  <div class="Product_object_features_innerdesktop_innerright_innerboxs_inneroverlay_title_new">
+                                    {{ product_features_tabs_item_list_selections.main_heading_text }}
+                                  </div>
+                                {%- endif -%}
+                                {%- if product_features_tabs_item_list_selections.main_information_text.value != blank -%}
+                                  <div class="Product_object_features_innerdesktop_innerright_innerboxs_inneroverlay_infos_new">
+                                    {{ product_features_tabs_item_list_selections.main_information_text | metafield_tag }}
+                                  </div>
+                                {%- endif -%}
+                              </div>
+                            </div>
+                          {%- endif -%} 
+                        {%- endfor -%}
+                      </div>
+                      <div class="swiper-pagination"></div>
+                    </div>
+                  </div>
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endif -%}
+      </div>  
+    </div>  
+  </div>
+{%- endif -%}
+
+
+
+
+
+{% schema %}
+  {
+    "name": "Product Object Features",
+    "class": "Product_object_features_new",
+    "settings": [
+      {
+        "type": "color",
+        "id": "main_background_color",
+        "label": "Add Main Background Color",
+        "default": "#F6F6F6"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product Object Features"
+      }
+    ]
+  }
+{% endschema %}

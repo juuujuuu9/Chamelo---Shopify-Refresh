@@ -1,0 +1,576 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "custom_review_TbRJPn": {
+          "type": "custom_review",
+          "settings": {}
+        },
+        "custom_count_tag_text_EV9rrm": {
+          "type": "custom_count_tag_text",
+          "settings": {
+            "text_style": "body",
+            "inventory_threshold_custom": 200,
+            "show_inventory_quantity": true
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "price_title_flex": false,
+            "price_title_adjacent": false
+          }
+        },
+        "meta_short_description_J3LqfR": {
+          "type": "meta_short_description",
+          "settings": {}
+        },
+        "object_size_and_fit_bbka8f": {
+          "type": "object_size_and_fit",
+          "settings": {
+            "main_heading_text": "Size and fit",
+            "main_popup_heading_text": "Size & Fit"
+          }
+        },
+        "meta_stitch_product_list_jwAydH": {
+          "type": "meta_stitch_product_list",
+          "settings": {
+            "main_heading_texts": "Frame Color:",
+            "main_heading_text_len": "Lens Color:"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "disabled": true,
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "icon_text_column_popup_RLJDQF": {
+          "type": "icon_text_column_popup",
+          "settings": {
+            "main_custom_image_1": "shopify://shop_images/Icons-Logos-1.svg",
+            "main_white_custom_image_1": "shopify://shop_images/free-shipping_5_1.svg",
+            "main_custom_texts_1": "<p>Fast & Free <br/>Shipping</p>",
+            "main_custom_popup_texts_1": "<p>We offer free US and international shipping on orders over $69. Packages shipping to the continental United States typically are fulfilled within 2 business days and arrive within 4-7 business days when shipped from our US warehouse. *<br/><br/>For international orders, they are fulfilled within 2-3 business days. Shipping time is typically 2-14 days. **<br/><br/>*All timelines stated above are dependent upon item availability and provided that the shipping requirements are satisfied. Orders with unavailable items may be put on hold until restocking occurs. If insufficient inventory is available to fulfill an order, our support team will reach out immediately to provide assistance with exchanging to another similar product or refunding the order. If products are unavailable in the US, then they may be shipped from our international warehouse. If that is the case, our team will contact you and the fulfillment and shipping time will be according to the “international orders” timeline.<br/><br/>**Shipping times vary by location. Customers are responsible for duties and fees. Chamelo cannot control delays caused by customs clearance.</p><p>***In some cases, new products may take up to one month or more to process and ship.<br/><br/><br/><br/></p>",
+            "main_custom_image_2": "shopify://shop_images/Icons-Logos-2.svg",
+            "main_white_custom_image_2": "shopify://shop_images/shield_1.svg",
+            "main_custom_texts_2": "<p>30-Day Money <br/>Back guarantee</p>",
+            "main_custom_popup_texts_2": "<p>If you’re not completely satisfied with your Chamelo product, you can return it within 30 days for a full refund or exchange. <a href=\"/collections/all\" target=\"_blank\" title=\"All products\">Learn more</a></p>",
+            "main_custom_image_3": "shopify://shop_images/Icons-Logos-3.svg",
+            "main_white_custom_image_3": "shopify://shop_images/paper_1_1.svg",
+            "main_custom_texts_3": "<p>1-Year <br/>Warranty</p>",
+            "main_custom_popup_texts_3": "<p>We stand behind the quality of our products, that’s why offer a 1-year warranty that covers any manufacturing defects. <a href=\"/collections\" target=\"_blank\" title=\"All collections\">Learn more</a></p>",
+            "ab_text_class": ""
+          }
+        },
+        "meta_real_life_items_WFwWRH": {
+          "type": "meta_real_life_items",
+          "settings": {
+            "main_heading_text": "See It In Real Life",
+            "ab_test_class_life": ""
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true,
+            "text_below_button": ""
+          }
+        },
+        "afterpay_on_site_messaging_payments_messaging_AAd6er": {
+          "type": "shopify://apps/afterpay-on-site-messaging/blocks/payments-messaging/f45a5524-d177-4475-bf59-281efd2215a8",
+          "settings": {
+            "text_align": "inherit",
+            "margin_top": 0,
+            "margin_bottom": 0,
+            "color": "",
+            "size": "md",
+            "intro_text": "or",
+            "show_interest_free": true,
+            "payment_amount_is_bold": true,
+            "show_with": true,
+            "logo_type": "badge",
+            "logo_theme": "black-on-mint",
+            "modal_link_style": "circled-info-icon",
+            "modal_theme": "mint",
+            "breakpoint": 749,
+            "text_align_mobile": "inherit",
+            "margin_top_mobile": 0,
+            "margin_bottom_mobile": 0,
+            "show_lower_limit": true,
+            "show_upper_limit": true,
+            "show_if_outside_limits": true,
+            "product": "{{product}}"
+          }
+        },
+        "banner_MXdYE8": {
+          "type": "banner",
+          "disabled": true,
+          "settings": {
+            "banner_link": "shopify://pages/sweepstakes"
+          }
+        },
+        "trynow_try_before_you_buy_trynow_cta_button_3yheXN": {
+          "type": "shopify://apps/trynow-try-before-you-buy/blocks/trynow-cta-button/4c8ee11a-0e2d-4d12-800e-b312601aebc7",
+          "disabled": true,
+          "settings": {
+            "button_title": "Try Before You Buy",
+            "cta_button_custom_css": "",
+            "button_classes": "",
+            "button_margin": "0px 0px 5px 0px",
+            "description": "Try up to [cart_limit_suggested_cart_size] items at home for [trial_period] days",
+            "description_font_size": 12,
+            "description_color": "#000000",
+            "view_collection_text": "View TryNow collection",
+            "collection": "",
+            "add_to_cart_container_selector": "",
+            "gated_toggle_font_size": 12,
+            "gated_toggle_size": 0.7,
+            "autoposition": false
+          }
+        },
+        "rebuy_personalization_engine_rebuy_widget_RJ4Nf6": {
+          "type": "shopify://apps/rebuy-personalization-engine/blocks/rebuy-widget/a26ae9b9-933b-40bf-bbc6-bf1220bbc4dc",
+          "disabled": true,
+          "settings": {
+            "enabled": true,
+            "id": "229661",
+            "product_id_enabled": true,
+            "collection_id_enabled": false
+          }
+        },
+        "prescription_lenses_tMt3XG": {
+          "type": "prescription_lenses",
+          "settings": {
+            "button_label": "Need prescription? Shop Rx",
+            "button_link": "shopify://products/aura-rx-black-prismatic-smart-glasses-electrochromic-color-changing-sunglasses-old"
+          }
+        },
+        "order_reveive_days_detail_BCNA93": {
+          "type": "order_reveive_days_detail",
+          "disabled": true,
+          "settings": {
+            "main_custom_texts": "Order within the next <strong>6 hrs</strong> to receive by <strong js-hb-shipping-date></strong>",
+            "shipping_date": 6
+          }
+        },
+        "rebuy_personalization_engine_rebuy_widget_Mak8Jk": {
+          "type": "shopify://apps/rebuy-personalization-engine/blocks/rebuy-widget/a26ae9b9-933b-40bf-bbc6-bf1220bbc4dc",
+          "disabled": true,
+          "settings": {
+            "enabled": true,
+            "id": "226944",
+            "product_id_enabled": true,
+            "collection_id_enabled": false
+          }
+        },
+        "meta_object_tabs_list_96tzAh": {
+          "type": "meta_object_tabs_list",
+          "settings": {
+            "main_Tab_heading_text_1": "Features",
+            "main_Tab_heading_text_2": "The Tech",
+            "main_Tab_heading_text_3": "Specs",
+            "ab_test_class": ""
+          }
+        },
+        "meta_accordions_list_mfgYUw": {
+          "type": "meta_accordions_list",
+          "settings": {
+            "main_heading_text_1": "Details",
+            "main_heading_text_2": "What’s in the box",
+            "main_heading_text_3": "Size and fit",
+            "main_popup_heading_text_3": "Size chart",
+            "main_heading_text_4": "Shipping & returns",
+            "main_information_text_4": "<p>We offer free US and international shipping on orders over $69. Packages shipping to the continental United States typically are fulfilled within 2 business days and arrive within 4-7 business days when shipped from our US warehouse. *<br/><br/>For international orders, they are fulfilled within 2-3 business days. Shipping time is typically 2-14 days. **<br/><br/>*All timelines stated above are dependent upon item availability and provided that the shipping requirements are satisfied. Orders with unavailable items may be put on hold until restocking occurs. If insufficient inventory is available to fulfill an order, our support team will reach out immediately to provide assistance with exchanging to another similar product or refunding the order. If products are unavailable in the US then they may be shipped from our international warehouse. If that is the case, our team will contact you and the fulfillment and shipping time will be according to the “international orders” timeline.<br/><br/>**Shipping times vary by location. Customers are responsible for duties and fees. Chamelo cannot control delays caused by customs clearance.</p><p>***In some cases, new products may take up to one month or more to process and ship.</p>"
+          }
+        },
+        "meta_real_life_items_EJ3gn9": {
+          "type": "meta_real_life_items",
+          "disabled": true,
+          "settings": {
+            "main_heading_text": "See It In Real Life",
+            "ab_test_class_life": ""
+          }
+        },
+        "video_with_texts_detail_p78AAK": {
+          "type": "video_with_texts_detail",
+          "settings": {
+            "main_full_background_color": "#f6f6f6",
+            "main_left_custom_image": "shopify://shop_images/465112282_2701106193409113_2235945206511118872_n_1_1.jpg",
+            "main_left_heading_text": "Time’s Best Inventions Of 2024",
+            "main_left_details_text": "<p>Voted one of <a href=\"https://time.com/7094864/chamelo-lens-technology/\" target=\"_blank\" title=\"https://time.com/7094864/chamelo-lens-technology/\">Time Magazine’s</a> Best Inventions of 2024, we’re here to redefine what eyewear can do.</p>"
+          }
+        },
+        "logo_list_slider_kVW4Le": {
+          "type": "logo_list_slider",
+          "settings": {
+            "main_custom_image_1": "shopify://shop_images/Marquee-Logo-1.png",
+            "main_custom_image_2": "shopify://shop_images/Marquee-Logo-2.png",
+            "main_custom_image_3": "shopify://shop_images/image_132_3ce69df1-c7a1-4c11-8edf-4d51c93c79a9.png",
+            "main_custom_image_4": "shopify://shop_images/image_138.png"
+          }
+        },
+        "white_logo_list_slider_QfC8ae": {
+          "type": "white_logo_list_slider",
+          "settings": {
+            "main_custom_image_1": "shopify://shop_images/image_131.png",
+            "main_custom_image_2": "shopify://shop_images/image_133.png",
+            "main_custom_image_3": "shopify://shop_images/image_132_3ce69df1-c7a1-4c11-8edf-4d51c93c79a9.png",
+            "main_custom_image_4": "shopify://shop_images/image_130.png"
+          }
+        }
+      },
+      "block_order": [
+        "custom_review_TbRJPn",
+        "custom_count_tag_text_EV9rrm",
+        "title",
+        "meta_short_description_J3LqfR",
+        "object_size_and_fit_bbka8f",
+        "meta_stitch_product_list_jwAydH",
+        "variant_picker",
+        "icon_text_column_popup_RLJDQF",
+        "meta_real_life_items_WFwWRH",
+        "buy_buttons",
+        "afterpay_on_site_messaging_payments_messaging_AAd6er",
+        "banner_MXdYE8",
+        "trynow_try_before_you_buy_trynow_cta_button_3yheXN",
+        "rebuy_personalization_engine_rebuy_widget_RJ4Nf6",
+        "prescription_lenses_tMt3XG",
+        "order_reveive_days_detail_BCNA93",
+        "rebuy_personalization_engine_rebuy_widget_Mak8Jk",
+        "meta_object_tabs_list_96tzAh",
+        "meta_accordions_list_mfgYUw",
+        "meta_real_life_items_EJ3gn9",
+        "video_with_texts_detail_p78AAK",
+        "logo_list_slider_kVW4Le",
+        "white_logo_list_slider_QfC8ae"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-3",
+        "media_size": "medium",
+        "constrain_to_viewport": false,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "none",
+        "mobile_thumbnails": "hide",
+        "hide_variants": false,
+        "enable_video_looping": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "product_object_meet_lists_new_Qyxdcp": {
+      "type": "Product-object-meet-lists-new",
+      "settings": {
+        "main_background_color": "#ffffff",
+        "main_text_color": ""
+      }
+    },
+    "product_object_lens_slide_new_TdkNn6": {
+      "type": "Product-object-lens-slide-new",
+      "settings": {
+        "main_background_color": "rgba(0,0,0,0)"
+      }
+    },
+    "product_object_lens_lists_new_hYjmpA": {
+      "type": "Product-object-lens-lists-new",
+      "settings": {
+        "main_background_color": "rgba(0,0,0,0)"
+      }
+    },
+    "product_object_features_new_qafhWQ": {
+      "type": "Product-object-features-new",
+      "settings": {
+        "main_background_color": "#f6f6f6"
+      }
+    },
+    "product_meta_testimonials_new_6DqMbQ": {
+      "type": "Product-meta-testimonials-new",
+      "settings": {
+        "main_background_color": "",
+        "main_outer_image": "shopify://shop_images/OUTER-IMGAE-REVIEWS.svg",
+        "main_inside_image": "shopify://shop_images/INSIDE-IMGAE-REVIEWS.svg",
+        "main_verified_text": "Verified Review"
+      }
+    },
+    "product_object_specs_list_new_64HWWj": {
+      "type": "Product-object-specs-list-new",
+      "settings": {
+        "main_background_color": "",
+        "inner_background_color": "#ffffff"
+      }
+    },
+    "product_meta_compare_list_new_Utbg4z": {
+      "type": "Product-meta-compare-list-new",
+      "settings": {
+        "main_background_color": "#ffffff",
+        "main_heading_text": "Compare styles",
+        "horizontal_design": false,
+        "hide_color_items": false
+      }
+    },
+    "product_image_logos_slider_new_kfpgTU": {
+      "type": "Product-image-logos-slider-new",
+      "blocks": {
+        "information_mdd8L8": {
+          "type": "information",
+          "settings": {
+            "title": "<p>“With a commitment to pushing boundaries and redefining the eyewear landscape, Chamelo  is poised to revolutionize the industry.”</p>",
+            "logos": "shopify://shop_images/image_124_721acf8e-a554-4d1d-b2b2-ef748d15f2f1.png"
+          }
+        },
+        "information_993bJF": {
+          "type": "information",
+          "settings": {
+            "title": "<p>“They’re a unique and innovative piece of gear...it could make some waves in the eyewear industry.”</p>",
+            "logos": "shopify://shop_images/image_152_48a034f8-ca54-4619-ab2e-f8e540cb7b9b.png"
+          }
+        },
+        "information_9jaY8G": {
+          "type": "information",
+          "settings": {
+            "title": "<p>“These aren’t ordinary sunglasses. These are epic.”</p>",
+            "logos": "shopify://shop_images/image_132_b1c62832-b479-4526-ae55-ccc098ec3828.png"
+          }
+        }
+      },
+      "block_order": [
+        "information_mdd8L8",
+        "information_993bJF",
+        "information_9jaY8G"
+      ],
+      "settings": {
+        "main_background_color": "",
+        "main_heading_text": "In The Press"
+      }
+    },
+    "index_tabs_banner_product_new_V7LLEX": {
+      "type": "Index-tabs-banner-product-new",
+      "blocks": {
+        "information_NBE4tj": {
+          "type": "information",
+          "settings": {
+            "title": "Adjustable Tint",
+            "main_desktop_video": "shopify://files/videos/-432f-477d-80c8-28b789f7af44 (1).mov",
+            "main_mobile_video": "shopify://files/videos/-432f-477d-80c8-28b789f7af44 (1).mov",
+            "main_details_text": "Eclipse™ Tint-adjustable Lenses",
+            "main_heading_text": "Change tint in less than 0.1 seconds",
+            "main_information_text": "<p>Choose your exact lens tint using touch tint slider, automatic tint control, and even app-enabled tint controls.</p>",
+            "main_button_text": "Learn More",
+            "main_button_link": "/",
+            "main_product_list": [
+              "music-shield-fire-lenses-sports-smart-glasses-electrochromic-tint-adjustable-changing-audio-sunglasses",
+              "falcon-obsidian-frames-alpha-blue-lenses-sports-smart-glasses-electrochromic-automatic-tint-adjustable-sunglasses",
+              "dusk-lifestyle-smart-glasses-electrochromic-tint-adjustable-audio-sunglasses",
+              "dusk-lite-lifestyle-smart-glasses-electrochromic-tint-adjustable-sunglasses"
+            ]
+          }
+        }
+      },
+      "block_order": [
+        "information_NBE4tj"
+      ],
+      "settings": {
+        "main_background_color": "#ffffff",
+        "main_details_text": "The Technology",
+        "main_heading_text": "Vision meets innovation",
+        "main_information_text": ""
+      }
+    },
+    "product_faqs_accordions_new_QtMQBA": {
+      "type": "Product-faqs-accordions-new",
+      "blocks": {
+        "information_UtLFNP": {
+          "type": "information",
+          "settings": {
+            "title": "How does Music Shield work?",
+            "infos": "<p>Tint-adjustable sports sunglasses with built-in audio for no lapse in vision and ultimate focus during your workout. Tint-adjustable sports sunglasses with built-in audio for no lapse in vision.</p>"
+          }
+        },
+        "information_THhVUa": {
+          "type": "information",
+          "settings": {
+            "title": "What can Music Shield be used for?",
+            "infos": "<p>Tint-adjustable sports sunglasses with built-in audio for no lapse in vision and ultimate focus during your workout. Tint-adjustable sports sunglasses with built-in audio for no lapse in vision.</p>"
+          }
+        },
+        "information_MaVqeJ": {
+          "type": "information",
+          "settings": {
+            "title": "Is Music Shield waterproof?",
+            "infos": "<p>Tint-adjustable sports sunglasses with built-in audio for no lapse in vision and ultimate focus during your workout. Tint-adjustable sports sunglasses with built-in audio for no lapse in vision.</p>"
+          }
+        },
+        "information_UQpKaL": {
+          "type": "information",
+          "settings": {
+            "title": "Is Music Shield polarized?",
+            "infos": "<p>Tint-adjustable sports sunglasses with built-in audio for no lapse in vision and ultimate focus during your workout. Tint-adjustable sports sunglasses with built-in audio for no lapse in vision.</p>"
+          }
+        },
+        "information_F7GiJj": {
+          "type": "information",
+          "settings": {
+            "title": "How fast is shipping?",
+            "infos": "<p>Tint-adjustable sports sunglasses with built-in audio for no lapse in vision and ultimate focus during your workout. Tint-adjustable sports sunglasses with built-in audio for no lapse in vision.</p>"
+          }
+        },
+        "information_eKPFVw": {
+          "type": "information",
+          "settings": {
+            "title": "Do you offer a guarantee?",
+            "infos": "<p>Tint-adjustable sports sunglasses with built-in audio for no lapse in vision and ultimate focus during your workout. Tint-adjustable sports sunglasses with built-in audio for no lapse in vision.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "information_UtLFNP",
+        "information_THhVUa",
+        "information_MaVqeJ",
+        "information_UQpKaL",
+        "information_F7GiJj",
+        "information_eKPFVw"
+      ],
+      "settings": {
+        "main_background_color": "#ffffff",
+        "main_heading_text": "FAQs",
+        "main_button_text": "Read All Faqs",
+        "main_button_link": "/",
+        "main_information_text": "<p>Curious how our sunglasses work or anything else? We’d love to hear from you. Email us at <a href=\"mailto:hello@chamelo.com\" title=\"mailto:hello@chamelo.com\">hello@chamelo.com</a> or call us at. (<a href=\"tel:(646)-413-7538\" title=\"tel:(646)-413-7538\">646)-413-7538.</a></p>",
+        "main_outer_image": "shopify://shop_images/Outer-white-Image-New.svg",
+        "main_inside_image": "shopify://shop_images/Inside-white-Image-New.svg"
+      }
+    },
+    "product_review_new_fPfERF": {
+      "type": "Product-review-new",
+      "settings": {
+        "main_background_color": "#f6f6f6",
+        "main_heading_text": "Hear from our<br>happy customers",
+        "main_information_text": "<p>Reviews</p>"
+      }
+    },
+    "index_icon_with_text_list_new_8GAEdK": {
+      "type": "Index-icon-with-text-list-new",
+      "blocks": {
+        "information_MmdcJW": {
+          "type": "information",
+          "settings": {
+            "icons": "shopify://shop_images/Icon-New-1.svg",
+            "title": "30-Day Guarantee",
+            "infos": "<p>If you’re not completely satisfied, return within 30 days for a full refund or exchange</p>",
+            "infos_mobile": ""
+          }
+        },
+        "information_698weP": {
+          "type": "information",
+          "settings": {
+            "icons": "shopify://shop_images/Icon-New-2.svg",
+            "title": "Fast, Free Shipping",
+            "infos": "<p>Enjoy free shipping on all orders of $69 or more (US & International). Orders usually arrive within 4-7 business days.</p>",
+            "infos_mobile": ""
+          }
+        },
+        "information_JcMfT6": {
+          "type": "information",
+          "settings": {
+            "icons": "shopify://shop_images/Icon-New-3.svg",
+            "title": "1-Year warranty",
+            "infos": "<p>Included with all glasses, covering any manufacturing defects</p>",
+            "infos_mobile": ""
+          }
+        },
+        "information_9aHkG9": {
+          "type": "information",
+          "settings": {
+            "icons": "shopify://shop_images/Icon-New-4.svg",
+            "title": "A+ Customer Service",
+            "infos": "<p>Curious how our sunglasses work or anything else? Just email us at <a href=\"mailto:hello@chamelo.com\" title=\"mailto:hello@chamelo.com\">hello@chamelo.com</a></p>",
+            "infos_mobile": "<p>Got a question about our glasses? Just email us at <a href=\"mailto:hello@chamelo.com\" title=\"mailto:hello@chamelo.com\">hello@chamelo.com</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "information_MmdcJW",
+        "information_698weP",
+        "information_JcMfT6",
+        "information_9aHkG9"
+      ],
+      "settings": {
+        "main_background_color": "",
+        "inner_background_color": "#f6f6f6",
+        "main_heading_text": "Upgrade your shades with confidence"
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "17645555376fa3336b": {
+      "type": "apps",
+      "blocks": {
+        "lensadvisor_select_lenses_app_app_block_WJnHUr": {
+          "type": "shopify://apps/lensadvisor-select-lenses-app/blocks/app-block/86552bcb-0c5c-439e-b59c-d8577012ea59",
+          "settings": {
+            "hide_add_to_cart": true,
+            "use_quick_view": false,
+            "use_metafield_data": false,
+            "enable_slide_animation": false
+          }
+        }
+      },
+      "block_order": [
+        "lensadvisor_select_lenses_app_app_block_WJnHUr"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product_object_meet_lists_new_Qyxdcp",
+    "product_object_lens_slide_new_TdkNn6",
+    "product_object_lens_lists_new_hYjmpA",
+    "product_object_features_new_qafhWQ",
+    "product_meta_testimonials_new_6DqMbQ",
+    "product_object_specs_list_new_64HWWj",
+    "product_meta_compare_list_new_Utbg4z",
+    "product_image_logos_slider_new_kfpgTU",
+    "index_tabs_banner_product_new_V7LLEX",
+    "product_faqs_accordions_new_QtMQBA",
+    "product_review_new_fPfERF",
+    "index_icon_with_text_list_new_8GAEdK",
+    "related-products",
+    "17645555376fa3336b"
+  ]
+}

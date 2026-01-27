@@ -1,0 +1,6 @@
+.Product_object_meet_lists_innerloops_new .swiper-button-prev {
+    background: url(veil_slider_previous.svg) no-repeat center left;
+}
+.Product_object_meet_lists_innerloops_new .swiper-button-next {
+    background: url(veil_slider_prev.svg) no-repeat center right;
+}

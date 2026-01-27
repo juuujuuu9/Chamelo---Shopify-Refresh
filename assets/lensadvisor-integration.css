@@ -1,0 +1,80 @@
+.la-prescription-modal * {
+    font-family: unset !important;
+}
+
+.la-prescription-modal {
+    font-family: inherit !important;
+}
+
+button.la-prescription-form-btn {
+    font-weight: bold !important;
+}
+
+.la-prescription-modal-image {
+    padding: 20px !important;
+}
+
+.la-prescription-modal-image .la-prescription-modal-title {
+    position: relative !important;
+}
+
+
+.la-select-lenses-btn {
+    font-size: 14px !important;
+    min-width: unset !important;
+    line-height: 1 !important;
+    padding: 16px 0 !important;
+}
+
+.display_header_new .la-select-lenses-btn {
+    font-size: 10px !important;
+    padding: 8px 0 !important
+}
+
+.la-modal-open .la-prescription-modal-image {
+    max-height: unset !important;
+    height: unset !important;
+    flex-direction: column-reverse !important;
+    padding-bottom: 0 !important;
+}
+
+.la-prescription-modal-content-body {
+    padding-top: 0 !important;
+}
+
+.la-prescription-modal-content {
+    padding-top:0 !important;
+}
+
+
+
+@media(min-width: 768px) {
+    .la-select-lenses-btn { 
+      font-size: 16px !important;
+    }
+
+    .display_header_new .la-select-lenses-btn {
+        font-size: 16px !important;
+        padding: 15px 0 !important
+    }
+
+    .la-modal-open .la-prescription-modal-image img{
+        max-height: 280px !important;
+    }
+
+    .la-prescription-modal-title h2 {
+        margin: 0 !important;
+    }
+    .la-prescription-modal-title p {
+        margin-bottom: 0 !important;
+    }
+
+    .la-prescription-modal-content {
+        padding-top: 10px !important;
+    }
+}
+
+.la-prescription-modal-title {
+    margin-bottom: 0 !important;
+}
+

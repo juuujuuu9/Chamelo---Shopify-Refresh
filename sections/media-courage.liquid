@@ -1,0 +1,216 @@
+{{ 'media-courage.css' | asset_url | stylesheet_tag }}
+
+<div class="media_courage"  style="background: {{ section.settings.main_background_color }};">
+    <div class="wrapper">
+        {%- if section.settings.main_desktop_video != blank or section.settings.main_mobile_video != blank or section.settings.main_desktop_image != blank or section.settings.main_mobile_image != blank -%}
+            <div class="alpha W-half">
+                <div class="media_courage__image_and_video">
+                    {%- if section.settings.main_desktop_video != blank or section.settings.main_mobile_video != blank -%}
+                    <div class="media_courage__video">
+                        {%- if section.settings.main_desktop_video != blank -%}
+                        {{ section.settings.main_desktop_video | video_tag: class:'media_courage__desktop_image_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                        {%- endif -%}
+                        {%- if section.settings.main_mobile_video != blank -%}
+                        {{ section.settings.main_mobile_video | video_tag: class:'media_courage__mobile_image_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                        {%- endif -%}
+                    </div>
+                    {% else %}  
+                    {%- if section.settings.main_desktop_image != blank or section.settings.main_mobile_image != blank -%}
+                        <div class="Imedia_courage__image">
+                        {%- if section.settings.main_desktop_image != blank -%}
+                            {{
+                            section.settings.main_desktop_image | 
+                            image_url: width: img.width | 
+                            image_tag: widths: '1296, 1512, 1728, 1944, 2048', 
+                            fetchpriority: 'auto', 
+                            class:'media_courage__desktop_image_new'
+                            }}
+                        {%- endif -%}
+                        {%- if section.settings.main_mobile_image != blank -%}
+                            {{
+                            section.settings.main_mobile_image | 
+                            image_url: width: img.width | 
+                            image_tag: widths: '1296, 1512, 1728, 1944, 2048', 
+                            fetchpriority: 'auto', 
+                            class:'media_courage__mobile_image_new'
+                            }}
+                        {%- endif -%}
+                        </div>
+                    {%- endif -%}
+                    {%- endif -%}
+                </div>
+            </div>
+        {%- endif -%}
+        {%- if  section.settings.main_heading_text != blank or sections.blocks.size > 0 -%}
+            <div class="beta W-half">
+                <div class="beta-inner">
+                    {%- if section.settings.main_heading_text != blank -%}
+                        <h4 class="media_courage__title">{{ section.settings.main_heading_text  }}</h4>
+                    {%- endif -%}
+                    <div class="swiper-container" js-media-courage-slider>
+                        <div class="media_courage__content-wrap swiper-wrapper">
+                            {%- for block in section.blocks -%}
+                                {%- if block.settings.title != blank and block.settings.logos != blank -%}
+                                    <div class="media_courage__content swiper-slide">
+                                        {%- if block.settings.title != blank -%}
+                                            <div class="media_courage__contents-text">
+                                                {{ block.settings.title }}
+                                            </div>
+                                        {%- endif -%}
+                                        {%- if block.settings.logos != blank -%}
+                                            <div class="media_courage__logo">
+                                                {{
+                                                    block.settings.logos | 
+                                                    image_url: width: img.width | 
+                                                    image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                                    fetchpriority: 'auto', 
+                                                    class:'media_courage__Logo_image_new'
+                                                }}
+                                            </div>
+                                        {%- endif -%}
+                                    </div>
+                                {%- endif -%}
+                            {%- endfor -%}
+                        </div>
+                        <div class="swiper-pagination js-media-courage-pagination"></div> 
+                    </div>
+                    <div class="media_courage__shadow">
+                        <div class="media_courage__destop_shadow">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="720" height="672" viewBox="0 0 720 672" fill="none">
+                                <g filter="url(#filter0_f_10221_6840)">
+                                <path d="M516.584 384.542C762.43 568.524 835.655 498.138 935.587 370.7C1135.05 -246.081 1106 153.377 935.587 370.7C881.212 538.835 809.856 782.489 719.752 1125.94C212.216 1299.81 -806.487 1589.52 -821.016 1357.44C-839.177 1067.35 -1450.61 367.777 -1215.81 445.881C-981.018 523.985 -586.958 128.372 -381.6 298.075C49.2719 654.136 272.544 201.911 516.584 384.542Z" fill="url(#paint0_linear_10221_6840)" fill-opacity="0.95"/>
+                                </g>
+                                <defs>
+                                <filter id="filter0_f_10221_6840" x="-1460.22" y="-149.166" width="2725.53" height="1783.85" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                                <feGaussianBlur stdDeviation="95.4" result="effect1_foregroundBlur_10221_6840"/>
+                                </filter>
+                                <linearGradient id="paint0_linear_10221_6840" x1="130.5" y1="774.298" x2="150.702" y2="11.716" gradientUnits="userSpaceOnUse">
+                                <stop offset="0.0430943" stop-color="#FC824E"/>
+                                <stop offset="0.0829968" stop-color="#FFB064"/>
+                                <stop offset="0.169604" stop-color="#FFF9E3"/>
+                                <stop offset="0.27831" stop-color="#4A98B0"/>
+                                <stop offset="0.433975" stop-color="#0D4061"/>
+                                <stop offset="0.630021"/>
+                                </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="media_courage__shadow-mobile">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="375" height="322" viewBox="0 0 375 322" fill="none">
+                                <g filter="url(#filter0_f_12085_8513)">
+                                <path d="M372.937 680.479C827.507 -259.894 442.755 456.172 247.78 159.373C187.157 67.0893 45.1591 51.9051 15.8827 188.645C-13.3936 325.385 -10.8303 312.646 -79.3322 250.485C-147.834 188.324 -139.05 529.755 -169.051 696.355C-193.053 829.635 182.274 741.304 372.937 680.479Z" fill="url(#paint0_linear_12085_8513)" fill-opacity="0.95"/>
+                                </g>
+                                <defs>
+                                <filter id="filter0_f_12085_8513" x="-271.349" y="-13.1563" width="958.531" height="880.322" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                                <feGaussianBlur stdDeviation="50.6" result="effect1_foregroundBlur_12085_8513"/>
+                                </filter>
+                                <linearGradient id="paint0_linear_12085_8513" x1="197.017" y1="441.012" x2="183.848" y2="82.4272" gradientUnits="userSpaceOnUse">
+                                <stop offset="0.02" stop-color="#FF6F5B"/>
+                                <stop offset="0.169037" stop-color="#FFB064"/>
+                                <stop offset="0.35797" stop-color="#4A98B0"/>
+                                <stop offset="0.715" stop-color="#0D4061"/>
+                                <stop offset="0.95"/>
+                                </linearGradient>
+                                </defs>
+                                </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {%- endif -%}
+    </div>
+    
+</div>
+
+<script>
+    
+    if (document.documentElement.clientWidth < 768) {
+        new Swiper("[js-media-courage-slider]", {
+            slidesPerView: 'auto',        
+            spaceBetween: 16,  
+            {% comment %} watchSlidesProgress: true,
+            draggable:!0,
+            autoHeight:!1,
+            watchOverflow:!0,
+            threshold:10,
+            mousewheel:{
+                forceToAxis:!0,
+                invert: 0,
+            },
+            freeMode:!0,  {% endcomment %}
+            pagination: {
+                el: '.js-media-courage-pagination', 
+                clickable: true,
+            },
+        }); 
+    }
+     
+</script>
+
+{% schema %}
+  {
+    "name": "Media courage",
+    "settings": [
+      {
+        "type": "color",
+        "id": "main_background_color",
+        "label": "Add Main Background Color"
+      },
+      {
+        "type": "video",
+        "id": "main_desktop_video",
+        "label": "Add Main Desktop Video"
+      },
+      {
+        "type": "video",
+        "id": "main_mobile_video",
+        "label": "Add Main Mobile Video"
+      },
+      {
+        "type": "image_picker",
+        "id": "main_desktop_image",
+        "label": "Add Main Desktop Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "main_mobile_image",
+        "label": "Add Main Mobile Image"
+      },
+      {
+        "type": "textarea",
+        "id": "main_heading_text",
+        "label": "Add Main Heading Text",
+        "default": "In The Press"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "information",
+        "name": "Information",
+        "limit": 3,
+        "settings": [
+          {
+            "type": "richtext",
+            "id": "title",
+            "label": "Add Main Heading Text",
+            "default": "<p>“Lorem Ipsum is simply dummy text of the printing and typesetting industry.”</p>"
+          },
+          {
+            "type": "image_picker",
+            "id": "logos",
+            "label": "Add Main Custom Image"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Media courage"
+      }
+    ]
+  }
+{% endschema %}

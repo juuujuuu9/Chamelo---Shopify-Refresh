@@ -1,0 +1,83 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hb_team_banner_eYnq7W": {
+      "type": "hb-team-banner",
+      "settings": {
+        "title": "Join the Chamelo dream team",
+        "description": "Looking for a new role? Check out our list of open roles and send in an application!",
+        "btn_text": "view open roles",
+        "btn_url": "https://www.chamelo.com/pages/careers#open-job-roles",
+        "background_color": "",
+        "image_1": "shopify://shop_images/MED-RARE-NYC-087_1.png",
+        "image_2": "shopify://shop_images/Screenshot_2024-10-07_at_10.53.17_AM_1.png",
+        "image_3": "shopify://shop_images/Screenshot_2024-09-22_at_7.40.27_PM_1.png",
+        "image_4": "shopify://shop_images/Ampere-Shenzhen-Dusk-Factory-125_1.png",
+        "image_5": "shopify://shop_images/Frame_1000006292_16f3d088-3288-4e29-be29-54b2eb183615.png"
+      }
+    },
+    "hb_info_section_XaAkkd": {
+      "type": "hb-info-section",
+      "blocks": {
+        "info_section_HD8mUV": {
+          "type": "info_section",
+          "settings": {
+            "card_number": 1,
+            "Card_title": "submit your application",
+            "card_pera": "Select one of our open roles from the list below, and submit your resume."
+          }
+        },
+        "info_section_zVack4": {
+          "type": "info_section",
+          "settings": {
+            "card_number": 2,
+            "Card_title": "screening and interviews",
+            "card_pera": "Once we receive your application, we’ll reach out to you via email to schedule an interview."
+          }
+        },
+        "info_section_mApk6U": {
+          "type": "info_section",
+          "settings": {
+            "card_number": 3,
+            "Card_title": "references",
+            "card_pera": "After the interview process, we typically ask for 3 references and a routine background check."
+          }
+        },
+        "info_section_FEecPd": {
+          "type": "info_section",
+          "settings": {
+            "card_number": 4,
+            "Card_title": "job offer",
+            "card_pera": "Congratulations! If you've made it this far, then we're super pumped to be working together!"
+          }
+        }
+      },
+      "block_order": [
+        "info_section_HD8mUV",
+        "info_section_zVack4",
+        "info_section_mApk6U",
+        "info_section_FEecPd"
+      ],
+      "settings": {
+        "section_header": "How to apply"
+      }
+    },
+    "hb_role_wXN8qx": {
+      "type": "hb-role",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hb_team_banner_eYnq7W",
+    "hb_info_section_XaAkkd",
+    "hb_role_wXN8qx"
+  ]
+}

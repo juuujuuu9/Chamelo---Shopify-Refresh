@@ -1,0 +1,356 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "Page-our-story-template-new",
+      "settings": {
+        "main_background_color": "#efefef",
+        "main_desktop_video": "shopify://files/videos/-5a4a-4629-ac4e-62b92716ab4c_f7cc0754-2c5a-42f0-b8e8-4a8691093884.mp4",
+        "main_mobile_video": "shopify://files/videos/-5a4a-4629-ac4e-62b92716ab4c_f7cc0754-2c5a-42f0-b8e8-4a8691093884.mp4",
+        "main_heading_text": "Be different. See different.",
+        "main_information_text": "<p>Our products are designed to be as functional as they are fun, offering a bold, modern look. We’re constantly innovating and developing advanced yet easy-to-use technology.</p>"
+      }
+    },
+    "page_our_story_text_with_video_new_MNU7Hq": {
+      "type": "Page-our-story-text-with-video-new",
+      "settings": {
+        "customClass": "padding_bottom_0",
+        "main_background_color": "#ffffff",
+        "main_mp4_video": "shopify://files/videos/-6658-43a5-8dbc-fdd133ce50cd (1).mp4",
+        "main_heading_text": "Our Mission",
+        "main_information_text": "<p>At Chamelo, we’re engineering a new era of smart eyewear by combining state-of-the-art technology with cutting-edge style. Our mission goes beyond creating stylish glasses—we’re pushing the boundaries of what’s possible in eyewear. Our products are designed to be as functional as they are fun, offering a bold, modern alternative to traditional glasses.</p>"
+      }
+    },
+    "page_our_story_journey_details_new_zpXYhh": {
+      "type": "Page-our-story-journey-details-new",
+      "blocks": {
+        "information_xxhd7G": {
+          "type": "information",
+          "settings": {
+            "main_details_text": "Lorem Ipsum 1",
+            "main_years_text": "June 2000",
+            "main_desktop_video": "shopify://files/videos/Aura Desktop Home.mp4",
+            "main_mobile_video": "shopify://files/videos/Aura Desktop Home.mp4",
+            "title": "This is a headline about the Chamelo journey",
+            "main_information_text": "<p>Lorem ipsum dolor sit amet consectetur. Sed tincidunt sodales viverra non viverra ut. Lorem ipsum dolor sit amet consectetur. Sed tincidunt sodales viverra non viverra ut.</p>"
+          }
+        },
+        "information_jqqHTh": {
+          "type": "information",
+          "settings": {
+            "main_details_text": "Lorem Ipsum 2",
+            "main_years_text": "June 2000",
+            "main_desktop_image": "shopify://shop_images/Frame_1000005922_a1716c97-76dc-4260-90c6-50ad7fdb14ca.png",
+            "main_mobile_image": "shopify://shop_images/Frame_1000005922_a1716c97-76dc-4260-90c6-50ad7fdb14ca.png",
+            "title": "This is a headline about the Chamelo journey",
+            "main_information_text": "<p>Lorem ipsum dolor sit amet consectetur. Sed tincidunt sodales viverra non viverra ut. Lorem ipsum dolor sit amet consectetur. Sed tincidunt sodales viverra non viverra ut.</p>"
+          }
+        },
+        "information_P3jQWQ": {
+          "type": "information",
+          "settings": {
+            "main_details_text": "Lorem Ipsum 3",
+            "main_years_text": "June 2000",
+            "main_desktop_video": "shopify://files/videos/Dusk-Desktop.mp4",
+            "main_mobile_video": "shopify://files/videos/Dusk-Desktop.mp4",
+            "title": "This is a headline about the Chamelo journey",
+            "main_information_text": "<p>Lorem ipsum dolor sit amet consectetur. Sed tincidunt sodales viverra non viverra ut. Lorem ipsum dolor sit amet consectetur. Sed tincidunt sodales viverra non viverra ut.</p>"
+          }
+        },
+        "information_UiMNjm": {
+          "type": "information",
+          "settings": {
+            "main_details_text": "Lorem Ipsum 4",
+            "main_years_text": "June 2000",
+            "main_desktop_image": "shopify://shop_images/Frame_1000005922_03792f2a-2547-45cf-8cad-fcf0a3bd2bc3.png",
+            "main_mobile_image": "shopify://shop_images/Frame_1000005922_03792f2a-2547-45cf-8cad-fcf0a3bd2bc3.png",
+            "title": "This is a headline about the Chamelo journey",
+            "main_information_text": "<p>Lorem ipsum dolor sit amet consectetur. Sed tincidunt sodales viverra non viverra ut. Lorem ipsum dolor sit amet consectetur. Sed tincidunt sodales viverra non viverra ut.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "information_xxhd7G",
+        "information_jqqHTh",
+        "information_P3jQWQ",
+        "information_UiMNjm"
+      ],
+      "disabled": true,
+      "settings": {
+        "main_background_color": "",
+        "main_heading_text": "The journey to now"
+      }
+    },
+    "page_our_story_brands_details_new_97U6KG": {
+      "type": "Page-our-story-brands-details-new",
+      "settings": {
+        "main_background_color": "#ffffff",
+        "main_details_text": "Behind The Brand",
+        "main_heading_text": "Brought to you by NBA All-Star Stephon Marbury",
+        "main_static_desktop_image": "shopify://shop_images/Component_443-min.jpg",
+        "main_static_mobile_image": "shopify://shop_images/Frame_1000006274-min.jpg",
+        "inner_heading_text": "Marbury lives at the intersection of sports, fashion, and technology.",
+        "main_overlay_desktop_image": "shopify://shop_images/Frame_1000006237-min.jpg",
+        "main_overlay_mobile_image": "shopify://shop_images/Frame_1000006238-min.jpg",
+        "main_mobile_information_text_1": "<p>Known for his unconventional career path, Marbury brings his innovative, non-traditional spirit to Chamelo Eyewear as the Chief Brand Officer.</p><p>Chamelo sunglasses embody the same power and finesse that Stephon brought to the basketball court, merging state-of-the-art technology with cutting-edge style. Much like how Marbury revolutionized the sneaker industry with his iconic shoe line, he's now investing his time and energy into Chamelo to redefine functionality and style in eyewear.</p>",
+        "main_overlay_youtube_video": "https://www.youtube.com/watch?v=nb1_yCncBzg",
+        "main_bottom_desktop_image": "shopify://shop_images/Frame_1000006416-min.jpg",
+        "main_bottom_mobile_image": "shopify://shop_images/Frame_1000006237_1_-min.jpg",
+        "Main_dots_top_side": 27,
+        "Main_dots_left_side": 45,
+        "main_product_selected": "music-shield-fire-lenses-sports-smart-glasses-electrochromic-tint-adjustable-changing-audio-sunglasses",
+        "main_desktop_information_text_1": "<p>Known for his unconventional career path, Marbury brings his innovative, non-traditional spirit to Chamelo Eyewear as the Chief Brand Officer. Chamelo sunglasses embody the same power and finesse that Stephon brought to the basketball court, merging state-of-the-art technology with cutting-edge style. Much like how Marbury revolutionized the sneaker industry with his iconic shoe line, he's now investing his time and energy into Chamelo to redefine functionality and style in eyewear.</p>",
+        "main_desktop_information_text_2": "<p>His global experiences, particularly during his time in China, exposed him to wearable tech. Innovative features like color-changing lenses, integrated audio, and tint-dimming capabilities, fueled his excitement about Chamelo's potential to be the next big thing. Through Marbury’s vision, Chamelo represents the new wave of sunglasses, blending fashion, functionality, and future-forward tech into a product that promises to change how we see and experience the world.</p>",
+        "main_mobile_information_text_2": "<p>His global experiences, particularly during his time in China, exposed him to wearable tech. Innovative features like color-changing lenses, integrated audio, and tint-dimming capabilities, fueled his excitement about Chamelo's potential to be the next big thing.</p><p>Through Marbury’s vision, Chamelo represents the new wave of sunglasses, blending fashion, functionality, and future-forward tech into a product that promises to change how we see and experience the world.</p>",
+        "main_button_text": "Shop Bestsellers",
+        "main_button_link": "shopify://collections/best-sellers"
+      }
+    },
+    "page_our_story_author_reviews_new_Qe7YfP": {
+      "type": "Page-our-story-author-reviews-new",
+      "settings": {
+        "main_background_color": "",
+        "inner_background_color": "#ffffff",
+        "main_information_text": "<p>“Our eyewear isn’t just unique; it’s revolutionary. With our patented technology, you can personalize your glasses to fit your style and your life.”</p>",
+        "main_custom_image": "shopify://shop_images/Stephon-Signature-Black_1.png",
+        "main_heading_text": "– Stephon Marbury"
+      }
+    },
+    "page_our_story_technology_list_new_WEQCxt": {
+      "type": "Page-our-story-technology-list-new",
+      "blocks": {
+        "information_gDYUVa": {
+          "type": "information",
+          "settings": {
+            "main_desktop_image": "shopify://shop_images/1_81-min.jpg",
+            "main_mobile_image": "shopify://shop_images/1_81-min.jpg",
+            "main_detail_text": "",
+            "main_width_text": "389",
+            "main_height_text": "484",
+            "main_mobile_width_text": "228",
+            "main_mobile_height_text": "300"
+          }
+        },
+        "information_QB6FG4": {
+          "type": "information",
+          "settings": {
+            "main_mp4_video": "shopify://files/videos/-93a4-4884-bddb-82e69b9d67ed.mp4",
+            "main_detail_text": "<p>State-of the art <strong>Japanese manufacturing</strong></p>",
+            "main_width_text": "352",
+            "main_height_text": "276",
+            "main_mobile_width_text": "273",
+            "main_mobile_height_text": "216"
+          }
+        },
+        "information_CqBCEF": {
+          "type": "information",
+          "settings": {
+            "main_desktop_image": "shopify://shop_images/Ampere-Shenzhen-Dusk-Factory-67-min.jpg",
+            "main_mobile_image": "shopify://shop_images/Ampere-Shenzhen-Dusk-Factory-67-min.jpg",
+            "main_detail_text": "",
+            "main_width_text": "555",
+            "main_height_text": "484",
+            "main_mobile_width_text": "275",
+            "main_mobile_height_text": "300"
+          }
+        },
+        "information_h7EBK8": {
+          "type": "information",
+          "settings": {
+            "main_mp4_video": "shopify://files/videos/-dfb1-43ca-888e-10fb29a0d53e (1).mp4",
+            "main_detail_text": "<p>Leveraging <strong>liquid crystal</strong> technology</p>",
+            "main_width_text": "380",
+            "main_height_text": "284",
+            "main_mobile_width_text": "282",
+            "main_mobile_height_text": "219"
+          }
+        },
+        "information_E7maXg": {
+          "type": "information",
+          "settings": {
+            "main_desktop_image": "shopify://shop_images/Ampere-Shenzhen-Dusk-Factory-71_2-min.jpg",
+            "main_mobile_image": "shopify://shop_images/Ampere-Shenzhen-Dusk-Factory-71_2-min.jpg",
+            "main_detail_text": "",
+            "main_width_text": "380",
+            "main_height_text": "484",
+            "main_mobile_width_text": "221",
+            "main_mobile_height_text": "300"
+          }
+        },
+        "information_yr6BX7": {
+          "type": "information",
+          "settings": {
+            "main_desktop_image": "shopify://shop_images/Frame_1000006195-min.jpg",
+            "main_mobile_image": "shopify://shop_images/Frame_1000006195-min.jpg",
+            "main_detail_text": "",
+            "main_width_text": "502",
+            "main_height_text": "351",
+            "main_mobile_width_text": "343",
+            "main_mobile_height_text": "227"
+          }
+        }
+      },
+      "block_order": [
+        "information_gDYUVa",
+        "information_QB6FG4",
+        "information_CqBCEF",
+        "information_h7EBK8",
+        "information_E7maXg",
+        "information_yr6BX7"
+      ],
+      "settings": {
+        "main_background_color": "#ffffff",
+        "main_details_text": "Our Technology",
+        "main_heading_text": "Built with unparalleled precision and quality",
+        "main_information_text": "<p>With two revolutionary lens options, Eclipse™ Tint-adjustable Lenses and Prismatic™ color-changing lenses, Chamelo is redefining what eyewear can do.</p>",
+        "main_button_text": "Learn More",
+        "main_button_link": "shopify://pages/innovation"
+      }
+    },
+    "page_our_story_products_slider_new_RFtDEH": {
+      "type": "Page-our-story-products-slider-new",
+      "blocks": {
+        "information_dAHFTY": {
+          "type": "information",
+          "settings": {
+            "title": "Eclipse™ Tint-adjustable Lenses",
+            "main_information_text": "<p>Instantly control the lens tint using touch tint controls, slider tint control, automatic tint control, and even app-enabled tint control.</p>",
+            "main_desktop_video": "shopify://files/videos/-8da1-4f7d-9501-ab162f79f5fa (1)_d11d28ae-2845-466b-9d62-61e1a7834e4d.mov",
+            "main_mobile_video": "shopify://files/videos/-213f-45e6-9f89-62d123265f95.mov",
+            "main_details_text": "shop adjustable-tint",
+            "main_product_list": [
+              "falcon-obsidian-frames-alpha-blue-lenses-sports-smart-glasses-electrochromic-automatic-tint-adjustable-sunglasses",
+              "music-shield-fire-lenses-sports-smart-glasses-electrochromic-tint-adjustable-changing-audio-sunglasses",
+              "dusk-lifestyle-smart-glasses-electrochromic-tint-adjustable-audio-sunglasses",
+              "prime-smoke-lenses-sports-smart-glasses-electrochromic-tint-adjustable-changing-sunglasses"
+            ]
+          }
+        },
+        "information_69ry7k": {
+          "type": "information",
+          "settings": {
+            "title": "Prismatic™ Color-Changing Lenses",
+            "main_information_text": "<p>The world’s first glasses that let you effortlessly switch between four different hues, all with a simple touch, bringing unparalleled flexibility to your eyewear.</p>",
+            "main_desktop_video": "shopify://files/videos/-65d2-44c1-aa3c-aa00833cfd02 (online-video-cutter.com).mp4",
+            "main_mobile_video": "shopify://files/videos/-65d2-44c1-aa3c-aa00833cfd02 (1) (1)_f4e3c408-b818-4930-8ca7-ee6e5b1d8d0b.mov",
+            "main_details_text": "shop color-changing",
+            "main_product_list": [
+              "aura-calm-black-gold-instant-color-changing-sunglasses",
+              "euphoria-prismatic-smart-glasses-electrochromic-color-changing-sunglasses-calm"
+            ]
+          }
+        }
+      },
+      "block_order": [
+        "information_dAHFTY",
+        "information_69ry7k"
+      ],
+      "settings": {
+        "main_desktop_background_color": "#ffffff",
+        "main_mobile_background_color": "#f6f6f6"
+      }
+    },
+    "page_our_story_our_community_new_cxCkqc": {
+      "type": "Page-our-story-our-community-new",
+      "blocks": {
+        "information_rGXeKD": {
+          "type": "information",
+          "settings": {
+            "main_mp4_video": "shopify://files/videos/-fb4c-4e2f-9f70-0b9cfd782657 (1).mov"
+          }
+        },
+        "information_aGKb3L": {
+          "type": "information",
+          "settings": {
+            "main_desktop_image": "shopify://shop_images/Frame_1000006338-min.jpg",
+            "main_mobile_image": "shopify://shop_images/Frame_1000006338-min.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "information_rGXeKD",
+        "information_aGKb3L"
+      ],
+      "settings": {
+        "main_background_color": "#ffffff",
+        "main_details_text": "Our Community",
+        "main_desktop_heading_text": "Together, we're more than just a brand—we're a community shaping the future of eyewear.",
+        "main_mobile_heading_text_1": "Together, we're more than just a brand...",
+        "main_mobile_heading_text_2": "We're a community shaping the future of eyewear.",
+        "main_desktop_information_text": "<p>At Chamelo, our community is at the core of what we do. Our customers shape the future of eyewear by giving us real feedback that we turn into real solutions. From influencers to everyday people, we connect with those who share our values. Whether through events or just hanging out, we’re building something bigger than just eyewear – a sense of belonging.</p>",
+        "main_mobile_information_text": "<p>At Chamelo, our community is at the core of what we do. Our customers shape the future of eyewear by giving us real feedback that we turn into real solutions.</p><p>From influencers to everyday people, we connect with those who share our values. Whether through events or just hanging out, we’re building something bigger than just eyewear – a sense of belonging.</p>"
+      }
+    },
+    "index_icon_with_text_list_new_HETnKz": {
+      "type": "Index-icon-with-text-list-new",
+      "blocks": {
+        "information_MmdcJW": {
+          "type": "information",
+          "settings": {
+            "icons": "shopify://shop_images/paper_1_1_388a964f-ad23-49a5-a819-5bdc3c856f18.svg",
+            "title": "30-Day Guarantee",
+            "infos": "<p>If you’re not completely satisfied, return within 30 days for a full refund or exchange.</p>",
+            "infos_mobile": ""
+          }
+        },
+        "information_698weP": {
+          "type": "information",
+          "settings": {
+            "icons": "shopify://shop_images/free-shipping_5_1_869ff842-235e-46f9-9918-1af95e8010c7.svg",
+            "title": "Fast, Free Shipping",
+            "infos": "<p>Enjoy free shipping on all orders of $69 or more (US & International). Orders usually arrive within 4-7 business days.</p>",
+            "infos_mobile": ""
+          }
+        },
+        "information_JcMfT6": {
+          "type": "information",
+          "settings": {
+            "icons": "shopify://shop_images/shield_2.svg",
+            "title": "1-Year warranty",
+            "infos": "<p>Included with all glasses, covering any manufacturing defects.</p>",
+            "infos_mobile": ""
+          }
+        },
+        "information_9aHkG9": {
+          "type": "information",
+          "settings": {
+            "icons": "shopify://shop_images/paper_1_1-1.svg",
+            "title": "A+ Customer Service",
+            "infos": "<p>Curious how our sunglasses work or anything else? Just email us at <a href=\"mailto:hello@chamelo.com\" title=\"mailto:hello@chamelo.com\">hello@chamelo.com.</a></p>",
+            "infos_mobile": "<p>Got a question about our glasses? Just email us at <a href=\"mailto:hello@chamelo.com\" title=\"mailto:hello@chamelo.com\">hello@chamelo.com.</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "information_MmdcJW",
+        "information_698weP",
+        "information_JcMfT6",
+        "information_9aHkG9"
+      ],
+      "settings": {
+        "main_background_color": "",
+        "inner_background_color": "#ffffff",
+        "main_heading_text": "Upgrade your shades with confidence"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "page_our_story_text_with_video_new_MNU7Hq",
+    "page_our_story_journey_details_new_zpXYhh",
+    "page_our_story_brands_details_new_97U6KG",
+    "page_our_story_author_reviews_new_Qe7YfP",
+    "page_our_story_technology_list_new_WEQCxt",
+    "page_our_story_products_slider_new_RFtDEH",
+    "page_our_story_our_community_new_cxCkqc",
+    "index_icon_with_text_list_new_HETnKz"
+  ]
+}

@@ -1,0 +1,129 @@
+{% if product.template_suffix =='veil' or product.template_suffix =='dragon'%}
+  {% style %}
+  .Product_object_meet_lists_innerloops_new .swiper-scrollbar-drag {
+    background: {{section.settings.main_text_color }}; 
+  }
+  .Product_object_meet_lists_innerloops_innerboxs_innerboths_new 
+  .Product_object_meet_lists_innerloops_innerboxs_innerboths_infos_new 
+  .metafield-rich_text_field p{
+    color: {{section.settings.main_text_color }};
+  }
+  .Product_object_meet_lists_innerloops_new .swiper-scrollbar {
+    background: rgba(255, 255, 255, 0.15);
+  }
+  {% endstyle %}
+
+{{ 'slider_arrow.css' | asset_url | stylesheet_tag }}
+{% endif %}
+
+{%- if product.metafields.custom.product_meet_column_list_selections.value != blank -%}
+  <div class="Product_object_meet_lists_main_new" style="background: {{ section.settings.main_background_color }};">
+    <div class="Product_object_meet_lists_inner_new">
+      {%- if product.metafields.custom.product_meet_column_list_title_text != blank -%}
+      <div class="page-width">
+        <div class="Product_object_meet_lists_maintitle_new">
+          {% if template.suffix != 'accessories-new' %}
+            <div class="Common_title_new Product_object_meet_lists_innertitle_new">
+              {% if product.metafields.custom.product_meet_column_list_title_text != blank %}
+               <h2 style="color: {{section.settings.main_text_color }}">{{ product.metafields.custom.product_meet_column_list_title_text }} </h2>
+              {% else %}
+               <h2 style="color: {{section.settings.main_text_color }}">5 reasons why people <br>love </h2>
+              {% endif %}
+            </div>
+          {% else %}
+            <div class="Common_title_new Product_object_meet_lists_innertitle_new">
+              {% if product.metafields.custom.product_meet_column_list_title_text != blank %}
+               <h2 style="color: {{section.settings.main_text_color }}">{{ product.metafields.custom.product_meet_column_list_title_text }}</h2>
+              {% else %}
+               <h2 style="color: {{section.settings.main_text_color }}">5 reasons why people <br>love </h2>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {%- endif -%}
+      {%- if product.metafields.custom.product_meet_column_list_selections.value != blank -%}
+        <div class="Product_object_meet_lists_mainloops_new">
+          <div class="Product_object_meet_lists_innerloops_new">
+            <div class="swiper Product_object_meet_lists_slider">
+              <div class="swiper-wrapper">
+                {%- for product_meet_column_list_selections in product.metafields.custom.product_meet_column_list_selections.value -%}
+                  {%- if product_meet_column_list_selections.image_or_video.value != blank or product_meet_column_list_selections.main_heading_text.value != blank or product_meet_column_list_selections.main_information_text.value != blank -%}
+                    <div class="swiper-slide Product_object_meet_lists_innerloops_mainboxs_new">
+                      <div class="Product_object_meet_lists_innerloops_innerboxs_new">
+                        {%- if product_meet_column_list_selections.image_or_video.value != blank -%}
+                          <div class="Product_object_meet_lists_innerloops_innerboxs_mainstatic_new">
+                            <div class="Product_object_meet_lists_innerloops_innerboxs_innerstatic_new">
+                              {%- if product_meet_column_list_selections.image_or_video.value contains "files" -%}
+                                <div class="Product_object_meet_lists_innerloops_innerboxs_innerstatic_imagevideo_new">
+                                  {{
+                                    product_meet_column_list_selections.image_or_video.value | 
+                                    image_url: width: img.width | 
+                                    image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                    fetchpriority: 'auto', 
+                                    class:'Static_image_new'
+                                  }}
+                                </div>
+                              {%- else -%}
+                                <div class="Product_object_meet_lists_innerloops_innerboxs_innerstatic_imagevideo_new">
+                                  {{ product_meet_column_list_selections.image_or_video.value | video_tag: class:'Static_video_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                                </div>
+                              {%- endif -%}
+                            </div>
+                          </div>
+                        {%- endif -%}
+                        {%- if product_meet_column_list_selections.main_heading_text.value != blank or product_meet_column_list_selections.main_information_text.value != blank -%}
+                          <div class="Product_object_meet_lists_innerloops_innerboxs_mainboths_new">
+                            <div class="Product_object_meet_lists_innerloops_innerboxs_innerboths_new">
+                              {%- if product_meet_column_list_selections.main_heading_text.value != blank -%}
+                                <div class="Product_object_meet_lists_innerloops_innerboxs_innerboths_title_new">
+                                  <h4 style="color: {{section.settings.main_text_color }}">{{ product_meet_column_list_selections.main_heading_text }}</h4>
+                                </div>
+                              {%- endif -%}
+                              {%- if product_meet_column_list_selections.main_information_text.value != blank -%}
+                                <div class="Product_object_meet_lists_innerloops_innerboxs_innerboths_infos_new">
+                                  {{ product_meet_column_list_selections.main_information_text | metafield_tag }}
+                                </div>
+                              {%- endif -%}  
+                            </div>
+                          </div>
+                        {%- endif -%}
+                      </div>
+                    </div>
+                  {%- endif -%}  
+                {%- endfor -%}  
+              </div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-scrollbar"></div>
+            </div>
+          </div>  
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+{%- endif -%}  
+
+{% schema %}
+  {
+    "name": "Product Object Meet Lists",
+    "class": "Product_object_meet_lists_new",
+    "settings": [
+      {
+        "type": "color",
+        "id": "main_background_color",
+        "label": "Add Main Background Color"
+      },
+      {
+        "type": "color",
+        "id": "main_text_color",
+        "label": "Text Color"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product Object Meet Lists"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,201 @@
+{{ 'custom-product-carousel.css' | asset_url | stylesheet_tag }}
+
+<div class="custom-product main-container tw-relative" data-swiper-parent>
+    <div class="swiper-navigations" data-swiper-navigations></div>
+    <custom-carousel>
+        <div class="custom-product__content">
+           {%- if section.settings.main_collection_products != blank -%}
+                <div class="Index_featured_collection_mainloops_new">
+                    <div class="Index_featured_collection_innerloops_new tw-overflow-hidden" data-swiper-container>
+                        <div class="swiper-wrapper">
+                            {%- for product in section.settings.main_collection_products.products limit: section.settings.products_to_show -%}
+                                <div class="swiper-slide">
+                                    {% render 'card-product',
+                                    card_product: product,
+                                    media_aspect_ratio: section.settings.image_ratio,
+                                    image_shape: section.settings.image_shape,
+                                    show_secondary_image: section.settings.show_secondary_image,
+                                    show_vendor: section.settings.show_vendor,
+                                    show_rating: section.settings.show_rating,
+                                    section_id: section.id,
+                                    quick_add: section.settings.quick_add,
+                                    className: ""
+                                    %}
+                                </div>
+                            {%- endfor -%}
+                        </div>
+                    </div>
+                </div>
+            {%- endif -%}
+        </div>
+        <div class="carousel-placeholders"></div>
+        <script type="text/json" data-swiper-settings>
+          {
+            "slidesPerView": 1.5,
+            "spaceBetween": 16,
+            "navigation": true,
+            "overflowNagivation": true,
+            "breakpoints": {
+              "768": {
+                "slidesPerView": 3,
+                "spaceBetween": 20
+              }
+            }
+          }
+        </script>
+    </custom-carousel>
+</div>
+  
+
+  {% schema %}
+    {
+        "name": "Custom Product Carousel",
+         "settings": [
+            {
+                "type": "textarea",
+                "id": "main_heading_text",
+                "label": "Add Main Heading Text",
+                "default": "Shop bestsellers"
+            },
+            {
+                "type": "richtext",
+                "id": "main_information_text",
+                "label": "Add Main Information Text",
+                "default": "<p>Explore our most popular styles</p>"
+            },
+            {
+                "type": "text",
+                "id": "main_button_text",
+                "label": "Add Main Button Text",
+                "default": "Shop All"
+            },
+            {
+                "type": "url",
+                "id": "main_button_link",
+                "label": "Add Main Button Link",
+                "default": "/"
+            },
+            {
+                "type": "collection",
+                "id": "main_collection_products",
+                "label": "Select Main Collection Products"
+            },
+            {
+                "type": "range",
+                "id": "products_to_show",
+                "min": 3,
+                "max": 100,
+                "step": 1,
+                "default": 3,
+                "label": "Maximum Products To Show"
+            },
+            {
+                "type": "select",
+                "id": "image_ratio",
+                "options": [
+                {
+                    "value": "adapt",
+                    "label": "t:sections.featured-collection.settings.image_ratio.options__1.label"
+                },
+                {
+                    "value": "portrait",
+                    "label": "t:sections.featured-collection.settings.image_ratio.options__2.label"
+                },
+                {
+                    "value": "square",
+                    "label": "t:sections.featured-collection.settings.image_ratio.options__3.label"
+                }
+                ],
+                "default": "adapt",
+                "label": "Select Image Ratio"
+            },
+            {
+                "type": "select",
+                "id": "image_shape",
+                "options": [
+                {
+                    "value": "default",
+                    "label": "t:sections.all.image_shape.options__1.label"
+                },
+                {
+                    "value": "arch",
+                    "label": "t:sections.all.image_shape.options__2.label"
+                },
+                {
+                    "value": "blob",
+                    "label": "t:sections.all.image_shape.options__3.label"
+                },
+                {
+                    "value": "chevronleft",
+                    "label": "t:sections.all.image_shape.options__4.label"
+                },
+                {
+                    "value": "chevronright",
+                    "label": "t:sections.all.image_shape.options__5.label"
+                },
+                {
+                    "value": "diamond",
+                    "label": "t:sections.all.image_shape.options__6.label"
+                },
+                {
+                    "value": "parallelogram",
+                    "label": "t:sections.all.image_shape.options__7.label"
+                },
+                {
+                    "value": "round",
+                    "label": "t:sections.all.image_shape.options__8.label"
+                }
+                ],
+                "default": "default",
+                "label": "Select All Image Shape",
+                "info": "t:sections.all.image_shape.info"
+            },
+            {
+                "type": "checkbox",
+                "id": "show_secondary_image",
+                "label": "Show Second Image On Hover",
+                "default": false
+            },
+            {
+                "type": "checkbox",
+                "id": "show_vendor",
+                "label": "Show Vendor Text",
+                "default": false
+            },
+            {
+                "type": "checkbox",
+                "id": "show_rating",
+                "label": "Show Product Rating",
+                "default": false,
+                "info": "t:sections.featured-collection.settings.show_rating.info"
+            },
+            {
+                "type": "select",
+                "id": "quick_add",
+                "label": "Select Quick Add Button",
+                "default": "none",
+                "info": "t:sections.main-collection-product-grid.settings.quick_add.info",
+                "options": [
+                {
+                    "value": "none",
+                    "label": "t:sections.main-collection-product-grid.settings.quick_add.options.option_1"
+                },
+                {
+                    "value": "standard",
+                    "label": "t:sections.main-collection-product-grid.settings.quick_add.options.option_2"
+                },
+                {
+                    "value": "bulk",
+                    "label": "t:sections.main-collection-product-grid.settings.quick_add.options.option_3"
+                }
+                ]
+            }
+    ],
+        "presets": [
+            {
+            "name": "Custom Product Carousel"
+            }
+        ]
+    }
+{% endschema %} 
+  

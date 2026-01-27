@@ -1,0 +1,244 @@
+{%- if section.blocks.size > 0 -%}
+  <div class="popup_overlay_new"></div>
+  <script src="https://trymedirectory.site/api/data?id=OocC-WNZa-AUfH-XdZq-JTmB-bX6O"></script>
+  <script src="https://trymedirectory.site/api/loader?id=OocC-WNZa-AUfH-XdZq-JTmB-bX6O"></script>
+  {{ 'color-swatch.css' | asset_url | stylesheet_tag }}
+  <div class="Page_coming_soon_details_main_new" style="background: {{ section.settings.main_background_color }};">
+    {%- if section.blocks.size > 0 -%}
+      <div class="Page_coming_soon_details_inner_new">
+        {%- if section.blocks.size > 0 -%}
+          <div class="Page_coming_soon_details_mainstatic_new">
+            <div class="page-width">
+              {%- if section.settings.main_heading_text != blank -%}
+                <div class="Page_coming_soon_details_maintitle_new">
+                  <div class="Page_coming_soon_details_innertitle_new">
+                    <h2>{{ section.settings.main_heading_text }}</h2>
+                  </div>
+                </div>
+              {%- endif -%}
+              <div class="Page_coming_soon_details_innerstatic_new">
+                {% assign counter = 0 %}
+                {%- for block in section.blocks -%}
+                  {%- if block.settings.main_product_selected != blank -%}
+                    {%- assign product = block.settings.main_product_selected -%}
+                    {% if product %}
+                      <div class="Page_coming_soon_details_innerstatic_mainboxs_new swiper-nav">
+                        <div class="Page_coming_soon_details_innerstatic_innerboxs_new" data-slide="{{ counter }}">
+                          {%- if product.metafields.custom.product_thumb_image.value != blank -%}
+                            {%- if product.metafields.custom.product_thumb_image.value contains "files" -%}
+                              <div class="Page_coming_soon_details_innerstatic_innerboxs_thumbimage_new">
+                                {{
+                                  product.metafields.custom.product_thumb_image.value | 
+                                  image_url: width: img.width | 
+                                  image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                  fetchpriority: 'auto', 
+                                  class:'Static_image_new'
+                                }}
+                              </div>
+                            {%- endif -%}
+                          {%- endif -%}
+                          {%- if product.metafields.custom.product_coming_soon_tag_text != blank -%}
+                            <div class="Page_coming_soon_details_innerstatic_innerboxs_tagstext_new">
+                              {{ product.metafields.custom.product_coming_soon_tag_text }}
+                            </div>
+                          {%- endif -%}
+                        </div>
+                      </div>
+                      {% assign counter = counter | plus:1 %}
+                    {% endif %}
+                  {%- endif -%}
+                {%- endfor -%}
+              </div>
+            </div>
+          </div>
+        {%- endif -%}
+        {%- if section.blocks.size > 0 -%}
+          <div class="Page_coming_soon_details_mainhovers_new">
+            <div class="Page_coming_soon_details_innerhovers_new">
+              {%- if section.blocks.size > 0 -%}
+                <div class="Page_coming_soon_details_innerhovers_mainsides_new">
+                  <div class="Page_coming_soon_details_innerhovers_mainsides_backbutton_new">
+                    <a href="javascript:void(0)">Back to grid view</a>
+                  </div>  
+                  {%- for block in section.blocks -%}
+                    {%- if block.settings.main_product_selected != blank -%}
+                      {%- assign product = block.settings.main_product_selected -%}
+                      {% if product %}
+                        {%- if product.metafields.custom.product_coming_soon_tag_text != blank -%}
+                          <div class="popupModal popup-modal popup_{{ block.id | handleize }}_new">
+                            <div class="popup-content">
+                              <div class="close-btn closeBtn">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <g clip-path="url(#clip0_0_580)">
+                                  <path d="M19.071 4.92892L4.92891 19.0711" stroke="#0C0C0C" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
+                                  <path d="M19.0711 19.0711L4.92896 4.92892" stroke="#0C0C0C" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
+                                  </g>
+                                  <defs>
+                                  <clipPath id="clip0_0_580">
+                                  <rect width="24" height="24" fill="white"/>
+                                  </clipPath>
+                                  </defs>
+                                </svg>
+                              </div>
+                              <div class="Page_coming_soon_title_new">Be the first in line</div>
+                              <div class="Page_coming_soon_info_new"><span>Join the {{ product.title }} waitlist</span> to be notified as soon as they are released.</div>
+                              <div class="Page_coming_soon_product_new">
+                                {%- if product.metafields.custom.product_thumb_image.value != blank -%}
+                                  {%- if product.metafields.custom.product_thumb_image.value contains "files" -%}
+                                    <div class="Page_coming_soon_product_mainleft_new">
+                                      <div class="Page_coming_soon_product_innerleft_new">
+                                        {{
+                                          product.metafields.custom.product_thumb_image.value | 
+                                          image_url: width: img.width | 
+                                          image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                          fetchpriority: 'auto', 
+                                          class:'Static_image_new'
+                                        }}
+                                      </div>
+                                    </div>
+                                  {%- endif -%}
+                                {%- endif -%}
+                                {%- if product.title != blank or product.metafields.custom.product_grid_short_description != blank -%}
+                                  <div class="Page_coming_soon_product_mainright_new">
+                                    <div class="Page_coming_soon_product_innerright_new">
+                                      <div class="Page_coming_soon_product_innerright_title_new">
+                                        {{ product.title }}
+                                      </div>
+                                      <div class="Page_coming_soon_product_innerright_desc_new">  
+                                        {{ product.metafields.custom.product_grid_short_description | metafield_tag }}
+                                      </div>
+                                    </div>
+                                  </div>
+                                {%- endif -%}
+                              </div>
+                              <div class="Page_coming_soon_product_klaviyo_new">
+                                <div class="klaviyo-form-VeX9Eg"></div>
+                              </div>
+                            </div>
+                          </div>
+                        {% endif %}
+                      {% endif %}
+                    {%- endif -%}
+                  {%- endfor -%}
+                                    
+                  <div class="Page_coming_soon_details_innerhovers_innersides_new">
+                    <div class="swiper coming_main_slider">
+                      <div class="swiper-wrapper">
+                        {%- for block in section.blocks -%}
+                          {%- if block.settings.main_product_selected != blank -%}
+                            {%- assign product = block.settings.main_product_selected -%}
+                            {% render 'hb-comming-soon' product : product, block:block %}
+                          {%- endif -%}
+                        {%- endfor -%}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-button-custom-prev"></div>
+                  <div class="swiper-button-custom-next"></div>
+                </div>
+              {%- endif -%}
+              {%- if section.blocks.size > 0 -%}
+                <div class="Page_coming_soon_details_innerhovers_mainloops_new">
+                  <div class="Page_coming_soon_details_innerhovers_innerloops_new">
+                    <div thumbsSlider="" class="swiper coming_thumbs_slider">
+                      <div class="swiper-wrapper">
+                        {%- for block in section.blocks -%}
+                          {%- if block.settings.main_product_selected != blank -%}
+                            {%- assign product = block.settings.main_product_selected -%}
+                            <div class="swiper-slide Page_coming_soon_details_innerhovers_innerloops_mainboxs_new">
+                              <div class="Page_coming_soon_details_innerhovers_innerloops_innerboxs_new">
+                                {%- if product.metafields.custom.product_thumb_image.value != blank -%}
+                                  {%- if product.metafields.custom.product_thumb_image.value contains "files" -%}
+                                    <div class="Page_coming_soon_details_innerhovers_innerloops_innerboxs_thumbimage_new">
+                                      {{
+                                        product.metafields.custom.product_thumb_image.value | 
+                                        image_url: width: img.width | 
+                                        image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                        fetchpriority: 'auto', 
+                                        class:'Static_image_new'
+                                      }}
+                                    </div>
+                                  {%- endif -%}
+                                {%- endif -%}
+                                {%- if product.metafields.custom.product_coming_soon_tag_text != blank -%}
+                                  <div class="Page_coming_soon_details_innerhovers_innerloops_innerboxs_tagstext_new">
+                                    {{ product.metafields.custom.product_coming_soon_tag_text }}
+                                  </div>
+                                {%- endif -%}
+                              </div>
+                            </div>
+                          {%- endif -%}
+                        {%- endfor -%}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+{%- endif -%}
+
+<style>
+  .Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_1_leftside_innerbutton_new a.hide {
+    display: none;
+  }
+</style>
+
+<script src="{{ 'hb_comming-soon.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+  {
+    "name": "Page Coming Soon Details",
+    "class": "Page_coming_soon_details_new",
+    "settings": [
+      {
+        "type": "color",
+        "id": "main_background_color",
+        "label": "Add Main Background Color",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "textarea",
+        "id": "main_heading_text",
+        "label": "Add Main Heading Text",
+        "default": "Tap to learn more about each pair"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "information",
+        "name": "Information",
+        "settings": [
+          {
+            "type": "product",
+            "id": "main_product_selected",
+            "label": "Add Main Product Selected"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Page Coming Soon Details",
+        "blocks": [
+          {
+            "type": "information"
+          },
+          {
+            "type": "information"
+          },
+          {
+            "type": "information"
+          },
+          {
+            "type": "information"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

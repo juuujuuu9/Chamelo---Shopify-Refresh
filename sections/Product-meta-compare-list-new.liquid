@@ -1,0 +1,347 @@
+{% if product.title contains 'La Melaza Music Shield - COMING SOON' %}
+<style>
+.la-melaza-music-shield_add_tocart{
+display: none;
+}
+</style>
+{%endif %}
+{%- if product.metafields.custom.product_compare_styles_selections.value != blank -%}
+  <div class="Product_meta_compare_list_main_new {% if section.settings.horizontal_design == true %} Product_meta_compare_horizontal_design_new {% endif %}" style="background: {{ section.settings.main_background_color }};">
+    <div class="page-width">
+      <div class="Product_meta_compare_list_inner_new">
+        {%- if section.settings.main_heading_text != blank -%}
+          <div class="Product_meta_compare_list_maintitle_new">
+            <div class="Common_title_new Product_meta_compare_list_innertitle_new">
+              <h2>{{ section.settings.main_heading_text }}</h2>
+            </div>
+          </div>
+        {%- endif -%}
+        {%- if product.metafields.custom.product_compare_styles_selections.value != blank -%}
+          <div class="Product_meta_compare_list_maintable_new Tabs_common_main_new">
+            <div class="Product_meta_compare_list_maintable_new">
+              {% assign counter = 0 %}
+              {% for product_compare_styles_selections in product.metafields.custom.product_compare_styles_selections.value %}
+                {% assign counter = counter | plus: 1 %}
+              {% endfor %}
+              {% if counter > 1 %}
+                {%- if product.metafields.custom.product_compare_styles_selections.value != blank -%}
+                  <div class="Index_object_table_detail_innertable_maindropdown_new Product_meta_compare_list_maintable_maindropdown_new Mobile_only_new">
+                    <div class="Product_meta_compare_list_maintable_innerdropdown_new">
+                      <div class="Product_meta_compare_list_maintable_innerdropdown_title_new">
+                        <h5>Compare With:</h5>
+                      </div>
+                      <div class="tab_title_main_new">
+                        {%- if product.metafields.custom.product_compare_styles_selections.value != blank -%}
+                          <div class="tab_title_mobile_new">                        
+                            <div class="tab_title_mobile_inner_new">
+                              {%- for product_compare_styles_selections in product.metafields.custom.product_compare_styles_selections.value limit: 1 -%}
+                                {%- if product_compare_styles_selections.featured_image != blank or product_compare_styles_selections.title != blank -%}
+                                  <div js-card-product class="Product_meta_compare_list_maintable_innerdropdown_mainboxs_new">
+                                    <div class="Product_meta_compare_list_maintable_innerdropdown_innerboxs_new">
+                                      {%- if product_compare_styles_selections.featured_image != blank or product_compare_styles_selections.metafields.custom.product_thumb_image != blank -%}
+                                        <div class="Product_meta_compare_list_maintable_innerdropdown_innerboxs_image_new">
+                                          {% if product_compare_styles_selections.metafields.custom.product_thumb_image != blank %}            
+                                            {{
+                                              product_compare_styles_selections.metafields.custom.product_thumb_image | 
+                                              image_url: width: img.width | 
+                                              image_tag: widths: '1296, 1512, 1728, 1944, 2048', 
+                                              fetchpriority: 'auto', 
+                                              class:'Static_image_new'
+                                            }}
+                                          {% else %}
+                                            {{
+                                              product_compare_styles_selections.featured_image | 
+                                              image_url: width: img.width | 
+                                              image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                              fetchpriority: 'auto', 
+                                              class:'Static_image_new'
+                                            }}
+                                          {% endif %}
+                                        </div>
+                                      {% endif %}
+                                      {%- if product_compare_styles_selections.title != blank -%}
+                                        <div class="Product_meta_compare_list_maintable_innerdropdown_innerboxs_title_new">
+                                          {{ product_compare_styles_selections.title }}
+                                        </div>
+                                      {%- endif -%}
+                                    </div>
+                                  </div>
+                                {%- endif -%}
+                              {%- endfor -%}
+                            </div>
+                          </div>
+                        {%- endif -%}
+                        <div class="tab common_tab_new">
+                          {%- for product_compare_styles_selections in product.metafields.custom.product_compare_styles_selections.value -%}
+                            {%- if product_compare_styles_selections.featured_image != blank or product_compare_styles_selections.title != blank -%}
+                              <button class="tablinks Tabs_common_inner_new{% if forloop.first %} active{% endif %}" tab_id="tab_{{ block.id | replace: '-', '_' }}_{{ forloop.index0 }}">
+                                <div class="Product_meta_compare_list_maintable_innerdropdown_mainboxs_new">
+                                  <div class="Product_meta_compare_list_maintable_innerdropdown_innerboxs_new">
+                                    {%- if product_compare_styles_selections.featured_image != blank or product_compare_styles_selections.metafields.custom.product_thumb_image != blank -%}
+                                      <div class="Product_meta_compare_list_maintable_innerdropdown_innerboxs_image_new">
+                                        {% if product_compare_styles_selections.metafields.custom.product_thumb_image != blank %}            
+                                          {{
+                                            product_compare_styles_selections.metafields.custom.product_thumb_image | 
+                                            image_url: width: img.width | 
+                                            image_tag: widths: '1296, 1512, 1728, 1944, 2048', 
+                                            fetchpriority: 'auto', 
+                                            class:'Static_image_new'
+                                          }}
+                                        {% else %}
+                                          {{
+                                            product_compare_styles_selections.featured_image | 
+                                            image_url: width: img.width | 
+                                            image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                            fetchpriority: 'auto', 
+                                            class:'Static_image_new'
+                                          }}
+                                        {% endif %}
+                                      </div>
+                                    {%- endif -%}
+                                    {%- if product_compare_styles_selections.title != blank -%}
+                                      <div class="Product_meta_compare_list_maintable_innerdropdown_innerboxs_title_new">
+                                        {{ product_compare_styles_selections.title }}
+                                      </div>
+                                    {%- endif -%}
+                                  </div>
+                                </div>
+                              </button>
+                            {%- endif -%}
+                          {%- endfor -%}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                {%- endif -%}
+              {%- endif -%}
+              {%- if product.metafields.custom.product_compare_styles_selections.value != blank -%}
+                <div class="Product_meta_compare_list_maintable_mainloops_new">
+                  <div class="Product_meta_compare_list_maintable_innerloops_new">
+                    {%- if product.featured_image != blank or product.title != blank or product.metafields.custom.product_compare_styles_features_lists_selections.value != blank -%}
+                      <div js-card-product class="Product_meta_compare_list_maintable_innerloops_mainboxs_new">
+                        <div class="Product_meta_compare_list_maintable_innerloops_innerboxs_new">
+                          <div class="Product_meta_compare_list_maintable_innerloops_innerboxs_top_new">
+                            <div class="Product_meta_compare_list_maintable_innerloops_innerboxs_top_inner_new">
+                              {%- if product.featured_image != blank or product.metafields.custom.product_thumb_image != blank -%}
+                                <div class="Product_meta_compare_list_maintable_innerloops_innerboxs_mainimage_new">
+                                  <div class="Product_meta_compare_list_maintable_innerloops_innerboxs_innerimage_new" js-hb-compare-product-image-wrapper >
+                                    {% if product.metafields.custom.product_thumb_image != blank %}            
+                                      {{
+                                        product.metafields.custom.product_thumb_image | 
+                                        image_url: width: img.width | 
+                                        image_tag: widths: '1296, 1512, 1728, 1944, 2048', 
+                                        fetchpriority: 'auto', 
+                                        class:'Static_image_new' 
+                                      }}
+                                    {% else %}
+                                      {{
+                                        product.featured_image | 
+                                        image_url: width: img.width | 
+                                        image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                        fetchpriority: 'auto', 
+                                        class:'Static_image_new'
+                                      }}
+                                    {% endif %}
+                                  </div>
+                                  <div class="Product_meta_compare_list_maintable_innerloops_innerboxs_mainimage_tagtext_new">
+                                    Current
+                                  </div>
+                                </div>
+                              {%- endif -%}
+
+                              {%- if product.title != blank -%}
+                                <div class="Product_meta_compare_list_maintable_innerloops_innerboxs_mainboths_new">
+                                   {% if section.settings.hide_color_items %}
+                                  {% render 'color-swatch' hb_product: product, show_full_variant: true %}
+                                  {%endif %}
+                                  <div class="Product_meta_compare_list_maintable_innerloops_innerboxs_innerboths_new">
+                                    <div class="Product_meta_compare_list_maintable_innerloops_innerboxs_innerboths_title_new">
+                                      <h3 js-hb-product-title >{{ product.title }}</h3>
+                                    </div>
+                                    <div class="Product_meta_compare_list_maintable_innerloops_innerboxs_innerboths_price_new">
+                                      {% render 'price', product: product, price_class: '', show_compare_at_price: false %}
+                                    </div>
+                                  </div>
+                                  <div class="Product_meta_compare_list_maintable_innerloops_innerboxs_innerboths_button_new Product_vertical_button_new">
+                                    <a js-btn-link href="#product_top" class="button">Add To Cart</a>
+                                  </div>
+                                </div>
+                              {%- endif -%}
+                            </div>
+                            <div class="Product_meta_compare_list_maintable_innerloops_innerboxs_innerboths_button_new la-melaza-music-shield_add_tocart">
+                              <a js-btn-link href="#product_top" class="button">Add To Cart</a>
+                            </div>
+                          </div>
+                          {%- if product.metafields.custom.product_compare_styles_features_lists_selections.value != blank -%}
+                            <div class="Product_meta_compare_list_maintable_innerloops_innerboxs_mainlists_new" js-hb-compare-product-details >
+                              <div class="Product_meta_compare_list_maintable_innerloops_innerboxs_innerlists_new">
+                                {%- for product_compare_styles_features_lists_selections in product.metafields.custom.product_compare_styles_features_lists_selections.value -%}
+                                  {%- if product_compare_styles_features_lists_selections.main_icon_image.value != blank or product_compare_styles_features_lists_selections.main_icon_detail_text.value != blank -%}
+                                    <div class="Product_meta_compare_list_maintable_innerloops_innerboxs_innerlists_mainboxs_new">
+                                      <div class="Product_meta_compare_list_maintable_innerloops_innerboxs_innerlists_innerboxs_new">
+                                        {%- if product_compare_styles_features_lists_selections.main_icon_image.value != blank -%}
+                                          {%- if product_compare_styles_features_lists_selections.main_icon_image.value contains "files" -%}
+                                            <div class="Product_meta_compare_list_maintable_innerloops_innerboxs_innerlists_innerboxs_icons_new {% if product_compare_styles_features_lists_selections.main_icon_image.value != blank and product_compare_styles_features_lists_selections.main_icon_detail_text.value == blank %} blank_icons_only_new {% endif %}">
+                                              {{
+                                                product_compare_styles_features_lists_selections.main_icon_image.value | 
+                                                image_url: width: img.width | 
+                                                image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                                fetchpriority: 'auto', 
+                                                class:'Static_icon_image_new'
+                                              }}
+                                            </div>
+                                          {%- endif -%}
+                                        {%- endif -%}
+                                        {%- if product_compare_styles_features_lists_selections.main_icon_detail_text.value != blank -%}
+                                          <div class="Product_meta_compare_list_maintable_innerloops_innerboxs_innerlists_innerboxs_title_new">
+                                            {{ product_compare_styles_features_lists_selections.main_icon_detail_text | metafield_tag }}
+                                          </div>
+                                        {%- endif -%}
+                                      </div>
+                                    </div>
+                                  {%- endif -%}  
+                                {%- endfor -%}  
+                              </div>
+                            </div>
+                          {%- endif -%}
+                        </div>
+                      </div>
+                    {%- endif -%}  
+                    {%- for product_compare_styles_selections in product.metafields.custom.product_compare_styles_selections.value -%}
+                      {%- if product_compare_styles_selections.featured_image != blank or product_compare_styles_selections.title != blank or product_compare_styles_selections.metafields.custom.product_compare_styles_features_lists_selections.value != blank -%}
+                        <div class="tabcontent tab_{{ block.id | replace: '-', '_' }}_{{ forloop.index0 }}_open"{% if forloop.first %} style="display:block;"{% endif %}>
+                          <div js-card-product class="Product_meta_compare_list_maintable_innerloops_mainboxs_new">
+                            <div class="Product_meta_compare_list_maintable_innerloops_innerboxs_new">
+                              <div class="Product_meta_compare_list_maintable_innerloops_innerboxs_top_new">
+                                <div class="Product_meta_compare_list_maintable_innerloops_innerboxs_top_inner_new">
+                                  {%- if product_compare_styles_selections.featured_image != blank or product_compare_styles_selections.metafields.custom.product_thumb_image != blank -%}
+                                    <div class="Product_meta_compare_list_maintable_innerloops_innerboxs_mainimage_new">
+                                      <div class="Product_meta_compare_list_maintable_innerloops_innerboxs_innerimage_new" js-hb-compare-product-image-wrapper >
+                                        {% if product_compare_styles_selections.metafields.custom.product_thumb_image != blank %}            
+                                          {{
+                                            product_compare_styles_selections.metafields.custom.product_thumb_image | 
+                                            image_url: width: img.width | 
+                                            image_tag: widths: '1296, 1512, 1728, 1944, 2048', 
+                                            fetchpriority: 'auto', 
+                                            class:'Static_image_new'
+                                          }}
+                                        {% else %}
+                                          {{
+                                            product_compare_styles_selections.featured_image | 
+                                            image_url: width: img.width | 
+                                            image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                            fetchpriority: 'auto', 
+                                            class:'Static_image_new'
+                                          }}
+                                        {% endif %}
+                                      </div>
+                                    </div>
+                                  {%- endif -%}
+
+                                  {%- if product_compare_styles_selections.title != blank -%}
+                                    <div class="Product_meta_compare_list_maintable_innerloops_innerboxs_mainboths_new">
+                                      {% if section.settings.hide_color_items %}
+                                      {% render 'color-swatch' hb_product: product_compare_styles_selections, show_full_variant: true %}
+                                      {% endif %}
+                                      <div class="Product_meta_compare_list_maintable_innerloops_innerboxs_innerboths_new">
+                                        <div class="Product_meta_compare_list_maintable_innerloops_innerboxs_innerboths_title_new">
+                                          <h3 js-hb-product-title >{{ product_compare_styles_selections.title }}</h3>
+                                        </div>
+                                        <div class="Product_meta_compare_list_maintable_innerloops_innerboxs_innerboths_price_new">
+                                          {% render 'price', product: product_compare_styles_selections, price_class: '', show_compare_at_price: false %}
+                                        </div>
+                                      </div>
+                                      <div class="Product_meta_compare_list_maintable_innerloops_innerboxs_innerboths_button_new Product_vertical_button_new">
+                                        <a js-btn-link href="{{ product_compare_styles_selections.url }}" class="button button_border_new">Shop Now</a>
+                                      </div>
+                                    </div>
+                                  {%- endif -%}
+                                </div>
+                                <div class="Product_meta_compare_list_maintable_innerloops_innerboxs_innerboths_button_new">
+                                  <a js-btn-link href="{{ product_compare_styles_selections.url }}" class="button button_border_new">Shop Now</a>
+                                </div>
+                              </div>
+                              {%- if product_compare_styles_selections.metafields.custom.product_compare_styles_features_lists_selections.value != blank -%}
+                                <div class="Product_meta_compare_list_maintable_innerloops_innerboxs_mainlists_new" js-hb-compare-product-details >
+                                  <div class="Product_meta_compare_list_maintable_innerloops_innerboxs_innerlists_new">
+                                    {%- for product_compare_styles_features_lists_selections in product_compare_styles_selections.metafields.custom.product_compare_styles_features_lists_selections.value -%}
+                                      {%- if product_compare_styles_features_lists_selections.main_icon_image.value != blank or product_compare_styles_features_lists_selections.main_icon_detail_text.value != blank -%}
+                                        <div class="Product_meta_compare_list_maintable_innerloops_innerboxs_innerlists_mainboxs_new">
+                                          <div class="Product_meta_compare_list_maintable_innerloops_innerboxs_innerlists_innerboxs_new">
+                                            {%- if product_compare_styles_features_lists_selections.main_icon_image.value != blank -%}
+                                              {%- if product_compare_styles_features_lists_selections.main_icon_image.value contains "files" -%}
+                                                <div class="Product_meta_compare_list_maintable_innerloops_innerboxs_innerlists_innerboxs_icons_new {% if product_compare_styles_features_lists_selections.main_icon_image.value != blank and product_compare_styles_features_lists_selections.main_icon_detail_text.value == blank %} blank_icons_only_new {% endif %}">
+                                                  {{
+                                                    product_compare_styles_features_lists_selections.main_icon_image.value | 
+                                                    image_url: width: img.width | 
+                                                    image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                                    fetchpriority: 'auto', 
+                                                    class:'Static_icon_image_new'
+                                                  }}
+                                                </div>
+                                              {%- endif -%}
+                                            {%- endif -%}
+                                            {%- if product_compare_styles_features_lists_selections.main_icon_detail_text.value != blank -%}
+                                              <div class="Product_meta_compare_list_maintable_innerloops_innerboxs_innerlists_innerboxs_title_new">
+                                                {{ product_compare_styles_features_lists_selections.main_icon_detail_text | metafield_tag }}
+                                              </div>
+                                            {%- endif -%}
+                                          </div>
+                                        </div>
+                                      {%- endif -%}  
+                                    {%- endfor -%}  
+                                  </div>
+                                </div>
+                              {%- endif -%}
+                            </div>
+                          </div>
+                        </div>
+                      {%- endif -%}  
+                    {%- endfor -%}
+                  </div>
+                </div>
+              {%- endif -%}    
+            </div>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Product Meta Compare List",
+    "class": "Product_meta_compare_list_new",
+    "settings": [
+      {
+        "type": "color",
+        "id": "main_background_color",
+        "label": "Add Main Background Color",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "textarea",
+        "id": "main_heading_text",
+        "label": "Add Main Heading Text",
+        "default": "Compare styles"
+      },
+      {
+        "type": "checkbox",
+        "id": "horizontal_design",
+        "label": "Set Horizontal Design"
+      },
+      {
+        "type": "checkbox",
+        "id": "hide_color_items",
+         "default": false,
+        "label": "Hide color chart"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product Meta Compare List"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,51 @@
+{{ 'reviews.css' | asset_url | stylesheet_tag }}
+
+<div class="cus-reviews" id="Reviews" data-section="{{ section.id }}" style="background: {{ section.settings.main_background_color }};">
+    <div class="page-width">
+      <div class="wrapper">
+        {%- if section.settings.title != blank -%}
+          <div class="review-header">
+            <h2 class="review_title">{{ section.settings.title }}</h2>
+          </div>
+        {%- endif -%}
+        <div class="review_widget_new">
+          {%- for block in section.blocks -%}
+            {%- if block.type == '@app' -%}
+              {% render block %}
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  {% schema %}
+    {
+      "name": "Reviews",
+      "class": "product_review_new",
+      "settings": [
+        {
+          "type": "color",
+          "id": "main_background_color",
+          "label": "Add Main Background Color",
+          "default": "#F6F6F6"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Review title",
+          "default": "Read our raving reviews"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "@app"
+        }
+      ],
+      "presets": [
+        {
+          "name": "Reviews"
+        }
+      ]
+    }
+  {% endschema %}

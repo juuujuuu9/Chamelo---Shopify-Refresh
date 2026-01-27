@@ -1,0 +1,223 @@
+ <div js-card-product class="swiper-slide Page_coming_soon_details_innerhovers_innersides_mainboxs_new"  style="background: {{ section.settings.main_background_color }};">
+    <div class="Page_coming_soon_details_innerhovers_innersides_innerboxs_new">
+      {%- if product.metafields.custom.product_thumb_image.value != blank -%}
+        {%- if product.metafields.custom.product_thumb_image.value contains "files" -%}
+          <div class="Page_coming_soon_details_innerhovers_innersides_innerboxs_mainleft_new">
+            <div js-hb-compare-product-image-wrapper class="Page_coming_soon_details_innerhovers_innersides_innerboxs_innerleft_new">
+              {{
+                product.metafields.custom.product_thumb_image.value | 
+                image_url: width: img.width | 
+                image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                fetchpriority: 'auto', 
+                class:'Static_image_new'
+              }}
+            </div>
+          </div>
+        {%- endif -%}
+      {%- endif -%}
+      {%- if product.title != blank or product.metafields.custom.product_grid_short_description != blank or product.metafields.custom.filter_collection != blank or product.metafields.custom.filter_tech.value != blank or product.metafields.custom.product_thumb_image.value != blank or product.metafields.custom.product_grid_hover_image_or_video.value != blank -%}
+        <div class="Page_coming_soon_details_innerhovers_innersides_innerboxs_mainright_new">
+          {% if product.metafields.custom.product_desktop_gradient != blank
+            and product.metafields.custom.product_mobile_gradient != blank
+          %}
+            <div class="lottie_svg_new">
+              {{
+                product.metafields.custom.product_desktop_gradient.value
+                | image_url: width: img.width
+                | image_tag:
+                  widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048',
+                  fetchpriority: 'auto',
+                  class: 'Desktop_only_new'
+              }}
+              {{
+                product.metafields.custom.product_mobile_gradient.value
+                | image_url: width: img.width
+                | image_tag:
+                  widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048',
+                  fetchpriority: 'auto',
+                  class: 'Mobile_only_new'
+              }}
+            </div>
+          {% endif %}
+          <div class="Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_new">
+            {%- if product.title != blank or product.metafields.custom.product_grid_short_description != blank or product.metafields.custom.filter_collection != blank or product.metafields.custom.filter_tech.value != blank -%}
+              <div class="Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_1_new">
+                <div class="Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_1_leftside_new">
+                  <div>
+                    {%- if product.title != blank or product.metafields.custom.product_grid_short_description != blank -%}
+                      <div class="Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_1_leftside_mainboths_new">
+                        <div class="Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_1_leftside_innerboths_new">
+                          <div js-hb-product-title class="Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_1_leftside_innerboths_title_new">
+                            {{ product.title }}
+                          </div>
+                          <div class="Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_1_leftside_innerboths_infos_new">  
+                            {{ product.metafields.custom.product_grid_short_description | metafield_tag }}
+                          </div>
+                        </div>
+                      </div>
+                    {%- endif -%}
+                    {%- if product.metafields.custom.filter_collection != blank or product.metafields.custom.filter_tech.value != blank -%}
+                      <div class="Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_1_leftside_mainlists_new">
+                        <div class="Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_1_leftside_innerlists_new">
+                          {%- if product.metafields.custom.filter_collection != blank -%}
+                            <div class="Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_1_leftside_innerlists_mainsides_new">
+                              <div class="Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_1_leftside_innerlists_innersides_new">
+                                <div class="Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_1_leftside_innerlists_title_new">
+                                  Collection
+                                </div>
+                                {%- if product.metafields.custom.filter_collection != blank -%}
+                                  <div class="Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_1_leftside_innerlists_infos_new">
+                                    {{ product.metafields.custom.filter_collection }}
+                                  </div>  
+                                {%- endif -%}
+                              </div>
+                            </div>
+                          {%- endif -%}
+                          {%- if product.metafields.custom.filter_tech.value != blank -%}
+                            <div class="Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_1_leftside_innerlists_mainsides_new">
+                              <div class="Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_1_leftside_innerlists_innersides_new">
+                                <div class="Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_1_leftside_innerlists_title_new">
+                                  Tech
+                                </div>
+                                {%- if product.metafields.custom.filter_tech.value != blank -%}
+                                  <div class="Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_1_leftside_innerlists_infos_new">
+                                    {%- assign combined_titles = '' -%}
+                                    {%- for filter_tech in product.metafields.custom.filter_tech.value -%}
+                                      {% assign combined_titles = combined_titles | append: filter_tech %}
+                                      {% if forloop.index != forloop.length %}
+                                        {% assign combined_titles = combined_titles | append: ', ' %}  <!-- Add a comma separator between titles -->
+                                      {% endif %}
+                                    {%- endfor -%}
+                                    {{ combined_titles }}
+                                  </div>  
+                                {%- endif -%}
+                              </div>
+                            </div>
+                          {%- endif -%}
+                          {%- if product.metafields.custom.filter_collection != blank -%}
+                            <div class="Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_1_leftside_innerlists_mainsides_new">
+                              <div class="Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_1_leftside_innerlists_innersides_new">
+                                <div class="Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_1_leftside_innerlists_title_new">
+                                  Colorways
+                                </div>
+                                <div class="Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_1_leftside_innerlists_infos_color_new">
+                                  {% render 'hb-color-swatch' hb_product: product, show_full_variant: false %}
+                                </div>
+                              </div>
+                            </div>
+                          {%- endif -%}
+                        </div>
+                      </div>
+                    {%- endif -%}
+                  </div>
+                  <div class="Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_1_leftside_mainbutton_new">
+                    <div class="Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_1_leftside_innerbutton_new">
+                        <a href="javascript:void(0)"  popup_id="popup_{{ block.id | handleize }}_new" js-product-comming-soon class="popupBtn button button_border_new {% if product.metafields.custom.product_coming_soon_tag_text == blank %} hide {% endif %}">
+                          Join the waitlist
+                        </a>
+                        <a js-btn-link js-product-available href="{{ product.url }}" class="button button_white_new {% if product.metafields.custom.product_coming_soon_tag_text != blank %} hide {% endif %}">
+                          <span>Shop now – </span> {% render 'price', product: product, price_class: '', show_compare_at_price: false %}
+                        </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {%- endif -%}
+            {%- if product.metafields.custom.product_thumb_image.value != blank or product.metafields.custom.product_grid_hover_image_or_video.value != blank -%}
+              <div class="Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_2_new">
+                <div class="Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_2_rightside_new">
+                  {%- if product.metafields.custom.product_grid_hover_image_or_video.value != blank -%}
+                    <div class="Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_2_rightside_maindesktop_new Desktop_only_new">
+                      <div class="Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_2_rightside_innerdesktop_new">
+                        {%- if product.metafields.custom.product_grid_hover_image_or_video.value contains "files" -%}
+                          <div class="Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_2_rightside_innerdesktop_imagevideo_new">
+                            {{
+                              product.metafields.custom.product_grid_hover_image_or_video.value | 
+                              image_url: width: img.width | 
+                              image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                              fetchpriority: 'auto', 
+                              class:'Static_image_new'
+                            }}
+                          </div>
+                        {%- else -%}
+                          <div class="Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_2_rightside_innerdesktop_imagevideo_new">
+                            {% if product.metafields.custom.product_grid_hover_image_or_video.value.sources[1].url != blank %}
+                              {% assign video_url =  product.metafields.custom.product_grid_hover_image_or_video.value.sources[1].url  %}
+                            {% elsif  product.metafields.custom.product_grid_hover_image_or_video.value.sources[0].url != blank %}
+                              {% assign video_url =  product.metafields.custom.product_grid_hover_image_or_video.value.sources[0].url  %}
+                            {% elsif  product.metafields.custom.product_grid_hover_image_or_video.value.sources[2].url != blank %}
+                              {% assign video_url =  product.metafields.custom.product_grid_hover_image_or_video.value.sources[2].url  %}
+                            {% endif %}
+                            <video js-hb-video playsinline="playsinline" class="Static_video_new" loop="loop" muted="muted" preload="metadata" poster="{{ product.metafields.custom.product_grid_hover_image_or_video.value.preview_image | image_url}}" video_url="{{ video_url }}"></video>
+                          </div>
+                        {%- endif -%}
+                      </div>
+                    </div>
+                  {%- endif -%}
+                  {%- if product.metafields.custom.product_thumb_image.value != blank or product.metafields.custom.product_grid_hover_image_or_video.value != blank -%}
+                    <div class="Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_2_rightside_mainmobile_new Mobile_only_new">
+                      <div class="Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_2_rightside_innermobile_new">
+                        <div class="swiper Page_coming_soon_details_mobile_slider">
+                          <div class="swiper-wrapper">
+                            {%- if product.metafields.custom.product_thumb_image.value != blank -%}
+                              <div class="swiper-slide Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_2_rightside_innermobile_mainstatic_new">
+                                <div class="Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_2_rightside_innermobile_innerstatic_new">
+                                  {%- if product.metafields.custom.product_thumb_image.value contains "files" -%}
+                                    <div class="Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_2_rightside_innermobile_innerstatic_imagevideo_new">
+                                      {{
+                                        product.metafields.custom.product_thumb_image.value | 
+                                        image_url: width: img.width | 
+                                        image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                        fetchpriority: 'auto', 
+                                        class:'Static_image_new'
+                                      }}
+                                    </div>
+                                  {%- else -%}
+                                    <div class="Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_2_rightside_innermobile_innerstatic_imagevideo_new">
+                                      {{ product.metafields.custom.product_thumb_image.value | video_tag: class:'Static_video_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                                    </div>
+                                  {%- endif -%}
+                                </div>
+                              </div>
+                            {%- endif -%}
+                            {%- if product.metafields.custom.product_grid_hover_image_or_video.value != blank -%}
+                              <div class="swiper-slide Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_2_rightside_innermobile_mainstatic_new">
+                                <div class="Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_2_rightside_innermobile_innerstatic_new">
+                                  {%- if product.metafields.custom.product_grid_hover_image_or_video.value contains "files" -%}
+                                    <div class="Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_2_rightside_innermobile_innerstatic_imagevideo_new">
+                                      {{
+                                        product.metafields.custom.product_grid_hover_image_or_video.value | 
+                                        image_url: width: img.width | 
+                                        image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                        fetchpriority: 'auto', 
+                                        class:'Static_image_new'
+                                      }}
+                                    </div>
+                                  {%- else -%}
+                                    <div class="Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_2_rightside_innermobile_innerstatic_imagevideo_new">
+                                      {{ product.metafields.custom.product_grid_hover_image_or_video.value | video_tag: class:'Static_video_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                                    </div>
+                                  {%- endif -%}
+                                </div>
+                              </div>
+                            {%- endif -%}
+                          </div>
+                          <div class="swiper-pagination"></div>
+                        </div>
+                      </div>
+                    </div>
+                  {%- endif -%}
+                  <div class="Page_coming_soon_details_innerhovers_innersides_innerboxs_innerright_2_rightside_virtualtext_new">
+                    
+                    {% if product.selected_or_first_available_variant.metafields.custom.tryme_code != blank %}
+                      {{ product.selected_or_first_available_variant.metafields.custom.tryme_code }}
+                    {% endif %}
+                  </div>  
+                </div>
+              </div>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endif -%}  
+    </div>
+  </div>

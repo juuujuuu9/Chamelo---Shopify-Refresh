@@ -1,0 +1,37 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "index.json",
+  "context": {
+    "market": "china"
+  },
+  "sections": {
+    "custom_banner_GBfJAF": {
+      "disabled": true,
+      "settings": {},
+      "blocks": {}
+    },
+    "index_top_text_with_video_new_wGyCbi": {
+      "disabled": true,
+      "settings": {},
+      "blocks": {}
+    },
+    "custom_product_carousel_CzWkGG": {
+      "disabled": true,
+      "settings": {},
+      "blocks": {}
+    },
+    "index_top_slideshow_slide_new_8ViGg3": {
+      "disabled": true,
+      "settings": {},
+      "blocks": {}
+    }
+  }
+}

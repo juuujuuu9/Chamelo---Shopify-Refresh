@@ -1,0 +1,188 @@
+
+  {%- assign default_orbit = '' -%}
+  {%- for product_features_tabs_item_list_selections in item_lists -%}
+     {%- if forloop.first -%}
+         {%- capture default_orbit -%}{{ product_features_tabs_item_list_selections.camera_orbit_x }}deg {{ product_features_tabs_item_list_selections.camera_orbit_y }}deg{%- endcapture -%}
+     {%- endif -%}
+  {%- endfor -%}
+  
+{%- if product.metafields.custom.glb_file != blank -%}
+  {%- assign glb_file = product.metafields.custom.glb_file.value.sources[0].url -%} 
+  <div class="custom-model-viewer">
+            <model-viewer 
+              js-sunglasses-model
+              camera-orbit="{{ default_orbit }} 80%"
+              id="sunglasses-model"
+              src="{{ glb_file }}"
+              alt="Sunglasses 3D Model"
+              shadow-intensity="1"
+              camera-controls
+              disable-zoom
+              disable-pan
+              interaction-prompt="none"
+
+              
+            >
+               
+            </model-viewer> 
+        </div>
+{%- endif -%}
+ 
+
+{%- assign Infos_Count = 0 -%}
+{%- for product_features_tabs_item_list_selections in item_lists -%}
+{%- assign Infos_Count = Infos_Count | plus: 1 -%}
+{%- if product_features_tabs_item_list_selections.main_icon_image.value != blank or product_features_tabs_item_list_selections.main_heading_text.value != blank or product_features_tabs_item_list_selections.main_information_text.value != blank -%}
+  <div js-custom-content="tab__{{ forloop.index0 }}" class="Product_object_features_innerdesktop_innerright_innerboxs_mainoverlay_new{% unless forloop.first %} hidden{% endunless %}">
+    <div class="Product_object_features_innerdesktop_innerright_innerboxs_inneroverlay_new">
+      <div class="Product_object_features_innerdesktop_innerright_innerboxs_inneroverlay_count_new">
+        {% if Infos_Count < 10 %}0{% endif %}{{ Infos_Count }}
+      </div>
+      {%- if product_features_tabs_item_list_selections.main_icon_image.value != blank -%}
+        {%- if product_features_tabs_item_list_selections.main_icon_image.value contains "files" -%}
+          <div class="Product_object_features_innerdesktop_innerright_innerboxs_inneroverlay_icons_new">
+            {{
+              product_features_tabs_item_list_selections.main_icon_image.value | 
+              image_url: width: img.width | 
+              image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+              fetchpriority: 'auto', 
+              class:'Static_icon_image_new'
+            }}
+          </div>
+        {%- endif -%}
+      {%- endif -%}
+      {%- if product_features_tabs_item_list_selections.main_heading_text.value != blank -%}
+        <div class="Product_object_features_innerdesktop_innerright_innerboxs_inneroverlay_title_new">
+          {{ product_features_tabs_item_list_selections.main_heading_text }}
+        </div>
+      {%- endif -%}
+      {%- if product_features_tabs_item_list_selections.main_information_text.value != blank -%}
+        <div class="Product_object_features_innerdesktop_innerright_innerboxs_inneroverlay_infos_new">
+          {{ product_features_tabs_item_list_selections.main_information_text | metafield_tag }}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+{%- endif -%}  
+{%- endfor -%} 
+
+    <!-- Import the component -->
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+
+<script type="module" src="{{ 'glb-custom.js' | asset_url }}"></script>
+
+<style>
+  .custom-model-viewer model-viewer {
+    width: 100%;
+    height: 500px;
+    max-height: 100%;
+    outline: none !important;
+  }
+  .custom-model-viewer {
+    z-index: 1;
+    height: 100%;
+    outline: none !important;
+    width: 100%;
+  }
+  .Product_object_features_innerdesktop_new .Product_object_features_innerdesktop_innerright_new {
+     position: relative;
+  }
+   
+  .custom-model-viewer model-viewer::part(default-progress-bar) {
+    width:150px;
+    border-radius:5px;
+    background-color:#000;
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @media only screen and (min-width:750px) {
+      .Product_object_features_innerdesktop_mainleft_new {
+        width: 25.765%;
+        padding: 56px 10px 56px 56px;
+       }
+    
+      .Product_object_features_innerdesktop_mainright_new {
+        width: 74.235%;
+        margin-top: 0px;
+    }
+    
+      .Product_object_features_innerdesktop_innerright_innerboxs_mainoverlay_new {
+        top: 50%;
+        right: 56px;
+        transform: translateY(-50%);
+      }
+     .custom-model-viewer {
+       width: calc(100% - 391px);
+    }
+    .Product_object_features_innerdesktop_new {
+        padding-bottom: 56px;
+    }
+  }
+
+ @media only screen and (max-width:580px) {
+    .custom-model-viewer model-viewer {
+      height: 245px;
+    }
+  }
+
+  @media only screen and (min-width: 581px) and (max-width: 749px) {
+    .custom-model-viewer model-viewer {
+        height: 365px;
+    }
+  }
+
+  @media only screen and (min-width: 750px) and (max-width: 989px) {
+   .Product_object_features_innerdesktop_mainleft_new {
+        width:25%;
+               padding: 50px 10px 50px 20px;
+    }
+    .Product_object_features_innerdesktop_mainright_new {
+        width: 75%;
+    }
+    .custom-model-viewer {
+        width: calc(100% - 230px);
+    }
+    .Product_object_features_innerdesktop_innerright_innerboxs_mainoverlay_new {
+        right: 20px;
+    }
+    .custom-model-viewer model-viewer {
+      height: 350px;
+   }
+   .Product_object_features_innerdesktop_new {
+        padding-bottom: 40px;
+    }
+  }
+
+  @media only screen and (min-width: 990px) and (max-width: 1439px) {
+    .Product_object_features_innerdesktop_mainleft_new {
+        width:27%;
+        padding: 50px 10px 50px 20px;
+    }
+    .Product_object_features_innerdesktop_mainright_new {
+        width: 73%;
+    }
+    .custom-model-viewer {
+        width: calc(100% - 310px);
+    }
+    .Product_object_features_innerdesktop_innerright_innerboxs_mainoverlay_new {
+        right: 20px;
+    }
+    .custom-model-viewer model-viewer {
+       height: 350px;
+    }
+    .Product_object_features_innerdesktop_new {
+        padding-bottom: 40px;
+    }
+  }
+
+  model-viewer {
+    position: static !important;
+    background: transparent !important;
+  }
+  </style>
+
+
+  

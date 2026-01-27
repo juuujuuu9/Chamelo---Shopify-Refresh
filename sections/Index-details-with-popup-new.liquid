@@ -1,0 +1,217 @@
+{%- if section.settings.main_custom_image != blank or section.settings.main_Author_text != blank or section.settings.main_detail_text != blank or section.settings.main_button_link != blank or section.settings.main_desktop_video != blank or section.settings.main_mobile_video != blank or section.settings.main_desktop_image != blank or section.settings.main_mobile_image != blank or section.settings.main_heading_text != blank or section.settings.main_information_text != blank -%}
+  <div class="Index_details_with_popup_main_new {{ section.settings.class-name }}" style="background: {{ section.settings.main_background_color }};">
+    <div class="page-width">
+      <div class="Index_details_with_popup_inner_new">
+        {%- if section.settings.main_custom_image != blank or section.settings.main_Author_text != blank or section.settings.main_detail_text != blank or section.settings.main_button_link != blank -%}
+          <div class="Index_details_with_popup_mainstatic_new">
+            <div class="Index_details_with_popup_innerstatic_new">
+              {%- if section.settings.main_custom_image != blank -%}
+                <div class="Index_details_with_popup_innerstatic_mainimage_new">
+                  <div class="Index_details_with_popup_innerstatic_innerimage_new">
+                    {{
+                      section.settings.main_custom_image | 
+                      image_url: width: img.width | 
+                      image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                      fetchpriority: 'auto', 
+                      class:'Icon_image_new'
+                    }}
+                  </div>
+                </div>
+              {%- endif -%}
+              {%- if section.settings.main_Author_text != blank -%}
+                <div class="Index_details_with_popup_innerstatic_mainauthor_new">
+                  <div class="Index_details_with_popup_innerstatic_innerauthor_new">
+                    {{ section.settings.main_Author_text }}
+                  </div>
+                </div>
+              {%- endif -%}
+              {%- if section.settings.main_detail_text != blank -%}
+                <div class="Index_details_with_popup_innerstatic_maininfos_new">
+                  <div class="Index_details_with_popup_innerstatic_innerinfos_new">
+                    <p>{{ section.settings.main_detail_text }}</p>
+                  </div>
+                </div>
+              {%- endif -%}
+              {%- if section.settings.main_button_text != blank and section.settings.main_button_link != blank -%}
+                <div class="Index_details_with_popup_innerstatic_mainbutton_new">
+                  <div class="Index_details_with_popup_innerstatic_innerbutton_new">
+                    <a href="{{ section.settings.main_button_link }}" class="button button_border_new">
+                      {{ section.settings.main_button_text }}  
+                    </a>
+                  </div>
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endif -%}
+        {%- if section.settings.main_desktop_video != blank or section.settings.main_mobile_video != blank or section.settings.main_desktop_image != blank or section.settings.main_mobile_image != blank or section.settings.main_heading_text != blank or section.settings.main_information_text != blank -%}
+          <div class="Index_details_with_popup_mainpopup_new">
+            <div class="Index_details_with_popup_innerpopup_close_new">
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="36" height="36" rx="18" fill="white"/>
+                <g clip-path="url(#clip0_19_17737)">
+                <path d="M23.8935 12.1074L12.1084 23.8925M23.8935 23.8925L12.1084 12.1074" stroke="black" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_19_17737">
+                <rect width="20" height="20" fill="white" transform="translate(8 8)"/>
+                </clipPath>
+                </defs>
+              </svg>
+            </div>
+            <div class="Index_details_with_popup_innerpopup_new">
+              {%- if section.settings.main_desktop_video != blank or section.settings.main_mobile_video != blank or section.settings.main_desktop_image != blank or section.settings.main_mobile_image != blank -%}
+                <div class="Index_details_with_popup_innerpopup_mainboths_new">
+                  <div class="Index_details_with_popup_innerpopup_innerboths_new">
+                    {%- if section.settings.main_desktop_video != blank and section.settings.main_mobile_video != blank -%}
+                      <div class="Index_details_with_popup_innerpopup_innerboths_videoimage_new">
+                        {%- if section.settings.main_desktop_video != blank -%}
+                          {{ section.settings.main_desktop_video | video_tag: class:'desktop_image_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                        {%- endif -%}
+                        {%- if section.settings.main_mobile_video != blank -%}
+                          {{ section.settings.main_mobile_video | video_tag: class:'mobile_image_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                        {%- endif -%}
+                      </div>
+                    {% else %}  
+                      {%- if section.settings.main_desktop_image != blank and section.settings.main_mobile_image != blank -%}
+                        <div class="Index_details_with_popup_innerpopup_innerboths_videoimage_new">
+                          {%- if section.settings.main_desktop_image != blank -%}
+                            {{
+                              section.settings.main_desktop_image | 
+                              image_url: width: img.width | 
+                              image_tag: widths: '1296, 1512, 1728, 1944, 2048', 
+                              fetchpriority: 'auto', 
+                              class:'desktop_image_new'
+                            }}
+                          {%- endif -%}
+                          {%- if section.settings.main_mobile_image != blank -%}
+                            {{
+                              section.settings.main_mobile_image | 
+                              image_url: width: img.width | 
+                              image_tag: widths: '1296, 1512, 1728, 1944, 2048', 
+                              fetchpriority: 'auto', 
+                              class:'mobile_image_new'
+                            }}
+                          {%- endif -%}
+                        </div>
+                      {%- endif -%}
+                    {%- endif -%}
+                  </div>
+                </div>
+              {%- endif -%}
+              {%- if section.settings.main_heading_text != blank or section.settings.main_information_text != blank -%}
+                <div class="Index_details_with_popup_innerpopup_maintexts_new">
+                  <div class="Index_details_with_popup_innerpopup_innertexts_new">
+                    {%- if section.settings.main_heading_text != blank -%}
+                      <div class="Index_details_with_popup_innerpopup_innertexts_maintitle_new">
+                        <div class="Index_details_with_popup_innerpopup_innertexts_innertitle_new">
+                          <h4>{{ section.settings.main_heading_text }}</h4>
+                        </div>
+                      </div>
+                    {%- endif -%}
+                    {%- if section.settings.main_information_text != blank -%}
+                      <div class="Index_details_with_popup_innerpopup_innertexts_maininfos_new">
+                        <div class="Index_details_with_popup_innerpopup_innertexts_innerinfos_new">
+                          {{ section.settings.main_information_text }}
+                        </div>
+                      </div>
+                    {%- endif -%}
+                  </div>
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Index Details With Popup",
+    "class": "Index_details_with_popup_new",
+    "settings": [
+      {
+        "type": "text",
+        "id": "class-name",
+        "label": "Class Name"
+      },
+      {
+        "type": "color",
+        "id": "main_background_color",
+        "label": "Add Main Background Color"
+      },
+      {
+        "type": "image_picker",
+        "id": "main_custom_image",
+        "label": "Add Main Custom Image"
+      },
+      {
+        "type": "text",
+        "id": "main_Author_text",
+        "label": "Add Main Author Text",
+        "default": "By Stephon Marbury"
+      },
+      {
+        "type": "textarea",
+        "id": "main_detail_text",
+        "label": "Add Main Detail Text",
+        "default": "Game-changing, performance-enhancing, and mood-boosting sunglasses. Made with next-gen <span>Chamelo™ lenses</span>, created to help you see better."
+      },
+      {
+        "type": "text",
+        "id": "main_button_text",
+        "label": "Add Main Button Text",
+        "default": "Learn More"
+      },
+      {
+        "type": "url",
+        "id": "main_button_link",
+        "label": "Add Main Button Link",
+        "default": "/"
+      },
+      {
+        "type": "header",
+        "content": "==== Popup All Detail ===="
+      },
+      {
+        "type": "video",
+        "id": "main_desktop_video",
+        "label": "Add Main Desktop Video"
+      },
+      {
+        "type": "video",
+        "id": "main_mobile_video",
+        "label": "Add Main Mobile Video"
+      },
+      {
+        "type": "image_picker",
+        "id": "main_desktop_image",
+        "label": "Add Main Desktop Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "main_mobile_image",
+        "label": "Add Main Mobile Image"
+      },
+      {
+        "type": "textarea",
+        "id": "main_heading_text",
+        "label": "Add Main Heading Text",
+        "default": "Chamelo™ Lenses"
+      },
+      {
+        "type": "richtext",
+        "id": "main_information_text",
+        "label": "Add Main Information Text",
+        "default": "<p>The world’s first glasses that let you instantly switch between four different hues, all with a simple touch.</p>"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Index Details With Popup"
+      }
+    ]
+  }
+{% endschema %}

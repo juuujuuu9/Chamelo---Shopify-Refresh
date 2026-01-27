@@ -1,0 +1,221 @@
+{% if section.settings.main_heading_text != blank or section.settings.button_text != blank or section.settings.button_url != blank or section.blocks.size > 0 %}
+  <div class="Page_four_cards_section_main Page_four_cards_section_main_{{ section.id }}" style="background-color: {{ section.settings.main_background_color }}">
+    <div class="page-width">
+      <div class="Page_four_cards_section_inner">
+        {% if section.settings.main_heading_text != blank or section.settings.button_text != blank or section.settings.button_url != blank %}
+          <div class="Page_four_cards_section_heading_part">
+            {% if section.settings.main_heading_text != blank %}
+              <div class="Page_four_cards_section_main_heading_text">
+                <h2>
+                  {{ section.settings.main_heading_text }}
+                </h2>
+              </div>
+            {% endif %}
+            {% if section.settings.button_text != blank or section.settings.button_url != blank %}
+              <div class="Page_four_cards_section_main_button_parent small-hide">
+                <a href="{{ section.settings.button_url }}" class="button">
+                  {{ section.settings.button_text }}
+                </a>
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+        {% if section.blocks.size > 0 %}
+          <div class="Page_four_cards_grid_main">
+            <div class="Page_four_cards_grid swiper">
+              <div class="swiper-wrapper">
+                {% for block in section.blocks %}
+                  {% if block.type == "card" %}
+                    {% if block.settings.icon_image != blank or block.settings.card_title != blank or block.settings.card_description != blank or block.settings.link_text != blank or block.settings.link != blank %}
+                      <div class="card swiper-slide" style="background-color: {{ block.settings.card_background_color }}">
+                        <div class="card_inner">
+                          {% if block.settings.icon_image != blank %}
+                            <div class="card_icon_image">
+                              {{
+                                block.settings.icon_image | 
+                                image_url: width: img.width | 
+                                image_tag: widths: '1296, 1512, 1728, 1944, 2048', 
+                                fetchpriority: 'auto', 
+                                class:'card_image'
+                              }}
+                            </div>
+                          {% endif %}
+                          {% if block.settings.card_title != blank %}
+                            <div class="card_title">
+                              <h5>
+                                {{ block.settings.card_title }}
+                              </h5>
+                            </div>
+                          {% endif %}
+                          {% if block.settings.card_description != blank %}
+                            <div class="card_description">
+                              {{ block.settings.card_description }}
+                            </div>
+                          {% endif %}
+                          {% if block.settings.link_text != blank or block.settings.link != blank %}
+                            <div class="card_link_parent">
+                              <a class="card_link" href="{{ block.settings.link }}">
+                                <span class="card_link_text">
+                                  {{ block.settings.link_text }}
+                                </span>
+                                <span class="arrow_icon">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+                                    <path d="M10.8139 3.91379L2.207 12.5207L0.792782 11.1065L9.39969 2.49957L1.81384 2.49957L1.81384 0.499876H12.8136V11.4996L10.8139 11.4996V3.91379Z" fill="black"></path>
+                                  </svg>
+                                </span>
+                              </a>
+                            </div>
+                          {% endif %}
+                        </div>
+                      </div>
+                    {% endif %}
+                  {% endif %}
+                {% endfor %}
+              </div>
+              <div class="swiper-scrollbar"></div>
+            </div>
+          </div>
+        {% endif %}
+        {% if section.settings.button_text != blank or section.settings.button_url != blank %}
+          <div class="Page_four_cards_section_main_button_parent large-up-hide medium-hide">
+            <a href="{{ section.settings.button_url }}" class="button">
+              {{ section.settings.button_text }}
+            </a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+<style>
+  .Page_four_cards_section_main { padding: 96px 0; }
+  .Page_four_cards_section_heading_part { display: flex; justify-content: space-between; gap: 30px; align-items: center; }
+  .Page_four_cards_section_main_heading_text h2 { margin: 0; font-size: 40px; font-weight: 700; line-height: 100%; letter-spacing: -.4px; color: #000; font-family: var(--font-heading-family); }
+  .Page_four_cards_section_main_button_parent .button { min-width: 240px; }
+  .Page_four_cards_grid_main { padding-top: 44px; }
+  /* .Page_four_cards_grid { display: flex; flex-wrap: nowrap; gap: 16px; } */
+  .Page_four_cards_grid .card { padding: 16px 16px 54.31px; height: auto; position: relative; }
+  .Page_four_cards_grid .card_icon_image { height: 48px; width: fit-content; }
+  .Page_four_cards_grid .card_icon_image img { width: 100%; height: 100%; display: block; }
+  .Page_four_cards_grid .card_title { padding-top: 32px; }
+  .Page_four_cards_grid .card_title h5 { color: #000; font-family: var(--font-heading-family); font-size: 24px; font-weight: 600; line-height: 110%; margin: 0 ;}
+  .Page_four_cards_grid .card_description { padding-top: 12px; }
+  .Page_four_cards_grid .card_description p { margin: 0; color: #000; font-size: 16px; font-weight: 400; line-height: 128%; }
+  .Page_four_cards_grid .card_link_parent { padding-top: 16px; position: absolute; left: 16px; bottom: 16px; }
+  .Page_four_cards_grid .card_link { display: flex; align-items: center; gap: 8px; }
+  .Page_four_cards_grid .card_link_text { color: #000; font-size: 16px; font-weight: 700; line-height: 140%; text-decoration-line: underline; text-transform: uppercase;}
+  .Page_four_cards_grid .arrow_icon svg { width: 15.56px; height: 16px; display: block; }
+
+  @media (max-width: 989px){
+    .Page_four_cards_section_main { padding: 56px 0; }
+    .Page_four_cards_section_main .page-width  { padding: 0 !important; }
+    .Page_four_cards_section_heading_part { padding: 0 20px; }
+    .Page_four_cards_grid_main { padding-top: 32px; }
+    .Page_four_cards_grid {  padding: 0 20px; padding-bottom: 32px; }
+    .Page_four_cards_grid .swiper-scrollbar { width: calc(100% - 40px); left: 20px; bottom: 0; background-color: rgba(0,0,0,0.15); height: 2px; }
+    .Page_four_cards_grid .swiper-scrollbar-drag { background: #000 !important; display: block; }
+    /* .Page_four_cards_grid::-webkit-scrollbar { height: 2px; background-color: rgba(0,0,0,0.15); width: calc(100% - 40px); } */
+    /* .Page_four_cards_grid::-webkit-scrollbar-thumb { background: #000; } */
+    /* .Page_four_cards_grid .card { width: 35%; flex: 0 0 35%; flex-basis: 35%; } */
+  }
+
+  @media (max-width: 749px){
+    /* .Page_four_cards_section_heading_part { justify-content: center; } */
+    .Page_four_cards_section_main_button_parent { padding: 32px 20px 0; text-align: center; }
+    .Page_four_cards_section_main_button_parent .button { min-width: unset; max-width: 100%; width: 100%; }
+  }
+
+  @media (max-width: 640px){
+    /* .Page_four_cards_grid .card { width: 50%; flex: 0 0 55%; flex-basis: 55%; } */
+  }
+
+  @media (max-width: 480px){
+    /* .Page_four_cards_grid .card { width: 79.405%; flex: 0 0 79.405%; flex-basis: 79.405%; } */
+  }
+  
+</style>
+
+{% schema %}
+  {
+    "name": "Page Four Cards Section",
+    "class": "Page_four_cards_section",
+    "settings": [
+      {
+        "type": "color",
+        "id": "main_background_color",
+        "label": "Add Main Background Color",
+        "default": "#F6F6F6"
+      },
+      {
+        "type": "text",
+        "id": "main_heading_text",
+        "label": "Add Main Heading Text",
+        "default": "How can we help?"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Add Button Text",
+        "default": "see all faqs"
+      },
+      {
+        "type": "url",
+        "id": "button_url",
+        "label": "Add Button URL"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "card",
+        "name": "Card",
+        "settings": [
+          {
+            "type": "color",
+            "id": "card_background_color",
+            "label": "Add Card Background Color",
+            "default": "#FFF"
+          },
+          {
+            "type": "image_picker",
+            "id": "icon_image",
+            "label": "Add Icon Image"
+          },
+          {
+            "type": "text",
+            "id": "card_title",
+            "label": "Add Card Title",
+            "default": "Our products"
+          },
+          {
+            "type": "richtext",
+            "id": "card_description",
+            "label": "Add Card Description",
+            "default": "<p>Curious about our sunglasses, our tech or why we’re different?</p>"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Add Link"
+          },
+          {
+            "type": "text",
+            "id": "link_text",
+            "label": "Add Link Text",
+            "default": "learn more"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Page Four Cards Section",
+        "blocks": [
+          {
+            "type": "card"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

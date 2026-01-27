@@ -1,0 +1,84 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "index.json",
+  "context": {
+    "market": "italy"
+  },
+  "sections": {
+    "custom_banner_GBfJAF": {
+      "disabled": true,
+      "settings": {
+        "title": "<p>Ferragosto sale</p>",
+        "description": "<p>Ferragosto sale 20% off sitewide</p>",
+        "desktop_image": "shopify://shop_images/MAIN_BANNER.png",
+        "mobile_image": "shopify://shop_images/MAIN_BANNER_MOBILE.png"
+      },
+      "blocks": {}
+    },
+    "index_top_text_with_video_new_wGyCbi": {
+      "disabled": true,
+      "settings": {},
+      "blocks": {}
+    },
+    "index_top_text_with_video_new_DwRNiP": {
+      "type": "Index-top-text-with-video-new",
+      "disabled": false,
+      "settings": {
+        "main_background_color": "#ffffff",
+        "header-0a6a85ad14c962a0ba9ed738420e4264": null,
+        "main_review_image": "shopify://shop_images/review-5_f4e7318b-2352-4285-9367-4f483c0102ec.svg",
+        "main_review_text": "OVER 40,000+ PAIRS SOLD",
+        "main_heading_text": "Hot Days. Smarter Shades.",
+        "main_information_text": "<p> Meet <strong>Music Shield</strong>—smart eyewear that’s built for the heat and ready for your rhythm.<br/><br/>✓ Built-in open-ear speakers<br/>✓ Tint-adjusting slider for instant sun control<br/>✓ Sweat-resistant and summer-proof</p>",
+        "main_button_text": "SHOP MUSIC SHIELD NOW",
+        "main_button_link": "shopify://products/music-shield-fire-lenses-sports-smart-glasses-electrochromic-tint-adjustable-changing-audio-sunglasses",
+        "main_left_custom_video": null,
+        "main_left_custom_image": "shopify://shop_images/465112282_2701106193409113_2235945206511118872_n_1_1.jpg",
+        "main_left_heading_text": "Time’s Best Inventions Of 2024",
+        "main_left_details_text": "<p>Voted one of <a href=\"https://time.com/7094864/chamelo-lens-technology/\" target=\"_blank\" title=\"https://time.com/7094864/chamelo-lens-technology/\">Time Magazine’s</a> Best Inventions of 2024, we’re here to redefine what eyewear can do.</p>",
+        "header-7a66cc3bec88eab06741ae7a39709418": null,
+        "main_desktop_video": null,
+        "main_mobile_video": null,
+        "main_desktop_image": "shopify://shop_images/Chamelo-Stephon-May-2024-36_1.png",
+        "main_mobile_image": "shopify://shop_images/Chamelo-Stephon-May-2024-36_1.png",
+        "main_product_title_text": "",
+        "main_product_tags_text": "",
+        "main_product_static_image": null,
+        "main_product_hover_image": null,
+        "main_product_button_text": "",
+        "main_product_redirect_link": "shopify://products/shield-deposit"
+      },
+      "blocks": {},
+      "block_order": []
+    }
+  },
+  "order": [
+    "custom_banner_GBfJAF",
+    "index_top_text_with_video_new_DwRNiP",
+    "index_top_text_with_video_new_wGyCbi",
+    "custom_product_carousel_CzWkGG",
+    "index_top_slideshow_slide_new_8ViGg3",
+    "index_marquee_logos_lists_new_P8hXe4",
+    "index_details_with_popup_new_xQJD4E",
+    "index_featured_collection_new_b7hxcq",
+    "index_featured_collection_new_cQnJ63",
+    "index_collection_scroll_new_c8gAen",
+    "index_mobile_sticky_prods_new_nrzMPe",
+    "index_image_over_product_new_RnAzNn",
+    "index_image_with_texts_new_qNe3yw",
+    "index_object_tabs_details_new_iKEbQH",
+    "index_tabs_banner_product_new_LrAQxU",
+    "index_object_table_detail_new_7mMyRq",
+    "index_image_logos_slider_new_FwJ6Ge",
+    "index_faqs_accordion_list_new_BekFwy",
+    "index_icon_with_text_list_new_TmEjYE"
+  ]
+}

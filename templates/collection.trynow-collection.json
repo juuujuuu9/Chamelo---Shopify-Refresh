@@ -1,0 +1,87 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": false,
+        "show_collection_image": false,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "collection_overlay_banner_new_heCfar": {
+      "type": "Collection-overlay-banner-new",
+      "disabled": true,
+      "settings": {
+        "main_background_color": "#ffffff"
+      }
+    },
+    "17582819978be7feb3": {
+      "type": "apps",
+      "blocks": {
+        "trynow_try_before_you_buy_how_it_works_4fHcCN": {
+          "type": "shopify://apps/trynow-try-before-you-buy/blocks/how-it-works/4c8ee11a-0e2d-4d12-800e-b312601aebc7",
+          "settings": {
+            "title": "Try Before You Buy",
+            "title_font_size": 20,
+            "subtitle_1": "Try up to [cart_limit_suggested_cart_size] items",
+            "copy_1": "Fill your cart to find something you love.",
+            "subtitle_2": "[trial_period]-day trial",
+            "copy_2": "Try it on in the comfort of your home.",
+            "subtitle_3": "Returns are easy",
+            "copy_3": "Only pay for what you keep.",
+            "subtitle_font_size": 16,
+            "copy_font_size": 14,
+            "image_size": 40,
+            "custom_css": ""
+          }
+        }
+      },
+      "block_order": [
+        "trynow_try_before_you_buy_how_it_works_4fHcCN"
+      ],
+      "custom_css": [
+        "#tn-hiw-steps-container * {color: #fff;}"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 12,
+        "columns_desktop": 3,
+        "color_scheme": "scheme-4",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": true,
+        "filter_type": "drawer",
+        "enable_sorting": true,
+        "show_count_products": true,
+        "columns_mobile": "2",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "collection_overlay_banner_new_heCfar",
+    "17582819978be7feb3",
+    "product-grid"
+  ]
+}

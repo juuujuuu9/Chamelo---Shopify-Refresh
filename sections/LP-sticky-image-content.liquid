@@ -1,0 +1,424 @@
+<style>
+  @media (max-width: 989px){
+    {% if section.settings.bg_color_mobile != blank %}
+      .LP_sticky_image_content_main { background-color: {{ section.settings.bg_color_mobile }} !important; }
+    {% endif %}
+  }
+</style>
+
+{% if section.settings.main_heading_text != blank or section.settings.main_button_link != blank or section.settings.main_button_text != blank or section.blocks.size > 0 %}
+  <div class="LP_sticky_image_content_main LP_sticky_image_content_main_{{ section.id }}" style="background-color: {{ section.settings.bg_color }}">
+    <div class="LP_sticky_image_content_inner">
+      <div class="LP_sticky_image_content_sides">
+        {% if section.settings.main_heading_text != blank or section.settings.main_button_link != blank or section.settings.main_button_text != blank %}
+          <div class="LP_sticky_image_content_leftmain_outer" style="background-color: {{ section.settings.left_sticky_bg_color }}">
+          <div class="LP_sticky_image_content_leftmain" style="background-image: url({{ section.settings.left_sticky_box_bg_effect | img_url:'master' }});background-size: 100% 100%;">
+            <div class="LP_sticky_image_content_left_inner_main">
+              <div class="LP_sticky_image_content_leftinner">
+                <!-- {% if section.settings.left_sticky_box_bg_effect != blank %}
+                  <div class="LP_sticky_image_content_left_bg_effect">
+                    {{
+                      section.settings.left_sticky_box_bg_effect | 
+                      image_url: width: img.width | 
+                      image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                      fetchpriority: 'auto'
+                    }}
+                  </div>
+                {% endif %} -->
+                {% if section.settings.main_heading_text != blank %}
+                  <div class="LP_sticky_image_content_left_main_heading_text Common_title_new">
+                    {{ section.settings.main_heading_text }}
+                  </div>
+                {% endif %}
+                {% if section.settings.main_button_link != blank or section.settings.main_button_text != blank %}
+                  <div class="LP_sticky_image_content_left_main_button_parent">
+                    <a href="{{ section.settings.main_button_link }}" class="button button_white_new">
+                      {{ section.settings.main_button_text }}
+                    </a>
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+          </div>
+        {% endif %}
+        {% if section.blocks.size > 0 %}
+          <div class="LP_sticky_image_content_rightmain">
+            <div class="LP_sticky_image_content_rightinner">
+              {% for block in section.blocks %}
+                {% if block.type == "video-image-content" %}
+                  {% if block.settings.video != blank or block.settings.image != blank or block.settings.image_tag_icon != blank or block.settings.image_tag_text != blank or block.settings.main_title != blank or block.settings.main_information_text != blank %}
+                    <div class="LP_sticky_image_content_right_block">
+                      {% if block.settings.video != blank or block.settings.image != blank %}
+                        <div class="LP_sticky_image_content_right_video_image_parent">
+                          {% if block.settings.video != blank %}
+                          <div class="LP_sticky_image_content_right_video_image_main">
+                            {{ block.settings.video | video_tag: image_size: 'master', controls: false, autoplay: true, loop: true }}
+                          </div>
+                          {% else %}
+                            {% if block.settings.image != blank %}
+                              <div class="LP_sticky_image_content_right_video_image_main">
+                                {{
+                                  block.settings.image | 
+                                  image_url: width: img.width | 
+                                  image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                  fetchpriority: 'auto'
+                                }}
+                              </div>
+                            {% endif %}
+                          {% endif %}
+                          {% if block.settings.image_tag_icon != blank or block.settings.image_tag_text != blank %}
+                            <div class="LP_sticky_image_content_right_video_image_tag">
+                              {% if block.settings.image_tag_icon != blank %}
+                                <div class="LP_sticky_image_content_right_video_image_tag_icon">
+                                  {{
+                                    block.settings.image_tag_icon | 
+                                    image_url: width: img.width | 
+                                    image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                    fetchpriority: 'auto'
+                                  }}
+                                </div>
+                              {% endif %}
+                              {% if block.settings.image_tag_text != blank %}
+                                <div class="LP_sticky_image_content_right_video_image_tag_text">
+                                  <p>
+                                    {{ block.settings.image_tag_text }}
+                                  </p>
+                                </div>
+                              {% endif %}
+                            </div>
+                          {% endif %}
+                        </div>
+                      {% endif %}
+                      {% if block.settings.main_title != blank or block.settings.main_information_text != blank %}
+                        <div class="LP_sticky_image_content_right_main_content_parent">
+                          {% if block.settings.main_title != blank %}
+                            <div class="LP_sticky_image_content_right_main_title">
+                              <h4>{{ block.settings.main_title }}</h4>
+                            </div>
+                          {% endif %}
+                          {% if block.settings.main_information_text != blank %}
+                            <div class="LP_sticky_image_content_right_main_information_text">
+                              {{ block.settings.main_information_text }}
+                            </div>
+                          {% endif %}
+                        </div>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+                {% endif %}
+                {% if block.type == "product-offer-block" %}
+                  {% if block.settings.product != blank or block.settings.product_image != blank or block.settings.offer_end_time != blank or block.settings.limited_text != blank or block.settings.heading_text != blank or block.settings.button_text != blank or block.settings.button_link != blank  %}
+                  <div class="LP_product_offer_block large-up-hide medium-hide">
+                    {% if block.settings.offer_end_time != blank %}
+                        <div class="LP_product_offer_timer_block">
+                          <div class="LP_product_offer_timer_block_inner">
+                            <p>
+                              <span id="btn">{% render 'LP-timer-new1', timer_end_date: block.settings.offer_end_time %}</span>
+                            </p>
+                          </div>
+                        </div>
+                      {% endif %}
+                    <div class="LP_product_offer_block_box">
+                      <div class="LP_product_offer_block_box_inner">
+                        {% if block.settings.product_image != blank %}
+                          <div class="LP_product_offer_block_product_image">
+                            {{
+                              block.settings.product_image | 
+                              image_url: width: img.width | 
+                              image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                              fetchpriority: 'auto'
+                            }}
+                          </div>
+                        {% else %}
+                          <div class="LP_product_offer_block_product_image">
+                            {{
+                              block.settings.product.featured_image | 
+                              image_url: width: img.width | 
+                              image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                              fetchpriority: 'auto'
+                            }}
+                          </div>
+                        {% endif %}
+                        {% if block.settings.limited_text != blank or block.settings.heading_text != blank %}
+                          <div class="LP_product_offer_block_product_text_parent">
+                            {% if block.settings.limited_text != blank %}
+                              <div class="LP_product_offer_block_product_limited_text">
+                                <p>
+                                  {{ block.settings.limited_text }}
+                                </p>
+                              </div>
+                            {% endif %}
+                            {% if block.settings.heading_text != blank %}
+                              <div class="LP_product_offer_block_product_heading_text Common_title_new">
+                                <h2>
+                                  {{ block.settings.heading_text }}
+                                </h2>
+                              </div>
+                            {% endif %}
+                          </div>
+                        {% endif %}
+                        {% if block.settings.button_text != blank or block.settings.button_link != blank %}
+                          <div class="LP_product_offer_block_button_parent">
+                            <a href="{{ block.settings.button_link }}" class="button">
+                              {{ block.settings.button_text }}
+                            </a>
+                          </div>
+                        {% endif %}
+                        <div class="LP_product_offer_block_remaining_product_text">
+                          {% assign product =  block.settings.product %}
+                          <p>
+                            only <strong>{{ product.selected_or_first_available_variant.inventory_quantity }}</strong> pairs left
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+      {% if section.settings.main_button_link != blank or section.settings.main_button_text != blank %}
+                  <div class="LP_sticky_image_content_left_main_button_parent large-up-hide medium-hide">
+                    <a href="{{ section.settings.main_button_link }}" class="button">
+                      {{ section.settings.main_button_text }}
+                    </a>
+                  </div>
+                {% endif %}
+    </div>
+  </div>
+{% endif %}
+
+<style>
+  /* .LP_sticky_image_content_main { padding: 72px 0 0; } */
+  .LP_sticky_image_content_sides { display: flex; flex-direction : row-reverse; }
+  .LP_sticky_image_content_leftmain_outer { width: 41.5976%; position: relative; }
+  .LP_sticky_image_content_rightmain { width: 58.4024%; padding: 168px 140px 96px; }
+  .LP_sticky_image_content_leftmain { background-attachment: fixed; height: 100%; }
+  .LP_sticky_image_content_left_inner_main { padding: 56px 89px 439px 56px; position: sticky; top: 72px;  }
+  /* .LP_sticky_image_content_leftinner { padding: 56px 89px 439px 56px; } */
+  .LP_sticky_image_content_left_bg_effect { position: absolute; left: 0; bottom: 0; width: 100%; height: 100%; }
+  .LP_sticky_image_content_left_bg_effect img { width: 100%; object-fit: cover; }
+  .LP_sticky_image_content_left_main_heading_text h2 { color: #FFF; }
+  .LP_sticky_image_content_left_main_button_parent { padding-top: 40px; }
+  .LP_sticky_image_content_left_main_button_parent a { min-width: 290px; }
+  .LP_sticky_image_content_right_block:not(:first-child) { padding-top: 64px; }
+  .LP_sticky_image_content_right_video_image_parent { position: relative; aspect-ratio: 1.5583; }
+  .LP_sticky_image_content_right_video_image_main { height: 100%; }
+  .LP_sticky_image_content_right_video_image_parent img, .LP_sticky_image_content_right_video_image_parent video { width: 100%; height: 100% !important; display: block; object-fit: cover; object-position: 100% 15%; }
+  .LP_sticky_image_content_right_video_image_tag { position: absolute; top: 12px; right: 12px; background-color: #000; padding: 6px 8px; display: flex; align-items: center; gap: 4px; }
+  /* .LP_sticky_image_content_right_video_image_tag_icon { min-width: 20px; aspect-ratio: 1; } */
+  .LP_sticky_image_content_right_video_image_tag_icon img { width: 100%; display: block; }
+  .LP_sticky_image_content_right_video_image_tag_text p { margin: 0; text-transform: uppercase; color: #FFF; font-family: var(--font-body-family); font-size: 12px; font-weight: 400; line-height: 1; }
+  .LP_sticky_image_content_right_main_content_parent { padding-top: 24px; }
+  .LP_sticky_image_content_right_main_title h4 { color: #000000; margin: 0; font-family: var(--font-body-family); font-size: 24px; font-weight: 600; line-height: 110%; }
+  .LP_sticky_image_content_right_main_information_text { padding-top: 16px; }
+  .LP_sticky_image_content_right_main_information_text p { color: #000000; margin: 0; font-family: var(--font-body-family); font-size: 16px; font-weight: 400; line-height: 125%; }
+  .LP_sticky_image_content_right_main_information_text p:not(:first-child) { padding-top: 16px; }
+
+  .LP_product_offer_block { padding: 30px 20px 0; background-color: #F6F6F6; }
+  .LP_product_offer_block_box { border: 1px solid #000000; padding: 32px 24px 24px; position: relative; }
+  .LP_product_offer_block_product_image { max-width: 187px; width: 100%; margin: 0 auto; }
+  .LP_product_offer_block_product_image img { width: 100%; object-fit: cover; height: 95px !important; display: block; }
+  .LP_product_offer_block_product_text_parent { padding: 20px 17px 0; text-align: center; }
+  .LP_product_offer_block_product_heading_text { padding-top: 12px; }
+  .LP_product_offer_block_product_limited_text p { margin: 0; font-size: 14px; font-weight: 600; line-height: 125%; text-transform: uppercase; color: #000; }
+  .LP_product_offer_block_product_heading_text h2 { font-size: 24px; line-height: 110%; color: #000; }
+  .LP_product_offer_block_button_parent { padding-top: 20px; text-align: center; }
+  .LP_product_offer_block_button_parent .button { max-width: 287px; width: 100%; }
+  .LP_product_offer_block_remaining_product_text { padding-top: 12px; text-align: center; }
+  .LP_product_offer_block_remaining_product_text p { color: #000; margin: 0; font-family: var(--font-mono-regular-family); text-transform: uppercase; font-size: 12px; font-weight: 400; line-height: 100%; }
+  .LP_product_offer_timer_block { padding: 7px 10px; border: 1px solid #000; background-color: #FFF; z-index: 1; margin: 0 auto -14px; position: relative; width: fit-content; }
+  .LP_product_offer_timer_block p { text-align: center; color: #000; margin: 0; letter-spacing: 0.2px; font-family: var(--font-mono-regular-family);  font-size: 10px; font-weight: 600; line-height: 100%; }
+  
+  @media (max-width: 1180px){
+    .LP_sticky_image_content_rightmain { padding: 56px; }
+    .LP_sticky_image_content_left_inner_main { padding: 56px 40px 400px; }
+    .LP_sticky_image_content_left_main_button_parent a { min-width: unset; }
+  }
+
+  @media (max-width: 749px){
+    .LP_sticky_image_content_main { padding: 48px 0; }
+    /* .LP_sticky_image_content_inner { padding: 0 20px; } */
+    .LP_sticky_image_content_sides { flex-direction: column; gap: 20px; }
+    .LP_sticky_image_content_leftmain_outer { width: 100%; background-color: transparent !important; }
+    .LP_sticky_image_content_rightmain { width: 100%; padding: 0; }
+    .LP_sticky_image_content_leftmain { background-image: none !important; }
+    .LP_sticky_image_content_left_inner_main { padding: 0;  }
+    .LP_sticky_image_content_leftmain .LP_sticky_image_content_left_main_button_parent { display: none; }
+    .LP_sticky_image_content_left_main_heading_text h2 { text-align: center;  color: #000000; padding: 0 25px; }
+    .LP_sticky_image_content_right_block:not(:first-child) { padding-top: 40px; }
+    .LP_sticky_image_content_right_video_image_tag { right: 8px; top: 8px; }
+    .LP_sticky_image_content_right_main_content_parent { padding: 20px 20px 0; }
+    .LP_sticky_image_content_right_main_information_text, .LP_sticky_image_content_right_main_information_text p:not(:first-child) { padding-top: 12px; }
+    .LP_sticky_image_content_left_main_button_parent { text-align: center; padding-top: 20px; }
+    .LP_sticky_image_content_left_main_button_parent a { min-width: unset; max-width: 335px; width: 100%; }
+  }
+  @media (max-width: 480px){
+    .LP_sticky_image_content_right_video_image_parent { aspect-ratio: 1.25; }
+  }
+   
+</style>
+  
+{% schema %}
+  {
+    "name": "LP Sticky Image Content",
+    "class": "LP_sticky_image_content",
+    "settings": [
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Add Background Color",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "bg_color_mobile",
+        "label": "Add Background Color- Mobile",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "header",
+        "content": "Left Side Content - Sticky Box"
+      },
+      {
+        "type": "color",
+        "id": "left_sticky_bg_color",
+        "label": "Add Left Sticky Box Background Color",
+        "default": "#000000"
+      },
+      {
+        "type": "image_picker",
+        "id": "left_sticky_box_bg_effect",
+        "label": "Add Left Sticky Box Background Effect"
+      },
+      {
+        "type": "textarea",
+        "id": "main_heading_text",
+        "label": "Add Main Heading Text",
+        "default": "<h2>5 reasons why people love Music Shield</h2>"
+      },
+      {
+        "type": "text",
+        "id": "main_button_text",
+        "label": "Add Main Button Text",
+        "default": "claim $50 off now"
+      },
+      {
+        "type": "url",
+        "id": "main_button_link",
+        "label": "Add Main Button Link",
+        "default": "/"
+      },
+    ],
+    "blocks": [
+      {
+        "type": "video-image-content",
+        "name": "Video-Image Content",
+        "settings": [
+          {
+            "type": "video",
+            "id": "video",
+            "label": "Add Video"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Add Image"
+          },
+          {
+            "type": "header",
+            "content": "Image Tag",
+            "info": "Image Tag will come at the top left position of the image"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_tag_icon",
+            "label": "Add Image Tag Icon"
+          },
+          {
+            "type": "text",
+            "id": "image_tag_text",
+            "label": "Add Image Tag Text",
+            "default": "Adjustable-tint"
+          },
+          {
+            "type": "text",
+            "id": "main_title",
+            "label": "Add Main Title",
+            "default": "Instantly adjust your tint",
+          },
+          {
+            "type": "richtext",
+            "id": "main_information_text",
+            "label": "Add Main Information Text",
+            "default": "<p>Change tint in using the slider on the side of the frame. With our electronic tint-adjustable technology you can change tint in less than 0.1 seconds (1,800 faster than photo-chromatic lenses). </p><p>With over 100+ hours of adjustable-tint battery life, you can take enjoy dusk to dawn versatility anywhere, anytime.</p>"
+          }
+        ]
+      },
+      {
+        "type": "product-offer-block",
+        "name": "Product Offer Block",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Add Product"
+          },
+          {
+            "type": "text",
+            "id": "offer_end_time",
+            "label": "Add end time for the offer",
+            "info": "EX:2024-06-19T23:59:59"
+          },
+          {
+            "type": "image_picker",
+            "id": "product_image",
+            "label": "Add Product Image"
+          },
+          {
+            "type": "text",
+            "id": "limited_text",
+            "label": "Add Limited Text",
+            "default": "limited time only"
+          },
+          {
+            "type": "text",
+            "id": "heading_text",
+            "label": "Add Heading Text",
+            "default": "Shop Music Shield today for $50 off"
+          },
+          {
+            "type": "text",
+            "id": "button_text",
+            "label": "Add Button Text",
+            "default": "claim offer now"
+          },
+          {
+            "type": "url",
+            "id": "button_link",
+            "label": "Add Button Link",
+            "default": "/"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "LP Sticky Image Content",
+        "blocks": [
+          {
+            "type": "video-image-content"
+          },
+          {
+            "type": "product-offer-block",
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

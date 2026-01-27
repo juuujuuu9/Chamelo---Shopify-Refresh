@@ -1,0 +1,92 @@
+{{ "sticky-addtocart-button.css" | asset_url | stylesheet_tag }}
+<div class="sticky-addtocart-button">
+  <div class="page-width">
+    <div class="main-grid">
+      <div class="sticky_addtocart_left_new">
+        <div class="sticky_addtocart_img_new">
+          <img src="
+            {% if product.metafields.custom.product_thumb_image != blank %}
+              {{ product.metafields.custom.product_thumb_image.value | img_url:'200x' }}
+            {% else %}
+              {{ product.featured_image | img_url:'200x' }}
+            {% endif %}
+            " alt="" width="" height="" />
+        </div>
+        <div class="sticky_addtocart_title_new">
+          <h2>{{ product.title }}</h2>
+
+          {% assign product_color_counter = 0 %}
+          {% assign stitcherProducts = product.metafields.custom.product_color_stitch_list.value.choose_products %}
+          {% for product_color_stitch_list in stitcherProducts.value %}
+            {% assign product_color_counter = product_color_counter | plus: 1 %}
+          {% endfor %}
+
+          {% if product_color_counter > 1 %}
+            {%- if product.metafields.custom.product_color_stitch_list != blank -%}
+              <div class="sticky_stitch_product_list_mainloops_new">
+                {%- if product.metafields.custom.product_color_icon.value != blank -%}
+                  {%- if product.metafields.custom.product_color_icon.value contains "files" -%}
+                    <div class="sticky_stitch_product_list_dropdown_new">
+                      <a href="javascript:void(0)" class="active">
+                        <div class="sticky_stitch_product_list_dropdown_icon_new">
+                          {{
+                            product.metafields.custom.product_color_icon.value | 
+                            image_url: width: img.width | 
+                            image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                            fetchpriority: 'auto', 
+                            class:'Static_image_new'
+                          }}
+                        </div>
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M2.625 4.875L6 8.25L9.375 4.875" stroke="black" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round"/>
+                        </svg>
+                      </a>
+                    </div>
+                  {%- endif -%}  
+                {%- endif -%} 
+                <div class="sticky_stitch_product_list_dropdown_details_open_new">
+                  <div class="sticky_stitch_product_list_dropdown_details_new">
+                    {% assign stitcherProducts = product.metafields.custom.product_color_stitch_list.value.choose_products %}
+                    {% for product_color_stitch_list in stitcherProducts.value %}
+                      {%- if product_color_stitch_list.metafields.custom.product_color_icon.value != blank -%}
+                        {%- if product_color_stitch_list.metafields.custom.product_color_icon.value contains "files" -%}
+                          <div  class="sticky_stitch_product_list_dropdown_details_icon_new">
+                            <a href="{{ product_color_stitch_list.url }}" class="{% if product.id == product_color_stitch_list.id %} active{% endif %}">
+                              <div class="sticky_stitch_product_list_dropdown_details_icon_in_new">
+                                {{
+                                  product_color_stitch_list.metafields.custom.product_color_icon.value | 
+                                  image_url: width: img.width | 
+                                  image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                  fetchpriority: 'auto', 
+                                  class:'Static_image_new'
+                                }}
+                              </div>
+                            </a>
+                          </div>
+                        {%- endif -%}  
+                      {%- endif -%}  
+                    {%- endfor -%}
+                  </div>
+                </div>
+              </div>
+            {%- endif -%}
+          {%- endif -%} 
+        </div>
+      </div>
+      <div class="sticky_addtocart_middle_new">
+        <ul>
+          <li><a href="#product_top" class="active">Overview</a></li>
+          {%- if product.metafields.custom.product_features_tabs_item_list_selections.value != blank -%}
+            <li><a href="#Features">Features</a></li>
+          {%- endif -%}
+          {%- if product.metafields.custom.product_faqs_accordions != blank %}
+            <li><a href="#FAQs">FAQs</a></li>
+          {%- endif -%}
+          <li><a href="#Reviews">Reviews</a></li>
+        </ul>
+      </div>
+      <div class="sticky_addtocart_right_new">
+      </div>
+    </div>
+  </div>
+</div>

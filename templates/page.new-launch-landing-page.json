@@ -1,0 +1,44 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "class-name": "",
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "form_inAVR7": {
+      "type": "form",
+      "settings": {
+        "left_logo": "{{ page.metafields.custom.veil_landing_page_form.value.left_logo.value }}",
+        "right_logo": "{{ page.metafields.custom.veil_landing_page_form.value.image_right_logo.value }}",
+        "right_heading": "{{ page.metafields.custom.veil_landing_page_form.value.image_right_heading.value }}",
+        "content_alignment": "center",
+        "form_id": "{{ page.metafields.custom.veil_landing_page_form.value.klaviyo_form_id.value }}",
+        "blur_image": "{{ page.metafields.custom.veil_landing_page_form.value.before_form_submit_blur_image.value }}",
+        "mobile_blur_image": "{{ page.metafields.custom.veil_landing_page_form.value.before_form_submit_image_mobile.value }}",
+        "before_submit_heding": "{{ page.metafields.custom.veil_landing_page_form.value.before_form_submit_heading | metafield_tag }}",
+        "before_submit_teaser": "{{ page.metafields.custom.veil_landing_page_form.value.before_form_submit_teaser | metafield_tag }}",
+        "clear_image": "{{ page.metafields.custom.veil_landing_page_form.value.after_form_submit_clear_image.value }}",
+        "mobile_clear_image": "{{ page.metafields.custom.veil_landing_page_form.value.after_form_submit_image_mobile.value }}",
+        "after_submit_heading": "{{ page.metafields.custom.veil_landing_page_form.value.after_form_submit_heading | metafield_tag }}",
+        "after_submit_teaser": "{{ page.metafields.custom.veil_landing_page_form.value.after_form_submit_teaser | metafield_tag }}"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "form_inAVR7"
+  ]
+}

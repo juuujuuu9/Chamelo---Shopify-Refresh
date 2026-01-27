@@ -1,0 +1,154 @@
+.hb_warranty_registration_banner img,
+.hb_warranty_registration_banner svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+.hb_warranty_registration_banner {
+    position: relative;
+    height: 700px;
+}
+.hb_banner__wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+    width: 100%;
+}
+.hb_banner__content {
+    max-width: 364px;
+    margin: 0 auto;
+}
+.hb_banner_overly {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+}
+.hb_banner__title {
+    font-size: 56px;
+    text-align: center;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: #ffffff;
+    margin: 0 0 16px;
+}
+.hb_banner__text {
+    margin-bottom: 24px;
+}
+.hb_banner__text p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.28;
+    text-align: center;
+    color: #ffffff;
+    letter-spacing: 0;
+    margin: 0 0 8px;
+}
+.hb_banner_sub-text p a {
+      color: #ffffff;
+}
+.hb_banner_sub-text p:last-child,
+.hb_banner__text p:last-child {
+    margin: 0;
+}
+.hb_banner__btn {
+    padding: 14px 40px;
+    background-color: #ffffff;
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #000000;
+    letter-spacing: -0.01em;
+    font-size: 16px;
+    line-height: 1.25;
+    font-weight: 700;
+    width: 100%;
+    margin: 0 0 24px;
+}
+.hb_banner__inner_wrap {
+    display: flex;
+    padding: 12px;
+    position: relative;
+}
+.hb_banner__inner_wrap::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    outline: 1px solid #FFFFFF14;
+    backdrop-filter: blur(24px);
+    background-color: #ffffff14;
+    z-index: -1;
+}
+.hb_banner_sub-title {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 0 0 8px;
+    line-height: 1.25;
+    letter-spacing: 0;
+    color: #ffffff;
+}
+.hb_banner__icon {
+    max-width: 40px;
+    flex: 40px;
+    height: 40px;
+}
+.hb_banner__text-wrap {
+    flex: 1;
+    padding-left: 12px;
+}
+.hb_banner_sub-text p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.28;
+    text-align: left;
+    letter-spacing: 0.1px;
+    margin: 0;
+    margin: 0 0 8px;
+}
+.hb_banner_overly.mobile {
+    display: none;
+} 
+.hb_banner_overly {
+    display: none !important;
+}
+
+@media screen and (min-width:768px) and (max-width:990px){
+    .hb_banner__title {
+        font-size: 46px;
+        margin: 0 0 10px;
+    }
+    .hb_banner__btn {
+        padding: 12px 32px;
+        font-size: 14px;
+        margin: 0 0 18px;
+    }
+    .hb_banner__text {
+        margin-bottom: 18px;
+    }
+}
+
+@media screen and (max-width:767px){
+    .hb_warranty_registration_banner {
+        height: 600px;
+    }
+    .hb_banner__title {
+        font-size: 40px;
+        line-height: 1;
+    }
+    .hb_banner__wrapper {
+        padding-top: 15px;
+    }
+    .hb_banner_overly.desktop {
+        display: none;
+    }
+    .hb_banner_overly.mobile {
+        display: block;
+    }
+}

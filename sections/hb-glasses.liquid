@@ -1,0 +1,157 @@
+{{ 'hb-glasses.css' |  asset_url |  stylesheet_tag }}
+{% style %}
+ {% for block in section.blocks %}
+  {% if block.type == "mob_gallery" %}
+      @media screen and (max-width:990px) {
+      .mobile_image_{{ block.id }} {
+        min-width: {{ block.settings.width }}px;
+       max-width: {{ block.settings.width }}px;
+       width: {{ block.settings.width }}px;
+        height: {{ block.settings.height }}px;
+      }
+    }
+  {% endif %}
+{% endfor %}
+{% endstyle %}
+
+<div class="hb_glasses">
+    <div class="page-width">
+        <div class="hb_glasses__wrapper">
+            {%- if section.settings.title != blank -%}  
+                <h2 class="hb_glasses__title">{{ section.settings.title }}</h2>
+            {%- endif -%}
+            <div class="hb_glasses__main--wrapper">
+                <div class="hb_glasses__images--wrap ">
+                  {%- if section.settings.large_image != blank -%}
+                      <div class="hb_glasses__large--image ">
+                          {{ section.settings.large_image |  image_url: width: "2000x" |  image_tag  }}
+                      </div>
+                  {%- endif -%}
+                  <div class="swiper-container " >
+                    <div class="hb_glasses__center--image-wrap">
+                      {% for block in section.blocks %}
+                          {% if block.type == "block" %}
+                            {%- if block.settings.video != blank or block.settings.center_image != blank -%}
+                                <div class="hb_glasses__center--image desktop">
+                                    {% if block.settings.video != blank %}
+                                     {{ block.settings.video | video_tag: autoplay: true, muted: true, loop: true, controls: false }}
+                                    {% else %}
+                                     {{ block.settings.center_image |  image_url: width: "1000x" |  image_tag  }}
+                                    {% endif %}
+                                </div>
+                            {%- endif -%}
+                          {% endif %}
+                          {% if block.type == "mob_gallery" %}
+                            {%- if block.settings.mob_video != blank or block.settings.center_mob_image != blank -%}
+                              <div class="hb_glasses__center--image mobile mobile_image_{{ block.id }} swiper-slide" >
+                                  {% if block.settings.mob_video != blank %}
+                                     {{ block.settings.mob_video | video_tag: autoplay: true, muted: true, loop: true, controls: false }}
+                                    {% else %}
+                                     {{ block.settings.center_mob_image |  image_url: width: "600x" |  image_tag  }}
+                                  {% endif %}
+                              </div>
+                          {%- endif -%}
+                          {% endif %}
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+                <div class="hb_glasses__texts--wrap">
+                    {%- if section.settings.text_title != blank -%}
+                        <h2 class="hb_glasses__text--title">{{ section.settings.text_title }}</h2>
+                    {%- endif -%}
+                    {%- if section.settings.text_content != blank -%}
+                        <div class="hb_glasses__text--content">{{ section.settings.text_content }}</div>
+                    {%- endif -%}
+                </div>
+            </div>
+          </div>
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Glasses",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "image_picker",
+        "id": "large_image",
+        "label": "Large image"
+      },
+      {
+        "type": "text",
+        "id": "text_title",
+        "label": "Text title"
+      },
+      {
+        "type": "richtext",
+        "id": "text_content",
+        "label": "Text content"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "block",
+        "type": "block",
+        "settings": [
+           {
+             "type": "image_picker",
+             "id": "center_image",
+             "label": "Center image (Desktop)"
+           },
+           {
+             "type": "video",
+             "id": "video",
+             "label": "Center Video (Desktop)"
+           }
+        ]
+      },
+      {
+        "name": "Mobile Content",
+        "type": "mob_gallery",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "center_mob_image",
+            "label": "Image"
+           },
+           {
+            "type": "video",
+            "id": "mob_video",
+            "label": "Video"
+           },
+           {
+            "type": "range",
+            "max": 362,
+            "min": 222,
+            "step": 2,
+            "unit": "px",
+            "id": "width",
+            "label": "Width",
+            "default": 228
+          },
+          {  
+            "type": "range",
+            "max": 342,
+            "min": 216,
+            "step": 2,
+            "unit": "px",
+            "id": "height",
+            "label": "Height",
+            "default": 228
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Glasses"
+      }
+    ]
+  }
+{% endschema %}

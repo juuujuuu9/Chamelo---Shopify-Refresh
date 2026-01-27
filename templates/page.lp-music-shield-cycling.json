@@ -1,0 +1,683 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "class-name": "",
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "lp_banner_nb8Qyz": {
+      "type": "LP-banner",
+      "blocks": {
+        "2_col_image_text_type_1_ggQwQB": {
+          "type": "2-col-image-text-type-1",
+          "disabled": true,
+          "settings": {
+            "section_bg_color_1": "#f6f6f6",
+            "main_review_image_1": "shopify://shop_images/review-5-1.svg",
+            "main_review_text_1": "Over 40,000+ pairs sold",
+            "main_heading_text_1": "Revolutionary smart-audio sunglasses",
+            "main_information_text_1": "<ul><li>Immerse yourself in crystal-clear open-ear audio</li><li>Adjust your lens tint to match any light condition</li><li>Sweat-proof and ridiculously comfortable</li></ul>",
+            "main_button_text_1": "Shop music shield Now",
+            "main_button_link_1": "#LP-featured-product-inner",
+            "bottom_icon_image_1": "shopify://shop_images/shield.svg",
+            "bottom_text_1": "30-Day Money Back Guarantee",
+            "best_inventions_block_bg_color_1": "#ffffff",
+            "best_inventions_block_image_1": "shopify://shop_images/465112282_2701106193409113_2235945206511118872_n_1_1.jpg",
+            "best_inventions_block_title_1": "time’s best inventions of 2024",
+            "best_inventions_block_description_1": "<p>Voted one of <em>Time Magazine’s</em> Best Inventions of 2024, we’re here to redefine what eyewear can do.</p>",
+            "image_section_bg_color_1": "#000000",
+            "image_section_bg_effect_desktop_1": "shopify://shop_images/Vector_4_7c064530-a901-457d-a026-0f81a672af75.svg",
+            "image_section_bg_effect_mobile_1": "shopify://shop_images/Vector_5_7f8f0e17-45a0-4500-bcb6-eb1eb6655b28.svg",
+            "main_image_1": "shopify://shop_images/2080x2080_Chamelo-sonic-boom-4_1.png",
+            "main_video_1": "shopify://files/videos/-a947-419a-9024-d0f0f0b7efa4 (1)_c9adcf81-1b67-417a-88da-48fda0de1303.mov"
+          }
+        },
+        "2_col_image_text_type_2_wXeeYm": {
+          "type": "2-col-image-text-type-2",
+          "settings": {
+            "section_bg_color_2": "#f6f6f6",
+            "main_review_image_2": "shopify://shop_images/review-5-1.svg",
+            "main_review_text_2": "Over 40,000+ pairs sold",
+            "main_heading_text_2": "Train Smarter with Revolutionary Smart Sunglasses",
+            "main_information_text_2": "<ul><li>Open-ear audio keeps you aware and motivated</li><li>Instant tint adjustment for perfect vision in all conditions</li><li>Lightweight, sweat-proof and ridiculously comfortable</li></ul>",
+            "main_button_text_2": "Shop music shield Now",
+            "main_button_link_2": "#LP-featured-product-inner",
+            "bottom_icon_image_2": "shopify://shop_images/shield.svg",
+            "bottom_text_2": "30-Day Money Back Guarantee",
+            "best_inventions_block_bg_color_2": "#ffffff",
+            "best_inventions_block_image_2": "shopify://shop_images/465112282_2701106193409113_2235945206511118872_n_1_1.jpg",
+            "best_inventions_block_title_2": "time’s best inventions of 2024",
+            "best_inventions_block_description_2": "<p>Voted one of <a href=\"https://time.com/7094864/chamelo-lens-technology/\" target=\"_blank\" title=\"https://time.com/7094864/chamelo-lens-technology/\">Time Magazine’s</a> Best Inventions of 2024, we’re here to redefine what eyewear can do.</p>",
+            "main_video_2": "shopify://files/videos/Cycling Main.mp4"
+          }
+        },
+        "2_col_image_text_type_3_nDYfc8": {
+          "type": "2-col-image-text-type-3",
+          "disabled": true,
+          "settings": {
+            "section_bg_color_3": "#f6f6f6",
+            "main_subheading_3": "Launching dec 2024",
+            "main_heading_text_3": "Be the first to hear",
+            "main_information_text_3": "<p>Music Shield Paris Edition is launching soon... join our exclusive waitlist and be the first to hear as soon as it drops.</p>",
+            "bottom_text_3": "sell out risk",
+            "bottom_risk_text_3": "high",
+            "main_image_3": "shopify://shop_images/Component_457.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "2_col_image_text_type_1_ggQwQB",
+        "2_col_image_text_type_2_wXeeYm",
+        "2_col_image_text_type_3_nDYfc8"
+      ],
+      "settings": {}
+    },
+    "index_marquee_logos_lists_new_P8hXe4": {
+      "type": "Index-marquee-logos-lists-new",
+      "blocks": {
+        "information_6ncpyP": {
+          "type": "information",
+          "settings": {
+            "main_custom_image": "shopify://shop_images/image_140.png"
+          }
+        },
+        "information_LhBYJ4": {
+          "type": "information",
+          "settings": {
+            "main_custom_image": "shopify://shop_images/image_138_3af8cccb-9d20-4796-b8aa-490c1f49ccf5.png"
+          }
+        },
+        "information_Q9brdr": {
+          "type": "information",
+          "settings": {
+            "main_custom_image": "shopify://shop_images/image_133_4c40a763-ab8d-4279-89df-571b155c84e7.png"
+          }
+        },
+        "information_J9KwM9": {
+          "type": "information",
+          "settings": {
+            "main_custom_image": "shopify://shop_images/image_132_3ce69df1-c7a1-4c11-8edf-4d51c93c79a9.png"
+          }
+        },
+        "information_fXmYDH": {
+          "type": "information",
+          "settings": {
+            "main_custom_image": "shopify://shop_images/image_140.png"
+          }
+        },
+        "information_88gzax": {
+          "type": "information",
+          "settings": {
+            "main_custom_image": "shopify://shop_images/image_138_3af8cccb-9d20-4796-b8aa-490c1f49ccf5.png"
+          }
+        },
+        "information_Jr8hyN": {
+          "type": "information",
+          "settings": {
+            "main_custom_image": "shopify://shop_images/image_133_4c40a763-ab8d-4279-89df-571b155c84e7.png"
+          }
+        },
+        "information_nHxcMW": {
+          "type": "information",
+          "settings": {
+            "main_custom_image": "shopify://shop_images/image_132_3ce69df1-c7a1-4c11-8edf-4d51c93c79a9.png"
+          }
+        }
+      },
+      "block_order": [
+        "information_6ncpyP",
+        "information_LhBYJ4",
+        "information_Q9brdr",
+        "information_J9KwM9",
+        "information_fXmYDH",
+        "information_88gzax",
+        "information_Jr8hyN",
+        "information_nHxcMW"
+      ],
+      "settings": {
+        "main_background_color": "#ffffff"
+      }
+    },
+    "lp_video_image_text_banner_y77qzc": {
+      "type": "LP-video-image-text-banner",
+      "disabled": true,
+      "settings": {
+        "custom_class": "",
+        "main_video": "shopify://files/videos/-c4e5-45a3-b2e2-e81d031637c7 (1).mov",
+        "main_banner_text": "<h4>Crush your workout with ultra-light frames, built-in speakers, and our electronic tint-adjustable lenses.</h4>"
+      }
+    },
+    "lp_sticky_image_content_Xg4JbP": {
+      "type": "LP-sticky-image-content",
+      "blocks": {
+        "video_image_content_dkHk4z": {
+          "type": "video-image-content",
+          "settings": {
+            "image": "shopify://shop_images/Cycling-1.png",
+            "image_tag_text": "",
+            "main_title": "1. Train Safer with Open-Ear Audio",
+            "main_information_text": "<p>No more compromising between music and safety. Music Shield's hidden speakers deliver crystal-clear audio while keeping you aware of your surroundings—perfect for road training and race day. </p><p>Take calls on the move, listen to your power zones, or get that extra motivation from your playlist.</p>"
+          }
+        },
+        "video_image_content_kLkr7Q": {
+          "type": "video-image-content",
+          "settings": {
+            "video": "shopify://files/videos/Triathlon Tint Change.mp4",
+            "image_tag_text": "",
+            "main_title": "2. Control Your Tint with the Swipe of a Finger",
+            "main_information_text": "<p>Slide to adapt instantly to any light condition. Whether you're cycling through shaded forest trails or sun-drenched open roads, you control your perfect tint. No more switching glasses or struggling with changing light—just focus on the ride.</p>"
+          }
+        },
+        "video_image_content_VcT6Yc": {
+          "type": "video-image-content",
+          "settings": {
+            "image": "shopify://shop_images/Trialthlon-1_3d2737e6-7651-4a96-8645-59a8c1808c6a.png",
+            "image_tag_text": "",
+            "main_title": "3. Engineered for Peak Performance",
+            "main_information_text": "<p>When every second counts, your gear needs to be on point. With IPX4 water resistance, an ultra-durable TR-90 frame, and impact-resistant lenses, Music Shield is ready for anything. </p><p>Adjustable nose pieces and ear tips ensure a secure, customized fit, so you can focus on your race, not your equipment.</p>"
+          }
+        },
+        "product_offer_block_CMMCpM": {
+          "type": "product-offer-block",
+          "settings": {
+            "product": "music-shield-fire-lenses-sports-smart-glasses-electrochromic-tint-adjustable-changing-audio-sunglasses",
+            "offer_end_time": "2024-11-22T15:52:30",
+            "product_image": "shopify://shop_images/Property_1_Frame_1000006599_1.png",
+            "limited_text": "limited time only",
+            "heading_text": "Shop Music Shield today for $50 off",
+            "button_text": "claim offer now",
+            "button_link": "/"
+          }
+        },
+        "video_image_content_YzLYg9": {
+          "type": "video-image-content",
+          "settings": {
+            "image": "shopify://shop_images/Cycling-2.png",
+            "image_tag_text": "",
+            "main_title": "4. Glasses That Go the Distance",
+            "main_information_text": "<p>Power that matches your endurance. With over 100 hours of tint adjustment and 6.5 hours of audio playback, Music Shield keeps up with your longest training days. Need a quick boost? Lightning-fast charging gets you back to 80% in just 30 minutes.</p>"
+          }
+        },
+        "video_image_content_F4B4Nh": {
+          "type": "video-image-content",
+          "settings": {
+            "image": "shopify://shop_images/Cycling-3.png",
+            "image_tag_text": "",
+            "main_title": "5. Love It or Return It—No Questions Asked",
+            "main_information_text": "<p>We're so confident you'll love Music Shield, we back every pair with a no-hassle 30-day trial. Train in them, race in them, put them through your toughest workouts. Not impressed? Send them back for a full refund. Plus, every pair includes a 1-year warranty against manufacturing defects.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "video_image_content_dkHk4z",
+        "video_image_content_kLkr7Q",
+        "video_image_content_VcT6Yc",
+        "product_offer_block_CMMCpM",
+        "video_image_content_YzLYg9",
+        "video_image_content_F4B4Nh"
+      ],
+      "settings": {
+        "bg_color": "#f6f6f6",
+        "bg_color_mobile": "#ffffff",
+        "left_sticky_bg_color": "#000000",
+        "left_sticky_box_bg_effect": "shopify://shop_images/Vector_4_6adc35d5-8407-46b7-94fc-06d0561dbeae.svg",
+        "main_heading_text": "<h2>5 reasons why cyclists choose Music Shield</h2>",
+        "main_button_text": "claim offer now",
+        "main_button_link": "#LP-featured-product-inner"
+      }
+    },
+    "lp_people_review_QmCaEy": {
+      "type": "LP-people-review",
+      "settings": {
+        "bg_color_desktop": "#ffffff",
+        "bg_color_mobile": "#000000",
+        "bg_effect_mobile": "shopify://shop_images/Vector_4_ef063494-e6bd-4831-8672-cc50545f71c7.svg",
+        "main_review_image": "shopify://shop_images/review-4.svg",
+        "main_review_image_mobile": "shopify://shop_images/review-4-white.svg",
+        "main_review_text": "Rated 4.7 • 9,201 reviews",
+        "main_heading_text": "Real people <br>real reviews",
+        "bottom_review_image": "shopify://shop_images/review-5.svg",
+        "review_message": "<h3>I get tons of compliments. The sound on these is crisp and clear for music and when answering phone calls. 10 out of 10! battery last a long time too!</h3>",
+        "review_author_name": "jeancarlo",
+        "bottom_eyewear_image": "shopify://shop_images/Music_Shield_Metafields.png",
+        "bottom_review_text": "<p>Reviewing</p>",
+        "bottom_product_text": "Music Shield",
+        "bottom_product_text_link": "#LP-featured-product-inner"
+      }
+    },
+    "featured_product_8Dbmdf": {
+      "type": "featured-product",
+      "blocks": {
+        "custom_review_QCw4EL": {
+          "type": "custom_review",
+          "settings": {}
+        },
+        "title_yF7q98": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_aHYJDt": {
+          "type": "price",
+          "settings": {}
+        },
+        "meta_short_description_jc4qtX": {
+          "type": "meta_short_description",
+          "settings": {}
+        },
+        "object_size_and_fit_M4aTnW": {
+          "type": "object_size_and_fit",
+          "settings": {
+            "main_heading_text": "Size and fit",
+            "main_popup_heading_text": "Size & Fit"
+          }
+        },
+        "meta_stitch_product_list_rQ3yAF": {
+          "type": "meta_stitch_product_list",
+          "settings": {
+            "main_heading_text": "Color:"
+          }
+        },
+        "buy_buttons_trULbT": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "order_reveive_days_detail_XiT47Q": {
+          "type": "order_reveive_days_detail",
+          "settings": {
+            "main_custom_texts": "Order within the next <strong>6 hrs</strong> to receive by <strong>Aug 12</strong>",
+            "shipping_date": 6
+          }
+        },
+        "icon_text_column_popup_hnpWby": {
+          "type": "icon_text_column_popup",
+          "settings": {
+            "main_custom_image_1": "shopify://shop_images/free-shipping_5_1_94226808-b20b-4833-848e-ff6d0ddae88c.svg",
+            "main_white_custom_image_1": "shopify://shop_images/free-shipping_5_1_869ff842-235e-46f9-9918-1af95e8010c7.svg",
+            "main_custom_texts_1": "<p>fast & free <br/>Shipping</p>",
+            "main_custom_popup_texts_1": "<p>We offer Free US and international shipping on orders over $69. Packages shipping to the continental United States typically arrive within 4-7 business days and are sent out from our warehouse in Tennessee. <a href=\"/collections\" target=\"_blank\" title=\"All collections\">Learn more</a></p>",
+            "main_custom_image_2": "shopify://shop_images/Icons-Logos-2.svg",
+            "main_white_custom_image_2": "shopify://shop_images/shield_1_9c0b67c3-3610-4907-b4a1-0e200f7af09d.svg",
+            "main_custom_texts_2": "<p>30-day Money <br/>back guarantee</p>",
+            "main_custom_popup_texts_2": "<p>If you’re not completely satisfied with your Chamelo product, you can return it within 30 days for a full refund or exchange. <a href=\"/collections/all\" target=\"_blank\" title=\"All products\">Learn more</a></p>",
+            "main_custom_image_3": "shopify://shop_images/Icons-Logos-3.svg",
+            "main_white_custom_image_3": "shopify://shop_images/paper_1_1.svg",
+            "main_custom_texts_3": "<p>1-Year <br/>Warranty</p>",
+            "main_custom_popup_texts_3": "<p>We stand behind the quality of our products, that’s why offer a 1-year warranty that covers any manufacturing defects. <a href=\"/collections\" target=\"_blank\" title=\"All collections\">Learn more</a></p>"
+          }
+        },
+        "meta_accordions_list_nFhWQy": {
+          "type": "meta_accordions_list",
+          "settings": {
+            "main_heading_text_1": "Details",
+            "main_heading_text_2": "What’s in the box",
+            "main_heading_text_3": "Size and fit",
+            "main_popup_heading_text_3": "Size chart",
+            "main_heading_text_4": "Shipping & returns",
+            "main_information_text_4": "<p>We offer Free US and international shipping on orders over $69. Packages shipping to the continental United States typically arrive within 4-7 business days and are sent out from our warehouse in Tennessee.</p>"
+          }
+        },
+        "featured_product_review_wQdxBN": {
+          "type": "featured_product_review",
+          "settings": {}
+        },
+        "stock_badge_KLAqPN": {
+          "type": "stock_badge",
+          "settings": {
+            "hosted_video": "shopify://files/videos/-7d48-4c4c-8958-43e4b3132a51.mov",
+            "stock_badge_text": "Only 3 left",
+            "btn_url": "#"
+          }
+        }
+      },
+      "block_order": [
+        "custom_review_QCw4EL",
+        "title_yF7q98",
+        "price_aHYJDt",
+        "meta_short_description_jc4qtX",
+        "object_size_and_fit_M4aTnW",
+        "meta_stitch_product_list_rQ3yAF",
+        "buy_buttons_trULbT",
+        "order_reveive_days_detail_XiT47Q",
+        "icon_text_column_popup_hnpWby",
+        "meta_accordions_list_nFhWQy",
+        "featured_product_review_wQdxBN",
+        "stock_badge_KLAqPN"
+      ],
+      "settings": {
+        "product": "music-shield-fire-lenses-sports-smart-glasses-electrochromic-tint-adjustable-changing-audio-sunglasses",
+        "color_scheme": "scheme-4",
+        "secondary_background": false,
+        "title": "Save $50 on Music Shield today only!",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 76,
+        "padding_bottom": 76
+      }
+    },
+    "lp_video_image_text_banner_YGK6wQ": {
+      "type": "LP-video-image-text-banner",
+      "settings": {
+        "custom_class": "new_era_eyewear",
+        "main_video": "shopify://files/videos/6cc8e89324302d5b560452478e9b43478b035e43.mp4",
+        "main_banner_text": "<h4>At Chamelo, our goal is to pioneer a new era in the eyewear industry by fusing state-of-the-art technology with cutting-edge style.</h4>"
+      }
+    },
+    "adjustable_lenses_section_new_CtqrwP": {
+      "type": "adjustable_lenses_section_new",
+      "blocks": {
+        "tab_HpNNBF": {
+          "type": "tab",
+          "settings": {
+            "tab_text": "",
+            "tab_sub_title": "Eclipse™ Tint-adjustable Lenses",
+            "tab_sub_text": "<p>Our Eclipse™ Tint-adjustable Lenses lenses <b>maintain a true, neutral black color at all tint levels</b>, avoiding the uneven tints found in other technologies. Crafted using state-of-the-art Japanese manufacturing and liquid crystal lens technology, we’re setting new standards in performance, quality, versatility, and design.</p>",
+            "popup_title": "Visual Light Transmittance (VLT)",
+            "popup_text": "Adjust your lens tint from 63-17% VLT, which is the percentage of light that passes through a lens. A higher percentage means more light can pass through the lens, and a lower percentage means less light can do so.",
+            "lottie_url": "https://cdn.shopify.com/s/files/1/0600/2645/4086/files/HVL.json?v=1731752321",
+            "button_mobile_text": "63-17% VLT",
+            "choose_product": [
+              "aura-calm-black-gold-instant-color-changing-sunglasses",
+              "aura-calm-white-silver-instant-color-changing-sunglasses"
+            ],
+            "tab_sub_title_mobile": "Cutting edge lens technology",
+            "tab_sub_text_mobile": "<p>Music Shield lenses have an industry-leading Visual Light Transmittance range of 63% to 17%, for extreme versatility.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "tab_HpNNBF"
+      ],
+      "settings": {
+        "id": "",
+        "video_mobile": "shopify://files/videos/6cc8e89324302d5b560452478e9b43478b035e43.mp4",
+        "title": "",
+        "video": "shopify://files/videos/-5654-4f30-b174-f4faa5614386_dd26db0c-37b0-4a99-9898-da5a19e06d6f.mov",
+        "video_width": 108,
+        "video_height": 80,
+        "greybox_title": "HVL lenses",
+        "greybox_subtitle": "63-17% VLT",
+        "greybox_description": "HVL Lenses have an industry-leading Visual Light Transmittance range of 63% to 17%, for extreme versatility.",
+        "width": 583,
+        "tab_title": "the technology",
+        "btn_text": "get music shield now",
+        "btn_url": "#LP-featured-product-inner",
+        "button_text": "",
+        "bottom_text_mobile": "10,485+ 5-star reviews",
+        "padding_top_mob": 96,
+        "padding_bottom_mob": 96
+      }
+    },
+    "lp_customer_testimonial_4pxQXL": {
+      "type": "LP-customer-testimonial",
+      "blocks": {
+        "image_video_desktop_aygahF": {
+          "type": "image_video_desktop",
+          "settings": {
+            "image": "shopify://shop_images/custromer-1.png"
+          }
+        },
+        "image_video_desktop_MhnACz": {
+          "type": "image_video_desktop",
+          "settings": {
+            "video": "shopify://files/videos/626086ab0cbea3c45e9edf2f4139c19a25a3df7c.mov"
+          }
+        },
+        "image_video_desktop_kE3J8G": {
+          "type": "image_video_desktop",
+          "settings": {
+            "image": "shopify://shop_images/customer-2.png"
+          }
+        },
+        "image_video_desktop_MHeywD": {
+          "type": "image_video_desktop",
+          "settings": {
+            "video": "shopify://files/videos/-300d-42cf-be94-b4d168ffda40.mov"
+          }
+        },
+        "image_video_desktop_YUcTDn": {
+          "type": "image_video_desktop",
+          "settings": {
+            "image": "shopify://shop_images/customer-4.png"
+          }
+        },
+        "image_video_desktop_aikHzT": {
+          "type": "image_video_desktop",
+          "settings": {
+            "video": "shopify://files/videos/3876c28e513174ca42a0f6e85820fd779df5e7a6.mov"
+          }
+        },
+        "image_video_mobile_top_XhDpH9": {
+          "type": "image_video_mobile_top",
+          "settings": {
+            "image-mt": "shopify://shop_images/custromer-1.png"
+          }
+        },
+        "image_video_mobile_top_xYf8WH": {
+          "type": "image_video_mobile_top",
+          "settings": {
+            "video-mt": "shopify://files/videos/-5654-4f30-b174-f4faa5614386_cd5378d1-6369-41b8-a967-152a99f59642.mov"
+          }
+        },
+        "image_video_mobile_top_4Ld3QM": {
+          "type": "image_video_mobile_top",
+          "settings": {
+            "image-mt": "shopify://shop_images/customer-2.png"
+          }
+        },
+        "image_video_mobile_top_7WmbYQ": {
+          "type": "image_video_mobile_top",
+          "settings": {
+            "image-mt": "shopify://shop_images/customer-3.png"
+          }
+        },
+        "image_video_mobile_bottom_9Vf4a8": {
+          "type": "image_video_mobile_bottom",
+          "settings": {
+            "video-mb": "shopify://files/videos/-300d-42cf-be94-b4d168ffda40.mov"
+          }
+        },
+        "image_video_mobile_bottom_7atUfL": {
+          "type": "image_video_mobile_bottom",
+          "settings": {
+            "image-mb": "shopify://shop_images/customer-4.png"
+          }
+        },
+        "image_video_mobile_bottom_QtDDKm": {
+          "type": "image_video_mobile_bottom",
+          "settings": {
+            "image-mb": "shopify://shop_images/customner-5.png"
+          }
+        },
+        "image_video_mobile_bottom_QG3xtk": {
+          "type": "image_video_mobile_bottom",
+          "settings": {
+            "video-mb": "shopify://files/videos/3876c28e513174ca42a0f6e85820fd779df5e7a6.mov"
+          }
+        }
+      },
+      "block_order": [
+        "image_video_desktop_aygahF",
+        "image_video_desktop_MhnACz",
+        "image_video_desktop_kE3J8G",
+        "image_video_desktop_MHeywD",
+        "image_video_desktop_YUcTDn",
+        "image_video_desktop_aikHzT",
+        "image_video_mobile_top_XhDpH9",
+        "image_video_mobile_top_xYf8WH",
+        "image_video_mobile_top_4Ld3QM",
+        "image_video_mobile_top_7WmbYQ",
+        "image_video_mobile_bottom_9Vf4a8",
+        "image_video_mobile_bottom_7atUfL",
+        "image_video_mobile_bottom_QtDDKm",
+        "image_video_mobile_bottom_QG3xtk"
+      ],
+      "settings": {
+        "section_bg_color": "#ffffff",
+        "testimonial_box_background_color": "#000000",
+        "testimonial_box_bg_effect": "shopify://shop_images/Vector_4_6b66085a-1aad-4efd-8aac-bea515a37c3d.svg",
+        "testimonial_box_bg_effect_mobile": "shopify://shop_images/Vector_5_c1bdceab-0b64-4713-843c-ab3cc8e9af73.svg",
+        "main_review_image": "shopify://shop_images/star-5.svg",
+        "main_heading_text": "Join 15,000+ happy customers",
+        "secondary_review_image": "shopify://shop_images/star-5-small.svg",
+        "review_message": "<p>The tint control is epic, & the frames really stick to your face — a big plus for running. If you’re looking for a one item accessory that does it all, music shield is a great option.</p>",
+        "review_author_name": "Cameron G",
+        "main_button_text": "get $50 off now",
+        "main_button_link": "#LP-featured-product-inner"
+      }
+    },
+    "index_object_table_detail_new_7mMyRq": {
+      "type": "Index-object-table-detail-new",
+      "settings": {
+        "main_background_color": "#ffffff"
+      }
+    },
+    "lp_bg_image_text_38K6Fh": {
+      "type": "LP-bg-image-text",
+      "settings": {
+        "bg_image_desktop": "shopify://shop_images/Screenshot_2024-07-26_at_10.34.17_AM_1_1.png",
+        "main_heading_text": "<h2>“Our eyewear isn’t just unique; it’s revolutionary.”</h2>",
+        "person_name": "stephon marbury",
+        "signature_image": "shopify://shop_images/Stephon-Signature-Black_1.png",
+        "bg_color_mobile": "#000000",
+        "bg_effect_mobile": "shopify://shop_images/Vector_5_575ae0b1-8d6d-4fb2-8ee6-16eb2d108847.svg",
+        "person_image_mobile": "shopify://shop_images/stephan.png"
+      }
+    },
+    "index_faqs_accordion_list_new_BekFwy": {
+      "type": "Index-faqs-accordion-list-new",
+      "blocks": {
+        "information_UtLFNP": {
+          "type": "information",
+          "settings": {
+            "title": "How does Music Shield work?",
+            "infos": "<p>Instantly adjust the tint with a simple slide on the side on the frame. Made with our Eclipse™ Tint-adjustable Lenses, Music Shield has a visual light transmittance range of 17% to 63, giving you incredible clarity and true dawn-to-dusk versatility.</p>"
+          }
+        },
+        "information_THhVUa": {
+          "type": "information",
+          "settings": {
+            "title": "What can Music Shield be used for?",
+            "infos": "<p>Music Shield’s adjustable tint lenses are perfect for biking, hiking, or running, allowing you get the perfect tint while staying active. You can also enjoy your favorite tunes or take calls with built-in Bluetooth speakers.</p><p></p>"
+          }
+        },
+        "information_MaVqeJ": {
+          "type": "information",
+          "settings": {
+            "title": "Is Music Shield waterproof?",
+            "infos": "<p>Music Shield is water-resistant, sweat-proof and workout-proof. It even features enhanced grip so they stay securely in place even during intense workouts.</p>"
+          }
+        },
+        "information_UQpKaL": {
+          "type": "information",
+          "settings": {
+            "title": "Is Music Shield polarized?",
+            "infos": "<p>No, Music Shield glasses are not polarized. If you’re looking for polarized glasses, check out our <a href=\"#\" target=\"_blank\">Dusk Classic.</a></p>"
+          }
+        },
+        "information_F7GiJj": {
+          "type": "information",
+          "settings": {
+            "title": "How fast is shipping?",
+            "infos": "<p>Packages shipping to the continental United States typically arrive within 4-7 business days and are sent out from our warehouse in Texas. We also offer Free US and international shipping on orders over $69.</p>"
+          }
+        },
+        "information_eKPFVw": {
+          "type": "information",
+          "settings": {
+            "title": "Do you offer a guarantee?",
+            "infos": "<p>At Chamelo, we understand that things don’t always go according to plan. That’s why we offer a robust warranty policy on our products, including a 30-day money-back guarantee and a 1-year manufacturer’s warranty. View our policy <a href=\"https://www.chamelo.com/pages/returns-exchanges\">here</a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "information_UtLFNP",
+        "information_THhVUa",
+        "information_MaVqeJ",
+        "information_UQpKaL",
+        "information_F7GiJj",
+        "information_eKPFVw"
+      ],
+      "settings": {
+        "main_background_color": "#ffffff",
+        "main_heading_text": "FAQs",
+        "main_button_text": "Shop music shield",
+        "main_button_link": "#LP-featured-product-inner",
+        "main_information_text": "<p>Curious how our sunglasses work or anything else? We’d love to hear from you. Email us at <a href=\"mailto:hello@chamelo.com\" title=\"mailto:hello@chamelo.com\">hello@chamelo.com</a> or call us at. (<a href=\"tel:(646)-413-7538\" title=\"tel:(646)-413-7538\">646)-413-7538.</a></p>",
+        "main_desktop_image": "shopify://shop_images/faq-image.png"
+      }
+    },
+    "lp_footer_teynVk": {
+      "type": "LP-footer",
+      "blocks": {
+        "footer_links_XXyiym": {
+          "type": "footer-links",
+          "settings": {
+            "link_text": "Privacy Policy",
+            "link": ""
+          }
+        },
+        "footer_links_kVbBRm": {
+          "type": "footer-links",
+          "settings": {
+            "link_text": "Terms of Service ",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "footer_links_XXyiym",
+        "footer_links_kVbBRm"
+      ],
+      "disabled": true,
+      "settings": {
+        "bg_color": "#000000",
+        "bg_effect_desktop": "shopify://shop_images/Vector_5.svg",
+        "bg_effect_mobile": "shopify://shop_images/Vector_5-mobile.svg",
+        "logo_desktop": "shopify://shop_images/Footer-Logo-New.svg",
+        "logo_mobile": "shopify://shop_images/Footer-Logo-New_200x200_30c3f850-1ac2-4002-b896-2e383b83b193.svg",
+        "copyright_text": "<p>©2024, Chamelo</p>",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    }
+  },
+  "order": [
+    "main",
+    "lp_banner_nb8Qyz",
+    "index_marquee_logos_lists_new_P8hXe4",
+    "lp_video_image_text_banner_y77qzc",
+    "lp_sticky_image_content_Xg4JbP",
+    "lp_people_review_QmCaEy",
+    "featured_product_8Dbmdf",
+    "lp_video_image_text_banner_YGK6wQ",
+    "adjustable_lenses_section_new_CtqrwP",
+    "lp_customer_testimonial_4pxQXL",
+    "index_object_table_detail_new_7mMyRq",
+    "lp_bg_image_text_38K6Fh",
+    "index_faqs_accordion_list_new_BekFwy",
+    "lp_footer_teynVk"
+  ]
+}

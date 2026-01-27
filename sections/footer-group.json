@@ -1,0 +1,92 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "index_object_instagram_new_6XDPJQ": {
+      "type": "Index-object-instagram-new",
+      "settings": {
+        "main_background_color": "",
+        "main_custom_image": "shopify://shop_images/Inside-white-Image-New.svg",
+        "main_heading_text": "Say hello to Chamelo",
+        "main_button_text": "Follow @Hellochamelo",
+        "main_button_link": "https://www.instagram.com/hellochamelo/"
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "link_list_w6BVQP": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Shop",
+            "menu": "shop",
+            "default_open": true
+          }
+        },
+        "link_list_MnKtd8": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Learn",
+            "menu": "learn",
+            "default_open": false
+          }
+        },
+        "link_list_EMJXmt": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Support",
+            "menu": "support",
+            "default_open": false
+          }
+        },
+        "link_list_LmpfbK": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Follow",
+            "menu": "follow",
+            "default_open": false
+          }
+        }
+      },
+      "block_order": [
+        "link_list_w6BVQP",
+        "link_list_MnKtd8",
+        "link_list_EMJXmt",
+        "link_list_LmpfbK"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "newsletter_enable": true,
+        "main_heading_text": "Sign up and save 10%",
+        "main_detail_text": "<p>Plus, hear about special offers and new styles.</p><p>Don’t worry, we won’t bombard you!</p>",
+        "main_information_text": "<p>*By completing this form, you are signing up to receive our emails and can unsubscribe at any time.</p>",
+        "main_custom_logo": "shopify://shop_images/Footer-Logo-New.svg",
+        "enable_copyright_text": true,
+        "main_copyright_text": "Chamelo",
+        "main_bottom_menu": "footer-new",
+        "enable_follow_on_shop": false,
+        "show_social": false,
+        "enable_country_selector": true,
+        "enable_language_selector": false,
+        "payment_enable": false,
+        "show_policy": false,
+        "margin_top": 0,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "index_object_instagram_new_6XDPJQ",
+    "footer"
+  ]
+}

@@ -1,0 +1,104 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "Page-coming-soon-template-new",
+      "settings": {
+        "main_background_color": "#f6f6f6",
+        "main_desktop_video": "shopify://files/videos/coming soon.mov",
+        "main_mobile_video": "shopify://files/videos/coming soon.mov",
+        "main_heading_text": "The future of <br>eyewear has <br>arrived...",
+        "main_details_text": "<p>and we’re just getting started.</p>",
+        "main_information_text": "<p>Join our email list and stay up-to-date on all future drops, giveaways, and more — you’re not gonna want to miss this.</p>",
+        "main_klaviyo_form": "<div class=\"klaviyo-form-R4cASc\"></div>"
+      }
+    },
+    "page_coming_soon_details_new_Lp8VMr": {
+      "type": "Page-coming-soon-details-new",
+      "blocks": {
+        "information_UYLa43": {
+          "type": "information",
+          "settings": {
+            "main_product_selected": "prime-smoke-lenses-sports-smart-glasses-electrochromic-tint-adjustable-changing-sunglasses"
+          }
+        },
+        "information_8daKQe": {
+          "type": "information",
+          "settings": {
+            "main_product_selected": "falcon-obsidian-frames-alpha-blue-lenses-sports-smart-glasses-electrochromic-automatic-tint-adjustable-sunglasses"
+          }
+        },
+        "information_YaUHrt": {
+          "type": "information",
+          "settings": {
+            "main_product_selected": "music-shield-fire-lenses-sports-smart-glasses-electrochromic-tint-adjustable-changing-audio-sunglasses"
+          }
+        },
+        "information_ByQRUi": {
+          "type": "information",
+          "settings": {
+            "main_product_selected": "dusk-lifestyle-smart-glasses-electrochromic-tint-adjustable-audio-sunglasses"
+          }
+        },
+        "information_T8XEni": {
+          "type": "information",
+          "settings": {
+            "main_product_selected": "dusk"
+          }
+        },
+        "information_46GFkX": {
+          "type": "information",
+          "settings": {
+            "main_product_selected": "dusk-lite-lifestyle-smart-glasses-electrochromic-tint-adjustable-sunglasses"
+          }
+        },
+        "information_cUBdY7": {
+          "type": "information",
+          "settings": {
+            "main_product_selected": "aura-calm-black-gold-instant-color-changing-sunglasses"
+          }
+        },
+        "information_NpJYri": {
+          "type": "information",
+          "settings": {
+            "main_product_selected": "euphoria-prismatic-smart-glasses-electrochromic-color-changing-sunglasses-calm"
+          }
+        },
+        "information_LXVVCa": {
+          "type": "information",
+          "disabled": true,
+          "settings": {
+            "main_product_selected": "music-shield-red-white-blue-lenses-sports-smart-glasses-electrochromic-tint-adjustable-changing-audio-sunglasses"
+          }
+        }
+      },
+      "block_order": [
+        "information_UYLa43",
+        "information_8daKQe",
+        "information_YaUHrt",
+        "information_ByQRUi",
+        "information_T8XEni",
+        "information_46GFkX",
+        "information_cUBdY7",
+        "information_NpJYri",
+        "information_LXVVCa"
+      ],
+      "settings": {
+        "main_background_color": "#ffffff",
+        "main_heading_text": "Tap to learn more about each pair"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "page_coming_soon_details_new_Lp8VMr"
+  ]
+}

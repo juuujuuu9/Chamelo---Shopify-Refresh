@@ -1,0 +1,351 @@
+{% if template.suffix != 'new-launch-landing-page' %}
+  {%- if section.settings.main_custom_image != blank or section.settings.main_heading_text != blank or section.settings.main_button_link != blank -%}
+    <div class="Index_object_instagram_main_new" style="background: {{ section.settings.main_background_color }};">
+      <div class="Index_object_instagram_inner_new">
+        <div class="Index_object_instagram_detail_new">
+          {%- if section.settings.main_custom_image != blank or section.settings.main_heading_text != blank or section.settings.main_button_link != blank -%}
+            <div class="Index_object_instagram_detail_mainsides_new">
+              <div class="page-width">
+                <div class="Index_object_instagram_detail_innersides_new">
+                  {%- if section.settings.main_custom_image != blank or section.settings.main_heading_text != blank or section.settings.main_button_link != blank -%}
+                    <div class="Index_object_instagram_detail_innersides_mainleft_new">
+                      <div class="Index_object_instagram_detail_innersides_innerleft_new">
+                        {%- if section.settings.main_custom_image != blank -%}
+                          <div class="Index_object_instagram_detail_innersides_innerleft_mainimage_new Desktop_only_new">
+                            <div class="Index_object_instagram_detail_innersides_innerleft_innerimage_new">
+                              {{
+                                section.settings.main_custom_image | 
+                                image_url: width: img.width | 
+                                image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                fetchpriority: 'auto', 
+                                class:'Icon_image_new'
+                              }}
+                            </div>
+                          </div>
+                        {%- endif -%}
+                        {%- if section.settings.main_heading_text != blank -%}
+                          <div class="Index_object_instagram_detail_innersides_innerleft_maintitle_new">
+                            <div class="Common_title_new Index_object_instagram_detail_innersides_innerleft_innertitle_new">
+                              <h2>{{ section.settings.main_heading_text }}</h2>
+                            </div>
+                          </div>
+                        {%- endif -%}
+                      </div>
+                    </div>
+                  {%- endif -%}
+                  {%- if section.settings.main_button_text != blank and section.settings.main_button_link != blank -%}
+                    <div class="Index_object_instagram_detail_innersides_mainright_new Desktop_only_new">
+                      <div class="Index_object_instagram_detail_innersides_innerright_new">
+                        <a href="{{ section.settings.main_button_link }}" class="button button_border_new">
+                          {{ section.settings.main_button_text }}  
+                        </a>
+                      </div>
+                    </div>
+                  {%- endif -%}
+                </div>
+              </div>
+            </div>
+          {%- endif -%}
+          <div class="Index_object_instagram_detail_mainloops_new">
+            <div class="Index_object_instagram_detail_innerloops_new">
+              <div class="Index_object_instagram_detail_innerloops_maindesktop_new Desktop_only_new">
+                <div class="Index_object_instagram_detail_innerloops_innerdesktop_new">
+                  {%- assign desktop_instagram_item_selections = shop.metaobjects.desktop_instagram_item_selections -%}
+                  {%- for desktop_instagram_item_selections in desktop_instagram_item_selections.values -%}
+                    {%- if desktop_instagram_item_selections.instagram_item_list.value != blank -%}
+                      <div class="Index_object_instagram_detail_innerloops_innerdesktop_boxs_row_1_new">
+                        {%- for instagram_item_list in desktop_instagram_item_selections.instagram_item_list.value limit: 1 -%}
+                          {%- if instagram_item_list.image_or_video.value != blank -%}
+                            <div class="Index_object_instagram_detail_innerloops_innerdesktop_mainstatic_new Desktop_Rows_1_index_{{ forloop.index }}_new">
+                              {%- if instagram_item_list.item_redirect_link.value != blank -%}
+                                <a href="{{ instagram_item_list.item_redirect_link.value }}">
+                              {%- endif -%} 
+                                  <div class="Index_object_instagram_detail_innerloops_innerdesktop_innerstatic_new">
+                                    {%- if instagram_item_list.image_or_video.value contains "files" -%}
+                                      <div class="Index_object_instagram_detail_innerloops_innerdesktop_innerstatic_imagevideo_new">
+                                        {{
+                                          instagram_item_list.image_or_video.value | 
+                                          image_url: width: img.width | 
+                                          image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                          fetchpriority: 'auto', 
+                                          class:'Static_image_new'
+                                        }}
+                                      </div>
+                                    {%- else -%}
+                                      <div class="Index_object_instagram_detail_innerloops_innerdesktop_innerstatic_imagevideo_new">
+                                        {{ instagram_item_list.image_or_video.value | video_tag: class:'Static_video_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                                      </div>
+                                    {%- endif -%}
+                                  </div>
+                              {%- if instagram_item_list.item_redirect_link.value != blank -%}
+                                </a>
+                              {%- endif -%} 
+                            </div>
+                          {%- endif -%}
+                        {%- endfor -%}
+                      </div>
+
+                      <div class="Index_object_instagram_detail_innerloops_innerdesktop_boxs_row_3_new">
+                        {%- for instagram_item_list in desktop_instagram_item_selections.instagram_item_list.value limit: 2 offset: 1 -%}
+                          {%- if instagram_item_list.image_or_video.value != blank -%}
+                            <div class="Index_object_instagram_detail_innerloops_innerdesktop_mainstatic_new Desktop_Rows_3_index_{{ forloop.index }}_new">
+                              {%- if instagram_item_list.item_redirect_link.value != blank -%}
+                                <a href="{{ instagram_item_list.item_redirect_link.value }}">
+                              {%- endif -%} 
+                                  <div class="Index_object_instagram_detail_innerloops_innerdesktop_innerstatic_new">
+                                    {%- if instagram_item_list.image_or_video.value contains "files" -%}
+                                      <div class="Index_object_instagram_detail_innerloops_innerdesktop_innerstatic_imagevideo_new">
+                                        {{
+                                          instagram_item_list.image_or_video.value | 
+                                          image_url: width: img.width | 
+                                          image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                          fetchpriority: 'auto', 
+                                          class:'Static_image_new'
+                                        }}
+                                      </div>
+                                    {%- else -%}
+                                      <div class="Index_object_instagram_detail_innerloops_innerdesktop_innerstatic_imagevideo_new">
+                                        {{ instagram_item_list.image_or_video.value | video_tag: class:'Static_video_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                                      </div>
+                                    {%- endif -%}
+                                  </div>
+                              {%- if instagram_item_list.item_redirect_link.value != blank -%}
+                                </a>
+                              {%- endif -%} 
+                            </div>
+                          {%- endif -%}
+                        {%- endfor -%}
+                      </div>
+
+                      <div class="Index_object_instagram_detail_innerloops_innerdesktop_boxs_row_2_new">
+                        {%- for instagram_item_list in desktop_instagram_item_selections.instagram_item_list.value limit: 1 offset: 3 -%}
+                          {%- if instagram_item_list.image_or_video.value != blank -%}
+                            <div class="Index_object_instagram_detail_innerloops_innerdesktop_mainstatic_new Desktop_Rows_2_index_{{ forloop.index }}_new">
+                              {%- if instagram_item_list.item_redirect_link.value != blank -%}
+                                <a href="{{ instagram_item_list.item_redirect_link.value }}">
+                              {%- endif -%} 
+                                  <div class="Index_object_instagram_detail_innerloops_innerdesktop_innerstatic_new">
+                                    {%- if instagram_item_list.image_or_video.value contains "files" -%}
+                                      <div class="Index_object_instagram_detail_innerloops_innerdesktop_innerstatic_imagevideo_new">
+                                        {{
+                                          instagram_item_list.image_or_video.value | 
+                                          image_url: width: img.width | 
+                                          image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                          fetchpriority: 'auto', 
+                                          class:'Static_image_new'
+                                        }}
+                                      </div>
+                                    {%- else -%}
+                                      <div class="Index_object_instagram_detail_innerloops_innerdesktop_innerstatic_imagevideo_new">
+                                        {{ instagram_item_list.image_or_video.value | video_tag: class:'Static_video_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                                      </div>
+                                    {%- endif -%}
+                                  </div>
+                              {%- if instagram_item_list.item_redirect_link.value != blank -%}
+                                </a>
+                              {%- endif -%} 
+                            </div>
+                          {%- endif -%}
+                        {%- endfor -%}
+                      </div>
+
+                      
+
+                      <div class="Index_object_instagram_detail_innerloops_innerdesktop_boxs_row_4_new">
+                        {%- for instagram_item_list in desktop_instagram_item_selections.instagram_item_list.value limit: 2 offset: 4 -%}
+                          {%- if instagram_item_list.image_or_video.value != blank -%}
+                            <div class="Index_object_instagram_detail_innerloops_innerdesktop_mainstatic_new Desktop_Rows_4_index_{{ forloop.index }}_new">
+                              {%- if instagram_item_list.item_redirect_link.value != blank -%}
+                                <a href="{{ instagram_item_list.item_redirect_link.value }}">
+                              {%- endif -%} 
+                                  <div class="Index_object_instagram_detail_innerloops_innerdesktop_innerstatic_new">
+                                    {%- if instagram_item_list.image_or_video.value contains "files" -%}
+                                      <div class="Index_object_instagram_detail_innerloops_innerdesktop_innerstatic_imagevideo_new">
+                                        {{
+                                          instagram_item_list.image_or_video.value | 
+                                          image_url: width: img.width | 
+                                          image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                          fetchpriority: 'auto', 
+                                          class:'Static_image_new'
+                                        }}
+                                      </div>
+                                    {%- else -%}
+                                      <div class="Index_object_instagram_detail_innerloops_innerdesktop_innerstatic_imagevideo_new">
+                                        {{ instagram_item_list.image_or_video.value | video_tag: class:'Static_video_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                                      </div>
+                                    {%- endif -%}
+                                  </div>
+                              {%- if instagram_item_list.item_redirect_link.value != blank -%}
+                                </a>
+                              {%- endif -%} 
+                            </div>
+                          {%- endif -%}
+                        {%- endfor -%}
+                      </div>
+                    {%- endif -%}
+                  {%- endfor -%}
+                </div>
+              </div>
+              <div class="Index_object_instagram_detail_innerloops_mainmobile_new Mobile_only_new">
+                <div class="Index_object_instagram_detail_innerloops_innermobile_new">
+                  {%- assign mobile_instagram_item_selections = shop.metaobjects.mobile_instagram_item_selections -%}
+                  {%- for mobile_instagram_item_selections in mobile_instagram_item_selections.values -%}
+                    {%- if mobile_instagram_item_selections.instagram_item_list.value != blank -%}
+                      <div class="Index_object_instagram_detail_innerloops_innermobile_boxs_row_1_new">
+                        {%- for instagram_item_list in mobile_instagram_item_selections.instagram_item_list.value limit: 2 -%}
+                          {%- if instagram_item_list.image_or_video.value != blank -%}
+                            <div class="Index_object_instagram_detail_innerloops_innermobile_mainstatic_new Mobile_Rows_1_index_{{ forloop.index }}_new">
+                              {%- if instagram_item_list.item_redirect_link.value != blank -%}
+                                <a href="{{ instagram_item_list.item_redirect_link.value }}">
+                              {%- endif -%} 
+                                  <div class="Index_object_instagram_detail_innerloops_innermobile_innerstatic_new">
+                                    {%- if instagram_item_list.image_or_video.value contains "files" -%}
+                                      <div class="Index_object_instagram_detail_innerloops_innermobile_innerstatic_imagevideo_new">
+                                        {{
+                                          instagram_item_list.image_or_video.value | 
+                                          image_url: width: img.width | 
+                                          image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                          fetchpriority: 'auto', 
+                                          class:'Static_image_new'
+                                        }}
+                                      </div>
+                                    {%- else -%}
+                                      <div class="Index_object_instagram_detail_innerloops_innermobile_innerstatic_imagevideo_new">
+                                        {{ instagram_item_list.image_or_video.value | video_tag: class:'Static_video_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                                      </div>
+                                    {%- endif -%}
+                                  </div>
+                              {%- if instagram_item_list.item_redirect_link.value != blank -%}
+                                </a>
+                              {%- endif -%} 
+                            </div>
+                          {%- endif -%}
+                        {%- endfor -%}
+                      </div>
+
+                      <div class="Index_object_instagram_detail_innerloops_innermobile_boxs_row_2_new">
+                        <div class="Index_object_instagram_detail_innerloops_innermobile_boxs_row_2_top_new">
+                          {%- for instagram_item_list in mobile_instagram_item_selections.instagram_item_list.value limit: 2 offset: 2 -%}
+                            {%- if instagram_item_list.image_or_video.value != blank -%}
+                              <div class="Index_object_instagram_detail_innerloops_innermobile_mainstatic_new Mobile_Rows_2_top_index_{{ forloop.index }}_new">
+                                {%- if instagram_item_list.item_redirect_link.value != blank -%}
+                                  <a href="{{ instagram_item_list.item_redirect_link.value }}">
+                                {%- endif -%} 
+                                    <div class="Index_object_instagram_detail_innerloops_innermobile_innerstatic_new">
+                                      {%- if instagram_item_list.image_or_video.value contains "files" -%}
+                                        <div class="Index_object_instagram_detail_innerloops_innermobile_innerstatic_imagevideo_new">
+                                          {{
+                                            instagram_item_list.image_or_video.value | 
+                                            image_url: width: img.width | 
+                                            image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                            fetchpriority: 'auto', 
+                                            class:'Static_image_new'
+                                          }}
+                                        </div>
+                                      {%- else -%}
+                                        <div class="Index_object_instagram_detail_innerloops_innermobile_innerstatic_imagevideo_new">
+                                          {{ instagram_item_list.image_or_video.value | video_tag: class:'Static_video_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                                        </div>
+                                      {%- endif -%}
+                                    </div>
+                                {%- if instagram_item_list.item_redirect_link.value != blank -%}
+                                  </a>
+                                {%- endif -%} 
+                              </div>
+                            {%- endif -%}
+                          {%- endfor -%}
+                        </div>
+                        <div class="Index_object_instagram_detail_innerloops_innermobile_boxs_row_2_bottom_new">
+                          {%- for instagram_item_list in mobile_instagram_item_selections.instagram_item_list.value limit: 1 offset: 4 -%}
+                            {%- if instagram_item_list.image_or_video.value != blank -%}
+                              <div class="Index_object_instagram_detail_innerloops_innermobile_mainstatic_new Mobile_Rows_2_bottom_index_{{ forloop.index }}_new">
+                                {%- if instagram_item_list.item_redirect_link.value != blank -%}
+                                  <a href="{{ instagram_item_list.item_redirect_link.value }}">
+                                {%- endif -%} 
+                                    <div class="Index_object_instagram_detail_innerloops_innermobile_innerstatic_new">
+                                      {%- if instagram_item_list.image_or_video.value contains "files" -%}
+                                        <div class="Index_object_instagram_detail_innerloops_innermobile_innerstatic_imagevideo_new">
+                                          {{
+                                            instagram_item_list.image_or_video.value | 
+                                            image_url: width: img.width | 
+                                            image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                            fetchpriority: 'auto', 
+                                            class:'Static_image_new'
+                                          }}
+                                        </div>
+                                      {%- else -%}
+                                        <div class="Index_object_instagram_detail_innerloops_innermobile_innerstatic_imagevideo_new">
+                                          {{ instagram_item_list.image_or_video.value | video_tag: class:'Static_video_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                                        </div>
+                                      {%- endif -%}
+                                    </div>
+                                {%- if instagram_item_list.item_redirect_link.value != blank -%}
+                                  </a>
+                                {%- endif -%} 
+                              </div>
+                            {%- endif -%}
+                          {%- endfor -%}
+                        </div>
+                      </div>
+                    {%- endif -%}
+                  {%- endfor -%}
+                </div>
+              </div>
+            </div>
+          </div>
+          {%- if section.settings.main_button_text != blank and section.settings.main_button_link != blank -%}
+            <div class="Index_object_instagram_detail_mainbutton_new Mobile_only_new">
+              <div class="Index_object_instagram_detail_innerbutton_new">
+                <a href="{{ section.settings.main_button_link }}" class="button">
+                  {{ section.settings.main_button_text }}  
+                </a>
+              </div>
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  {%- endif -%}
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Index Object Instagram",
+    "class": "Index_object_instagram_new",
+    "settings": [
+      {
+        "type": "color",
+        "id": "main_background_color",
+        "label": "Add Main Background Color"
+      },
+      {
+        "type": "image_picker",
+        "id": "main_custom_image",
+        "label": "Add Main Custom Image"
+      },
+      {
+        "type": "textarea",
+        "id": "main_heading_text",
+        "label": "Add Main Heading Text",
+        "default": "Say hello to Chamelo"
+      },
+      {
+        "type": "text",
+        "id": "main_button_text",
+        "label": "Add Main Button Text",
+        "default": "Follow @Hellochamelo"
+      },
+      {
+        "type": "url",
+        "id": "main_button_link",
+        "label": "Add Main Button Link",
+        "default": "/"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Index Object Instagram"
+      }
+    ]
+  }
+{% endschema %}

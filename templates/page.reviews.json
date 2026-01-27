@@ -1,0 +1,174 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hb_reviews_CfTNGK": {
+      "type": "hb-reviews-slider",
+      "blocks": {
+        "info_EaaxAJ": {
+          "type": "Info",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1000005731.png",
+            "detail_title": "",
+            "detail_content": "",
+            "button_text": "",
+            "button_link": ""
+          }
+        },
+        "info_dQaVQt": {
+          "type": "Info",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2024-07-26_at_11.41.01_AM_1.png",
+            "detail_title": "I get tons of compliments",
+            "detail_content": "The sound on these is crisp and clear for the music and when answering phone calls. 10 out of 10! battery last a long time too!",
+            "small_image": "shopify://shop_images/Frame_1000005603_4bd2cd82-f68b-4b41-be91-06d85c98c0f3.png",
+            "button_text": "Music shield",
+            "button_link": "shopify://products/music-shield-smoke-lenses-sports-smart-glasses-electrochromic-tint-adjustable-changing-audio-sunglasses"
+          }
+        },
+        "info_fhCYV9": {
+          "type": "Info",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1000005728.png",
+            "detail_title": "",
+            "detail_content": "",
+            "button_text": "",
+            "button_link": ""
+          }
+        },
+        "info_kJUNER": {
+          "type": "Info",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1000005730.png",
+            "detail_title": "Great pair of glasses",
+            "detail_content": "I absolutely love these glasses. They look like a pair of designer glasses but pretty much like having 4 pairs in 1. Highly recommend.",
+            "small_image": "shopify://shop_images/Frame_1000005603_1_163247b4-11e3-4505-ba01-c7ac6fc235a9.png",
+            "button_text": "Euphoria",
+            "button_link": "shopify://products/euphoria-prismatic-smart-glasses-electrochromic-color-changing-sunglasses-calm"
+          }
+        },
+        "info_cadQVd": {
+          "type": "Info",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1000006098_19c8e1b2-067f-486c-9d27-d5063692dc1b.png",
+            "detail_title": "",
+            "detail_content": "",
+            "button_text": "",
+            "button_link": ""
+          }
+        },
+        "info_CeRaJJ": {
+          "type": "Info",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1000005730_db9822a1-4790-4112-9c8f-a1be09b8600b.png",
+            "detail_title": "The tint control is epic",
+            "detail_content": "The frames really stick to your face — a big plus for running. If you’re looking for a one item accessory that does it all, music shield is a great option.",
+            "small_image": "shopify://shop_images/Frame_1000005603_3191a00e-8b39-48c9-94e8-f9e48850ca68.png",
+            "button_text": "music shield",
+            "button_link": "shopify://products/music-shield-fire-lenses-sports-smart-glasses-electrochromic-tint-adjustable-changing-audio-sunglasses"
+          }
+        }
+      },
+      "block_order": [
+        "info_EaaxAJ",
+        "info_dQaVQt",
+        "info_fhCYV9",
+        "info_kJUNER",
+        "info_cadQVd",
+        "info_CeRaJJ"
+      ],
+      "settings": {
+        "title": "Over 9,201+ 5-star reviews",
+        "text": "See why everyone can’t stop raving about their brand new shades.",
+        "btn_text": "Shop now",
+        "button_url": "#",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "reviews_qyTxUQ": {
+      "type": "reviews",
+      "blocks": {
+        "judge_me_reviews_all_reviews_page_AM6Qmz": {
+          "type": "shopify://apps/judge-me-reviews/blocks/all_reviews_page/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_all_reviews_page_AM6Qmz"
+      ],
+      "settings": {
+        "main_background_color": "#f6f6f6",
+        "title": "Read our raving reviews"
+      }
+    },
+    "media_courage_9QDgEC": {
+      "type": "media-courage",
+      "blocks": {
+        "information_RPHNQR": {
+          "type": "information",
+          "settings": {
+            "title": "<p>“With a commitment to pushing boundaries and redefining the eyewear landscape, Chamelo is poised to revolutionize the industry.”</p>",
+            "logos": "shopify://shop_images/image_124_721acf8e-a554-4d1d-b2b2-ef748d15f2f1.png"
+          }
+        },
+        "information_36JiEV": {
+          "type": "information",
+          "settings": {
+            "title": "<p>“Former NBA All-Star Stephon Marbury is looking to revolutionize the eyewear industry with a new brand rooted in technology.”</p>",
+            "logos": "shopify://shop_images/image_154_6233ec64-25ab-4f2b-b005-4f9448b57d7e.png"
+          }
+        },
+        "information_FBeEtw": {
+          "type": "information",
+          "settings": {
+            "title": "<p>“They’re a unique and innovative piece of gear...it could make some waves in the eyewear industry.”</p>",
+            "logos": "shopify://shop_images/image_152.png"
+          }
+        }
+      },
+      "block_order": [
+        "information_RPHNQR",
+        "information_36JiEV",
+        "information_FBeEtw"
+      ],
+      "settings": {
+        "main_background_color": "",
+        "main_desktop_image": "shopify://shop_images/Chamelo-Prime-and-Shield-Sept-2024-149_2_7f5771a1-9c46-4a67-9d16-5c6d36a3a31f.png",
+        "main_mobile_image": "shopify://shop_images/Chamelo-Prime-and-Shield-Sept-2024-149_2_8dc566ef-29dd-4f5a-9597-f68f5856e285.png",
+        "main_heading_text": "In The Press"
+      }
+    },
+    "index_featured_collection_new_PkiWVP": {
+      "type": "Index-featured-collection-new",
+      "settings": {
+        "main_background_color": "#f6f6f6",
+        "main_heading_text": "Shop bestsellers",
+        "main_information_text": "<p>Explore our most popular styles</p>",
+        "main_button_text": "Shop All",
+        "main_button_link": "/",
+        "main_collection_products": "holiday-bundles",
+        "products_to_show": 5,
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none"
+      }
+    }
+  },
+  "order": [
+    "hb_reviews_CfTNGK",
+    "reviews_qyTxUQ",
+    "media_courage_9QDgEC",
+    "index_featured_collection_new_PkiWVP"
+  ]
+}

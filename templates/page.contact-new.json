@@ -1,0 +1,87 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "contact_form_with_banner_new_epG4TA": {
+      "type": "contact-form-with-banner-new",
+      "settings": {
+        "section_color_scheme": "scheme-4",
+        "main_title": "Contact us",
+        "short_description": "<p>Got a question about our how our sunglasses work, how you make a return or anything else? We'd love to hear from you. Email us at <a href=\"mailto:hello@chamelo.com\" title=\"mailto:hello@chamelo.com\">hello@chamelo.com</a> or call us at <a href=\"tel:(646) 413-7538\" title=\"tel:(646) 413-7538\">(646) 413-7538</a>.</p>",
+        "bgimage": "shopify://shop_images/desktop_bg_img.jpg"
+      }
+    },
+    "page_four_cards_section_E4dmwc": {
+      "type": "Page-four-cards-section",
+      "blocks": {
+        "card_Fnt7UU": {
+          "type": "card",
+          "settings": {
+            "card_background_color": "#ffffff",
+            "icon_image": "shopify://shop_images/Frame_40_3087f886-f308-4d58-a388-bc5842a2d7ea.svg",
+            "card_title": "Our products",
+            "card_description": "<p>Curious about our sunglasses, our tech or why we’re different?</p>",
+            "link": "https://www.chamelo.com/pages/faq#faq_product",
+            "link_text": "learn more"
+          }
+        },
+        "card_cpfCF3": {
+          "type": "card",
+          "settings": {
+            "card_background_color": "#ffffff",
+            "icon_image": "shopify://shop_images/free-shipping_5_1_94226808-b20b-4833-848e-ff6d0ddae88c.svg",
+            "card_title": "Shipping",
+            "card_description": "<p>Have a question about delivery times, where we ship, or cancellations?</p>",
+            "link": "https://www.chamelo.com/pages/faq#faq_shipping",
+            "link_text": "learn more"
+          }
+        },
+        "card_qUzmmw": {
+          "type": "card",
+          "settings": {
+            "card_background_color": "#ffffff",
+            "icon_image": "shopify://shop_images/paper_1_1_2596a854-4d72-4ba7-9490-f36720884802.svg",
+            "card_title": "Warranty",
+            "card_description": "<p>Want to know more about our warranty policy and money-back guarantee?</p>",
+            "link": "https://www.chamelo.com/pages/faq#faq_warranty",
+            "link_text": "learn more"
+          }
+        },
+        "card_BRgMTx": {
+          "type": "card",
+          "settings": {
+            "card_background_color": "#ffffff",
+            "icon_image": "shopify://shop_images/return_1.svg",
+            "card_title": "Returns",
+            "card_description": "<p>Looking to initiate a return? Have a question about refunds?</p>",
+            "link": "https://www.chamelo.com/pages/faq#faq_returns",
+            "link_text": "learn more"
+          }
+        }
+      },
+      "block_order": [
+        "card_Fnt7UU",
+        "card_cpfCF3",
+        "card_qUzmmw",
+        "card_BRgMTx"
+      ],
+      "settings": {
+        "main_background_color": "#f6f6f6",
+        "main_heading_text": "How can we help?",
+        "button_text": "see all faqs",
+        "button_url": "shopify://pages/faq"
+      }
+    }
+  },
+  "order": [
+    "contact_form_with_banner_new_epG4TA",
+    "page_four_cards_section_E4dmwc"
+  ]
+}

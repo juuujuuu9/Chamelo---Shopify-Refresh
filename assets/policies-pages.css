@@ -1,0 +1,31 @@
+.policies-pages .rich-text__wrapper { max-width: 800px; width: 100%; margin: 0 auto; }
+.policies-pages .page-width{padding: 0 320px !important;}
+.policies-pages .rich-text:not(.rich-text--full-width) .rich-text__wrapper{width:100%;display: block;}
+.policies-pages h2.rich-text__heading{font-size: 56px;font-weight: 700;line-height: 58.8px;letter-spacing: -0.01em;text-align: left;margin-bottom:32px;} 
+.policies-pages .rich-text__text h3,.policies-pages .rich-text__text h2,.policies-pages .rich-text__text h1,.policies-pages .rich-text__text h4,.policies-pages .rich-text__text h5,.policies-pages .rich-text__text h6{font-size: 20px;font-weight: 700;line-height: 22px;text-align: left;margin:32px 0 16px;}
+.policies-pages .rich-text__blocks>*+*{margin-top:0;}
+.policies-pages .rich-text__text.rte p{font-size: 16px;font-weight: 400;line-height: 20.48px;text-align: left;margin:10px 0 0;}
+.policies-pages .rich-text__text.rte p:first-child{margin:0;}
+.policies-pages .rich-text__text.rte li{font-size: 16px;font-weight: 400;line-height: 20.48px;text-align: left;text-indent: -0.6em;list-style:none;}
+.policies-pages .rich-text__text.rte ul{padding-left:27px;margin: 10px 0;}
+.policies-pages .rich-text__text.rte li:before{content:'•';position:relative;display:inline-block;padding-right: 10px;}
+@media(min-width:750px){
+  .policies-pages .rich-text__blocks {max-width: 100%;}
+}
+@media screen and (min-width: 990px) {
+ .policies-pages .rich-text__blocks {max-width: 100%;}
+}
+@media(max-width:1250px){
+ .policies-pages .page-width {padding: 0 220px !important;}
+}
+@media(max-width:900px){
+  .policies-pages .page-width {padding: 0 89px !important;}
+}
+@media(max-width:750px){
+  .policies-pages .page-width {padding: 0 20px !important;}
+  .policies-pages .rich-text.content-container{padding-top: 42px;padding-bottom: 15px;}
+  .policies-pages h2.rich-text__heading{font-size:40px;line-height:1;margin-bottom:16px;}
+  .policies-pages .rich-text__text.rte li{text-indent: -0.4em;}
+  .policies-pages .rich-text__text.rte li:before{padding-right: 5px;}
+  .policies-pages .rich-text__text.rte ul {padding-left: 22px;}
+}

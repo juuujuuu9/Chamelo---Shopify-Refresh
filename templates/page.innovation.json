@@ -1,0 +1,425 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "index_top_slideshow_slide_new_8ViGg3": {
+      "type": "Index-top-slideshow-slide-new",
+      "blocks": {
+        "information_CDkTVz": {
+          "type": "information",
+          "settings": {
+            "main_desktop_video": "shopify://files/videos/-cccf-47bc-b603-7378fe59d0e6 (2).mp4",
+            "main_mobile_video": "shopify://files/videos/-cccf-47bc-b603-7378fe59d0e6 (3).mp4",
+            "main_review_text": "chamelo innovation",
+            "title": "Where vision <br>meets technology",
+            "main_information_text": "<p>At Chamelo, our goal is to pioneer a new era in the </p><p>eyewear industry by fusing state-of-the-art technology </p><p>with cutting-edge style.</p>",
+            "main_information_text_mob": "<p>At Chamelo, our goal is to pioneer a new era in the eyewear industry by fusing state-of-the-art technology with cutting-edge style.</p>",
+            "main_button_text": "",
+            "main_button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "information_CDkTVz"
+      ],
+      "custom_css": [],
+      "settings": {
+        "class-name": "Page_about_index_top_slideshow Page_innovation_index_top_slideshow",
+        "main_background_color": "#efefef"
+      }
+    },
+    "hb_redefining_ET9kNF": {
+      "type": "hb-Redefining",
+      "blocks": {
+        "block_BgiMPC": {
+          "type": "block",
+          "settings": {
+            "video": "shopify://files/videos/-5d38-4b8b-bf01-5db7baa8d8b7_b9f200a2-4eeb-4284-8b5c-11cecb6d8770.mov",
+            "pre_title": "Eclipse™ Tint-adjustable Lenses",
+            "title": "Adjust lens tint in 0.1 seconds",
+            "content": "<p>Choose your exact lens tint using touch tint slider, automatic tint control, and even app-enabled tint controls.</p>",
+            "button": "learn more",
+            "button_url": "#tint-section"
+          }
+        },
+        "block_xiHHhz": {
+          "type": "block",
+          "settings": {
+            "video": "shopify://files/videos/-65d2-44c1-aa3c-aa00833cfd02 (1) (1)_f4e3c408-b818-4930-8ca7-ee6e5b1d8d0b.mov",
+            "pre_title": "Prismatic™ Color-Changing Lenses",
+            "title": "A color for every mood",
+            "content": "<p>The world’s first glasses that let you instantly switch between four different hues, all with a simple touch.</p>",
+            "button": "learn more",
+            "button_url": "#prismatic-section"
+          }
+        }
+      },
+      "block_order": [
+        "block_BgiMPC",
+        "block_xiHHhz"
+      ],
+      "settings": {
+        "circle_image": "shopify://shop_images/Vector_1.png",
+        "text_pre_title": "chamelo® lens technology",
+        "text_title": "Redefining what eyewear can do",
+        "text_content": "<p>Chamelo leverages liquid crystal film technology to create next-generation smart eyewear. <strong>All our eyewear changes tint or color instantly, either manually, automatically or both.</strong></p><p>Whether navigating the bright conditions of an outdoor adventure or looking to elevate your personal style, we’ve got a pair for you.</p>",
+        "text_button": "shop now",
+        "text_button_url": "#"
+      }
+    },
+    "hb_tab_section_zPirEV": {
+      "type": "hb-tab-section",
+      "blocks": {
+        "tab_zD7Dr9": {
+          "type": "tab",
+          "settings": {
+            "tab_text": "HVL",
+            "tab_sub_title": "HVL lenses",
+            "tab_sub_text": "<p>HVL Lenses have an industry-leading Visual Light Transmittance range of 63% to 17%, for true versatility.</p><p>With the widest tint range on the market, HVL Lenses are  extremely adaptable to whatever life throws at you. Whether you’re dealing with intense sun or low-light conditions, HVL Lenses seamlessly adjust to provide optimal clarity and comfort.</p>",
+            "popup_title": "Visual Light Transmittance (VLT)",
+            "popup_text": "Adjust your lens tint from 63-17% VLT, which is the percentage of light that passes through a lens. A higher percentage means more light can pass through the lens, and a lower percentage means less light can do so.",
+            "lottie_url": "https://cdn.shopify.com/s/files/1/0600/2645/4086/files/HVL.json?v=1731752321",
+            "button_mobile_text": "63-17% VLT",
+            "choose_product": [
+              "music-shield-smoke-lenses-sports-smart-glasses-electrochromic-tint-adjustable-changing-audio-sunglasses",
+              "prime-smoke-lenses-sports-smart-glasses-electrochromic-tint-adjustable-changing-sunglasses"
+            ]
+          }
+        },
+        "tab_MTrDXg": {
+          "type": "tab",
+          "settings": {
+            "tab_text": "alpha",
+            "tab_sub_title": "ALPHA lenses",
+            "tab_sub_text": "<p>Alpha Lenses have our darkest tint range to date. With a Visual Light Transmittance of 38 to 4%, you can change your lens tint to perfectly match the light conditions.</p><p>With a darker tint range, Alpha Lenses are effective at dealing with harsh sunlight and reducing glare. Whether you're out running, biking, or driving into the sunset, Alpha Lenses ensure your vision stays sharp and protected.</p>",
+            "popup_title": "Visual Light Transmittance (VLT)",
+            "popup_text": "Adjust your lens tint from 38-4% VLT, which is the percentage of light that passes through a lens. A higher percentage means more light can pass through the lens, and a lower percentage means less light can do so.",
+            "lottie_url": "https://cdn.shopify.com/s/files/1/0600/2645/4086/files/Alpha.json?v=1731752320",
+            "button_mobile_text": "38-4% VLT",
+            "choose_product": [
+              "falcon-obsidian-frames-alpha-blue-lenses-sports-smart-glasses-electrochromic-automatic-tint-adjustable-sunglasses",
+              "dusk",
+              "dusk-lite-lifestyle-smart-glasses-electrochromic-tint-adjustable-sunglasses"
+            ]
+          }
+        },
+        "tab_97yijf": {
+          "type": "tab",
+          "settings": {
+            "tab_text": "xpanse",
+            "tab_sub_title": "XPANSE lenses (Coming soon)",
+            "tab_sub_text": "<p>Xpanse Lenses have an ground-breaking Visual Light Transmittance range of 63% to 6%, giving you with the darker tint protection of Alpha and the versatile tint range of HVL. Currently in production, you can expect to see our Xpanse lens technology coming to Chamelo glasses as early as 2025. Stay tuned...</p>",
+            "popup_title": "Visual Light Transmittance (VLT)",
+            "popup_text": "Adjust your lens tint from 63% to 6% VLT, which is the percentage of light that passes through a lens. A higher percentage means more light can pass through the lens, and a lower percentage means less light can do so.",
+            "lottie_url": "https://cdn.shopify.com/s/files/1/0600/2645/4086/files/Xpanse.json?v=1731752321",
+            "button_mobile_text": "63-6% VLT",
+            "choose_product": []
+          }
+        }
+      },
+      "block_order": [
+        "tab_zD7Dr9",
+        "tab_MTrDXg",
+        "tab_97yijf"
+      ],
+      "settings": {
+        "id": "tint-section",
+        "Top_img": "shopify://shop_images/Frame_1000006396.png",
+        "title": "Eclipse™ Tint-adjustable Lenses",
+        "video": "shopify://files/videos/-5654-4f30-b174-f4faa5614386.mov",
+        "video_width": 155,
+        "video_height": 100,
+        "text": "<p>Our lenses change tint in less than 0.1 seconds — 1,800 times faster than photochromic glasses. Eclipse™ Tint-adjustable Lenses maintain a true, neutral black color at all tint levels, <strong>avoiding the uneven tints found in other technologies. </strong></p>",
+        "width": 583,
+        "tab_title": "Available in 3 versions",
+        "btn_text": "shop tint-adjustable",
+        "btn_url": "#",
+        "button_text": "View products",
+        "padding_top_mob": 56,
+        "padding_bottom_mob": 56
+      }
+    },
+    "hb_tab_section_LkA9yt": {
+      "type": "hb-tab-section",
+      "blocks": {
+        "tab_PqzaLR": {
+          "type": "tab",
+          "settings": {
+            "tab_text": "calm",
+            "tab_sub_title": "Calm lenses",
+            "tab_sub_text": "<p>Made with soft, cool colors (blue, purple, ruby, and clear), Calm Lenses are perfect for helping you relax and feel at ease no matter the occassion. </p><p>Whether you're out and about, or just chilling at home, these lenses create a soothing view that keeps you calm and focused.</p>",
+            "popup_title": "",
+            "popup_text": "",
+            "lottie_url": "https://cdn.shopify.com/s/files/1/0600/2645/4086/files/Calm.json?v=1731752320",
+            "button_mobile_text": "",
+            "choose_product": [
+              "aura-calm-black-gold-instant-color-changing-sunglasses",
+              "euphoria-prismatic-smart-glasses-electrochromic-color-changing-sunglasses-calm"
+            ]
+          }
+        },
+        "tab_RbiEfB": {
+          "type": "tab",
+          "settings": {
+            "tab_text": "energy",
+            "tab_sub_title": "Energy lenses (coming soon)",
+            "tab_sub_text": "<p>Designed with bright, warm colors (red, orange, yellow, and clear), Energy Lenses bring a boost of positivity and energy to your day. </p><p>They're great for staying motivated, enjoying outdoor activities, or just adding some brightness to your routine. These lenses make everything feel more vibrant and uplifting.</p>",
+            "popup_title": "",
+            "popup_text": "",
+            "lottie_url": "https://cdn.shopify.com/s/files/1/0600/2645/4086/files/Energy.json?v=1731752321",
+            "button_mobile_text": "",
+            "choose_product": []
+          }
+        }
+      },
+      "block_order": [
+        "tab_PqzaLR",
+        "tab_RbiEfB"
+      ],
+      "settings": {
+        "id": "prismatic-section",
+        "Top_img": "shopify://shop_images/Frame_1000005377.png",
+        "title": "Prismatic™ Color- Changing Lenses",
+        "video": "shopify://files/videos/Euphoria Features - TAB Features - TAB -5ba4-4517-b965-034ed1799317.mov",
+        "video_width": 165,
+        "video_height": 120,
+        "text": "<p><strong>Introducing the world’s first glasses that allow you to change the tint color instantly.</strong> With Prismatic™ Color-changing Lenses you can effortlessly switch between four different hues, all with a simple touch. A 2018 ZEISS study showed that colors evoke emotional reactions. Using this insight, we created two lens options to suit both style and mood preferences.</p>",
+        "width": 665,
+        "tab_title": "Available in 2 colorways",
+        "btn_text": "shop color-changing",
+        "btn_url": "#",
+        "button_text": "View products",
+        "padding_top_mob": 0,
+        "padding_bottom_mob": 56
+      }
+    },
+    "hb_glasses_Dcft6d": {
+      "type": "hb-glasses",
+      "blocks": {
+        "block_6ryxY7": {
+          "type": "block",
+          "settings": {
+            "center_image": "shopify://shop_images/Frame_1000006277.png",
+            "video": "shopify://files/videos/-93a4-4884-bddb-82e69b9d67ed.mov"
+          }
+        },
+        "block_gqTwFr": {
+          "type": "block",
+          "settings": {
+            "center_image": "shopify://shop_images/Frame_1000006277_1.png"
+          }
+        },
+        "block_VKBJD6": {
+          "type": "block",
+          "settings": {
+            "center_image": "shopify://shop_images/Frame_1000006279.png",
+            "video": "shopify://files/videos/-39c1-43c0-9ccc-8c946bf2159e.mov"
+          }
+        },
+        "block_WmRLjH": {
+          "type": "block",
+          "settings": {
+            "center_image": "shopify://shop_images/Frame_1000006280.png"
+          }
+        },
+        "block_BJAYyh": {
+          "type": "block",
+          "settings": {
+            "center_image": "shopify://shop_images/Frame_1000006278.png"
+          }
+        },
+        "mob_gallery_UK4LDc": {
+          "type": "mob_gallery",
+          "settings": {
+            "center_mob_image": "shopify://shop_images/1_81.png",
+            "width": 226,
+            "height": 300
+          }
+        },
+        "mob_gallery_dCV4zE": {
+          "type": "mob_gallery",
+          "settings": {
+            "mob_video": "shopify://files/videos/-93a4-4884-bddb-82e69b9d67ed.mov",
+            "width": 272,
+            "height": 216
+          }
+        },
+        "mob_gallery_XfzMUG": {
+          "type": "mob_gallery",
+          "settings": {
+            "center_mob_image": "shopify://shop_images/Ampere-Shenzhen-Dusk-Factory-67.png",
+            "width": 276,
+            "height": 300
+          }
+        },
+        "mob_gallery_TLXmTY": {
+          "type": "mob_gallery",
+          "settings": {
+            "mob_video": "shopify://files/videos/-dfb1-43ca-888e-10fb29a0d53e.mp4",
+            "width": 282,
+            "height": 228
+          }
+        },
+        "mob_gallery_W3mHVg": {
+          "type": "mob_gallery",
+          "settings": {
+            "center_mob_image": "shopify://shop_images/Frame_1000006196.png",
+            "width": 222,
+            "height": 300
+          }
+        },
+        "mob_gallery_rVBpiQ": {
+          "type": "mob_gallery",
+          "settings": {
+            "center_mob_image": "shopify://shop_images/Ampere-Shenzhen-Dusk-Factory-86_1.png",
+            "width": 344,
+            "height": 228
+          }
+        },
+        "mob_gallery_CLBQHp": {
+          "type": "mob_gallery",
+          "settings": {
+            "center_mob_image": "shopify://shop_images/1_81.png",
+            "width": 228,
+            "height": 300
+          }
+        },
+        "mob_gallery_AbdwDT": {
+          "type": "mob_gallery",
+          "settings": {
+            "mob_video": "shopify://files/videos/-93a4-4884-bddb-82e69b9d67ed.mov",
+            "width": 274,
+            "height": 216
+          }
+        },
+        "mob_gallery_yUWrwp": {
+          "type": "mob_gallery",
+          "settings": {
+            "center_mob_image": "shopify://shop_images/Ampere-Shenzhen-Dusk-Factory-67.png",
+            "width": 276,
+            "height": 300
+          }
+        },
+        "mob_gallery_9wxWja": {
+          "type": "mob_gallery",
+          "settings": {
+            "mob_video": "shopify://files/videos/-dfb1-43ca-888e-10fb29a0d53e.mp4",
+            "width": 282,
+            "height": 220
+          }
+        },
+        "mob_gallery_bTkBMt": {
+          "type": "mob_gallery",
+          "settings": {
+            "center_mob_image": "shopify://shop_images/Frame_1000006196.png",
+            "width": 222,
+            "height": 300
+          }
+        },
+        "mob_gallery_WcerH7": {
+          "type": "mob_gallery",
+          "settings": {
+            "center_mob_image": "shopify://shop_images/Ampere-Shenzhen-Dusk-Factory-86_1.png",
+            "width": 344,
+            "height": 228
+          }
+        }
+      },
+      "block_order": [
+        "block_6ryxY7",
+        "block_gqTwFr",
+        "block_VKBJD6",
+        "block_WmRLjH",
+        "block_BJAYyh",
+        "mob_gallery_UK4LDc",
+        "mob_gallery_dCV4zE",
+        "mob_gallery_XfzMUG",
+        "mob_gallery_TLXmTY",
+        "mob_gallery_W3mHVg",
+        "mob_gallery_rVBpiQ",
+        "mob_gallery_CLBQHp",
+        "mob_gallery_AbdwDT",
+        "mob_gallery_yUWrwp",
+        "mob_gallery_9wxWja",
+        "mob_gallery_bTkBMt",
+        "mob_gallery_WcerH7"
+      ],
+      "settings": {
+        "title": "Our glasses are produced using a state-of-the-art Japanese manufacturing process",
+        "large_image": "shopify://shop_images/Frame_1000005404.png",
+        "text_title": "On the cutting-edge of lens technology",
+        "text_content": "<p>Made with state-of-the-art manufacturing and liquid crystal lens technology, we’re setting new standards in performance, quality, versatility, and design.</p><p>In an industry that’s been static for decade after decade, we’re here to push the boundaries of what’s possible.</p>"
+      }
+    },
+    "hb_image_video_overlay_xkhCRm": {
+      "type": "hb-image-video-overlay",
+      "settings": {
+        "background_color": "",
+        "inner_background_color": "#ffffff",
+        "image": "shopify://shop_images/image_161.png",
+        "video": "shopify://files/videos/-0166-411f-8dbc-348936d42d98 (1).mov",
+        "vimoe_video_id": "1007920640",
+        "video_mobile": "shopify://files/videos/ask_the_experts__dr._jay_schwartz (1080p) (1) (1).mp4",
+        "thumbnail_img_mob": "shopify://shop_images/Component_439.png",
+        "title": "Backed by Phoenix Suns ophthalmologist Dr. Jay Schwartz",
+        "description": "<p>Chamelo’s technology is cutting-edge... I’ve never seen anything like it.</p>",
+        "name": "Dr. Jay Schwartz",
+        "text": "Chamelo Optical Advisor"
+      }
+    },
+    "index_object_table_detail_new_7mMyRq": {
+      "type": "Index-object-table-detail-new",
+      "settings": {
+        "main_background_color": "#ffffff"
+      }
+    },
+    "index_featured_collection_new_b7hxcq": {
+      "type": "Index-featured-collection-new",
+      "settings": {
+        "main_background_color": "#f6f6f6",
+        "main_heading_text": "Shop bestsellers",
+        "main_information_text": "<p>Explore our most popular styles</p>",
+        "main_button_text": "Shop All",
+        "main_button_link": "shopify://collections/best-sellers",
+        "main_collection_products": "best-sellers",
+        "products_to_show": 30,
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none"
+      }
+    },
+    "index_object_tabs_details_new_iKEbQH": {
+      "type": "Index-object-tabs-details-new",
+      "disabled": true,
+      "settings": {
+        "main_background_color": "rgba(0,0,0,0)",
+        "main_review_text": "Rated 4.7 • 9,201 reviews",
+        "main_heading_text": "Real Chamelo love",
+        "main_heading_mobile_text": "Real life <br>Chamelo love",
+        "main_button_text": "Read All Reviews",
+        "main_button_link": "/"
+      }
+    }
+  },
+  "order": [
+    "index_top_slideshow_slide_new_8ViGg3",
+    "hb_redefining_ET9kNF",
+    "hb_tab_section_zPirEV",
+    "hb_tab_section_LkA9yt",
+    "hb_glasses_Dcft6d",
+    "hb_image_video_overlay_xkhCRm",
+    "index_object_table_detail_new_7mMyRq",
+    "index_featured_collection_new_b7hxcq",
+    "index_object_tabs_details_new_iKEbQH"
+  ]
+}

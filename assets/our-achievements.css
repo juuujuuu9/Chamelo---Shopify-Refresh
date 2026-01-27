@@ -1,0 +1,317 @@
+.hb_our_achievements img {
+    width: 100%;
+    height: 100% !important;
+    display: block;
+    object-fit: cover;
+}
+.hb_our_achievements {
+    background-color: #F6F6F6;
+    padding: 56px 0 0;
+}
+.hb_our_achievements .page-width {
+    padding-right: 0 !important;
+}
+.hb_our_achievements__wrapper {
+    margin-bottom: 96px;
+}
+.hb_our_achievements__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 56px;
+    margin-bottom: 48px;
+}
+.hb_our_achievements__title {
+    font-family: var(--font-heading-family);
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    text-align: left;
+    text-transform: capitalize;
+    color: #000000;
+    margin: 0;
+}
+.hb_our_achievements__text.richtext p,
+.hb_our_achievements__text.richtext p a {
+    line-height: 1.35;
+    letter-spacing: 0.015em;
+    max-width: 324px;
+    text-align: left;
+}
+.hb_our_achievements__text.richtext p a {
+    max-width: fit-content;
+    color: #000000;
+    text-underline-offset: 3px;
+}
+.hb_our_achievements__text p {
+    font-family: var(--font-heading-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: 0;
+    text-align: center;
+    color: #000000;
+    margin: 0;
+}
+.hb_our_achievements__grid {
+    display: flex;
+}
+.hb_our_achievements__alpha {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -8px -16px;
+}
+.hb_our_achievements__alpha,
+.hb_our_achievements__beta {
+    max-width: 50%;
+    flex: 50%;
+}
+.hb_our_achievements__beta {
+    margin-left: 16px;
+    position: sticky;
+    top: 0;
+    height: 828px;
+}
+.hb_our_achievements__item {
+    max-width: 50%;
+    flex: 50%;
+    padding: 0 8px;
+    margin-bottom: 16px;
+}
+.hb_our_achievements__inner {
+    background-color: #fff;
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    padding: 35.5px 40px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 262.67px;
+}
+.hb_our_achievements__block-img {
+    margin: 0 auto 24px;
+}
+.hb_our_achievements__btn {
+    font-family: var(--font-heading-family);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+    text-align: left;
+    color: #000000;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    text-underline-offset: 3px;
+    display: block;
+    max-width: fit-content;
+    margin: 24px auto 0;
+}
+.hb_our_achievements__mobile-img {
+    display: none;
+}
+
+/* ------------------hb_logo_css---------------- */
+.hb_logo {
+    padding: 72px 0;
+    background-color: #ffffff;
+}
+.hb_logo.mobile {
+    display: none;
+}
+.hb_logo .hb_logo__title {
+    font-family: var(--font-heading-family);
+    font-size: 32px;
+    font-weight: 600;
+    line-height:1.1;
+    text-align: center;
+    letter-spacing: 0;
+    color: #000000;
+    max-width: 90%;
+    margin: 0 auto 40px;
+}
+.hb_logo__grid {
+    display: flex;
+    gap: 48px;
+    overflow: auto;
+    max-width: fit-content;
+    margin: 0 auto;
+}
+.hb_logo__grid::-webkit-scrollbar {
+    display: none;
+  }
+.hb_logo__item {
+    min-width: 147px;
+    max-width: 147px;
+    flex: 147px;
+    height: 176px;
+}
+.hb_logo__item:last-child {
+    margin-right: 20px;
+}
+.hb_logo__item:first-child {
+    margin-left: 20px;
+}
+
+
+@media screen and (min-width: 1440px) {
+    .hb_our_achievements__content {
+        padding-right: 56px;
+    }
+    .hb_logo .page-width {
+        padding: 0 !important;
+    }
+    .hb_logo__item:last-child {
+        margin-right: 56px;
+    }
+    .hb_logo__item:first-child {
+        margin-left: 56px;
+    }
+}
+@media screen and (max-width: 1439px) {
+    .hb_logo .page-width {
+        padding: 0 !important;
+    }
+    .hb_our_achievements__content {
+        padding-right: 20px;
+    }
+}
+@media screen and (max-width:1279px){
+    .hb_our_achievements__content {
+        margin-bottom: 36px;
+    }
+    .hb_our_achievements__title {
+        font-size: 42px;
+    }
+    .hb_our_achievements__inner {
+        padding: 20px;
+        min-height: unset;
+    }
+    .hb_our_achievements__block-img {
+        margin: 0 auto 15px;
+    }
+    .hb_our_achievements__btn {
+        margin: 15px auto 0;
+    }
+    .hb_logo {
+        padding: 60px 0;
+    }
+    .hb_logo .hb_logo__title {
+        font-size: 28px;
+        margin: 0 auto 30px;
+    }
+    .hb_logo__grid {
+        gap: 30px;
+    }
+    .hb_logo__item {
+        max-width: 130px;
+        flex: 130px;
+        min-width: 130px;
+        height: 160px;
+    }
+}
+@media screen and (max-width:990px){
+    .hb_our_achievements__wrapper {
+        margin-bottom: 70px;
+    }
+    .hb_our_achievements__content {
+        margin-bottom: 30px;
+    }
+    .hb_our_achievements__alpha {
+        margin: 0 0 -16px;
+    }
+    .hb_our_achievements__item {
+        max-width: 100%;
+        flex: 100%;
+        padding: 0;
+        margin-bottom: 16px;
+    }
+    .hb_logo {
+        padding: 50px 0;
+    }
+    .hb_logo .hb_logo__title {
+        font-size: 26px;
+    }
+    .hb_logo__grid {
+        gap: 25px;
+    }
+    .hb_logo__item {
+        max-width: 100px;
+        flex: 100px;
+        min-width: 100px;
+        height: 130px;
+    }
+}
+@media screen and (max-width:767px){
+    .hb_our_achievements {
+        background-color: #ffffff;
+        padding: 0;
+    }
+    .hb_logo.desktop {
+        display: none;
+    }
+    .hb_logo.mobile {
+        display: block;
+        padding: 0 0 32px;
+        margin: 0 -20px;
+        overflow: hidden;
+    }
+
+    .hb_logo__grids span {
+        display: flex;
+    }
+    .hb_logo__item {
+        max-width: 81.85px;
+        flex: 81.85px;
+        min-width: 81.85px;
+        height: 90px;
+        margin-right: 16px;
+    }
+    .hb_our_achievements .page-width {
+        padding: 0 20px !important;
+    }
+    .hb_our_achievements__wrapper {
+        margin-bottom: 0;
+    }
+    .hb_our_achievements__content {
+        margin-bottom: 0;
+        padding: 32px 0 24px;
+        flex-wrap: wrap;
+    }
+    .hb_our_achievements__mobile-img {
+        display: block;
+        height: 235px;
+    }
+    .hb_our_achievements__text.richtext p {
+        max-width: 100%;
+    }
+    .hb_our_achievements__title {
+        font-size: 40px;
+        line-height: 1;
+        margin-bottom: 16px;
+    }
+    .hb_our_achievements__beta {
+        display: none;
+    }
+    .hb_our_achievements__alpha {
+        max-width: 100%;
+        flex: 100%;
+    }
+    .hb_our_achievements__inner {
+        background-color: #F6F6F6;
+        padding: 32px 24px;
+    }
+    .hb_our_achievements__block-img {
+        margin: 0 auto 20px;
+    }
+    .hb_our_achievements__btn {
+        margin: 20px auto 0;
+    }
+    .hb_logo__grid {
+        overflow: unset !important;
+    }
+    .hb_logo__grid.swiper-wrapper {
+        transition-timing-function: linear !important;
+    }
+}

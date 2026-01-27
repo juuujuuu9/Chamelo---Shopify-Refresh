@@ -1,0 +1,111 @@
+{%- if collection.metafields.custom.collection_offer_banner_desktop_video_or_image_full.value != blank or collection.metafields.custom.collection_offer_banner_mobile_video_or_image_full.value != blank or collection.metafields.custom.collection_offer_banner_main_heading_text != blank or collection.title != blank or collection.metafields.custom.collection_offer_banner_main_details_text != blank -%}
+  <style>
+    .Collection_template_mainparts_new{ display:none; }
+    @media (min-width: 0px) and (max-width: 749px) {
+      .List_collection_template_main_new {
+        
+      }
+    }
+  </style>
+  <div class="Collection_overlay_banner_main_new" style="background: {{ section.settings.main_background_color }};">
+    <div class="Collection_overlay_banner_inner_new">
+      <div class="Collection_overlay_banner_detail_new">
+        {%- if collection.metafields.custom.collection_offer_banner_desktop_video_or_image_full.value != blank and collection.metafields.custom.collection_offer_banner_mobile_video_or_image_full.value != blank -%}
+          <div class="Collection_overlay_banner_detail_mainstatic_new">
+            <div class="Collection_overlay_banner_detail_innerstatic_new">
+              {%- if collection.metafields.custom.collection_offer_banner_desktop_video_or_image_full.value != blank -%}
+                <div class="Collection_overlay_banner_detail_innerstatic_mainboths_new Desktop_only_new">
+                  <div class="Collection_overlay_banner_detail_innerstatic_innerboths_new">
+                    {%- if collection.metafields.custom.collection_offer_banner_desktop_video_or_image_full.value contains "files" -%}
+                      <div class="Collection_overlay_banner_detail_innerstatic_innerboths_imagevideo_new {% if collection.title == 'Sale' %}collection-banner__gardient-remove{% endif %}">
+                        {{
+                          collection.metafields.custom.collection_offer_banner_desktop_video_or_image_full.value | 
+                          image_url: width: img.width | 
+                          image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                          fetchpriority: 'auto', 
+                          class:'Static_image_new'
+                        }}
+                      </div>
+                    {%- else -%}
+                      <div class="Collection_overlay_banner_detail_innerstatic_innerboths_imagevideo_new {% if collection.title == 'Sale' %}collection-banner__gardient-remove{% endif %}">
+                        {{ collection.metafields.custom.collection_offer_banner_desktop_video_or_image_full.value | video_tag: class:'Static_video_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                      </div>
+                    {%- endif -%}
+                  </div>
+                </div>
+              {%- endif -%}
+              {%- if collection.metafields.custom.collection_offer_banner_mobile_video_or_image_full.value != blank -%}
+                <div class="Collection_overlay_banner_detail_innerstatic_mainboths_new Mobile_only_new">
+                  <div class="Collection_overlay_banner_detail_innerstatic_innerboths_new">
+                    {%- if collection.metafields.custom.collection_offer_banner_mobile_video_or_image_full.value contains "files" -%}
+                      <div class="Collection_overlay_banner_detail_innerstatic_innerboths_imagevideo_new {% if collection.title == 'Sale' %}collection-banner__gardient-remove{% endif %}">
+                        {{
+                          collection.metafields.custom.collection_offer_banner_mobile_video_or_image_full.value | 
+                          image_url: width: img.width | 
+                          image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                          fetchpriority: 'auto', 
+                          class:'Static_image_new'
+                        }}
+                      </div>
+                    {%- else -%}
+                      <div class="Collection_overlay_banner_detail_innerstatic_innerboths_imagevideo_new {% if collection.title == 'Sale' %}collection-banner__gardient-remove{% endif %}"> 
+                        {{ collection.metafields.custom.collection_offer_banner_mobile_video_or_image_full.value | video_tag: class:'Static_video_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                      </div>
+                    {%- endif -%}
+                  </div>
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endif -%}
+        {%- if collection.metafields.custom.collection_offer_banner_main_heading_text != blank or collection.title != blank or collection.metafields.custom.collection_offer_banner_main_details_text != blank -%}
+          <div class="Collection_overlay_banner_detail_mainoverlay_new">
+            <div class="Collection_overlay_banner_detail_inneroverlay_new">
+              {%- if collection.metafields.custom.collection_offer_banner_main_heading_text != blank or collection.title != blank -%}
+                <div class="Collection_overlay_banner_detail_inneroverlay_maintitle_new">
+                  <div class="Common_title_new Collection_overlay_banner_detail_inneroverlay_innertitle_new">
+                    {%- if collection.metafields.custom.collection_offer_banner_main_heading_text != blank -%}
+                      <h1>{{ collection.metafields.custom.collection_offer_banner_main_heading_text }}</h1>
+                    {%- else -%}
+                      {% if collection.title != 'Sale' %}
+                        <h1>{{ collection.title }}</h1>
+                      {% endif %}
+                    {%- endif -%}
+                  </div>
+                </div>
+              {%- endif -%}
+              {%- if collection.metafields.custom.collection_offer_banner_main_details_text != blank -%}
+                <div class="Collection_overlay_banner_detail_inneroverlay_maininfos_new">
+                  <div class="Collection_overlay_banner_detail_inneroverlay_innerinfos_new">
+                    {{ collection.metafields.custom.collection_offer_banner_main_details_text | metafield_tag }}
+                  </div>
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endif -%}  
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Collection Overlay Banner",
+    "class": "Collection_overlay_banner_new",
+    "settings": [
+      {
+        "type": "color",
+        "id": "main_background_color",
+        "label": "Add Main Background Color",
+        "default": "#FFFFFF"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Collection Overlay Banner"
+      }
+    ]
+  }
+{% endschema %}
+

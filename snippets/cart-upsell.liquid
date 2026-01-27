@@ -1,0 +1,22 @@
+<div class="cart-upsell">
+    {% if settings.upsell_title != blank %}
+        <h3 class="upsell-title">{{ settings.upsell_title }}</h3>
+    {% endif %}
+    <div class="upsell__grid">
+        {% for upsellProduct in upsellCollection.products %}
+            <div class="upsell__item">
+                <div class="upsell__img">
+                    {{ upsellProduct.featured_image | image_url: width: 500 | image_tag }}
+                </div>
+                <div class="upsell__details">
+                    <h4 class="product__title">{{ upsellProduct.title }}</h4>
+                  <div class="upsell_price_wrapper">
+                    <span class="product__price">{{ upsellProduct.price | money | remove: '.00'  }}</span>
+                    <span class="compare__product__price">{{ upsellProduct.compare_at_price | money | remove: '.00'  }}</span>
+                  </div>
+                    <a href="{{ upsellProduct.url }}" class="product__link">shop Now</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

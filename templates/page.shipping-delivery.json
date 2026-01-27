@@ -1,0 +1,134 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "class-name": "",
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "shipping_and_delivery_page_tE7J8q": {
+      "type": "Shipping-and-delivery-page",
+      "blocks": {
+        "accordian_block_zEnL3x": {
+          "type": "accordian-block",
+          "settings": {
+            "accordian_title_text": "US shipping",
+            "accordian_information_text": "<p>Packages shipping to the continental United States are usually sent from our local fulfillment center. Orders that are shipped from local fulfillment center are typically packed within 1-2 business days of placement, excluding weekends and public holidays. However, during the peak holiday seasons or during Black Friday, Cyber Monday, Valentine's Day, Memorial Day, Father's Day, National Sunglasses Day, 4th of July, Labour Day, Singles Day and Labor Day sales, please allow 3-5 business days for your order to be packed and processed.</p><p>In the US, packages usually arrive 2-5 business days after they are shipped, but occasionally can take longer — especially during Black Friday and Cyber Monday sales.  The average shipping time in the continental United States is 4 business days, but may take up to 5-10 days during the peak holiday seasons or during Black Friday, Cyber Monday, Valentine's Day, Memorial Day, Father's Day, National Sunglasses Day, 4th of July, Labor Day, Singles Day and Labor Day sales.</p><p>If an item you have selected is not in our local fulfillment center, it will be shipped from our International fulfillment center. Orders sent from our international may take an additional 1-2 weeks. Please note, we cannot control processing delays in customs or additional delivery time to locations outside of metro areas. Once your order arrives in the US, most shipments are sent through UPS Ground. The carrier always depends on the size of your order and your location.<br/><br/>All timelines stated above are dependent upon item availability and orders with unavailable items may be put on hold until restocking occurs. If insufficient inventory is available to fulfill an order, our support team will reach out immediately to provide assistance with exchanging to another similar product or refunding the order.<br/><br/><a href=\"https://chamelo.com/products/veil-modern-tint-adjustable-cateye-sunglasses?_pos=2&_psq=ve&_ss=e&_v=1.0\" title=\"https://chamelo.com/products/veil-modern-tint-adjustable-cateye-sunglasses?_pos=2&_psq=ve&_ss=e&_v=1.0\">Veil</a> is currently out of stock and will ship once inventory is replenished in mid-February.</p>"
+          }
+        },
+        "accordian_block_RhyxMi": {
+          "type": "accordian-block",
+          "settings": {
+            "accordian_title_text": "Canada shipping",
+            "accordian_information_text": "<p>We ship to almost every country and international shipments are sent from our warehouses in our international fulfillment center. Orders that are shipped from our international fulfillment center are typically packed within 1-2 business days of placement, excluding weekends and public holidays.</p><p>Once your shipment arrives in your country, it will be handed off to your local mail carrier.</p><p>In Canada, packages usually arrive 5-8 business after they are shipped, but occasionally can take longer. The average shipping time in Canada is 7 business days. Please note, we cannot control processing delays in customs or additional delivery time to locations outside of metro areas.<br/><br/>All timelines stated above are dependent upon item availability and orders with unavailable items may be put on hold until restocking occurs. If insufficient inventory is available to fulfill an order, our support team will reach out immediately to provide assistance with exchanging to another similar product or refunding the order.<br/><br/><a href=\"https://chamelo.com/products/veil-modern-tint-adjustable-cateye-sunglasses?_pos=2&_psq=ve&_ss=e&_v=1.0\" title=\"https://chamelo.com/products/veil-modern-tint-adjustable-cateye-sunglasses?_pos=2&_psq=ve&_ss=e&_v=1.0\">Veil</a> is currently out of stock and will ship once inventory is replenished in mid-February.</p>"
+          }
+        },
+        "accordian_block_HiB8AU": {
+          "type": "accordian-block",
+          "settings": {
+            "accordian_title_text": "EU and UK shipping",
+            "accordian_information_text": "<p>We ship to almost every country and international shipments are sent from our warehouses in our international fulfillment center. Orders that are shipped from international fulfillment center are typically packed within 1-2 business days of placement, excluding weekends and public holidays.</p><p>Once your shipment arrives in your country, it will be handed off to your local mail carrier.</p><p>Packages shipping to the UK and most European countries usually arrive 4-13 business after they are shipped, but occasionally can take longer. The average shipping time to the UK and most northern European countries is 7 business days. Please note, we cannot control processing delays in customs or additional delivery time to locations outside of metro areas.<br/><br/>All timelines stated above are dependent upon item availability and orders with unavailable items may be put on hold until restocking occurs. If insufficient inventory is available to fulfill an order, our support team will reach out immediately to provide assistance with exchanging to another similar product or refunding the order.<br/><br/><a href=\"https://chamelo.com/products/veil-modern-tint-adjustable-cateye-sunglasses?_pos=2&_psq=ve&_ss=e&_v=1.0\" title=\"https://chamelo.com/products/veil-modern-tint-adjustable-cateye-sunglasses?_pos=2&_psq=ve&_ss=e&_v=1.0\">Veil</a> is currently out of stock and will ship once inventory is replenished in mid-February.</p>"
+          }
+        },
+        "accordian_block_QMxcDA": {
+          "type": "accordian-block",
+          "settings": {
+            "accordian_title_text": "Australia and New Zealand shipping",
+            "accordian_information_text": "<p>We ship to almost every country and international shipments are sent from our warehouses in our international fulfillment center. Orders that are shipped from our international fulfillment center are typically packed within 1-2 business days of placement, excluding weekends and public holidays.</p><p>Once your shipment arrives in your country, it will be handed off to your local mail carrier.</p><p>Packages shipping to Australia and New Zealand countries usually arrive 3-14 business after they are shipped, but occasionally can take longer. The average shipping time to Australia and New Zealand is 5 business days. Please note, we cannot control processing delays in customs or additional delivery time to locations outside of metro areas.<br/><br/>All timelines stated above are dependent upon item availability and orders with unavailable items may be put on hold until restocking occurs. If insufficient inventory is available to fulfill an order, our support team will reach out immediately to provide assistance with exchanging to another similar product or refunding the order.<br/><br/><a href=\"https://chamelo.com/products/veil-modern-tint-adjustable-cateye-sunglasses?_pos=2&_psq=ve&_ss=e&_v=1.0\" title=\"https://chamelo.com/products/veil-modern-tint-adjustable-cateye-sunglasses?_pos=2&_psq=ve&_ss=e&_v=1.0\">Veil</a> is currently out of stock and will ship once inventory is replenished in mid-February.</p>"
+          }
+        },
+        "accordian_block_bRQaHY": {
+          "type": "accordian-block",
+          "settings": {
+            "accordian_title_text": "Asia shipping",
+            "accordian_information_text": "<p>We ship to almost every country and international shipments are sent from our warehouses in our international fulfillment center. Orders that are shipped from our international fulfillment center are typically packed within 1-2 business days of placement, excluding weekends and public holidays.</p><p>Once your shipment arrives in your country, it will be handed off to your local mail carrier.</p><p>Packages shipping to Asia (Singapore, Hong Kong, Japan, China, Thailand, Malaysia and Indonesia) usually arrive 1-15 business after they are shipped, but occasionally can take longer. The average shipping time to Asia is 5 business days. Please note, we cannot control processing delays in customs or additional delivery time to locations outside of metro areas.<br/><br/>All timelines stated above are dependent upon item availability and orders with unavailable items may be put on hold until restocking occurs. If insufficient inventory is available to fulfill an order, our support team will reach out immediately to provide assistance with exchanging to another similar product or refunding the order.<br/><br/><a href=\"https://chamelo.com/products/veil-modern-tint-adjustable-cateye-sunglasses?_pos=2&_psq=ve&_ss=e&_v=1.0\" title=\"https://chamelo.com/products/veil-modern-tint-adjustable-cateye-sunglasses?_pos=2&_psq=ve&_ss=e&_v=1.0\">Veil</a> is currently out of stock and will ship once inventory is replenished in mid-February.</p>"
+          }
+        },
+        "accordian_block_cYRNpB": {
+          "type": "accordian-block",
+          "settings": {
+            "accordian_title_text": "Holiday shipping",
+            "accordian_information_text": "<p>Our delivery times may change depending on the time of the year (e.g. Black Friday sales), holiday periods, weekends and severe weather (e.g. heavy snow in some cities). </p>"
+          }
+        },
+        "accordian_block_Kje8cN": {
+          "type": "accordian-block",
+          "settings": {
+            "accordian_title_text": "Rest of the world shipping",
+            "accordian_information_text": "<p>We ship to almost every country and international shipments are sent from our warehouses in our international fulfillment center. Orders that are shipped from our international fulfillment center are typically packed within 1-2 business days of placement, excluding weekends and public holidays.</p><p>Once your shipment arrives in your country, it will be handed off to your local mail carrier.</p><p>For other countries not listed above, it may take 7-20 business days and sometimes take as long as 3-6 weeks — it all depends on your country, region and your order placed. Unfortunately, we can't give a more defined timeframe for you, due to the complicated nature of international shipping. <br/><br/>All timelines stated above are dependent upon item availability and orders with unavailable items may be put on hold until restocking occurs. If insufficient inventory is available to fulfill an order, our support team will reach out immediately to provide assistance with exchanging to another similar product or refunding the order.<br/><br/><a href=\"https://chamelo.com/products/veil-modern-tint-adjustable-cateye-sunglasses?_pos=2&_psq=ve&_ss=e&_v=1.0\" title=\"https://chamelo.com/products/veil-modern-tint-adjustable-cateye-sunglasses?_pos=2&_psq=ve&_ss=e&_v=1.0\">Veil</a> is currently out of stock and will ship once inventory is replenished in mid-February.</p>"
+          }
+        },
+        "sub_heading_description_af7Jr3": {
+          "type": "sub-heading-description",
+          "settings": {
+            "sub_heading_text": "Order tracking and more",
+            "sub_description": "<p>Once your Chamelo order is packed and leaves our warehouse, you will receive an email from us with your tracking number so you can keep an eye on the progress of your order.</p>"
+          }
+        },
+        "accordian_block_DLpycA": {
+          "type": "accordian-block",
+          "settings": {
+            "accordian_title_text": "Issues with order tracking",
+            "accordian_information_text": "<p>If you lost your tracking number or didn’t receive one, please email <a href=\"mailto:hello@chamelo.com\" target=\"_blank\" title=\"mailto:hello@chamelo.com\">hello@chamelo.com</a> and one of our team members can help. Please allow us 24 hours to respond. </p><p>If you have your tracking information but want more information about your package in transit, please be aware that our team will only have the same tracking information that you have. Please also be aware that it can take 2-4 business days before your tracking number will show an update. </p><p>To resolve any issues with your in-transit package, please first try to contact the carrier directly. But of course, our team is always here if you need a sounding board.</p>"
+          }
+        },
+        "accordian_block_dRfyE9": {
+          "type": "accordian-block",
+          "settings": {
+            "accordian_title_text": "International custom fees and duties",
+            "accordian_information_text": "<p>Some countries apply customs fees, taxes and other additional costs on shipments received from our international fulfillment center or Hong Kong. These fees associated with your purchase are the responsibility of you, the customer. Unfortunately, these are not included in the cost of the order or shipping fee. Chamelo is not responsible for any additional taxes and customs charges that are requested during the shipment of your order.  We do not offer refunds for these costs.</p><p>We suggest contacting your local customs office if you are unsure of the applicable taxes and customs fees that are relevant to your purchase. If an order is refused by a customer due to customs fees, the parcel will be held for two weeks and then be abandoned if these fees are not paid in this time. Chamelo is not responsible for the handling of an abandoned order.</p>"
+          }
+        },
+        "accordian_block_UKLEdr": {
+          "type": "accordian-block",
+          "settings": {
+            "accordian_title_text": "Lost or stolen packages",
+            "accordian_information_text": "<p>Has your package been delivered but you suspect it was stolen? This is known as \"Porch Piracy,\" which tends to increase around the holiday season. Below, you'll find information on how Chamelo handles porch piracy and the steps to take if this happens to you. <br/><br/>If the tracking number shows that your order has been delivered but you cannot locate it, please follow the steps below:</p><p>• Chamelo is not responsible for packages lost or stolen due to Porch Piracy.</p><p>• Report the theft to your local authorities and file an official report.</p><p>• If you can provide the <span style=\"text-decoration:underline\"><strong>official police report</strong></span> to our support team, we will review it and consider reshipping your order.</p><p>We sincerely apologize for any inconvenience caused due to porch piracy. Please be assured that our team is always committed to finding the best resolution possible.</p>"
+          }
+        },
+        "sub_heading_description_Fkd84p": {
+          "type": "sub-heading-description",
+          "settings": {
+            "sub_heading_text": "Still have questions about shipping?",
+            "sub_description": "<p>Don't hesitate to contact us <a href=\"mailto:hello@chamelo.com\" target=\"_blank\" title=\"mailto:hello@chamelo.com\">hello@chamelo.com</a> and we'll help clear up your questions.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "accordian_block_zEnL3x",
+        "accordian_block_RhyxMi",
+        "accordian_block_HiB8AU",
+        "accordian_block_QMxcDA",
+        "accordian_block_bRQaHY",
+        "accordian_block_cYRNpB",
+        "accordian_block_Kje8cN",
+        "sub_heading_description_af7Jr3",
+        "accordian_block_DLpycA",
+        "accordian_block_dRfyE9",
+        "accordian_block_UKLEdr",
+        "sub_heading_description_Fkd84p"
+      ],
+      "settings": {
+        "main_background_color": "#ffffff",
+        "main_heading_text": "Shipping & delivery",
+        "main_information_text": "<p>By finalizing your payment and submitting an order on the Chamelo website, you accept the following terms and conditions regarding the shipping and delivery of your order.</p>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "shipping_and_delivery_page_tE7J8q"
+  ]
+}

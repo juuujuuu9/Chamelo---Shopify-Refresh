@@ -1,0 +1,49 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "collection.sale-collection.json",
+  "context": {
+    "market": "italy"
+  },
+  "sections": {
+    "custom_banner_MRJNW": {
+      "type": "custom-banner",
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "description": "",
+        "main_video": null,
+        "main_video_mobile": null,
+        "desktop_image": "shopify://shop_images/Collections_Banner_Desktop_83220414-8fca-4d25-8389-165cc927a7f7.png",
+        "mobile_image": "shopify://shop_images/Collections_Banner_Mobile_1f89798a-4adc-430e-b891-b4003cb2efdd.png"
+      },
+      "blocks": {},
+      "block_order": [],
+      "name": "Custom Banner"
+    },
+    "collection_overlay_banner_new_j89Axd": {
+      "disabled": false,
+      "settings": {},
+      "blocks": {}
+    },
+    "banner": {
+      "disabled": true,
+      "settings": {},
+      "blocks": {}
+    }
+  },
+  "order": [
+    "rich_text_RCXYeA",
+    "banner",
+    "custom_banner_MRJNW",
+    "collection_overlay_banner_new_j89Axd",
+    "product-grid"
+  ]
+}

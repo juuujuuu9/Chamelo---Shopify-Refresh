@@ -1,0 +1,341 @@
+<style>
+  {% if section.settings.testimonial_box_background_color != blank %}
+    .LP_customer_testimonial_box_main { background-color: {{ section.settings.testimonial_box_background_color }}; }
+  {% endif %}
+
+  {% if section.settings.testimonial_box_bg_effect != blank %}
+    .LP_customer_testimonial_box_main:before { background-attachment: fixed; content: ""; position: absolute; background-image: url({{ section.settings.testimonial_box_bg_effect | img_url:'master' }}); background-size: cover;  width: 100%; height: 100%; bottom: 0; right: 0; }
+  {% endif %}
+
+  @media (max-width: 989px){
+    {% if section.settings.testimonial_box_bg_effect_mobile != blank %}
+      .LP_customer_testimonial_box_main:before { content: ""; position: absolute; background-image: url({{ section.settings.testimonial_box_bg_effect_mobile | img_url:'master' }}); background-size: cover;  width: 100%; height: 100%; bottom: 0; right: 0; }
+    {% else %}
+      {% if section.settings.testimonial_box_bg_effect != blank %}
+        .LP_customer_testimonial_box_main:before { content: ""; position: absolute; background-image: url({{ section.settings.testimonial_box_bg_effect | img_url:'master' }}); background-size: cover;  width: 100%; height: 100%; bottom: 0; right: 0; }
+      {% endif %}
+    {% endif %}                                       
+  }
+</style>
+
+{% if section.blocks.size > 0 or section.settings.main_review_image != blank or section.settings.main_heading_text != blank or section.settings.secondary_review_image != blank or section.settings.review_message != blank or section.settings.review_author_name != blank or section.settings.main_button_link != blank or section.settings.main_button_text != blank %}
+  <div class="LP_customer_testimonial_main LP_customer_testimonial_main_{{ section.id }}" style="background-color: {{ section.settings.section_bg_color }}">
+    <div class="page-width">
+      <div class="LP_customer_testimonial_inner">
+        <div class="LP_customer_testimonial_box_main">
+          <div class="LP_customer_testimonial_box_sides">
+            {% if section.blocks.size > 0 %}
+              <div class="LP_customer_testimonial_box_leftmain">
+                <div class="LP_customer_testimonial_box_leftinner">
+                  <div class="LP_customer_testimonial_box_left_image_video_grid small-hide medium-hide">
+                    {% for block in section.blocks %}
+                      {% if block.type == "image_video_desktop" %}
+                        {% if block.settings.video != blank or block.settings.image != blank %}
+                          <div class="LP_customer_testimonial_box_left_image_video_parent">
+                            {% if block.settings.video != blank %}
+                              {{ block.settings.video | video_tag: image_size: 'master', controls: false, autoplay: true, loop: true }}
+                            {% else %}
+                              {% if block.settings.image != blank %}
+                                {{
+                                  block.settings.image | 
+                                  image_url: width: img.width | 
+                                  image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                  fetchpriority: 'auto'
+                                }}
+                              {% endif %}
+                            {% endif %}
+                          </div>
+                        {% endif %}
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+            {% if section.settings.main_review_image != blank or section.settings.main_heading_text != blank or section.settings.secondary_review_image != blank or section.settings.review_message != blank or section.settings.review_author_name != blank or section.settings.main_button_link != blank or section.settings.main_button_text != blank %}
+              <div class="LP_customer_testimonial_box_rightmain">
+                <div class="LP_customer_testimonial_box_rightinner">
+                  <div class="LP_customer_testimonial_box_right_content_box">
+                    {% if section.settings.main_review_image != blank %}
+                      <div class="LP_customer_testimonial_box_right_content_main_review_image">
+                        {{
+                          section.settings.main_review_image | 
+                          image_url: width: img.width | 
+                          image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                          fetchpriority: 'auto'
+                        }}
+                      </div>
+                    {% endif %}
+                    {% if section.settings.main_heading_text != blank %}
+                      <div class="LP_customer_testimonial_box_right_content_main_heading_text Common_title_new">
+                        <h2>
+                          {{ section.settings.main_heading_text }}
+                        </h2>
+                      </div>
+                    {% endif %}
+                    <div class="LP_customer_testimonial_box_left_image_video_slider_parent large-up-hide">
+                    <div class="LP_customer_testimonial_box_left_image_video_slider LP_customer_testimonial_box_left_image_video_top_slider swiper">
+                      <div class="swiper-wrapper">
+                        {% for block in section.blocks %}
+                          {% if block.type == "image_video_mobile_top" %}
+                            {% if block.settings.video-mt != blank or block.settings.image-mt != blank %}
+                              <div class="LP_customer_testimonial_box_left_image_video_slide swiper-slide">
+                                {% if block.settings.video-mt != blank %}
+                                  {{ block.settings.video-mt | video_tag: image_size: 'master', controls: false, autoplay: true, loop: true }}
+                                {% else %}
+                                  {% if block.settings.image-mt != blank %}
+                                    {{
+                                      block.settings.image-mt | 
+                                      image_url: width: img.width | 
+                                      image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                      fetchpriority: 'auto'
+                                    }}
+                                  {% endif %}
+                                {% endif %}
+                              </div>
+                            {% endif %}
+                          {% endif %}
+                        {% endfor %}
+                      </div>
+                      </div>
+                    <div class="LP_customer_testimonial_box_left_image_video_slider LP_customer_testimonial_box_left_image_video_bottom_slider swiper">
+                      <div class="swiper-wrapper">
+                        {% for block in section.blocks %}
+                          {% if block.type == "image_video_mobile_bottom" %}
+                            {% if block.settings.video-mb != blank or block.settings.image-mb != blank %}
+                              <div class="LP_customer_testimonial_box_left_image_video_slide swiper-slide">
+                                {% if block.settings.video-mb != blank %}
+                                  {{ block.settings.video-mb | video_tag: image_size: 'master', controls: false, autoplay: true, loop: true }}
+                                {% else %}
+                                  {% if block.settings.image-mb != blank %}
+                                    {{
+                                      block.settings.image-mb | 
+                                      image_url: width: img.width | 
+                                      image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                      fetchpriority: 'auto'
+                                    }}
+                                  {% endif %}
+                                {% endif %}
+                              </div>
+                            {% endif %}
+                          {% endif %}
+                        {% endfor %}
+                      </div>
+                      </div>
+                  </div>
+                    {% if section.settings.secondary_review_image != blank or section.settings.review_message != blank or section.settings.review_author_name != blank %}
+                      <div class="LP_customer_testimonial_box_right_content_review_message_parent">
+                        {% if section.settings.secondary_review_image != blank %}
+                          <div class="LP_customer_testimonial_box_right_content_review_image">
+                            {{
+                              section.settings.secondary_review_image | 
+                              image_url: width: img.width | 
+                              image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                              fetchpriority: 'auto'
+                            }}
+                          </div>
+                        {% endif %}
+                        {% if section.settings.review_message != blank %}
+                          <div class="LP_customer_testimonial_box_right_content_review_message">
+                            {{ section.settings.review_message }}
+                          </div>
+                        {% endif %}
+                        {% if section.settings.review_author_name != blank %}
+                          <div class="LP_customer_testimonial_box_right_content_review_author_name">
+                            <p>
+                              {{ section.settings.review_author_name }}
+                            </p>
+                          </div>
+                        {% endif %}
+                      </div>
+                    {% endif %}
+                    {% if section.settings.main_button_link != blank or section.settings.main_button_text != blank %}
+                      <div class="LP_customer_testimonial_box_right_content_button_parent">
+                        <a href="{{ section.settings.main_button_link }}" class="button button_white_new">
+                          {{ section.settings.main_button_text }}
+                        </a>
+                      </div>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+<style>
+  .LP_customer_testimonial_box_main { position: relative; }
+  .LP_customer_testimonial_box_sides { display: flex; align-items: center; position: relative; }
+  .LP_customer_testimonial_box_leftmain { width: 53.0123%; padding: 16px; }
+  .LP_customer_testimonial_box_rightmain { width: 46.9877%; padding: 16px 76px; }
+  .LP_customer_testimonial_box_left_image_video_grid { display: flex; flex-wrap: wrap; gap: 12px; }
+  .LP_customer_testimonial_box_left_image_video_parent { width: calc(33.33% - 8px); aspect-ratio: 0.76858; }
+  .LP_customer_testimonial_box_left_image_video_parent video, .LP_customer_testimonial_box_left_image_video_parent img,
+  .LP_customer_testimonial_box_right_content_main_review_image img, .LP_customer_testimonial_box_right_content_review_image img,
+  .LP_customer_testimonial_box_left_image_video_slide video, .LP_customer_testimonial_box_left_image_video_slide img { width: 100%; height: 100% !important; object-fit: cover; display: block; }
+  .LP_customer_testimonial_box_right_content_main_review_image { max-width: 108px; width: 100%; margin: 0 auto;  }
+  .LP_customer_testimonial_box_right_content_review_image { max-width: 64px; width: 100%; margin: 0 auto; }
+  .LP_customer_testimonial_box_right_content_main_heading_text, .LP_customer_testimonial_box_right_content_review_message_parent { padding-top: 32px; text-align: center; }
+  .LP_customer_testimonial_box_right_content_review_message { margin: 0 auto; padding-top: 16px; max-width: 362px; width: 100%; }
+  .LP_customer_testimonial_box_right_content_review_message p { color: #FFF; margin: 0; text-align: center; font-family: var(--font-body-family); font-size: 18px; font-weight: 400; letter-spacing: 0px; line-height: 110%;}
+  .LP_customer_testimonial_box_right_content_review_author_name { padding-top: 16px; }
+  .LP_customer_testimonial_box_right_content_review_author_name p { margin: 0; color: #FFF; text-align: center; font-family: var(--font-body-family); font-size: 14px; font-weight: 700; letter-spacing: 0px; line-height: 128%; text-tarnsform: uppercase; }
+  .LP_customer_testimonial_box_right_content_button_parent { padding-top: 40px; text-align: center; }
+  .LP_customer_testimonial_box_right_content_button_parent .button { min-width: 294px;}
+  .LP_customer_testimonial_box_left_image_video_slider_parent { padding-top: 32px; }
+  .LP_customer_testimonial_box_left_image_video_slider .swiper-wrapper { transition-timing-function : linear; }
+  .LP_customer_testimonial_box_left_image_video_bottom_slider { padding-top: 12px; }
+  .LP_customer_testimonial_box_left_image_video_slide { aspect-ratio: 0.91666; }
+
+  @media (max-width: 1280px){
+    .LP_customer_testimonial_box_rightmain { padding: 16px; }
+    .LP_customer_testimonial_box_left_image_video_parent { aspect-ratio: 0.68; }
+  }
+
+  @media (max-width: 989px){
+    .LP_customer_testimonial_main .page-width { padding: 0 !important; }
+    .LP_customer_testimonial_box_main { padding: 56px 0; }
+    .LP_customer_testimonial_box_sides { flex-direction: column; }
+    .LP_customer_testimonial_box_leftmain { width: 100%; padding: 0; }
+    .LP_customer_testimonial_box_rightmain { width: 100%; padding: 0; }
+    ..LP_customer_testimonial_box_right_content_main_review_image { max-width: 94px; height: 18px; }
+    .LP_customer_testimonial_box_right_content_main_heading_text { padding: 16px 20px 0; }
+    .LP_customer_testimonial_box_right_content_review_message_parent { padding: 44px 20px 0; }
+    .LP_customer_testimonial_box_right_content_review_image { max-width: 74px; height: 14px; }
+    .LP_customer_testimonial_box_right_content_review_message { padding: 14px 17px 0; max-width: 100%; }
+    .LP_customer_testimonial_box_right_content_review_message p { font-weight: 600; }
+    .LP_customer_testimonial_box_right_content_review_author_name { padding-top: 24px; }
+    .LP_customer_testimonial_box_right_content_button_parent { padding: 32px 20px 0; }
+    .LP_customer_testimonial_box_right_content_button_parent .button { min-width: unset; max-width: 335px; width: 100%; }
+  }
+</style>
+  
+{% schema %}
+  {
+    "name": "LP Customer Testimonial",
+    "class": "LP_customer_testimonial",
+    "settings": [
+      {
+        "type": "color",
+        "id": "section_bg_color",
+        "label": "Add Section Background Color",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "testimonial_box_background_color",
+        "label": "Add Testimonial Box Background Color",
+        "default": "#000000"
+      },
+      {
+        "type": "image_picker",
+        "id": "testimonial_box_bg_effect",
+        "label": "Add Testimonial Box Background Effect"
+      },
+      {
+        "type": "image_picker",
+        "id": "testimonial_box_bg_effect_mobile",
+        "label": "Add Testimonial Box Background Effect - Mobile"
+      },
+      {
+        "type": "image_picker",
+        "id": "main_review_image",
+        "label": "Add Main Review Image"
+      },
+      {
+        "type": "textarea",
+        "id": "main_heading_text",
+        "label": "Add Main Heading Text",
+        "default": "Join 15,000+ happy customers"
+      },
+      {
+        "type": "image_picker",
+        "id": "secondary_review_image",
+        "label": "Add Secondary Review Image"
+      },
+      {
+        "type": "richtext",
+        "id": "review_message",
+        "label": "Add Review Message",
+        "default": "<p>The tint control is epic, & the frames really stick to your face — a big plus for running. If you’re looking for a one item accessory that does it all, music shield is a great option.</p>"
+      },
+      {
+        "type": "text",
+        "id": "review_author_name",
+        "label": "Add Review Author Name",
+        "default": "Cameron G"
+      },
+      {
+        "type": "text",
+        "id": "main_button_text",
+        "label": "Add Main Button Text",
+        "default": "get $50 off now"
+      },
+      {
+        "type": "url",
+        "id": "main_button_link",
+        "label": "Add Main Button Link"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image_video_desktop",
+        "name": "Image/Video - Desktop",
+        "limit": 6,
+        "settings": [
+          {
+            "type": "video",
+            "id": "video",
+            "label": "Add Video"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Add Image"
+          },
+        ]
+      },
+      {
+        "type": "image_video_mobile_top",
+        "name": "Img/Video - Mobile - Top",
+        "settings": [
+          {
+            "type": "video",
+            "id": "video-mt",
+            "label": "Add Video"
+          },
+          {
+            "type": "image_picker",
+            "id": "image-mt",
+            "label": "Add Image"
+          },
+        ]
+      },
+      {
+        "type": "image_video_mobile_bottom",
+        "name": "Img/Video -Mobile-Bottom", 
+        "settings": [
+          {
+            "type": "video",
+            "id": "video-mb",
+            "label": "Add Video"
+          },
+          {
+            "type": "image_picker",
+            "id": "image-mb",
+            "label": "Add Image"
+          },
+        ]
+      },
+    ],
+    "presets": [
+      {
+        "name": "LP Customer Testimonial",
+      }
+    ]
+  }
+{% endschema %}

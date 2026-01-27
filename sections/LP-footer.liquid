@@ -1,0 +1,235 @@
+<style>
+.LP_footer_main {
+  padding-top: {{ section.settings.padding_top }}px;
+  padding-bottom: {{ section.settings.padding_bottom }}px;
+}
+
+  .LP_footer_main:before { background-attachment: fixed; content: ""; position: absolute; background-image: url({{ section.settings.bg_effect_desktop | img_url:'master' }}); background-size: 100% 50%;  width: 100%; height: 100%; bottom: 0; right: 0;  }
+
+  @media (max-width: 749px){
+    {% if section.settings.bg_effect_mobile != blank %}
+    .LP_footer_main:before { background-attachment: fixed; content: ""; position: fixed; background-image: url({{ section.settings.bg_effect_mobile | img_url:'master' }}); background-size: 100% 35%;  width: 100%; height: 100%; bottom: 0; right: 0;  }                      
+     {% else %}
+    .LP_footer_main:before { background-attachment: fixed; content: ""; position: fixed; background-image: url({{ section.settings.bg_effect_desktop | img_url:'master' }}); background-size: 100% 35%;  width: 100%; height: 100%; bottom: 0; right: 0;  }
+    
+    {% endif %}
+  }
+    
+</style>
+
+
+
+{% if section.settings.logo_desktop != blank or section.settings.copyright_text != blank or section.blocks.size > 0 %}
+  <div class="LP_footer_main LP_footer_main_{{ section.id }}" style="background-color: {{ section.settings.bg_color }}">
+    {% if section.settings.bg_effect_desktop != blank %}
+      <div class="LP_footer_bg_effect_desktop LP_footer_bg_effect small-hide">
+        {{
+          section.settings.bg_effect_desktop | 
+          image_url: width: img.width | 
+          image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+          fetchpriority: 'auto'
+        }}
+      </div>
+    {% endif %}
+    {% if section.settings.bg_effect_mobile != blank %}
+      <div class="LP_footer_bg_effect_mobile LP_footer_bg_effect large-up-hide medium-hide">
+        {{
+          section.settings.bg_effect_mobile | 
+          image_url: width: img.width | 
+          image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+          fetchpriority: 'auto'
+        }}
+      </div>
+      {% else %}
+      <div class="LP_footer_bg_effect_mobile LP_footer_bg_effect large-up-hide medium-hide">
+        {{
+          section.settings.bg_effect_desktop | 
+          image_url: width: img.width | 
+          image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+          fetchpriority: 'auto'
+        }}
+      </div>
+    {% endif %}
+    <div class="page-width">
+      <div class="LP_footer_inner">
+        <div class="LP_footer_logo_parent">
+          {% if section.settings.logo_desktop != blank %}
+            <div class="LP_footer_logo_desktop LP_footer_logo small-hide">
+              <a href="{{ routes.root_url }}">
+                {{
+                  section.settings.logo_desktop | 
+                  image_url: width: img.width | 
+                  image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                  fetchpriority: 'auto', 
+                  class:'LP_footer_desktop_logo'
+                }}
+              </a>
+            </div>
+          {% endif %}
+          {% if section.settings.logo_mobile != blank %}
+            <div class="LP_footer_logo_mobile LP_footer_logo large-up-hide medium-hide">
+              <a href="{{ routes.root_url }}">
+                {{
+                  section.settings.logo_mobile | 
+                  image_url: width: img.width | 
+                  image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                  fetchpriority: 'auto', 
+                  class:'LP_footer_mobile_logo'
+                }}
+              </a>
+            </div>
+            {% else %}
+            <div class="LP_footer_logo_mobile LP_footer_logo large-up-hide medium-hide">
+              <a href="{{ routes.root_url }}">
+                {{
+                  section.settings.logo_desktop | 
+                  image_url: width: img.width | 
+                  image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                  fetchpriority: 'auto', 
+                  class:'LP_footer_mobile_logo'
+                }}
+              </a>
+            </div>
+          {% endif %}
+        </div>
+        {% if section.settings.copyright_text != blank or section.blocks.size > 0 %}
+          <div class="LP_footer_bottom_part">
+            {% if section.settings.copyright_text != blank %}
+              <div class="LP_footer_copyright_text">
+                {{ section.settings.copyright_text }}
+              </div>
+            {% endif %}
+            {% if section.blocks.size > 0 %}
+              <div class="LP_footer_links_parent">
+                {% for block in section.blocks %}
+                  {% if block.type == "footer-links" %}
+                    {% if block.settings.link_text != blank or block.settings.link != blank %}
+                      <div class="LP_footer_link">
+                        <a href="{{ block.settings.link }}">
+                          {{ block.settings.link_text }}
+                        </a>
+                      </div>
+                    {% endif %}
+                  {% endif %}
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+<style>
+  .LP_footer_main, .LP_footer_inner { position: relative; line-height: 0; }
+  .LP_footer_bg_effect { display: none; position: absolute; width: 100%; left: 0; bottom: 0; background-size: cover; background-repeat: no-repeat; background-attachment: fixed; }
+  .LP_footer_bg_effect img { width: 100%; }
+  .LP_footer_logo_parent { margin: 0 auto; width: fit-content; }
+  .LP_footer_logo_desktop { max-width: 430px; height: 56px; width: 100%; }
+  .LP_footer_logo_mobile { max-width: 335px; height: 43px; width: 100%; }
+  .LP_footer_logo_parent img { width: 100%; object-fit: cover; display: block; }
+  .LP_footer_bottom_part { padding-top: 40px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+  .LP_footer_links_parent { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; line-height: 0; }
+  .LP_footer_copyright_text, .LP_footer_link { position: relative; }
+  .LP_footer_copyright_text:before, .LP_footer_link:not(:last-child):before { content: ""; position: absolute; width: 4px; height: 4px; background-color: #FFF; border-radius: 50%; top: 7px; right: -12px; }
+  .LP_footer_bottom_part p, .LP_footer_bottom_part a { margin: 0; font-family: var(--font-body-family); font-size: 12px; font-weight: 400; line-height: 150%; color: #FFF; text-decoration: none; }
+
+  @media (max-width: 749px){
+    .LP_footer_main { padding: 32px 0 56px; }
+    .LP_footer_bottom_part { padding-top: 32px; }
+    .LP_footer_bottom_part, .LP_footer_links_parent { gap: 12px; }
+    .LP_footer_bottom_part p, .LP_footer_bottom_part a { color: rgba(255,255,255,0.5); }
+    .LP_footer_copyright_text:before, .LP_footer_link:not(:last-child):before { background-color: rgba(255,255,255,0.5); top: 7px; right: -8px; }
+  }
+  
+</style>
+
+{% schema %}
+  {
+    "name": "LP Footer",
+    "class": "LP_footer",
+    "settings": [
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Add Background Color",
+        "default": "#000000"
+      },
+      {
+        "type": "image_picker",
+        "id": "bg_effect_desktop",
+        "label": "Add Desktop Background Effect"
+      },
+      {
+        "type": "image_picker",
+        "id": "bg_effect_mobile",
+        "label": "Add Mobile Background Effect"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo_desktop",
+        "label": "Add Desktop Logo"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo_mobile",
+        "label": "Add Mobile Logo"
+      },
+      {
+        "type": "richtext",
+        "id": "copyright_text",
+        "label": "Add Copyright Text",
+        "default": "<p>©2024, Chamelo</p>"
+      },
+      {
+        "type": "header",
+        "content": "t:sections.all.padding.section_padding_heading"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 80
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 80
+      }
+    ],
+    "blocks": [
+      {
+        "type": "footer-links",
+        "name": "Footer Links",
+        "settings": [
+          {
+            "type": "text",
+            "id": "link_text",
+            "default": "Privacy Policy",
+            "label": "Add Footer Link Text"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Add Footer Link"
+          },
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "LP Footer",
+      }
+    ]
+  }
+{% endschema %}

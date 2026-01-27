@@ -1,0 +1,205 @@
+{{ 'form.css' | asset_url | stylesheet_tag }}
+
+<style>
+  {% if template.suffix == 'new-launch-landing-page' %}
+    body{
+      overflow: hidden; 
+    }
+  {%endif %}
+</style>
+
+{% liquid
+    assign form_id = section.settings.form_id
+    assign blur_image = section.settings.blur_image
+    assign mobile_blur_image = section.settings.mobile_blur_image
+    assign clear_image = section.settings.clear_image
+    assign mobile_clear_image = section.settings.mobile_clear_image
+    assign before_submit_heding = section.settings.before_submit_heding
+    assign before_submit_teaser = section.settings.before_submit_teaser
+    assign after_submit_heading = section.settings.after_submit_heading
+    assign after_submit_teaser = section.settings.after_submit_teaser
+    assign left_logo = section.settings.left_logo
+    assign right_logo = section.settings.right_logo
+    assign right_heading = section.settings.right_heading
+%}
+
+<div class="section-{{ section.id }}-padding gradient color-{{ section.settings.section_color_scheme }}">
+    <div class="container">
+        <div class="container__left-text">
+          <a href="https://www.chamelo.com/"><img src="{{ left_logo | image_url: width: 143, height: 19 }}"/></a>
+          {% comment %} {% render 'shopify-responsive-image', image: left_logo, aspect_ratio: 7.5, cover: true %} {% endcomment %}
+        </div>
+        <div class="container__right-text {% if right_logo == blank %}container__right-text-hide-mobile{% endif %}">
+          {% if right_logo != blank %}
+            <img src="{{ right_logo | image_url: width: 132, height: 66 }}" class="container__right-logo" />
+          {% else %}
+            <div>{{ right_heading }}</div>
+          {% endif %}
+        </div>
+        <div class="blurred__image-container">
+          <div class="image__text-container container-position-{{ section.settings.content_alignment }}">
+            {% if before_submit_heding != blank %}<div class="blurred__image-heading heading-position-{{ section.settings.content_alignment }}">{{ before_submit_heding }}</div>{%endif %}
+            {% if before_submit_teaser != blank %}<div class="blurred__image-teaser">{{ before_submit_teaser }}</div>{%endif %}
+            <div class="klaviyo-form__form klaviyo-form-{{form_id}} klaviyo_form-position-{{ section.settings.content_alignment }}"></div>
+          </div>
+          <div class="blurred__image-desktop">
+            {% render 'shopify-responsive-image', image: blur_image, aspect_ratio: 1.6, cover: true %}
+          </div>
+          <div class="blurred__image-mobile">
+            {% render 'shopify-responsive-image', image: mobile_blur_image, aspect_ratio: 0.54 %}
+          </div>
+          
+        </div>
+      
+        <div class="clear__image-container">
+          <div class="clear-image__text-container container-position-{{ section.settings.content_alignment }}">
+            {% if after_submit_heading != blank %}<div class="clear__image-heading">{{ after_submit_heading }}</div>{%endif %}
+            {% if after_submit_teaser != blank %}<div class="clear__image-teaser clear-teaser-{{ section.settings.content_alignment }}">{{ after_submit_teaser }}</div>{%endif %}
+             <div class="reserve-your-pair__button" >{{ page.content }}</div>
+          </div>
+          <div class="clear__image-desktop">
+            {% render 'shopify-responsive-image', image: clear_image, aspect_ratio: 1.6, cover: true %}
+          </div>
+          <div class="clear__image-mobile">
+            {% render 'shopify-responsive-image', image: mobile_clear_image, aspect_ratio: 0.4, cover: true  %}
+          </div>
+        </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        window.addEventListener("klaviyoForms", function(e) {
+          if (e.detail.type === 'submit') {
+            console.log("Klaviyo form submitted!");
+            if (typeof fbq === 'function') {
+              fbq('track', 'Lead');
+            } else {
+              console.log("fbq not defined");
+            }
+    
+            if (typeof gsap === 'object') {
+                gsap.to(".blurred__image-container", { opacity: 0, duration: 0.5 });
+                document.querySelector(".clear__image-container").classList.remove("hidden");
+                gsap.to(".clear__image-container", { opacity: 1, duration: 0.5 });
+            } else {
+              console.log("GSAP not loaded");
+            }
+          }
+        });
+    
+        if (typeof KlaviyoSubscribe === 'object') {
+          KlaviyoSubscribe.attachToForms('.klaviyo-form-XXXXXX', {
+            hide_form_on_success: true,
+            extra_properties: {
+              $source: '$embed'
+            }
+          });
+        } else {
+          console.log("KlaviyoSubscribe not loaded");
+        }
+      });
+    </script>
+
+</div>
+
+{% schema %}
+{
+  "name": "form",
+  "class": "custom_form",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Text on image"
+    },
+    {
+      "type": "image_picker",
+      "id": "left_logo",
+      "label": "image left logo"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_logo",
+      "label": "image right logo"
+    },
+    {
+      "type": "text",
+      "id": "right_heading",
+      "label": "image right Heading"
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.rich-text.settings.content_alignment.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.rich-text.settings.content_alignment.options__2.label"
+        }
+      ],
+      "default": "center",
+      "label": "t:sections.rich-text.settings.content_alignment.label"
+    },
+    {
+      "type": "header",
+      "content": "before form submit"
+    },
+    {
+      "type": "text",
+      "id": "form_id",
+      "label": "form id"
+    },
+    {
+        "type": "image_picker",
+        "id": "blur_image",
+        "label": "blur image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_blur_image",
+      "label": "blur image mobile"
+    },
+    {
+      "type": "richtext",
+      "id": "before_submit_heding",
+      "label": "before form submit Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "before_submit_teaser",
+      "label": "before form submit Teaser"
+    },
+    {
+      "type": "header",
+      "content": "after form submit"
+    },
+    {
+        "type": "image_picker",
+        "id": "clear_image",
+        "label": "clear image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_clear_image",
+      "label": "clear image mobile"
+    },
+    {
+      "type": "richtext",
+      "id": "after_submit_heading",
+      "label": "after form submit Heading",
+    },
+    {
+      "type": "richtext",
+      "id": "after_submit_teaser",
+      "label": "after form submit Teaser"
+    },
+  ],
+  "presets": [
+    {
+      "name": "form"
+    }
+  ]
+}
+{% endschema %}

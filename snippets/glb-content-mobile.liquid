@@ -1,0 +1,26 @@
+ {%- assign default_orbit = '' -%}
+  {%- for product_features_tabs_item_list_selections in item_lists -%}
+     {%- if forloop.first -%}
+         {%- capture default_orbit -%}{{ product_features_tabs_item_list_selections.camera_orbit_x }}deg {{ product_features_tabs_item_list_selections.camera_orbit_y }}deg{%- endcapture -%}
+     {%- endif -%}
+  {%- endfor -%}
+  
+{%- if product.metafields.custom.glb_file != blank -%}
+    {%- assign glb_file = product.metafields.custom.glb_file.value.sources[0].url -%} 
+    <div class="custom-model-viewer">
+              <model-viewer 
+                js-sunglasses-model-mobile
+                camera-orbit="{{ default_orbit }} 80%"
+                id="sunglasses-model"
+                src="{{ glb_file }}"
+                alt="Sunglasses 3D Model"
+                shadow-intensity="1"
+                camera-controls
+                disable-zoom
+                disable-pan
+                 interaction-prompt="none"
+              >
+                 
+              </model-viewer> 
+          </div>
+{%- endif -%}

@@ -1,0 +1,117 @@
+{%- if section.settings.main_mp4_video != blank or section.settings.main_desktop_image != blank or section.settings.main_mobile_image != blank or section.settings.main_heading_text != blank or section.settings.main_information_text != blank -%}
+  <div class="Page_our_story_text_with_video_main_new {{ section.settings.customClass }}" style="background: {{ section.settings.main_background_color }};">
+    <div class="page-width">
+      <div class="Page_our_story_text_with_video_inner_new">
+        <div class="Page_our_story_text_with_video_detail_new">
+          {%- if section.settings.main_heading_text != blank or section.settings.main_information_text != blank -%}
+            <div class="Page_our_story_text_with_video_detail_maintexts_new">
+              <div class="Page_our_story_text_with_video_detail_innertexts_new">
+                {%- if section.settings.main_heading_text != blank -%}
+                  <div class="Page_our_story_text_with_video_detail_innertexts_maintitle_new">
+                    <div class="Page_our_story_text_with_video_detail_innertexts_innertitle_new">
+                      <h5>{{ section.settings.main_heading_text }}</h5>
+                    </div>
+                  </div>
+                {%- endif -%}
+                {%- if section.settings.main_information_text != blank -%}
+                  <div class="Page_our_story_text_with_video_detail_innertexts_maininfos_new">
+                    <div class="Page_our_story_text_with_video_detail_innertexts_innerinfos_new">
+                      {{ section.settings.main_information_text }}
+                    </div>
+                  </div>
+                {%- endif -%}
+              </div>
+            </div>
+          {%- endif -%}
+          {%- if section.settings.main_mp4_video != blank or section.settings.main_desktop_image != blank or section.settings.main_mobile_image != blank -%}
+            <div class="Page_our_story_text_with_video_detail_mainboths_new">
+              <div class="Page_our_story_text_with_video_detail_innerboths_new">
+                {%- if section.settings.main_mp4_video != blank -%}
+                  <div class="Page_our_story_text_with_video_detail_innerboths_videoimage_new">
+                    {{ section.settings.main_mp4_video | video_tag: class: 'Custom_video_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                  </div>
+                {% else %}  
+                  {%- if section.settings.main_desktop_image != blank and section.settings.main_mobile_image != blank -%}
+                    <div class="Page_our_story_text_with_video_detail_innerboths_videoimage_new">
+                      {%- if section.settings.main_desktop_image != blank -%}
+                        {{
+                          section.settings.main_desktop_image | 
+                          image_url: width: img.width | 
+                          image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                          fetchpriority: 'auto', 
+                          class:'desktop_image_new'
+                        }}
+                      {%- endif -%}
+                      {%- if section.settings.main_mobile_image != blank -%}
+                        {{
+                          section.settings.main_mobile_image | 
+                          image_url: width: img.width | 
+                          image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                          fetchpriority: 'auto', 
+                          class:'mobile_image_new'
+                        }}
+                      {%- endif -%}
+                    </div>
+                  {%- endif -%}
+                {%- endif -%}
+              </div>
+            </div>
+          {%- endif -%}
+        </div>  
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Our Story Text With Video",
+    "class": "Page_our_story_text_with_video_new",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "customClass",
+        "label": "Add Main Custom Class",
+        "info": "padding_bottom_0"
+      },
+      {
+        "type": "color",
+        "id": "main_background_color",
+        "label": "Add Main Background Color",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "video",
+        "id": "main_mp4_video",
+        "label": "Add Main MP4 Video"
+      },
+      {
+        "type": "image_picker",
+        "id": "main_desktop_image",
+        "label": "Add Main Desktop Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "main_mobile_image",
+        "label": "Add Main Mobile Image"
+      },
+      {
+        "type": "textarea",
+        "id": "main_heading_text",
+        "label": "Add Main Heading Text",
+        "default": "Our Mission"
+      },
+      {
+        "type": "richtext",
+        "id": "main_information_text",
+        "label": "Add Main Information Text",
+        "default": "<p>At Chamelo, we’re engineering a new era of smart eyewear by combining state-of-the-art technology with cutting-edge style. Our mission goes beyond creating stylish glasses—we’re pushing the boundaries of what’s possible in eyewear. Our products are designed to be as functional as they are fun, offering a bold, modern alternative to traditional glasses.</p>"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Our Story Text With Video"
+      }
+    ]
+  }
+{% endschema %}

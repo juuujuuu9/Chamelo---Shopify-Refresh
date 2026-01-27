@@ -1,0 +1,199 @@
+{{ "sticky-addtocart-button.css" | asset_url | stylesheet_tag }}
+{{ "accessories-sticky-addtocart-button.css" | asset_url | stylesheet_tag }}
+<div class="sticky-addtocart-button accessories__sticky-addtocart-button ">
+  <div class="page-width">
+    <div class="main-grid">
+      <div class="sticky_addtocart_left_new">
+        {%- for block in section.blocks -%}
+            {%- if block.settings.main_custom_image_1 != blank or block.settings.main_custom_image_2 != blank or block.settings.main_custom_image_3 != blank -%}
+                <div class="Icon_text_column_popup_mainloop_new" {{ block.shopify_attributes }}>
+                <div class="Icon_text_column_popup_innerloop_new open_shipping_popup">
+                    {%- if block.settings.main_custom_image_1 != blank and block.settings.main_custom_texts_1 != blank -%}
+                    <div class="Icon_text_column_popup_innerloop_mainboxs_new">
+                        <div class="Icon_text_column_popup_innerloop_innerboxs_new">
+                        {%- if block.settings.main_custom_image_1 != blank and block.settings.main_white_custom_image_1 != blank -%}
+                            <div class="Icon_text_column_popup_innerloop_innerboxs_mainlogo_new">
+                            <div class="Icon_text_column_popup_innerloop_innerboxs_innerlogo_new">
+                                {{
+                                block.settings.main_custom_image_1 | 
+                                image_url: width: img.width | 
+                                image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                fetchpriority: 'auto', 
+                                class:'black_image_new'
+                                }}
+                                {{
+                                block.settings.main_white_custom_image_1 | 
+                                image_url: width: img.width | 
+                                image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                fetchpriority: 'auto', 
+                                class:'white_image_new'
+                                }}
+                            </div>
+                            </div>
+                        {%- endif -%}
+                        {%- if block.settings.main_custom_texts_1 != blank -%}
+                            <div class="Icon_text_column_popup_innerloop_innerboxs_maintext_new">
+                            <div class="Icon_text_column_popup_innerloop_innerboxs_innertext_new">
+                                {{ block.settings.main_custom_texts_1 }}
+                            </div>
+                            </div>
+                        {%- endif -%}
+                        </div>
+                    </div>
+                    {%- endif -%}
+                    {%- if block.settings.main_custom_image_2 != blank and block.settings.main_custom_texts_2 != blank -%}
+                    <div class="Icon_text_column_popup_innerloop_mainboxs_new">
+                        <div class="Icon_text_column_popup_innerloop_innerboxs_new">
+                        {%- if block.settings.main_custom_image_2 != blank and block.settings.main_white_custom_image_2 != blank -%}
+                            <div class="Icon_text_column_popup_innerloop_innerboxs_mainlogo_new">
+                            <div class="Icon_text_column_popup_innerloop_innerboxs_innerlogo_new">
+                                {{
+                                block.settings.main_custom_image_2 | 
+                                image_url: width: img.width | 
+                                image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                fetchpriority: 'auto', 
+                                class:'black_image_new'
+                                }}
+                                {{
+                                block.settings.main_white_custom_image_2 | 
+                                image_url: width: img.width | 
+                                image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                fetchpriority: 'auto', 
+                                class:'white_image_new'
+                                }}
+                            </div>
+                            </div>
+                        {%- endif -%}
+                        {%- if block.settings.main_custom_texts_2 != blank -%}
+                            <div class="Icon_text_column_popup_innerloop_innerboxs_maintext_new">
+                            <div class="Icon_text_column_popup_innerloop_innerboxs_innertext_new">
+                                {{ block.settings.main_custom_texts_2 }}
+                            </div>
+                            </div>
+                        {%- endif -%}
+                        </div>
+                    </div>
+                    {%- endif -%}
+                    {%- if block.settings.main_custom_image_3 != blank and block.settings.main_custom_texts_3 != blank -%}
+                    <div class="Icon_text_column_popup_innerloop_mainboxs_new">
+                        <div class="Icon_text_column_popup_innerloop_innerboxs_new">
+                        {%- if block.settings.main_custom_image_3 != blank and block.settings.main_white_custom_image_3 != blank -%}
+                            <div class="Icon_text_column_popup_innerloop_innerboxs_mainlogo_new">
+                            <div class="Icon_text_column_popup_innerloop_innerboxs_innerlogo_new">
+                                {{
+                                block.settings.main_custom_image_3 | 
+                                image_url: width: img.width | 
+                                image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                fetchpriority: 'auto', 
+                                class:'black_image_new'
+                                }}
+                                {{
+                                block.settings.main_white_custom_image_3 | 
+                                image_url: width: img.width | 
+                                image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                fetchpriority: 'auto', 
+                                class:'white_image_new'
+                                }}
+                            </div>
+                            </div>
+                        {%- endif -%}
+                        {%- if block.settings.main_custom_texts_3 != blank -%}
+                            <div class="Icon_text_column_popup_innerloop_innerboxs_maintext_new">
+                            <div class="Icon_text_column_popup_innerloop_innerboxs_innertext_new">
+                                {{ block.settings.main_custom_texts_3 }}
+                            </div>
+                            </div>
+                        {%- endif -%}
+                        </div>
+                    </div>
+                    {%- endif -%}
+                </div>
+                </div>
+            {%- endif -%}
+        {% endfor %}
+      </div>
+      <div class="custom-sticky__buy-button">
+        {%- render 'buy-buttons',
+            block: block,
+            product: product,
+            product_form_id: product_form_id,
+            section_id: section.id,
+            show_pickup_availability: true
+          -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const footer = document.querySelector(".Footer_main_new"); 
+      const stickyButton = document.querySelector(".accessories__sticky-addtocart-button");
+      if (!footer || !stickyButton) return;
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              stickyButton.style.opacity = "0";
+              stickyButton.style.pointerEvents = "none"; 
+            } else {
+              stickyButton.style.opacity = "1";
+              stickyButton.style.pointerEvents = "auto";
+            }
+          });
+        },
+        {
+          root: null,
+          threshold: 0,
+        }
+      );
+  
+      observer.observe(footer);
+    });
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const targetElement = document.querySelector('.product_review_new');
+      const sliderPagination = document.querySelector('.custom_slider_pagination_new');
+    
+      if (!targetElement || !sliderPagination) return;
+    
+      sliderPagination.style.transition = 'bottom 0.3s ease';
+    
+      const updatePosition = (isIntersecting) => {
+        if (window.innerWidth > 1439) {
+          sliderPagination.style.bottom = isIntersecting ? '59px' : '162px';
+        } else {
+          sliderPagination.style.bottom = '59px';
+        }
+      };
+      updatePosition(true);
+      let observer;
+      const setupObserver = () => {
+        if (window.innerWidth > 1439) {
+          observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                updatePosition(entry.isIntersecting);
+              });
+            },
+            {
+              threshold: 0.1,
+            }
+          );
+    
+          observer.observe(targetElement);
+        }
+      };
+    
+      setupObserver();
+      window.addEventListener('resize', () => {
+        if (observer) observer.disconnect();
+        setupObserver();
+        updatePosition(true); 
+      });
+    });    
+      
+       
+  </script>
+  

@@ -1,0 +1,128 @@
+{% if section.settings.background_video != blank or section.settings.button_text != blank or section.settings.video_link != blank or section.settings.shopify_video_popup != blank %}
+  <div class="Video_popup_section Video_popup_section_{{ section.id }}">
+    <div class="Video_popup_setion_main">
+      {% if section.settings.background_video != blank %}
+        <div class="Video_popup_setion_bg_video_main">
+          {{ section.settings.background_video | video_tag: image_size: 'master', controls: false, autoplay: true, loop: true }}
+        </div>
+      {% endif %}
+      {% if section.settings.button_text != blank %}
+        <div class="Video_popup_setion_bg_video_button_parent">
+          <button class="play_button">
+            <span class="play_button_icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="11.97" r="11.22" stroke="currentColor" stroke-width="1.45px"></circle>
+                <path d="M15.51 12 9.79 7.84v8.26z" fill="currentColor"></path></svg>
+            </span>
+            <span>
+              {{ section.settings.button_text }}
+            </span>
+          </button>
+        </div>
+      {% endif %}
+      
+    </div>
+  </div>
+{% endif %}
+
+{% if section.settings.video_link != blank or section.settings.shopify_video_popup != blank %}
+        <div class="Video_popup_setion_popup_video_main">
+          <button class="button--close" type="button" title="Close" aria-label="Close"><span class="icon icon-new icon-close ">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.66 1.34 2 .68.68 2l.66.66 1.32-1.32zm18.68 21.32.66.66L23.32 22l-.66-.66-1.32 1.32zm1.32-20 .66-.66L22 .68l-.66.66 1.32 1.32zM1.34 21.34.68 22 2 23.32l.66-.66-1.32-1.32zm0-18.68 10 10 1.32-1.32-10-10-1.32 1.32zm11.32 10 10-10-1.32-1.32-10 10 1.32 1.32zm-1.32-1.32-10 10 1.32 1.32 10-10-1.32-1.32zm0 1.32 10 10 1.32-1.32-10-10-1.32 1.32z" fill="currentColor"></path></svg>
+          </span>
+          </button>
+          {% if section.settings.shopify_video_popup != blank %}
+            <div class="Video_popup_setion_popup_video shopify_video">
+              {{ section.settings.shopify_video_popup | video_tag: image_size: 'master', controls: true, autoplay: true, muted: false }}
+            </div>
+            {% else %}
+              {% if section.settings.video_link != blank %}
+                <div class="Video_popup_setion_popup_video video_link">
+                  <iframe id="youtubeVimeoIframe" width="100%" height="100%" src="{{ section.settings.video_link | escape }}?&autoplay=1&controls=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; autostop; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <!-- <iframe id="youtubeVimeoIframe" width="100%" height="100%" src="{{ section.settings.video_link | escape }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; controls; autostop; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                </div>
+              {% endif %}
+          {% endif %}
+        </div>
+      {% endif %}
+
+<style>
+  .Video_popup_section { aspect-ratio: 1.77557; }
+  .Video_popup_setion_main, .Video_popup_setion_bg_video_main { height: 100%; }
+  .Video_popup_setion_bg_video_main video { width: 100%; height: 100% !important; object-fit: cover; display: block; }
+  .Video_popup_setion_main { position: relative; }
+  .Video_popup_setion_bg_video_button_parent { position: absolute; width: fit-content; top: 50%; left: 50%; z-index: 9; transform: translate(-50%, -50%); }
+  .Video_popup_setion_bg_video_button_parent .play_button { color: #FFF; background: transparent; border-radius: 30px; transition: all ease 0.3s; cursor: pointer; display: flex; align-items: center; gap: 20px; padding: 12px 20px; border: 1px solid rgba(255, 255, 255, 0.6); }
+  .Video_popup_setion_bg_video_button_parent .play_button:hover { border: 2px solid #FFF;}
+  .Video_popup_setion_popup_video_main { display: none; }
+  .Video_popup_setion_bg_video_button_parent .play_button svg { width: 34px; height: 34px; display: block; }
+  .Video_popup_setion_bg_video_button_parent .play_button circle { fill: #FFF; fill-opacity: .05; }
+
+  .Video_popup { position: relative; }
+  .Video_popup_setion_popup_video_main { position: fixed; z-index: 9999; width: 100%; top: 0; left: 0; height: 100%; }
+  .Video_popup_setion_popup_video_main:before { content: ""; position: absolute; background-color: rgba(0,0,0,0.7); width: 100%; height: 100%; top: 0; left: 0; }
+  .Video_popup_setion_popup_video { position: absolute; width: 70%; aspect-ratio: 1.5; padding: 20px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+  .Video_popup_setion_popup_video_main video { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .button--close { position: absolute; display: flex; align-items: center; justify-content: center; width: 43px; height: 43px; top: 60px; right: 30px; cursor: pointer; background-color: #FFF; border-radius: 50%; border: 0; z-index: 99; }
+  .button--close svg { display: block; width: 16px; height: 16px; }
+  
+  body.overflow_hidden { overflow: hidden; position: relative; }
+  body.overflow_hidden:before { content: ""; position: absolute; z-index: 1; background-color: rgba(0,0,0,0.7); width: 100%; height: 100%; top: 0; left: 0;}
+
+  @media (max-width: 989px){
+    .Video_popup_setion_popup_video { width: 100%; aspect-ratio: 1.6; }
+    .button--close { right: 20px; }
+  }
+  
+</style>
+  
+{% schema %}
+  {
+    "name": "Video Popup",
+    "class": "Video_popup",
+    "settings": [
+      {
+        "type": "video",
+        "id": "background_video",
+        "label": "Add Background Video"
+      },
+      {
+        "type": "select",
+        "id": "video_type",
+        "label": "Select Video Type",
+        "options": [
+          {
+            "label": "Shopify",
+            "value": "shopify"
+          },
+          {
+            "label": "Youtube/Vimeo",
+            "value": "youtube-vimeo"
+          },
+        ]
+      },
+      {
+        "type": "video",
+        "id": "shopify_video_popup",
+        "label": "Add Shopify Video - Popup"
+      },
+      {
+        "type": "text",
+        "id": "video_link",
+        "label": "Add Video Link - Popup",
+        "info": "It accepts only Youtube/Vimeo video"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Add Button Text",
+        "default": "Watch Now"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Video Popup",
+      }
+    ]
+  }
+{% endschema %}

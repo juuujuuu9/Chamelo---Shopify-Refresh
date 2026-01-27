@@ -1,0 +1,145 @@
+ @media screen and (min-width: 768px) {
+    .product--medium:not(.product--no-media) .product__info-wrapper, .product--small:not(.product--no-media) .product__media-wrapper {
+        max-width: 49% !important;
+    }
+    .Product_template_rightside_new {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-end: 2;
+        margin-right: 0;
+        width: auto !important;
+        max-width: 0;
+        padding-left: 0 !important;
+        margin-top: unset;
+        margin-bottom: unset;
+    }
+    section.product__info-container.product__column-sticky {
+        height: 100%;
+    }
+   .accessories__sticky-addtocart-button .Icon_text_column_popup_mainloop_new{
+        margin: 8px 0 12px !important;
+    }
+}
+
+.Meta_accordions_list_innerloop_new .accordion>ul>li .question h4{
+    font-size: 20px !important;
+    color: #000;
+}
+.Product_version_1_new .Product_template_rightside_mainboths_new h1, .Product_version_1_new .Product_template_rightside_mainboths_innerprice_new, 
+.Product_version_1_new .Product_template_rightside_mainboths_innerprice_new .price , .product__info-container .metafield-rich_text_field , 
+.product__info-container .Meta_accordions_list_innerloop_new .accordion>ul>li .answer{
+    color: #000;
+    margin-top: 1px;
+}
+
+.Product_version_1_new .Meta_accordions_list_innerloop_new .accordion>ul>li .question h4,
+.Product_version_1_new .Meta_accordions_list_innerloop_new .accordion>ul>li .answer {
+    color: #000 !important;
+}
+
+.Meta_accordions_list_innerloop_new .accordion>ul>li .question {
+    border: none;
+    padding: 14px 24px 14px 0;
+    background: url(banner_mobile_minus.svg) no-repeat center right !important;
+}
+
+.Meta_accordions_list_innerloop_new .accordion>ul>li.open .question {
+    background: url(banner_mobile_plus.svg) no-repeat center right !important;
+}
+
+.Product_version_1_new .product__info-container {
+    background: white;
+}
+
+.Meta_accordions_list_innerloop_new .accordion>ul>li {
+    border-color: #000 !important;
+}
+.Meta_accordions_list_main_new.Mobile_only_new{
+    display: block;
+}
+
+.product__column-sticky {
+    padding: 20px;
+}
+
+.price-item.price-item--regular.igComparePrice{
+    display: none !important;
+}
+
+.product-form__submit.button.button--full-width.button--primary{
+    font-size: 14px;
+}
+
+/* .product__info-wrapper .primary-title , .accessories-cross-sell-rebuy-title{
+    font-size: 20px !important;
+    line-height: 112% !important;
+    letter-spacing: -.32px;
+    text-transform: inherit !important;
+    margin-bottom: 20px !important;
+    color: #000000;
+    font-weight: 700;
+}
+
+.product__info-wrapper .rebuy-product-info a{
+    font-size: 16px !important;
+}
+
+.product__info-wrapper .rebuy-product-actions{
+    margin-top: 10px !important;
+} */
+
+.Meta_accordions_list_innerloop_new .accordion>ul>li .answer ul li:after {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    content: "";
+    background: black;
+    width: 4px;
+    height: 4px;
+    border-radius: 100%;
+}
+
+
+@media(max-width: 767px){
+    .swiper-button-next , .swiper-button-prev {
+        display: none;
+    }
+   
+    .display_header_new .product-form__buttons .to_cart_new {
+        display: contents !important;
+    }
+
+    .accessories__sticky-addtocart-button .main-grid {
+        justify-content: center !important;
+    }
+
+    .Buy_buttons_main_new .product-form__submit , .product-form__submit.button.button--full-width.button--primary{
+        min-height: 50px !important;
+    }
+
+    .Icon_text_column_popup_mainloop_new {
+        margin: 6px 0 24px !important;
+    }
+    .slider-mobile-gutter.slider-mobile-gutter_large{
+        padding: 0 0 0 20px;
+    }
+
+    product-info .page-width{
+        padding: 0 !important;
+    }
+
+    media-gallery{
+            display: block;
+    }
+
+    .product__column-sticky {
+        padding: 20px 20px 0;
+    }
+    
+}
+
+@media (min-width: 0px) and (max-width: 749px) {
+    .Meta_accordions_list_innerloop_new .accordion>ul>li .question h4 {
+        text-transform: capitalize !important;
+    }
+}

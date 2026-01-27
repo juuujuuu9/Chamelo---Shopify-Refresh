@@ -1,0 +1,68 @@
+{{ 'contact_form_with_banner_new.css' | asset_url | stylesheet_tag }}
+<div class="contact_form_with_bg_wrapper_padding">
+<div class="contact_form_with_bg_wrapper color-{{ section.settings.section_color_scheme }}">
+  {% if section.settings.bgimage != blank %}
+  <div class="background_image_wrapper_div">
+    <img src="{{ section.settings.bgimage | img_url:'master' }}" width="100%"/>
+  </div>
+    {% endif %}
+  <div class="content_wrapper_contact">
+  <div class="page-width">
+    <div class="contact_form_div">
+      {% if section.settings.main_title != blank %}
+      <div class="contact_form_div_title Common_title_new">
+        <h2>{{ section.settings.main_title }}</h2>
+      </div>
+        {% endif %}
+      {% if section.settings.short_description != blank %}
+      <div class="contact_short_description">
+        {{ section.settings.short_description }}
+      </div>
+        {% endif %}
+      <div class="contact_form">
+        {% render 'contact-form-new' %}
+      </div>
+    </div>
+  </div>
+    </div>
+</div>
+</div>
+{% schema %}
+  {
+    "name": "Contact Form with BG",
+    "settings": [
+          {
+      "type": "color_scheme",
+      "id": "section_color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+      {
+        "type": "text",
+        "id": "main_title",
+        "label": "Main Title"
+      },
+      {
+        "type": "richtext",
+        "id": "short_description",
+        "label": "Short Description"
+      },
+      {
+        "type": "image_picker",
+        "id": "bgimage",
+        "label": "Desktop Background Image"
+      },
+            {
+        "type": "image_picker",
+        "id": "bgimage_mobile",
+        "label": "Mobile Background Image"
+      },
+         
+    ],
+    "presets": [
+      {
+        "name": "Contact Form with BG"
+      }
+    ]
+  }
+{% endschema %}

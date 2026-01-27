@@ -1,0 +1,265 @@
+{{ "hb-image-video-overlay.css" | asset_url | stylesheet_tag }}
+{%- style -%}
+  .hb_section_{{ section.id }} {
+    background-color: {{ section.settings.background_color }};
+  }
+{%- endstyle -%}
+<div class="hb_image_video_overlay">
+    <div class="hb_image_video_overlay_overlap back_left" style="background: {{ section.settings.inner_background_color }};"></div>
+    <div class="hb_image_video_overlay_overlap hb_image_video_overlay_back_right" style="background: {{ section.settings.inner_background_color }};"></div>
+    <div class="page-width">
+        <div class="hb_image_video_wrapper hb_section_{{ section.id }}">
+            <div class="hb_image_video_alpha">
+                {% if section.settings.title != blank %}
+                    <h2 class="hb_alpha_title">
+                        {{ section.settings.title }}  
+                    </h2>
+                {% endif %}
+                <div class="hb_video_mobile">
+                    <div class="hb_mobile_video">
+                        {{ section.settings.video_mobile | video_tag: autoplay: false, muted: true, loop: true, controls: false }}
+                    </div>
+                    <div class="hb_mobile_video_icon">
+                        <svg class="mute" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.1254 7.5L18.1254 12.5M18.1254 7.5L13.1254 12.5M1.45874 6.66667V13.3333H5.70791L10.6254 17.5V2.5L5.62541 6.66667H1.45874Z" stroke="white" stroke-width="1.5"/>
+                        </svg>
+                        <svg class="unmute" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.6396 10.27H18.5225" stroke="white" stroke-width="1.5"/>
+                        <path d="M14.667 6.66656L17.1535 5.2251" stroke="white" stroke-width="1.5"/>
+                        <path d="M14.667 13.8735L17.1535 15.315" stroke="white" stroke-width="1.5"/>
+                        <path d="M2.5 6.66667V13.3333H6.74917L11.6667 17.5V2.5L6.66667 6.66667H2.5Z" stroke="white" stroke-width="1.5"/>
+                        </svg>
+                    </div>
+                    {%- if section.settings.thumbnail_img_mob != blank -%}
+                        <div class="hb_thumbnail_image_mob">
+                            <img src="{{ section.settings.thumbnail_img_mob | image_url: width:'800x' }}" alt="">
+                        </div>
+                    {%- endif -%}
+                    <div class="hb_video_icon_mob" js-video-play-icon>
+                        <svg width="15" height="18" viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 0.25V17.75L15 9L0 0.25Z" fill="white"/>
+                        </svg>
+                    </div>
+                </div>
+                {% if section.settings.description != blank %}
+                    <div class="hb_alpha_text_wrapper">
+                        <div class="hb_alpha_quote">
+                            <svg width="24" height="19" viewBox="0 0 24 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 9H2.11C2.29585 7.76234 2.73779 6.57705 3.40759 5.51983C4.07739 4.46262 4.96033 3.55672 6 2.86L7.79 1.66L6.69 0L4.9 1.2C3.39328 2.20408 2.15771 3.56456 1.30293 5.16072C0.448156 6.75689 0.000607087 8.53937 0 10.35V17C0 17.5304 0.210714 18.0391 0.585786 18.4142C0.960859 18.7893 1.46957 19 2 19H8C8.53043 19 9.03914 18.7893 9.41421 18.4142C9.78929 18.0391 10 17.5304 10 17V11C10 10.4696 9.78929 9.96086 9.41421 9.58579C9.03914 9.21071 8.53043 9 8 9ZM22 9H16.11C16.2959 7.76234 16.7378 6.57705 17.4076 5.51983C18.0774 4.46262 18.9603 3.55672 20 2.86L21.79 1.66L20.7 0L18.9 1.2C17.3933 2.20408 16.1577 3.56456 15.3029 5.16072C14.4482 6.75689 14.0006 8.53937 14 10.35V17C14 17.5304 14.2107 18.0391 14.5858 18.4142C14.9609 18.7893 15.4696 19 16 19H22C22.5304 19 23.0391 18.7893 23.4142 18.4142C23.7893 18.0391 24 17.5304 24 17V11C24 10.4696 23.7893 9.96086 23.4142 9.58579C23.0391 9.21071 22.5304 9 22 9Z" fill="white"/>
+                            </svg>
+                        </div>
+                        <div class="hb_alpha_description">
+                            {{ section.settings.description }}
+                        </div>
+                        {% if section.settings.name != blank %}
+                            <h5 class="hb_alpha_name">
+                                {{ section.settings.name }}
+                            </h5>
+                        {% endif %}
+                        {% if section.settings.text != blank %}
+                            <p class="hb_aplha_text">
+                                {{ section.settings.text }}
+                            </p>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="hb_image_video_beta">
+                {% if  section.settings.image != blank %}
+                    <div class="hb_beta_image">
+                        {{ section.settings.image |  image_url: width: "1000x" |  image_tag }}
+                    </div>
+                    {% if section.settings.video != blank %}
+                        <div class="hb_beta_video_wrap" js-video-popup-parent>
+                            <div class="hb_beta_video" js-video-popup-trigger data-popup-video-src="https://player.vimeo.com/video/{{section.settings.vimoe_video_id}}?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479">
+                                {{ section.settings.video | video_tag: autoplay: true, muted: true, loop: true, controls: false }}
+                            </div>
+                            <div class="hb_video_icon">
+                                <svg width="15" height="18" viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 0.25V17.75L15 9L0 0.25Z" fill="white"/>
+                                </svg>
+                            </div>
+                            {% if section.settings.video != blank  %}
+                                <div class="hb_video_popup">
+                                    <div class="hb_video_popup__wrapper">
+                                        <div class="hb_video_popup__inner--wrap">
+                                            {% if section.settings.vimoe_video_id != blank %}
+                                                <div class="hb_video_popup__video">
+                                                <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Ask the Experts: Dr. Jay Schwartz"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+                                            </div>
+                                            {% endif %}
+                                            <div class="hb_video_popup__icon">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_1_2577)">
+                                                <path d="M12.7139 3.28661L3.28578 12.7147" stroke="black" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
+                                                <path d="M12.7142 12.7147L3.28613 3.28661" stroke="black" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
+                                                </g>
+                                                <defs>
+                                                <clipPath id="clip0_1_2577">
+                                                <rect width="16" height="16" fill="white"/>
+                                                </clipPath>
+                                                </defs>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hb_video_popup__overlay"></div>
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                {% endif %}
+            </div>
+            {% comment %} <div class="hb_image_video_gradient hb_image_video_disktop_gradient">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1328" height="727" viewBox="0 0 1328 727" fill="none">
+                    <g filter="url(#filter0_f_1_2057)">
+                    <path d="M1249.25 467.479C1482.52 670.589 1560.39 602.307 1668.75 476.841C1909.31 -146.405 1853.54 262.881 1668.75 476.841C1603.17 646.739 1515.57 893.366 1402.57 1241.6C883.907 1391.87 -153.158 1632.52 -152.134 1392.96C-150.853 1093.52 -714.822 339.429 -485.496 433C-256.17 526.57 163.976 141.8 357.764 327.94C764.358 718.488 1017.68 265.862 1249.25 467.479Z" fill="url(#paint0_linear_1_2057)"/>
+                    </g>
+                    <defs>
+                    <filter id="filter0_f_1_2057" x="-720.35" y="-34.0769" width="2729.29" height="1708.41" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                    <feGaussianBlur stdDeviation="90" result="effect1_foregroundBlur_1_2057"/>
+                    </filter>
+                    <linearGradient id="paint0_linear_1_2057" x1="837.458" y1="846.674" x2="903.15" y2="62.8806" gradientUnits="userSpaceOnUse">
+                    <stop offset="0.0430943" stop-color="#FC824E"/>
+                    <stop offset="0.0829968" stop-color="#FFB064"/>
+                    <stop offset="0.16" stop-color="#F0DFBD"/>
+                    <stop offset="0.23" stop-color="#4A98B0"/>
+                    <stop offset="0.433975" stop-color="#0D4061"/>
+                    <stop offset="0.630021"/>
+                    </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <div class="hb_image_video_gradient hb_image_video_mobile_gradient">
+                <svg width="375" height="666" viewBox="0 0 375 666" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g filter="url(#filter0_f_0_1116)">
+                    <path d="M363.183 1354.51C812.299 -629.087 431.718 881.13 235.183 253.02C174.074 57.7224 32.0594 24.7888 3.55863 313.448C-24.9421 602.107 -22.451 575.213 -91.2666 443.495C-160.082 311.777 -149.4 1033.04 -178.46 1384.76C-201.707 1666.15 172.949 1481.84 363.183 1354.51Z" fill="url(#paint0_linear_0_1116)" fill-opacity="0.95"/>
+                    </g>
+                    <defs>
+                    <filter id="filter0_f_0_1116" x="-280.693" y="0.403275" width="955.287" height="1633.3" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                    <feGaussianBlur stdDeviation="50.6" result="effect1_foregroundBlur_0_1116"/>
+                    </filter>
+                    <linearGradient id="paint0_linear_0_1116" x1="165.867" y1="796.218" x2="125.882" y2="252.663" gradientUnits="userSpaceOnUse">
+                    <stop offset="0.02" stop-color="#FF9E68"/>
+                    <stop offset="0.169037" stop-color="#FFB45C"/>
+                    <stop offset="0.265" stop-color="#EFECE2"/>
+                    <stop offset="0.421236" stop-color="#4A98B0"/>
+                    <stop offset="0.715" stop-color="#0D4061"/>
+                    <stop offset="0.95"/>
+                    </linearGradient>
+                    </defs>
+                </svg>
+            </div> {% endcomment %}
+        </div>
+    </div>
+</div>
+<script>
+    const video = document.querySelector(".hb_mobile_video video");
+    document.querySelector(".hb_mobile_video_icon").addEventListener("click", (e) => {
+        const icon = document.querySelector(".hb_mobile_video_icon");
+        if  (!video.muted){
+            icon.classList.remove("unmute")
+        } else {
+            icon.classList.add("unmute")
+        }
+      
+        if (video) {
+            video.muted = !video.muted;
+        } else {
+            console.warn("Video element not found.");
+        }
+    });
+    const playIcon = document.querySelector("[js-video-play-icon]");
+    playIcon.addEventListener("click", function(){
+        video.play()
+        this.classList.add("play")
+    });
+    video.addEventListener("click", function(){
+        playIcon.classList.remove("play")
+        this.pause()
+    });
+    
+    
+</script>
+{% schema %}
+  {
+    "name": "Image Video Overlay",
+    "settings": [
+        {
+          "type": "header",
+          "content": "Section Background Color"
+        },
+        {
+          "type": "color_background",
+          "id": "background_color",
+          "label": "Background",
+          "default": "#000000"
+        },
+        {
+          "type": "color_background",
+          "id": "inner_background_color",
+          "label": "Inner background Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "header",
+          "content": "Section Media"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video"
+        },
+        {
+          "type": "text",
+          "id": "vimoe_video_id",
+          "label": "Video Id Popup",
+          "info": "e.g: 'https://vimeo.com/1007920640?share=copy#t=0' from this '1007920640' is the ID"
+        },
+        {
+          "type": "video",
+          "id": "video_mobile",
+          "label": "Video (Mob)"
+        },
+        {
+          "type": "image_picker",
+          "id": "thumbnail_img_mob",
+          "label": "Thumbnail image (Mob)"
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "description"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        }
+    ],
+    "presets": [
+      {
+        "name": "Image Video Overlay"
+      }
+    ]
+  }
+{% endschema %}

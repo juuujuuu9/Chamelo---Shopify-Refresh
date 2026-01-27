@@ -1,0 +1,1123 @@
+{% if section.blocks.size > 0 %}
+  <div class="LP_banner_main LP_banner_main_{{ section.id }}">
+    <div clas="LP_banner_inner">
+      <div class="LP_banner_slider_parent">
+        <div class="LP_banner_slider swiper">
+          <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+              <div class="LP_banner_slide swiper-slide">
+                {% if block.type == "2-col-image-text-type-1" %}
+                  {% if block.settings.main_review_image_1 != blank or block.settings.main_review_text_1 != blank or block.settings.main_heading_text_1 != blank or block.settings.main_information_text_1 != blank or block.settings.main_button_text_1 != blank or block.settings.main_button_link_1 != blank or block.settings.bottom_icon_image_1 != blank or block.settings.bottom_text_1 != blank or block.settings.main_image_1 != blank or block.settings.main_video_1 != blank %}
+                    <div class="LP_banner_2_col_image_text_slide LP_banner_2_col_image_text_type_1_slide">
+                      <div class="LP_banner_2_col_image_text_slide_sides">
+                        {% if block.settings.main_review_image_1 != blank or block.settings.main_review_text_1 != blank or block.settings.main_heading_text_1 != blank or block.settings.main_information_text_1 != blank or block.settings.main_button_text_1 != blank or block.settings.main_button_link_1 != blank or block.settings.bottom_icon_image_1 != blank or block.settings.bottom_text_1 != blank %}
+                          <div class="LP_banner_2_col_image_text_slide_leftmain" style="background-color: {{ block.settings.section_bg_color_1 }}">
+                            <div class="LP_banner_2_col_image_text_slide_leftinner">
+                              <div class="LP_banner_2_col_image_text_slide_left_content_box">
+                                {% if block.settings.main_review_image_1 != blank or block.settings.main_review_text_1 != blank %}
+                                  <div class="LP_banner_review_parent">
+                                    {% if block.settings.main_review_image_1 != blank %}
+                                      <div class="LP_banner_review_image small-hide">
+                                        {{
+                                          block.settings.main_review_image_1 | 
+                                          image_url: width: img.width | 
+                                          image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                          fetchpriority: 'auto'
+                                        }}
+                                      </div>
+                                    {% endif %}
+                                    {% if block.settings.main_review_image_mobile_1 != blank %}
+                                      <div class="LP_banner_review_image large-up-hide medium-hide">
+                                        {{
+                                          block.settings.main_review_image_mobile_1 | 
+                                          image_url: width: img.width | 
+                                          image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                          fetchpriority: 'auto'
+                                        }}
+                                      </div>
+                                      {% else %}
+                                        {% if block.settings.main_review_image_1 != blank %}
+                                          <div class="LP_banner_review_image large-up-hide medium-hide">
+                                            {{
+                                              block.settings.main_review_image_1 | 
+                                              image_url: width: img.width | 
+                                              image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                              fetchpriority: 'auto'
+                                            }}
+                                          </div>
+                                        {% endif %}
+                                    {% endif %}
+                                    {% if block.settings.main_review_text_1 != blank %}
+                                      <div class=LP_banner_review_text>
+                                        <p>
+                                          {{ block.settings.main_review_text_1 }}
+                                        </p>
+                                      </div>
+                                    {% endif %}
+                                  </div>
+                                {% endif %}
+                                {% if block.settings.main_heading_text_1 != blank %}
+                                  <div class="LP_banner_main_heading_text Common_title_new">
+                                    <h2>
+                                      {{ block.settings.main_heading_text_1 }}
+                                    </h2>
+                                  </div>
+                                {% endif %}
+                                {% if block.settings.main_information_text_1 != blank %}
+                                  <div class="LP_banner_main_information_text">
+                                    {{ block.settings.main_information_text_1 }}
+                                  </div>
+                                {% endif %}
+                                {% if block.settings.main_button_text_1 != blank or block.settings.main_button_link_1 != blank %}
+                                  <div class="LP_banner_main_button_parent">
+                                    <a href="{{ block.settings.main_button_link_1 }}" class="button">
+                                      {{ block.settings.main_button_text_1 }}
+                                    </a>
+                                  </div>
+                                {% endif %}
+                                {% if block.settings.bottom_icon_image_1 != blank or block.settings.bottom_text_1 != blank %}
+                                  <div class="LP_banner_main_bottom_text_parent">
+                                    {% if block.settings.bottom_icon_image_1 != blank %}
+                                      <div class="LP_banner_main_bottom_icon_image">
+                                         {{
+                                            block.settings.bottom_icon_image_1 | 
+                                            image_url: width: img.width | 
+                                            image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                            fetchpriority: 'auto'
+                                          }}
+                                      </div>
+                                    {% endif %}
+                                  
+                                    {% if block.settings.bottom_text_1 != blank %}
+                                      <div class="LP_banner_main_bottom_text ">
+                                        <p>
+                                          {{ block.settings.bottom_text_1 }}
+                                        </p>
+                                      </div>
+                                    {% endif %}
+                                  </div>
+                                {% endif %}
+                                {% if block.settings.best_inventions_block_image_1 != blank or block.settings.best_inventions_block_title_1 != blank or block.settings.best_inventions_block_description_1 != blank %}
+                                  <div class="LP_banner_main_best_inventions_block_parent">
+                                    <div class="LP_banner_main_best_inventions_block_box" style="background-color: {{ block.settings.best_inventions_block_bg_color_1 }}">
+                                      {% if block.settings.best_inventions_block_image_1 != blank %}
+                                        <div class="LP_banner_main_best_inventions_block_box_image">
+                                          {{
+                                              block.settings.best_inventions_block_image_1 | 
+                                              image_url: width: img.width | 
+                                              image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                              fetchpriority: 'auto'
+                                            }}
+                                        </div>
+                                      {% endif %}
+                                      {% if block.settings.best_inventions_block_title_1 != blank or block.settings.best_inventions_block_description_1 != blank %}
+                                        <div class="LP_banner_main_best_inventions_block_box_content">
+                                          {% if block.settings.best_inventions_block_title_1 != blank %}
+                                            <div class="LP_banner_main_best_inventions_block_box_title">
+                                              <p>
+                                                {{ block.settings.best_inventions_block_title_1 }}
+                                              </p>
+                                            </div>
+                                          {% endif %}
+                                          {% if block.settings.best_inventions_block_description_1 != blank %}
+                                            <div class="LP_banner_main_best_inventions_block_box_description">
+                                              {{ block.settings.best_inventions_block_description_1 }}
+                                            </div>
+                                          {% endif %}
+                                        </div>
+                                      {% endif %}
+                                    </div>
+                                  </div>
+                                {% endif %}
+                              </div>
+                            </div>
+                          </div>
+                        {% endif %}
+                        {% if block.settings.main_image_1 != blank or block.settings.main_video_1 != blank %}
+                          <div class="LP_banner_2_col_image_text_slide_rightmain LP_banner_2_col_image_text_type_1_slide_rightmain" style="background-color: {{ block.settings.image_section_bg_color_1 }}">
+                            <div class="LP_banner_2_col_image_text_slide_rightinner" style="background-image: url({{ block.settings.image_section_bg_effect_desktop_1 | img_url:'master' }});background-size: 100% 100%;">
+                              {% if block.settings.main_image_1 != blank %}
+                                <div class="LP_banner_2_col_image_text_type_1_slide_main_image medium-hide small-hide">
+                                  {{
+                                    block.settings.main_image_1 | 
+                                    image_url: width: img.width | 
+                                    image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                    fetchpriority: 'auto'
+                                  }}
+                                </div>
+                              {% endif %}
+                              {% if block.settings.main_image_1_mobile != blank %}
+                                <div class="LP_banner_2_col_image_text_type_1_slide_main_image large-up-hide">
+                                  {{
+                                    block.settings.main_image_1_mobile | 
+                                    image_url: width: img.width | 
+                                    image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                    fetchpriority: 'auto'
+                                  }}
+                                </div>
+                                {% else %}
+                                <div class="LP_banner_2_col_image_text_type_1_slide_main_image large-up-hide">
+                                  {{
+                                    block.settings.main_image_1 | 
+                                    image_url: width: img.width | 
+                                    image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                    fetchpriority: 'auto'
+                                  }}
+                                </div>
+                              {% endif %}
+                              {% if block.settings.main_video_1 != blank %}
+                                <div class="LP_banner_2_col_image_text_type_1_slide_main_video">
+                                  {{ block.settings.main_video_1 | video_tag: image_size: 'master', controls: false, autoplay: true, loop: true }}  
+                                </div>
+                              {% endif %}
+                            </div>
+                          </div>
+                        {% endif %}
+                      </div>
+                    </div>
+                  {% endif %}
+                {% endif %}
+                {% if block.type == "2-col-image-text-type-2" %}
+                  {% if block.settings.main_review_image_2 != blank or block.settings.main_review_text_2 != blank or block.settings.main_heading_text_2 != blank or block.settings.main_information_text_2 != blank or block.settings.main_button_text_2 != blank or block.settings.main_button_link_2 != blank or block.settings.bottom_icon_image_2 != blank or block.settings.bottom_text_2 != blank or block.settings.main_image_2 != blank or block.settings.main_video_2 != blank %}
+                    <div class="LP_banner_2_col_image_text_slide LP_banner_2_col_image_text_type_2_slide">
+                      <div class="LP_banner_2_col_image_text_slide_sides">
+                        {% if block.settings.main_review_image_2 != blank or block.settings.main_review_text_2 != blank or block.settings.main_heading_text_2 != blank or block.settings.main_information_text_2 != blank or block.settings.main_button_text_2 != blank or block.settings.main_button_link_2 != blank or block.settings.bottom_icon_image_2 != blank or block.settings.bottom_text_2 != blank %}
+                          <div class="LP_banner_2_col_image_text_slide_leftmain" style="background-color: {{ block.settings.section_bg_color_2 }}">
+                            <div class="LP_banner_2_col_image_text_slide_leftinner">
+                              <div class="LP_banner_2_col_image_text_slide_left_content_box">
+                                {% if block.settings.main_review_image_2 != blank or block.settings.main_review_text_2 != blank %}
+                                  <div class="LP_banner_review_parent">
+                                    {% if block.settings.main_review_image_2 != blank %}
+                                      <div class="LP_banner_review_image small-hide">
+                                        {{
+                                          block.settings.main_review_image_2 | 
+                                          image_url: width: img.width | 
+                                          image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                          fetchpriority: 'auto'
+                                        }}
+                                      </div>
+                                    {% endif %}
+                                    {% if block.settings.main_review_image_mobile_2 != blank %}
+                                      <div class="LP_banner_review_image large-up-hide medium-hide">
+                                        {{
+                                          block.settings.main_review_image_mobile_2 | 
+                                          image_url: width: img.width | 
+                                          image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                          fetchpriority: 'auto'
+                                        }}
+                                      </div>
+                                      {% else %}
+                                        {% if block.settings.main_review_image_2 != blank %}
+                                          <div class="LP_banner_review_image large-up-hide medium-hide">
+                                            {{
+                                              block.settings.main_review_image_2 | 
+                                              image_url: width: img.width | 
+                                              image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                              fetchpriority: 'auto'
+                                            }}
+                                          </div>
+                                        {% endif %}
+                                    {% endif %}
+                                    {% if block.settings.main_review_text_2 != blank %}
+                                      <div class=LP_banner_review_text>
+                                        <p>
+                                          {{ block.settings.main_review_text_2 }}
+                                        </p>
+                                      </div>
+                                    {% endif %}
+                                  </div>
+                                {% endif %}
+                                {% if block.settings.main_heading_text_2 != blank %}
+                                  <div class="LP_banner_main_heading_text Common_title_new">
+                                    <h2>
+                                      {{ block.settings.main_heading_text_2 }}
+                                    </h2>
+                                  </div>
+                                {% endif %}
+                                {% if block.settings.main_information_text_2 != blank %}
+                                  <div class="LP_banner_main_information_text">
+                                    {{ block.settings.main_information_text_2 }}
+                                  </div>
+                                {% endif %}
+                                {% if block.settings.custom_liquid != blank %}
+                                  <div class="LP_banner_main_information_text">
+                                    {{ block.settings.custom_liquid }}
+                                  </div>
+                                {% endif %}
+                                
+
+                                {% if block.settings.main_button_text_2 != blank or block.settings.main_button_link_2 != blank %}
+                                  <div class="LP_banner_main_button_parent">
+                                    <a href="{{ block.settings.main_button_link_2 }}" class="button">
+                                      {{ block.settings.main_button_text_2 }}
+                                    </a>
+                                  </div>
+                                {% endif %}
+                                {% if block.settings.bottom_icon_image_2 != blank or block.settings.bottom_text_2 != blank %}
+                                  <div class="LP_banner_main_bottom_text_parent">
+                                    {% if block.settings.bottom_icon_image_2 != blank %}
+                                      <div class="LP_banner_main_bottom_icon_image">
+                                         {{
+                                            block.settings.bottom_icon_image_2 | 
+                                            image_url: width: img.width | 
+                                            image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                            fetchpriority: 'auto'
+                                          }}
+                                      </div>
+                                    {% endif %}
+                                    {% if block.settings.bottom_text_2 != blank %}
+                                      <div class="LP_banner_main_bottom_text {% if template.suffix == 'aura-eternal' %}LP_banner_main_bottom_text_eternal {% endif %}">
+                                        <p>
+                                          {{ block.settings.bottom_text_2 }}
+                                        </p>
+                                      </div>
+                                    {% endif %}
+                                  </div>
+                                {% endif %}
+                                {% if block.settings.best_inventions_block_image_2 != blank or block.settings.best_inventions_block_title_2 != blank or block.settings.best_inventions_block_description_2 != blank %}
+                                  <div class="LP_banner_main_best_inventions_block_parent">
+                                    <div class="LP_banner_main_best_inventions_block_box" style="background-color: {{ block.settings.best_inventions_block_bg_color_2 }}">
+                                      {% if block.settings.best_inventions_block_image_2 != blank %}
+                                        <div class="LP_banner_main_best_inventions_block_box_image">
+                                          {{
+                                              block.settings.best_inventions_block_image_2 | 
+                                              image_url: width: img.width | 
+                                              image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                              fetchpriority: 'auto'
+                                            }}
+                                        </div>
+                                      {% endif %}
+                                      {% if block.settings.best_inventions_block_title_2 != blank or block.settings.best_inventions_block_description_2 != blank %}
+                                        <div class="LP_banner_main_best_inventions_block_box_content">
+                                          {% if block.settings.best_inventions_block_title_2 != blank %}
+                                            <div class="LP_banner_main_best_inventions_block_box_title">
+                                              <p>
+                                                {{ block.settings.best_inventions_block_title_2 }}
+                                              </p>
+                                            </div>
+                                          {% endif %}
+                                          {% if block.settings.best_inventions_block_description_2 != blank %}
+                                            <div class="LP_banner_main_best_inventions_block_box_description">
+                                              {{ block.settings.best_inventions_block_description_2}}
+                                            </div>
+                                          {% endif %}
+                                        </div>
+                                      {% endif %}
+                                    </div>
+                                  </div>
+                                {% endif %}
+                              </div>
+                            </div>
+                          </div>
+                        {% endif %}
+                        {% if block.settings.main_image_2 != blank or block.settings.main_video_2 != blank %}
+                          <div class="LP_banner_2_col_image_text_slide_rightmain  LP_banner_2_col_image_text_type_2_slide_rightmain">
+                            <div class="LP_banner_2_col_image_text_slide_rightinner">
+                              {% if block.settings.main_video_2 != blank %}
+                                <div class="LP_banner_2_col_image_text_type_2_slide_image_video_main">
+                                  {{ block.settings.main_video_2 | video_tag: image_size: 'master', controls: false, autoplay: true, loop: true }}  
+                                </div>
+                                {% else %}
+                                  {% if block.settings.main_image_2 != blank %}
+                                    {{
+                                      block.settings.main_image_2 | 
+                                      image_url: width: img.width | 
+                                      image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                      fetchpriority: 'auto'
+                                    }}
+                                  {% endif %}
+                              {% endif %}
+                            </div>
+                          </div>
+                        {% endif %}
+                        
+                        
+                      </div>
+                    </div>
+                  {% endif %}
+                {% endif %}
+
+                {% comment %}
+                {% if block.type == "2-col-image-text-type-2" %}
+                  {% if block.settings.main_review_image_2 != blank or block.settings.main_review_text_2 != blank or block.settings.main_heading_text_2 != blank or block.settings.main_information_text_2 != blank or block.settings.main_button_text_2 != blank or block.settings.main_button_link_2 != blank or block.settings.bottom_icon_image_2 != blank or block.settings.bottom_text_2 != blank or block.settings.main_image_2 != blank or block.settings.main_video_2 != blank %}
+                    <div class="LP_banner_full_image_video_text_slide">
+                      {% if block.settings.main_video_2 != blank %}
+                        <div class="LP_banner_full_image_video_main">
+                          {{ block.settings.main_video_2 | video_tag: image_size: 'master', controls: false, autoplay: true, loop: true }}
+                        </div>
+                        {% else %}
+                          {% if block.settings.main_image_2 != blank %}
+                            <div class="LP_banner_full_image_video_main">
+                              {{
+                                block.settings.main_image_2 | 
+                                image_url: width: img.width | 
+                                image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                fetchpriority: 'auto'
+                              }}
+                            </div>
+                            {% endif %}
+                      {% endif %}                   
+                      {% if block.settings.main_review_image_2 != blank or block.settings.main_review_text_2 != blank or block.settings.main_heading_text_2 != blank or block.settings.main_information_text_2 != blank or block.settings.main_button_text_2 != blank or block.settings.main_button_link_2 != blank or block.settings.bottom_icon_image_2 != blank or block.settings.bottom_text_2 != blank %}
+                        <div class="LP_banner_2_col_image_text_slide_left_content_box">
+                          {% if block.settings.main_review_image_2 != blank or block.settings.main_review_text_2 != blank %}
+                            <div class="LP_banner_review_parent">
+                              {% if block.settings.main_review_image_2 != blank %}
+                                <div class="LP_banner_review_image">
+                                  {{
+                                    block.settings.main_review_image_2 | 
+                                    image_url: width: img.width | 
+                                    image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                    fetchpriority: 'auto'
+                                  }}
+                                </div>
+                              {% endif %}
+                              {% if block.settings.main_review_text_2 != blank %}
+                                <div class=LP_banner_review_text>
+                                  <p>
+                                    {{ block.settings.main_review_text_2 }}
+                                  </p>
+                                </div>
+                              {% endif %}
+                            </div>
+                          {% endif %}
+                          {% if block.settings.main_heading_text_2 != blank %}
+                            <div class="LP_banner_main_heading_text Common_title_new">
+                              <h2>
+                                {{ block.settings.main_heading_text_2 }}
+                              </h2>
+                            </div>
+                          {% endif %}
+                          {% if block.settings.main_information_text_2 != blank %}
+                            <div class="LP_banner_main_information_text">
+                              {{ block.settings.main_information_text_2 }}
+                            </div>
+                          {% endif %}
+                          {% if block.settings.main_button_text_2 != blank or block.settings.main_button_link_2 != blank %}
+                            <div class="LP_banner_main_button_parent">
+                              <a href="{{ block.settings.main_button_link_2 }}"  class="button button_white_new">
+                                {{ block.settings.main_button_text_2 }}
+                              </a>
+                            </div>
+                          {% endif %}
+                          {% if block.settings.bottom_icon_image_2 != blank or block.settings.bottom_text_2 != blank %}
+                            <div class="LP_banner_main_bottom_text_parent">
+                              {% if block.settings.bottom_icon_image_2 != blank %}
+                                <div class="LP_banner_main_bottom_icon_image">
+                                    {{
+                                      block.settings.bottom_icon_image_2 | 
+                                      image_url: width: img.width | 
+                                      image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                      fetchpriority: 'auto'
+                                    }}
+                                </div>
+                              {% endif %}
+                              {% if block.settings.bottom_text_2 != blank %}
+                                <div class="LP_banner_main_bottom_text">
+                                  <p>
+                                    {{ block.settings.bottom_text_2 }}
+                                  </p>
+                                </div>
+                              {% endif %}
+                            </div>
+                          {% endif %}
+                          {% if block.settings.best_inventions_block_image_2 != blank or block.settings.best_inventions_block_title_2 != blank or block.settings.best_inventions_block_description_2 != blank %}
+                                  <div class="LP_banner_main_best_inventions_block_parent">
+                                    <div class="LP_banner_main_best_inventions_block_box" style="background-color: {{ block.settings.best_inventions_block_bg_color_2 }}">
+                                      {% if block.settings.best_inventions_block_image_2 != blank %}
+                                        <div class="LP_banner_main_best_inventions_block_box_image">
+                                          {{
+                                              block.settings.best_inventions_block_image_2 | 
+                                              image_url: width: img.width | 
+                                              image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                              fetchpriority: 'auto'
+                                            }}
+                                        </div>
+                                      {% endif %}
+                                      {% if block.settings.best_inventions_block_title_2 != blank or block.settings.best_inventions_block_description_2 != blank %}
+                                        <div class="LP_banner_main_best_inventions_block_box_content">
+                                          {% if block.settings.best_inventions_block_title_2 != blank %}
+                                            <div class="LP_banner_main_best_inventions_block_box_title">
+                                              <p>
+                                                {{ block.settings.best_inventions_block_title_2 }}
+                                              </p>
+                                            </div>
+                                          {% endif %}
+                                          {% if block.settings.best_inventions_block_description_2 != blank %}
+                                            <div class="LP_banner_main_best_inventions_block_box_description">
+                                              {{ block.settings.best_inventions_block_description_2 }}
+                                            </div>
+                                          {% endif %}
+                                        </div>
+                                      {% endif %}
+                                    </div>
+                                  </div>
+                                {% endif %}
+                        </div>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+                {% endif %}
+                {% endcomment %}
+              
+                {% if block.type == "2-col-image-text-type-3" %}
+                  {% if block.settings.main_subheading_3 != blank or block.settings.main_heading_text_3 != blank or block.settings.main_information_text_3 != blank or block.settings.bottom_text_3 != blank or block.settings.bottom_risk_text_3 != blank or block.settings.main_video_3 != blank or block.settings.main_image_3 != blank %}
+                    <div class="LP_banner_2_col_image_text_slide LP_banner_2_col_image_text_type_3_slide">
+                      <div class="LP_banner_2_col_image_text_slide_sides">
+                        {% if block.settings.main_subheading_3 != blank or block.settings.main_heading_text_3 != blank or block.settings.main_information_text_3 != blank or block.settings.bottom_text_3 != blank or block.settings.bottom_risk_text_3 != blank %}
+                          <div class="LP_banner_2_col_image_text_slide_leftmain" style="background-color: {{ block.settings.section_bg_color_3 }}">
+                            <div class="LP_banner_2_col_image_text_slide_leftinner">
+                              <div class="LP_banner_2_col_image_text_slide_left_content_box">
+                                {% if block.settings.main_subheading_3 != blank %}
+                                  <div class="LP_banner_main_subheading_text">
+                                    <p>
+                                      {{ block.settings.main_subheading_3 }}
+                                    </p>
+                                  </div>
+                                {% endif %}
+                                {% if block.settings.main_heading_text_3 != blank %}
+                                  <div class="LP_banner_main_heading_text Common_title_new">
+                                    <h2>
+                                      {{ block.settings.main_heading_text_3 }}
+                                    </h2>
+                                  </div>
+                                {% endif %}
+                                {% if block.settings.main_information_text_3 != blank %}
+                                  <div class="LP_banner_main_information_text">
+                                    {{ block.settings.main_information_text_3 }}
+                                  </div>
+                                {% endif %}
+                                <div class="LP_banner_form_main">
+                                  <div class="Page_coming_soon_product_klaviyo_new">
+                                    <div class="klaviyo-form-VeX9Eg"></div>
+                                  </div>
+                                  
+                                  {% comment %}
+                                  {% form 'customer', class: 'newsletter-form' %}
+                                    <input type="hidden" name="contact[tags]" value="newsletter">
+                                    <div
+                                      class="newsletter-form__field-wrapper{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                                      {% if settings.animations_reveal_on_scroll %}
+                                        data-cascade
+                                        style="--animation-order: {{ forloop.index }};"
+                                      {% endif %}
+                                    >
+                                      <div class="field">
+                                        <input
+                                          id="NewsletterForm--{{ section.id }}"
+                                          type="email"
+                                          name="contact[email]"
+                                          class="field__input"
+                                          value="{{ form.email }}"
+                                          aria-required="true"
+                                          autocorrect="off"
+                                          autocapitalize="off"
+                                          autocomplete="email"
+                                          {% if form.errors %}
+                                            autofocus
+                                            aria-invalid="true"
+                                            aria-describedby="Newsletter-error--{{ section.id }}"
+                                          {% elsif form.posted_successfully? %}
+                                            aria-describedby="Newsletter-success--{{ section.id }}"
+                                          {% endif %}
+                                          placeholder="{{ 'newsletter.label' | t }}"
+                                          required
+                                        >
+                                        <label class="field__label" for="NewsletterForm--{{ section.id }}">
+                                          {{ 'newsletter.label' | t }}
+                                        </label>
+                                        <button
+                                          class="button"
+                                          type="submit"
+                                          class="newsletter-form__button field__button"
+                                          name="commit"
+                                          id="Subscribe"
+                                          aria-label="{{ 'newsletter.button_label' | t }}"
+                                        >
+                                          join the waitlist
+                                        </button>
+                                      </div>
+                                      {%- if form.errors -%}
+                                        <small class="newsletter-form__message form__message" id="Newsletter-error--{{ section.id }}">
+                                          {%- render 'icon-error' -%}
+                                          {{- form.errors.translated_fields.email | capitalize }}
+                                          {{ form.errors.messages.email -}}
+                                        </small>
+                                      {%- endif -%}
+                                    </div>
+                                    {%- if form.posted_successfully? -%}
+                                      <h3
+                                        class="newsletter-form__message newsletter-form__message--success form__message"
+                                        id="Newsletter-success--{{ section.id }}"
+                                        tabindex="-1"
+                                        autofocus
+                                      >
+                                        {% render 'icon-success' -%}
+                                        {{- 'newsletter.success' | t }}
+                                      </h3>
+                                    {%- endif -%}
+                                  {% endform %}
+                                  {% endcomment %}
+                                  
+                                </div>
+                                {% if block.settings.bottom_text_3 != blank or block.settings.bottom_risk_text_3 != blank %}
+                                  <div class="LP_banner_bottom_risk_parent">
+                                    {% if block.settings.bottom_text_3 != blank %}
+                                      <div class="LP_banner_bottom_risk_main_text">
+                                        <p>
+                                          {{ block.settings.bottom_text_3 }}
+                                        </p>
+                                      </div>
+                                    {% endif %}
+                                    {% if block.settings.bottom_risk_text_3 != blank %}
+                                      <div class="LP_banner_bottom_risk_tag_text">
+                                        <p>
+                                          {{ block.settings.bottom_risk_text_3 }}
+                                        </p>
+                                      </div>
+                                    {% endif %}
+                                  </div>
+                                {% endif %}
+                              </div>
+                            </div>
+                          </div>
+                        {% endif %}
+                        {% if block.settings.main_image_3 != blank or block.settings.main_video_3 != blank %}
+                          <div class="LP_banner_2_col_image_text_slide_rightmain  LP_banner_2_col_image_text_type_3_slide_rightmain">
+                            <div class="LP_banner_2_col_image_text_slide_rightinner">
+                              {% if block.settings.main_video_3 != blank %}
+                                <div class="LP_banner_2_col_image_text_type_3_slide_image_video_main">
+                                  {{ block.settings.main_video_3 | video_tag: image_size: 'master', controls: false, autoplay: true, loop: true }}  
+                                </div>
+                                {% else %}
+                                  {% if block.settings.main_image_3 != blank %}
+                                    {{
+                                      block.settings.main_image_3 | 
+                                      image_url: width: img.width | 
+                                      image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                                      fetchpriority: 'auto'
+                                    }}
+                                  {% endif %}
+                              {% endif %}
+                            </div>
+                          </div>
+                        {% endif %}
+                      </div>
+                    </div>
+                  {% endif %}
+                {% endif %}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+<style>
+  .LP_banner_2_col_image_text_slide_sides { display: flex; }
+  .LP_banner_2_col_image_text_slide_leftmain { width: 41.667%; padding: 20px; }
+  .LP_banner_2_col_image_text_slide_leftinner { height: 100%; display: flex; align-items: center; }
+  .LP_banner_2_col_image_text_slide_rightmain { width: 58.333%; aspect-ratio: 1.31248; }
+  .LP_banner_2_col_image_text_slide_rightinner { height: 100%; position: relative; }
+  .LP_banner_2_col_image_text_slide_left_content_box { max-width: 430px; width: 100%; margin: 0 auto; }
+  .LP_banner_review_parent { display: flex; align-items: center; gap: 8px; }
+  .LP_banner_review_image { max-width: 68px; width: 100%; }
+  .LP_banner_review_image img, .LP_banner_main_bottom_icon_image img { width: 100%; height: 100%; display: block; object-fit: cover; }
+  .LP_banner_review_text p, .LP_banner_main_bottom_text p { margin: 0; font-family: var(--font-mono-regular-family); text-transform: uppercase; font-size: 12px; font-weight: 400; line-height: 135%; }
+  .LP_banner_main_heading_text, .LP_banner_main_information_text { padding-top: 16px; }
+  .LP_banner_main_heading_text h2 { font-size: 48px; }
+  .LP_banner_main_information_text ul { padding: 0; margin: 0; list-style: none; }
+  .LP_banner_main_information_text li { padding-left: 26px; position: relative; }
+  .LP_banner_main_information_text li:not(:first-child) { margin-top: 6px !important; }
+  .LP_banner_main_information_text li:before { content: ""; position: absolute; width: 18px; height: 18px; left: 0; top: 1px; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none"><path d="M7.1627 13.9885L2.8877 9.71348L3.95645 8.64473L7.1627 11.851L14.0439 4.96973L15.1127 6.03848L7.1627 13.9885Z" fill="black"/></svg>'); background-size: contain; }
+  .LP_banner_main_information_text p, .LP_banner_main_information_text li { margin: 0; color: #000000; font-family: var(--font-body-family); font-size: 16px; font-weight: 400; line-height: 125%; }
+  .LP_banner_2_col_image_text_slide .LP_banner_review_text p, .LP_banner_2_col_image_text_slide .LP_banner_main_bottom_text p,
+  .LP_banner_2_col_image_text_slide .LP_banner_main_heading_text h2, .LP_banner_2_col_image_text_slide .LP_banner_main_information_text p { color: #000; }
+  .LP_banner_full_image_video_text_slide .LP_banner_review_text p, .LP_banner_full_image_video_text_slide .LP_banner_main_bottom_text p,
+  .LP_banner_full_image_video_text_slide .LP_banner_main_heading_text h2, .LP_banner_full_image_video_text_slide .LP_banner_main_information_text p { color: #FFF; }
+  .LP_banner_main_button_parent { padding-top: 24px; }
+  .LP_banner_main_button_parent .button { min-width: unset; width: 100%; max-width: 100%; }
+  .LP_banner_main_bottom_text_parent { padding-top: 8px; display: flex; align-items: center; justify-content: center; gap: 12px; }
+  .LP_banner_main_bottom_icon_image { max-width: 12.85px; width: 100%; }
+  .LP_banner_full_image_video_text_slide { text-align: left;; }
+  .LP_banner_2_col_image_text_type_1_slide_main_video { position: absolute; width: 18.691%; aspect-ratio: 0.743; bottom: 53px; right: 56px; border: 1px solid #FFF; }
+  .LP_banner_2_col_image_text_type_1_slide_main_image { padding-top: 80px; width: 97.378%; aspect-ratio: 1.287; margin: 0 0 0 auto; }
+  .LP_banner_2_col_image_text_type_1_slide_main_image img, .LP_banner_2_col_image_text_type_1_slide_main_video video { width: 100%; height: 100% !Important; display: block; object-fit: cover; }
+
+  .LP_banner_main_best_inventions_block_parent { padding-top: 24px; }
+  .LP_banner_main_best_inventions_block_box { display: flex; align-items: center; gap: 16px; padding: 10px; }
+  .LP_banner_main_best_inventions_block_box_image { max-width: 59.56px; width: 100%; }
+  .LP_banner_main_best_inventions_block_box_image img { width: 100%; display: block; object-fit: cover; }
+  .LP_banner_main_best_inventions_block_box_title p { font-size: 14px; font-weight: 600; line-height: 125%; color: #000; margin: 0; text-transform: uppercase; }
+  .LP_banner_main_best_inventions_block_box_description { padding: 8px 14.44px 0 0; }
+  .LP_banner_main_best_inventions_block_box_description p { font-size: 14px; font-weight: 400; line-height: 148%; color: #000; margin: 0; }
+  .LP_banner_main_best_inventions_block_box_description p em { font-style: normal; text-decoration: underline; }
+  .LP_banner_main_best_inventions_block_box_description a { color: #000; }
+
+  .LP_banner_2_col_image_text_type_3_slide .LP_banner_2_col_image_text_slide_left_content_box { max-width: 443px; }
+  .LP_banner_main_subheading_text p { font-size: 14px; font-weight: 600; line-height: 125%; color: #000; margin: 0; text-transform: uppercase; }
+  .LP_banner_2_col_image_text_type_3_slide_rightmain img, .LP_banner_2_col_image_text_type_3_slide_rightmain video { width: 100%; height: 100% !important; object-fit: cover; display: block; }
+  .LP_banner_form_main { padding-top: 24px; }
+  .LP_banner_form_main .newsletter-form, .LP_banner_form_main .newsletter-form__field-wrapper { max-width: 100% !important; }
+  .LP_banner_form_main .field__input { background-color: transparent; border: 1px solid #000000; padding: 13px 16px; }
+  .LP_banner_form_main .field__label { display: none; }
+  .LP_banner_form_main .field__input, .LP_banner_form_main .field__input::placeholder { text-transform: uppercase; font-size: 16px; font-weight: 700; line-height: 125%; opacity: 1; letter-spacing: 0.01em; color: #000000; }
+  .LP_banner_form_main .field { display: unset; }
+  .LP_banner_form_main .field:before, .LP_banner_form_main .field:after { display: none; }
+  .LP_banner_form_main .button { width: 100%; margin-top: 12px; }
+  .LP_banner_bottom_risk_parent { display: flex; align-items: center;  padding-top: 12px; gap: 8px; justify-content: center; }
+  .LP_banner_bottom_risk_main_text p { color: #000; margin: 0; font-family: var(--font-mono-regular-family); text-transform: uppercase; font-size: 12px; font-weight: 400; line-height: 100%; }
+  .LP_banner_bottom_risk_tag_text { padding: 3px 4px; background-color: #CA2C16; }
+  .LP_banner_bottom_risk_tag_text p { color: #FFF; margin: 0; font-family: var(--font-mono-regular-family); text-transform: uppercase; font-size: 11px; font-weight: 600; line-height: 100%;}
+
+  .LP_banner_2_col_image_text_type_2_slide_rightmain img, .LP_banner_2_col_image_text_type_2_slide_rightmain video { width: 100%; height: 100% !important; object-fit: cover; display: block; }
+  .LP_banner_2_col_image_text_type_2_slide_image_video_main { height: 100%; }
+  
+  @media (max-width: 1200px){
+    .LP_banner_2_col_image_text_type_1_slide_main_image { padding-top: 40px; }
+    .LP_banner_2_col_image_text_type_1_slide_main_video { max-width: 130px; width: 100%; bottom: 35px; right: 35px; }
+  }
+
+  @media (max-width: 989px){
+    .LP_banner_2_col_image_text_slide_sides { flex-direction: column-reverse; }
+    .LP_banner_2_col_image_text_slide_leftmain { width: 100%; padding: 24px 20px 16px; }
+    .LP_banner_2_col_image_text_slide_rightmain { width: 100%; aspect-ratio: 1.25; }
+    .LP_banner_2_col_image_text_slide_left_content_box { max-width: 100%; }
+    .LP_banner_review_text p { line-height: 100%; }
+    .LP_banner_main_heading_text, .LP_banner_main_information_text { padding-top: 12px; }
+    .LP_banner_main_information_text p, .LP_banner_main_information_text li { font-size: 14px; }
+    .LP_banner_main_information_text li:not(:first-child) { margin-top: 4px; }
+    .LP_banner_main_information_text li:before { top: 0; }
+    .LP_banner_main_button_parent, .LP_banner_main_best_inventions_block_parent { padding-top: 20px; }
+    .LP_banner_main_best_inventions_block_box { padding: 12px; gap: 12px; }
+    .LP_banner_main_best_inventions_block_box_description { padding: 4px 0 0; }
+    .LP_banner_2_col_image_text_type_1_slide_main_video { width: 24%; max-width: 100%; right: 16px; bottom: 21px; }
+    .LP_banner_2_col_image_text_type_1_slide_main_image { width: 100%; padding: 19px 9px 21px; margin: 0;}
+
+    .LP_banner_form_main .button { margin-top: 8px; }
+    .LP_banner_2_col_image_text_type_3_slide .LP_banner_main_subheading_text,
+    .LP_banner_2_col_image_text_type_3_slide .LP_banner_main_heading_text, 
+    .LP_banner_2_col_image_text_type_3_slide .LP_banner_main_information_text { text-align: center; }
+    .LP_banner_2_col_image_text_type_3_slide .LP_banner_main_information_text p { font-size: 16px; }
+
+    .LP_banner_2_col_image_text_type_2_slide_image_video_main { aspect-ratio: 1.25; }
+  }
+
+  @media (max-width: 749px){
+    .LP_banner_main_heading_text h2 { font-size: 32px; line-height: 110%; }
+    
+  }
+
+</style>
+
+{% schema %}
+  {
+    "name": "LP Banner",
+    "class": "LP_banner",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "2-col-image-text-type-1",
+        "name": "2 Col Image Text Type-1",
+        "settings": [
+          {
+            "type": "color",
+            "id": "section_bg_color_1",
+            "label": "Add Section Background Color",
+            "default": "#FFFFFF"
+          },
+          {
+            "type": "header",
+            "content": "Content Section"
+          },
+          {
+            "type": "image_picker",
+            "id": "main_review_image_1",
+            "label": "Add Main Review Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "main_review_image_mobile_1",
+            "label": "Add Main Review Image - Mobile"
+          },
+          {
+            "type": "textarea",
+            "id": "main_review_text_1",
+            "label": "Add Main Review Text",
+            "default": "10,485+ 5-star reviews"
+          },
+          {
+            "type": "textarea",
+            "id": "main_heading_text_1",
+            "label": "Add Main Heading Text",
+            "default": "Get $50 Off Music Shield"
+          },
+          {
+            "type": "richtext",
+            "id": "main_information_text_1",
+            "label": "Add Information Text",
+            "default": "<p>Performance-enhancing, smart-audio sunglasses by Stephon Marbury</p>"
+          },
+          {
+            "type": "text",
+            "id": "main_button_text_1",
+            "label": "Add Main Button Text",
+            "default": "Shop music shield Now"
+          },
+          {
+            "type": "url",
+            "id": "main_button_link_1",
+            "label": "Add Main Button Link"
+          },
+          {
+            "type": "image_picker",
+            "id": "bottom_icon_image_1",
+            "label": "Add Bottom Icon Image"
+          },
+          {
+            "type": "text",
+            "id": "bottom_text_1",
+            "label": "Add Bottom Text",
+            "default": "30-Day Money Back Guarantee"
+          },
+          {
+            "type": "header",
+            "content": "Best Inventions Block"
+          },
+          {
+            "type": "color",
+            "id": "best_inventions_block_bg_color_1",
+            "label": "Add background Color"
+          },
+          {
+            "type": "image_picker",
+            "id": "best_inventions_block_image_1",
+            "label": "Add Image"
+          },
+          {
+            "type": "text",
+            "id": "best_inventions_block_title_1",
+            "label": "Add Title",
+            "default": "time’s best inventions of 2024"
+          },
+          {
+            "type": "richtext",
+            "id": "best_inventions_block_description_1",
+            "label": "Add Description",
+            "default": "<p>Voted one of Time Magazine’s Best Inventions of 2024, we’re here to redefine what eyewear can do.</p>"
+          },
+          {
+            "type": "header",
+            "content": "Image Section"
+          },
+          {
+            "type": "color",
+            "id": "image_section_bg_color_1",
+            "label": "Add Image Section Background Color",
+            "default": "#000000"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_section_bg_effect_desktop_1",
+            "label": "Add Image Section Background Effect - Desktop"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_section_bg_effect_mobile_1",
+            "label": "Add Image Section Background Effect - Mobile"
+          },
+          {
+            "type": "image_picker",
+            "id": "main_image_1",
+            "label": "Add Main Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "main_image_1_mobile",
+            "label": "Add Main Image - Mobile"
+          },
+          {
+            "type": "video",
+            "id": "main_video_1",
+            "label": "Add Main Video"
+          },
+        ]
+      },
+      {
+        "type": "full-image-video-text",
+        "name": "Full Image Video Text",
+        "settings": [
+          {
+            "type": "video",
+            "id": "main_video_2",
+            "label": "Add Main Video"
+          },
+          {
+            "type": "image_picker",
+            "id": "main_image_2",
+            "label": "Add Main Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "main_review_image_2",
+            "label": "Add Main Review Image"
+          },
+          {
+            "type": "textarea",
+            "id": "main_review_text_2",
+            "label": "Add Main Review Text",
+            "default": "10,485+ 5-star reviews"
+          },
+          {
+            "type": "textarea",
+            "id": "main_heading_text_2",
+            "label": "Add Main Heading Text",
+            "default": "Get $50 Off Music Shield "
+          },
+          {
+            "type": "richtext",
+            "id": "main_information_text_2",
+            "label": "Add Information Text",
+            "default": "<p>Performance-enhancing, smart-audio sunglasses by Stephon Marbury</p>"
+          },
+          {
+            "type": "text",
+            "id": "main_button_text_2",
+            "label": "Add Main Button Text",
+            "default": "Shop music shield Now"
+          },
+          {
+            "type": "url",
+            "id": "main_button_link_2",
+            "label": "Add Main Button Link"
+          },
+          {
+            "type": "image_picker",
+            "id": "bottom_icon_image_2",
+            "label": "Add Bottom Icon Image"
+          },
+          {
+            "type": "text",
+            "id": "bottom_text_2",
+            "label": "Add Bottom Text",
+            "default": "30-Day Money Back Guarantee"
+          },
+          {
+            "type": "header",
+            "content": "Best Inventions Block"
+          },
+          {
+            "type": "color",
+            "id": "best_inventions_block_bg_color_2",
+            "label": "Add background Color"
+          },
+          {
+            "type": "image_picker",
+            "id": "best_inventions_block_image_2",
+            "label": "Add Image"
+          },
+          {
+            "type": "text",
+            "id": "best_inventions_block_title_2",
+            "label": "Add Title",
+            "default": "time’s best inventions of 2024"
+          },
+          {
+            "type": "richtext",
+            "id": "best_inventions_block_description_2",
+            "label": "Add Description",
+            "default": "<p>Voted one of Time Magazine’s Best Inventions of 2024, we’re here to redefine what eyewear can do.</p>"
+          }
+        ]
+      },
+      {
+        "type": "2-col-image-text-type-3",
+        "name": "2 Col Image Text Type-3",
+        "settings": [
+          {
+            "type": "color",
+            "id": "section_bg_color_3",
+            "label": "Add Section Background Color",
+            "default": "#FFFFFF"
+          },
+          {
+            "type": "header",
+            "content": "Content Section"
+          },
+          {
+            "type": "text",
+            "id": "main_subheading_3",
+            "label": "Add Main Subheading",
+            "default": "Launching dec 2024"
+          },
+          {
+            "type": "textarea",
+            "id": "main_heading_text_3",
+            "label": "Add Main Heading Text",
+            "default": "Be the first to hear"
+          },
+          {
+            "type": "richtext",
+            "id": "main_information_text_3",
+            "label": "Add Information Text",
+            "default": "<p>Music Shield Paris Edition is launching soon... join our exclusive waitlist and be the first to hear as soon as it drops.</p>"
+          },
+          {
+            "type": "text",
+            "id": "bottom_text_3",
+            "label": "Add Bottom Text",
+            "default": "sell out risk"
+          },
+          {
+            "type": "text",
+            "id": "bottom_risk_text_3",
+            "label": "Add Bottom Risk Text",
+            "default": "high"
+          },
+          {
+            "type": "header",
+            "content": "Image Section"
+          },
+          {
+            "type": "video",
+            "id": "main_video_3",
+            "label": "Add Main Video"
+          },
+          {
+            "type": "image_picker",
+            "id": "main_image_3",
+            "label": "Add Main Image"
+          },
+        ]
+      },
+      {
+        "type": "2-col-image-text-type-2",
+        "name": "2 Col Image Text Type-2",
+        "settings": [
+          {
+            "type": "color",
+            "id": "section_bg_color_2",
+            "label": "Add Section Background Color",
+            "default": "#FFFFFF"
+          },
+          {
+            "type": "header",
+            "content": "Content Section"
+          },
+          {
+            "type": "image_picker",
+            "id": "main_review_image_2",
+            "label": "Add Main Review Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "main_review_image_mobile_2",
+            "label": "Add Main Review Image - Mobile"
+          },
+          {
+            "type": "textarea",
+            "id": "main_review_text_2",
+            "label": "Add Main Review Text",
+            "default": "10,485+ 5-star reviews"
+          },
+          {
+            "type": "textarea",
+            "id": "main_heading_text_2",
+            "label": "Add Main Heading Text",
+            "default": "Get $50 Off Music Shield"
+          },
+          {
+            "type": "richtext",
+            "id": "main_information_text_2",
+            "label": "Add Information Text",
+            "default": "<p>Performance-enhancing, smart-audio sunglasses by Stephon Marbury</p>"
+          },
+          {
+            "type": "liquid",
+            "id": "custom_liquid",
+            "label": "Custom Liquid"
+          },
+          {
+            "type": "text",
+            "id": "main_button_text_2",
+            "label": "Add Main Button Text",
+            "default": "Shop music shield Now"
+          },
+          {
+            "type": "url",
+            "id": "main_button_link_2",
+            "label": "Add Main Button Link"
+          },
+          {
+            "type": "image_picker",
+            "id": "bottom_icon_image_2",
+            "label": "Add Bottom Icon Image"
+          },
+          {
+            "type": "text",
+            "id": "bottom_text_2",
+            "label": "Add Bottom Text",
+            "default": "30-Day Money Back Guarantee"
+          },
+          {
+            "type": "header",
+            "content": "Best Inventions Block"
+          },
+          {
+            "type": "color",
+            "id": "best_inventions_block_bg_color_2",
+            "label": "Add background Color"
+          },
+          {
+            "type": "image_picker",
+            "id": "best_inventions_block_image_2",
+            "label": "Add Image"
+          },
+          {
+            "type": "text",
+            "id": "best_inventions_block_title_2",
+            "label": "Add Title",
+            "default": "time’s best inventions of 2024"
+          },
+          {
+            "type": "richtext",
+            "id": "best_inventions_block_description_2",
+            "label": "Add Description",
+            "default": "<p>Voted one of Time Magazine’s Best Inventions of 2024, we’re here to redefine what eyewear can do.</p>"
+          },
+          {
+            "type": "header",
+            "content": "Image Section"
+          },
+          {
+            "type": "video",
+            "id": "main_video_2",
+            "label": "Add Main Video"
+          },
+          {
+            "type": "image_picker",
+            "id": "main_image_2",
+            "label": "Add Main Image"
+          },
+        ]
+      },
+    ],
+    "presets": [
+      {
+        "name": "LP Banner",
+        "blocks": [
+          {
+            "type": "2-col-image-text-type-1"
+          },
+          {
+            "type": "2-col-image-text-type-2"
+          },
+          {
+            "type": "2-col-image-text-type-3"
+          },
+        ]
+      }
+    ]
+  }
+{% endschema %}

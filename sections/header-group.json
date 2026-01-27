@@ -1,0 +1,166 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "17582772228aa728bc": {
+      "type": "apps",
+      "blocks": {
+        "hextom_timer_bar_ctb_custom_placement_V9QBh9": {
+          "type": "shopify://apps/hextom-timer-bar/blocks/ctb-custom-placement/f7b88b6e-2e87-46bc-87a9-3e3638a24fa9",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "hextom_timer_bar_ctb_custom_placement_V9QBh9"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "header_announcement_bar_new_p4jaPh": {
+      "type": "Header-announcement-bar-new",
+      "blocks": {
+        "information_Aq7wmz": {
+          "type": "information",
+          "disabled": true,
+          "settings": {
+            "title": "<p>30-Day Trial | Free Shipping | 100,000+ Customers</p>"
+          }
+        },
+        "information_467Nwq": {
+          "type": "information",
+          "settings": {
+            "title": "<p>30-Day Trial | Fast & Free Shipping | 100,000+ Customers</p>"
+          }
+        },
+        "information_RngL4Y": {
+          "type": "information",
+          "settings": {
+            "title": "<p>Aura, Veil, Music Shield Selling Out</p>"
+          }
+        },
+        "information_AGpg9T": {
+          "type": "information",
+          "disabled": true,
+          "settings": {
+            "title": "<p>Our last event of the summer</p>"
+          }
+        },
+        "information_3Epddg": {
+          "type": "information",
+          "disabled": true,
+          "settings": {
+            "title": "<p>Free Shipping On Orders $69+</p>"
+          }
+        },
+        "information_fcm6Dh": {
+          "type": "information",
+          "disabled": true,
+          "settings": {
+            "title": "<p>1-Year Warranty</p>"
+          }
+        },
+        "information_tA6tk3": {
+          "type": "information",
+          "disabled": true,
+          "settings": {
+            "title": "<p>Free Shipping On Orders $69+</p>"
+          }
+        },
+        "information_N68Bbe": {
+          "type": "information",
+          "disabled": true,
+          "settings": {
+            "title": "<p>✨ BEST. DAY. <em>EVER.</em> 💜 SCORE $86 OFF AURA. 😎</p>"
+          }
+        },
+        "information_FfLXYT": {
+          "type": "information",
+          "disabled": true,
+          "settings": {
+            "title": "<p>🔥 Double Up: Buy One Falcon, Get One FREE! ⚡️</p>"
+          }
+        },
+        "information_hnUAVy": {
+          "type": "information",
+          "disabled": true,
+          "settings": {
+            "title": "<p>2-day free shipping</p>"
+          }
+        }
+      },
+      "block_order": [
+        "information_Aq7wmz",
+        "information_467Nwq",
+        "information_RngL4Y",
+        "information_AGpg9T",
+        "information_3Epddg",
+        "information_fcm6Dh",
+        "information_tA6tk3",
+        "information_N68Bbe",
+        "information_FfLXYT",
+        "information_hnUAVy"
+      ],
+      "settings": {
+        "main_back_color": "#ffffff",
+        "main_text_color": "#000000",
+        "main_back_color_home": "#ffffff",
+        "main_text_color_home": "#000000",
+        "gradient_back_color": "",
+        "gradient_text_color_home": "#000000"
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_position": "middle-center",
+        "menu": "main-menu-new",
+        "mobile_main_menu": "mobile-main-menu",
+        "main_mobile_button_text": "Shop all",
+        "main_mobile_button_link": "shopify://collections/shop-all",
+        "main_mobile_bottom_menu": "mobile-bottom-menu",
+        "menu_type_desktop": "mega",
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": false,
+        "color_scheme": "scheme-1",
+        "menu_color_scheme": "scheme-1",
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "enable_customer_avatar": false,
+        "mobile_logo_position": "center",
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "lp_header_8pRf77": {
+      "type": "LP-header",
+      "disabled": true,
+      "name": "LP Header",
+      "settings": {
+        "sticky_header": true,
+        "bg_color": "#000000",
+        "logo_desktop": "shopify://shop_images/Footer-Logo-New_200x200_30c3f850-1ac2-4002-b896-2e383b83b193.svg",
+        "main_button_text": "Claim offer",
+        "main_button_link": "#LP-featured-product-inner",
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    }
+  },
+  "order": [
+    "17582772228aa728bc",
+    "header_announcement_bar_new_p4jaPh",
+    "header",
+    "lp_header_8pRf77"
+  ]
+}

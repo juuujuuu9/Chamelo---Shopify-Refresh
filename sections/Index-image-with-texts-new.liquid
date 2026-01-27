@@ -1,0 +1,188 @@
+{%- if section.settings.main_mp4_video != blank or section.settings.main_desktop_image != blank or section.settings.main_mobile_image != blank or section.settings.main_heading_text != blank or section.settings.main_information_text != blank or section.settings.main_custom_image != blank or section.settings.main_outer_image != blank or section.settings.main_inside_image != blank -%}
+  <div class="Index_image_with_texts_main_new {{ section.settings.class-name }}" style="background: {{ section.settings.main_background_color }};">
+    <div class="page-width">
+      <div class="Index_image_with_texts_inner_new">
+        {%- if section.settings.main_mp4_video != blank or section.settings.main_desktop_image != blank or section.settings.main_mobile_image != blank or section.settings.main_heading_text != blank or section.settings.main_information_text != blank or section.settings.main_custom_image != blank -%}
+          <div class="Index_image_with_texts_mainsides_new">
+            <div class="Index_image_with_texts_innersides_new">
+              {%- if section.settings.main_mp4_video != blank or section.settings.main_desktop_image != blank or section.settings.main_mobile_image != blank -%}
+                <div class="Index_image_with_texts_innersides_mainleft_new">
+                  <div class="Index_image_with_texts_innersides_innerleft_new">
+                    {%- if section.settings.main_mp4_video != blank -%}
+                      <div class="Index_image_with_texts_innersides_innerleft_videoimage_new">
+                        {{ section.settings.main_mp4_video | video_tag: image_size: 'master', controls: false, autoplay: true, loop: true }}
+                      </div>
+                    {% else %}  
+                      {%- if section.settings.main_desktop_image != blank and section.settings.main_mobile_image != blank -%}
+                        <div class="Index_image_with_texts_innersides_innerleft_videoimage_new">
+                          {%- if section.settings.main_desktop_image != blank -%}
+                            {{
+                              section.settings.main_desktop_image | 
+                              image_url: width: img.width | 
+                              image_tag: widths: '1296, 1512, 1728, 1944, 2048', 
+                              fetchpriority: 'auto', 
+                              class:'desktop_image_new'
+                            }}
+                          {%- endif -%}
+                          {%- if section.settings.main_mobile_image != blank -%}
+                            {{
+                              section.settings.main_mobile_image | 
+                              image_url: width: img.width | 
+                              image_tag: widths: '1296, 1512, 1728, 1944, 2048', 
+                              fetchpriority: 'auto', 
+                              class:'mobile_image_new'
+                            }}
+                          {%- endif -%}
+                        </div>
+                      {%- endif -%}
+                    {%- endif -%}
+                  </div>
+                </div>
+              {%- endif -%}
+              {%- if section.settings.main_heading_text != blank or section.settings.main_information_text != blank or section.settings.main_custom_image != blank -%}
+                <div class="Index_image_with_texts_innersides_mainright_new">
+                  <div class="Index_image_with_texts_innersides_innerright_new">
+                    {%- if section.settings.main_heading_text != blank -%}
+                      <div class="Index_image_with_texts_innersides_innerright_maintitle_new">
+                        <div class="Common_title_new Index_image_with_texts_innersides_innerright_innertitle_new">
+                          <h2>{{ section.settings.main_heading_text }}</h2>
+                        </div>
+                      </div>
+                    {%- endif -%}
+                    {%- if section.settings.main_information_text != blank -%}
+                      <div class="Index_image_with_texts_innersides_innerright_maininfos_new">
+                        <div class="Index_image_with_texts_innersides_innerright_innerinfos_new">
+                          {{ section.settings.main_information_text }}
+                        </div>
+                      </div>
+                    {%- endif -%}
+                    {%- if section.settings.main_custom_image != blank -%}
+                      <div class="Index_image_with_texts_innersides_innerright_mainimage_new">
+                        <div class="Index_image_with_texts_innersides_innerright_innerimage_new">
+                          {{
+                            section.settings.main_custom_image | 
+                            image_url: width: img.width | 
+                            image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                            fetchpriority: 'auto', 
+                            class:'Signature_image_new'
+                          }}
+                        </div>
+                      </div>
+                    {%- endif -%}
+                  </div>
+                </div>
+              {%- endif -%}  
+            </div>
+          </div>
+        {%- endif -%}
+        {%- if section.settings.main_outer_image != blank and section.settings.main_inside_image != blank -%}
+          <div class="Index_image_with_texts_maincustom_new">
+            <div class="Index_image_with_texts_innercustom_new">
+              {%- if section.settings.main_outer_image != blank -%}
+                <div class="Index_image_with_texts_innercustom_mainouter_new">
+                  <div class="Index_image_with_texts_innercustom_innerouter_new spin">
+                    {{
+                      section.settings.main_outer_image | 
+                      image_url: width: img.width | 
+                      image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                      fetchpriority: 'auto', 
+                      class:'Icon_image_new'
+                    }}
+                  </div>
+                </div>
+              {%- endif -%}
+              {%- if section.settings.main_inside_image != blank -%}
+                <div class="Index_image_with_texts_innercustom_maininside_new">
+                  <div class="Index_image_with_texts_innercustom_innerinside_new">
+                    {{
+                      section.settings.main_inside_image | 
+                      image_url: width: img.width | 
+                      image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                      fetchpriority: 'auto', 
+                      class:'Icon_image_new'
+                    }}
+                  </div>
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endif -%}  
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Index Image With Texts",
+    "class": "Index_image_with_texts_new",
+    "settings": [
+      {
+        "type": "text",
+        "id": "class-name",
+        "label": "Class Name"
+      },
+      {
+        "type": "color",
+        "id": "main_background_color",
+        "label": "Add Main Background Color",
+        "default": "#F6F6F6"
+      },
+      {
+        "type": "image_picker",
+        "id": "main_outer_image",
+        "label": "Add Main Outer Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "main_inside_image",
+        "label": "Add Main Inside Image"
+      },
+      {
+        "type": "header",
+        "content": "==== Left Side Detail ===="
+      },
+      {
+        "type": "video",
+        "id": "main_mp4_video",
+        "label": "Add Main MP4 Video"
+      },
+      {
+        "type": "image_picker",
+        "id": "main_desktop_image",
+        "label": "Add Main Desktop Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "main_mobile_image",
+        "label": "Add Main Mobile Image"
+      },
+      {
+        "type": "header",
+        "content": "==== Right Side Detail ===="
+      },
+      {
+        "type": "textarea",
+        "id": "main_heading_text",
+        "label": "Add Main Heading Text",
+        "default": "By Stephon <br>Marbury"
+      },
+      {
+        "type": "richtext",
+        "id": "main_information_text",
+        "label": "Add Main Information Text",
+        "default": "<p>Two-time NBA All-Star, Stephon Marbury, is bringing his passionate and unconventional spirit to Chamelo Eyewear as the Chief Brand Officer.</p><p><strong>’Our eyewear isn’t just unique; it’s revolutionary.</strong> With our patented technology, you can personalize your glasses to fit your style.’</p>"
+      },
+      {
+        "type": "image_picker",
+        "id": "main_custom_image",
+        "label": "Add Main Custom Image"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Index Image With Texts"
+      }
+    ]
+  }
+{% endschema %}

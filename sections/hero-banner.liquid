@@ -1,0 +1,585 @@
+{% liquid
+  assign is_overlay = section.settings.is_overlay
+  assign background_image = section.settings.background_image
+  assign enable_social_share = section.settings.enable_social_share
+  assign social_icon_alignment = section.settings.social_icon_alignment
+  assign heading = section.settings.heading
+  assign text = section.settings.content
+  assign text_alignment = section.settings.text_alignment
+  assign image_alignment = section.settings.image_alignment
+  assign desktop_text_color = section.settings.desktop_text_color
+  assign mobile_text_color = section.settings.mobile_text_color
+  assign mobile_background_color = section.settings.mobile_background_color
+  assign desktop_background_color = section.settings.desktop_background_color
+  assign button_label = section.settings.button_label
+  assign button_url = section.settings.button_url
+  assign desktop_button_background_color = section.settings.desktop_button_background_color
+  assign desktop_button_text_color = section.settings.desktop_button_text_color
+  assign mobile_button_background_color = section.settings.mobile_button_background_color
+  assign mobile_button_text_color = section.settings.mobile_button_text_color
+  assign padding_top = section.settings.padding_top
+  assign padding_bottom = section.settings.padding_bottom
+  assign padding_right = section.settings.padding_right
+  assign padding_left = section.settings.padding_left
+  assign mobile_padding_top = section.settings.mobile_padding_top
+  assign mobile_padding_bottom = section.settings.mobile_padding_bottom
+
+  assign media_blocks = section.blocks | where: 'type', 'media_item'
+  assign has_multiple_media = false
+  if media_blocks.size > 1
+    assign has_multiple_media = true
+  endif
+%}
+
+{{ 'hero-banner.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  {% if section.settings.is_overlay %}
+    .custom-banner__wrapper{
+        position: relative;
+        overflow: hidden;
+    }
+
+    .custom-banner__text-wrapper::after{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+        pointer-events: none;
+    }
+  {% endif %}
+
+  .image_aspect_ratio_desktop{
+    aspect-ratio: {{ section.settings.desktop_image_aspect_ratio }};
+  }
+
+  .image_aspect_ratio_mobile{
+    aspect-ratio: {{ section.settings.mobile_image_aspect_ratio }};
+  }
+{% endstyle %}
+
+<style>
+    video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    #section-{{ section.id }} {
+      --desktop-text-color: {{ desktop_text_color }};
+      --desktop-background-color: {{ desktop_background_color }};
+      --mobile-text-color: {{ mobile_text_color }};
+      --mobile-background-color: {{ mobile_background_color }};
+      --desktop-button-text-color: {{ desktop_button_text_color }};
+      --desktop-button-background-color: {{ desktop_button_background_color }};
+      --mobile-button-text-color: {{ mobile_button_text_color }};
+      --mobile-button-background-color: {{ mobile_button_background_color }};
+    }
+    @media(min-width: 1024px) {
+      .custom-banner__grid--left > a {
+      order: 1;
+    }
+    .custom-banner__grid--left > div {
+      order: 2;
+    }
+
+    .custom-banner__grid--right > a {
+      order: 2;
+  }
+    .custom-banner__grid--right > div {
+      order: 1;
+    }
+  }
+
+    @media (min-width: 1024px) {
+      #section-{{ section.id }} .custom-banner__grid {
+        padding-left: {{ padding_left }}px;
+        padding-right: {{ padding_right }}px;
+      }
+    }
+  	 #section-{{ section.id }} .custom-banner__wrapper {
+        padding-top: {{ mobile_padding_top }}px;
+        padding-bottom: {{ mobile_padding_bottom }}px;
+      }
+
+  	 @media (min-width: 1024px) {
+      #section-{{ section.id }} .custom-banner__wrapper {
+        padding-top: {{ padding_top }}px;
+        padding-bottom: {{ padding_bottom }}px;
+      }
+    }
+  	#section-{{ section.id }} .custom-banner__button {
+       background-color: {{ section.settings.mobile_button_background_color }};
+       color: {{ section.settings.mobile_button_text_color }};
+    }
+
+    #section-{{ section.id }} .custom-banner__button:hover {
+        background-color: {{ section.settings.mobile_button_text_color |  default: "#fff" }};
+        color: {{ section.settings.mobile_button_background_color }};
+      }
+
+    @media (min-width: 1024px) {
+      #section-{{ section.id }} .custom-banner__button {
+        background-color: {{ section.settings.desktop_button_background_color }};
+        color: {{ section.settings.desktop_button_text_color }};
+      }
+      #section-{{ section.id }} .custom-banner__button:hover {
+        background-color: {{ section.settings.desktop_button_text_color |  default: "#fff"  }};
+        color: {{ section.settings.desktop_button_background_color }};
+      }
+    }
+</style>
+<section
+  class="custom-banner custom-hero-banner"
+  id="section-{{ section.id }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="custom-banner"
+>
+  <!-- Debug Info -->
+  {% comment %}
+    <div style="position: fixed; top: 10px; right: 10px; background: rgba(0,0,0,0.8); color: white; padding: 10px; font-size: 12px; z-index: 9999; max-width: 300px;">
+      <strong>Hero Banner Debug:</strong><br>
+      Media Blocks: {{ media_blocks.size }}<br>
+      Multiple Media: {% if has_multiple_media %}Yes{% else %}No{% endif %}<br>
+      Total Blocks: {{ section.blocks.size }}
+    </div>
+  {% endcomment %}
+  <a style="cursor: default;">
+    <div
+      class="custom-banner__wrapper custom-banner__wrapper--with-overlay tw-relative tw-bg-transparent"
+    >
+      {% unless is_overlay %}
+        <div class="custom-banner__background-image tw-absolute tw-inset-0 tw-w-full tw-h-full">
+          {% render 'shopify-responsive-image',
+            image: background_image,
+            image_aspect_ratio: section.settings.desktop_image_aspect_ratio
+          %}
+        </div>
+      {% endunless %}
+      {% unless is_overlay %}
+        <div
+          class="custom-banner__grid custom-banner__grid--{{ image_alignment }} tw-grid tw-grid-cols-1 lg:tw-grid-cols-2 tw-gap-4 tw-relative"
+        >
+      {% endunless %}
+      {% if media_blocks.size > 0 %}
+        <div class="custom-banner__media-wrapper">
+          {% if has_multiple_media %}
+            <div
+              class="hero-swiper swiper"
+              data-swiper-config='{"loop": true, "pagination": {"el": ".swiper-pagination", "clickable": true}, "navigation": {"nextEl": ".swiper-button-next", "prevEl": ".swiper-button-prev"}}'
+            >
+              <div class="swiper-wrapper">
+                {% for block in media_blocks %}
+                  <div class="swiper-slide">
+                    {% if block.settings.video %}
+                      <div class="custom-banner__image custom-banner__image--desktop">
+                        {{
+                          block.settings.video
+                          | video_tag: autoplay: true, loop: true, muted: true, controls: false, image_size: '400x'
+                        }}
+                      </div>
+                    {% endif %}
+                    {% if block.settings.desktop_image %}
+                      <div class="custom-banner__image custom-banner__image--desktop">
+                        {% render 'shopify-responsive-image',
+                          image: block.settings.desktop_image,
+                          image_class: 'image_aspect_ratio_desktop'
+                        %}
+                      </div>
+                    {% endif %}
+                    {% if block.settings.mobile_image %}
+                      <div class="custom-banner__image custom-banner__image--mobile">
+                        {% render 'shopify-responsive-image',
+                          image: block.settings.mobile_image,
+                          image_class: 'image_aspect_ratio_mobile'
+                        %}
+                      </div>
+                    {% endif %}
+                    {% comment %}Debug info{% endcomment %}
+                    {% comment %}
+                      <div style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.7); color: white; padding: 5px; font-size: 12px; z-index: 1000;">
+                        Block {{ forloop.index }}:
+                        Video: {% if block.settings.video != blank %}Yes{% else %}No{% endif %},
+                        Desktop: {% if block.settings.desktop_image != blank %}Yes{% else %}No{% endif %},
+                        Mobile: {% if block.settings.mobile_image != blank %}Yes{% else %}No{% endif %}
+                      </div>
+                    {% endcomment %}
+                  </div>
+                {% endfor %}
+              </div>
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button-next">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+                  <g clip-path="url(#clip0_949_16674)">
+                    <path d="M47.5 24C47.5 11.0213 36.9787 0.5 24 0.5C11.0213 0.5 0.5 11.0213 0.5 24C0.5 36.9787 11.0213 47.5 24 47.5C36.9787 47.5 47.5 36.9787 47.5 24Z" stroke="white"/>
+                    <path d="M28.172 24.9997H16V22.9997H28.172L22.808 17.6357L24.222 16.2217L32 23.9997L24.222 31.7777L22.808 30.3637L28.172 24.9997Z" fill="white"/>
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_949_16674">
+                      <rect width="48" height="48" fill="white"/>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+              <div class="swiper-button-prev">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_949_16669)">
+                  <path d="M0.5 24C0.5 36.9787 11.0213 47.5 24 47.5C36.9787 47.5 47.5 36.9787 47.5 24C47.5 11.0213 36.9787 0.5 24 0.5C11.0213 0.5 0.5 11.0213 0.5 24Z" stroke="white"/>
+                  <path d="M19.828 22.9997H32V24.9997H19.828L25.192 30.3637L23.778 31.7777L16 23.9997L23.778 16.2217L25.192 17.6357L19.828 22.9997Z" fill="white"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_949_16669">
+                  <rect width="48" height="48" fill="white"/>
+                  </clipPath>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+          {% else %}
+            {% assign first_block = media_blocks.first %}
+            {% if first_block.settings.video %}
+              <div class="custom-banner__image custom-banner__image--desktop">
+                {{
+                  first_block.settings.video
+                  | video_tag: autoplay: true, loop: true, muted: true, controls: false, image_size: '400x'
+                }}
+              </div>
+            {% endif %}
+            {% if first_block.settings.desktop_image %}
+              <div class="custom-banner__image custom-banner__image--desktop">
+                {% render 'shopify-responsive-image',
+                  image: first_block.settings.desktop_image,
+                  image_class: 'image_aspect_ratio_desktop'
+                %}
+              </div>
+            {% endif %}
+            {% if first_block.settings.mobile_image %}
+              <div class="custom-banner__image custom-banner__image--mobile">
+                {% render 'shopify-responsive-image',
+                  image: first_block.settings.mobile_image,
+                  image_class: 'image_aspect_ratio_mobile'
+                %}
+              </div>
+            {% endif %}
+          {% endif %}
+        </div>
+        {% if media_blocks.size > 0 %}
+          <div class="custom-banner__text-wrapper tw-relative {% if is_overlay %} lg:tw-absolute  lg:tw-inset-0 tw-w-full tw-h-full tw-bg-transparent {% endif %}">
+            <div
+              class="
+                custom-banner__text tw-flex tw-flex-col  tw-px-[22px] tw-py-[32px] md:tw-py-[36px] {% if text_alignment == 'left' %}tw-items-start tw-text-left{% elsif text_alignment == 'right' %}tw-items-end tw-text-right{% else %}tw-items-center tw-text-center{% endif %}
+                 {% if is_overlay %}
+                  tw-justify-end tw-h-full
+                {% endif %}
+              "
+            >
+              {% comment %}
+                {%  assign split_heading_with_big_font_start = heading | split:"start_big_font" %}
+                 {%  assign normal_heading_first_part = split_heading_with_big_font_start | first %}
+                 {%  assign  split_heading_with_big_font_end = split_heading_with_big_font_start | last | split: 'end_big_font' %}
+                {%  assign normal_heading_second_part = split_heading_with_big_font_end | last %}
+                {%  assign big_font_heading =  split_heading_with_big_font_end | first %}
+              {% endcomment %}
+              {% if enable_social_share %}
+                {% render 'social-share-ambassador',
+                  social_icon_alignment: social_icon_alignment,
+                  facebook_url: section.settings.facebook_url,
+                  instagram_url: section.settings.instagram_url,
+                  tiktok_url: section.settings.tiktok_url,
+                  twitter_url: section.settings.twitter_url
+                %}
+              {% endif %}
+
+              <h2 class="tw-text-[40px] xl:tw-text-[length:var(--heading-1-size)] tw-pb-[10px] lg:tw-pb-[16px] tw-text-current tw-font-bold tw-sticky tw-z-10 tw-leading-none">
+                {{- heading -}}
+                {% comment %}
+                  <span class="tw-text-[length:var(--heading-1-size)]">{{- big_font_heading -}}</span>
+                  {{- normal_heading_second_part -}}
+                {% endcomment %}
+              </h2>
+              <div class="tw-text-[length:var(--body-font-size)] tw-leading-[20px] tw-sticky tw-z-10 {% if is_overlay %} lg:tw-max-w-[700px]{% else %} lg:tw-max-w-[555px]{% endif %} tw-pb-[20px] lg:tw-pb-[30px]">
+                {{ text }}
+              </div>
+              <a
+                href="{{ button_url }}"
+                class="tw-max-w-max tw-font-bold tw-sticky tw-z-10 tw-min-w-full md:tw-min-w-[180px] tw-px-[30px] xl:tw-px-[86px] tw-py-[12px] tw-text-[length:var(--body-font-size)] custom-banner__button tw-text-center"
+              >
+                {{ button_label }}
+              </a>
+            </div>
+          </div>
+        {% endif %}
+      {% endif %}
+      {% unless is_overlay %}
+        </div>
+      {% endunless %}
+    </div>
+  </a>
+</section>
+
+{% if has_multiple_media %}
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const swiperElement = document.querySelector('#section-{{ section.id }} .hero-swiper');
+      if (swiperElement && typeof Swiper !== 'undefined') {
+        const config = JSON.parse(swiperElement.dataset.swiperConfig || '{}');
+        new Swiper(swiperElement, config);
+      }
+    });
+  </script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Custom hero Banner",
+  "settings": [
+    {
+      "type": "url",
+      "id": "facebook_url",
+      "label": "Facebook URL"
+    },
+    {
+      "type": "url",
+      "id": "instagram_url",
+      "label": "Instagram URL"
+    },
+    {
+      "type": "url",
+      "id": "tiktok_url",
+      "label": "TikTok URL"
+    },
+    {
+      "type": "url",
+      "id": "twitter_url",
+      "label": "Twitter URL"
+    },
+    {
+      "type": "checkbox",
+      "id": "is_overlay",
+      "label": "Is Content Overlay?",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image for non-overlay",
+      "info": "Only works if Is Content Overlay is checked. This image will be used as a background for the banner."
+    },
+    {
+      "type": "header",
+      "content": "Media Settings"
+    },
+    {
+      "type": "range",
+      "id": "desktop_image_aspect_ratio",
+      "label": "Desktop image aspect ratio",
+      "default": 1.7,
+      "min": 0.1,
+      "unit": "x",
+      "max": 5,
+      "step": 0.1
+    },
+    {
+      "type": "range",
+      "id": "mobile_image_aspect_ratio",
+      "label": "Mobile image aspect ratio",
+      "default": 1.5,
+      "min": 0.1,
+      "unit": "x",
+      "max": 5,
+      "step": 0.1
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_social_share",
+      "label": "Show social icons",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "social_icon_alignment",
+      "label": "Social Icon Alignment",
+      "default": "center",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Enter heading"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Enter text content"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "default": "center",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "image_alignment",
+      "label": "Image Alignment",
+      "default": "left",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "right", "label": "Right" }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "desktop_text_color",
+      "label": "Select Text Color for desktop",
+      "info": "This will be used as a text content color on desktop"
+    },
+    {
+      "type": "color",
+      "id": "desktop_background_color",
+      "label": "Select Desktop Background Color",
+      "info": "This will be used as a background color for the text content on desktop"
+    },
+    {
+      "type": "color",
+      "id": "mobile_text_color",
+      "label": "Select Text Color for desktop",
+      "info": "This will be used as a text content color on mobile"
+    },
+    {
+      "type": "color",
+      "id": "mobile_background_color",
+      "label": "Select Desktop Background Color",
+      "info": "This will be used as a background color for the text content on mobile"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Enter button label"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Enter button url"
+    },
+    {
+      "type": "color",
+      "id": "desktop_button_text_color",
+      "label": "Select desktop button text color"
+    },
+    {
+      "type": "color",
+      "id": "desktop_button_background_color",
+      "label": "Select desktop button background color"
+    },
+    {
+      "type": "color",
+      "id": "mobile_button_text_color",
+      "label": "Select mobile button text color"
+    },
+    {
+      "type": "color",
+      "id": "mobile_button_background_color",
+      "label": "Select mobile button background color"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": " Desktop Padding Top (px)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": " Desktop Padding Bottom (px)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_left",
+      "label": "Padding left (px)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_right",
+      "label": "Padding Right (px)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "label": "Mobile Padding Top (px)",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "label": "Mobile Padding Bottom (px)",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "media_item",
+      "name": "Media Item",
+      "settings": [
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video"
+        },
+        {
+          "type": "image_picker",
+          "id": "desktop_image",
+          "label": "Desktop image"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "Mobile image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom hero Banner",
+      "blocks": [
+        {
+          "type": "media_item"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

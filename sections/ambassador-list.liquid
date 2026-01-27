@@ -1,0 +1,153 @@
+{{ 'section-ambassador-list.css' | asset_url | stylesheet_tag }}
+<div class="athlete-showcase">
+  <div
+    class="
+      athlete-showcase__grid tw-grid tw-items-stretch md:tw-px-[56px] tw-bg-black
+      {% if section.settings.columns_mobile == 1 %} tw-px-[16px] tw-py-[23px] tw-bg-black {% endif %}
+    "
+    style="--columns-desktop: {{ section.settings.columns_desktop }}; --columns-mobile: {{ section.settings.columns_mobile }};"
+    >
+
+    {% for block in section.blocks %}
+       <{% if block.settings.button_link %}a href="{{ block.settings.button_link }}"{% else %}div{% endif %} class="athlete-card tw-overflow-hidden tw-cursor-pointer" {{ block.shopify_attributes }}>
+        <div class="athlete-card__image-wrapper tw-relative tw-h-full">
+          {% if block.settings.image %}
+            <div class="athlete-card__image-container tw-relative">
+              {% render 'shopify-responsive-image', image: block.settings.image, aspect_ratio: 0.80 %}
+              {% unless section.settings.columns_mobile == 1 %}
+                <div class="tw-absolute tw-bottom-0 tw-right-0 tw-pr-[7px] tw-pb-[17px] md:tw-hidden">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    width="30"
+                    height="30"
+                    viewBox="0 0 30 30"
+                  >
+                    <image
+                      xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAjtJREFUSEvtl8/LYVEYx79+RLFA2VixkI2VBZKyYWWLEpaYQjYopeywMMNKCBv1Tin5AwiZ3fhRUhYWUhYWFrKwGAvNdO6Med93mvHjdY3N+9Tt3u459/t5znme59xzGHg2B4APALQAuC/e0/G4B/AVQBHAZyLI+KX6EUCIDsIFGp8AhAmYjPTpgg/o7OIk4B4AA52qF2h9IeBvd4jpOfaegL+f63WP9nfwyVkVCAQYDAbg8XjodDpoNpvUfbVaXR2Nq6ZaLBZjMplAIpG8As1mM8qBbreLdruNzWZz1pGrwESNw+FAp9PBaDRSl1arBYvFegUaDodwuVwgDv3Lrgb/KcTn82EwGOBwOOB0OsFg/FwMA4EAcrnc/cBcLheRSATRaBTEiaOpVCqMx+P7gK1WK9LpNGQy2SvAdruFSCQ6Gec3TbVSqUSxWIRer8fhcECpVEIsFoPNZkOhUECtVoPdbqcPTLI6kUjA7XaDyWSi1+vB7/djOp1SkHq9DovFAo/Hg3K5fDuYzWYjGAwiHo+D1PJisUA4HEaj0fgtTpKKlJFQKIRUKsVyubwNbDabkc1moVAosNvtkEwmkclksN+Tf/uzqdVq9Pt9zOdzyOXy2+qYJE4oFKJKpFqtUtm7Xq//KkqyOpVKIZ/Pw+fz3QYmoyDJ4vV6MRqNToq1Wi2YTCYqxi9DcLcF5ChcqVSg0WioVY2E5Jy9qZzOiV7S/g6+ZJZo6fPQzd7DtrcP29CTmD3kCHNMlv96aPsByOLAMTAcOC0AAAAASUVORK5CYII="
+                      x="0" y="0" width="30" height="30" />
+                  </svg>
+                </div>
+              {% endunless %}
+            </div>
+          {% endif %}
+          <div
+            class="athlete-card__info tw-w-full tw-h-full tw-p-[8px] tw-pb-[16px] tw-bg-black md:tw-absolute md:tw-bottom-0 md:tw-py-[20px] md:tw-px-[12px] md:tw-bg-transparent{% if section.settings.columns_mobile == 1 %} tw-flex tw-align-center tw-justify-between tw-pl-0 tw-pb-[16px]{% endif %}"
+          >
+            <div class="athlete-card__container">
+              {% if block.settings.title %}
+                <h3 class="athlete-card__name tw-text-[length:--body-font-size] md:tw-text-[length:--heading-3-size] tw-font-semibold tw-leading-[1.5]">
+                  {{ block.settings.title }}
+                </h3>
+              {% endif %}
+              {% if block.settings.sub_title %}
+                <p class="athlete-card__role tw-text-[length:--body-small-size] md:tw-text-[length:--body-font-size] tw-font-normal tw-mt-[0px] md:tw-mt-[5px] tw-leading-[1.6]">
+                  {{ block.settings.sub_title }}
+                </p>
+              {% endif %}
+              <div class="athlete-card__hover-element tw-hidden tw-flex-row tw-justify-between tw-items-center">
+                <p class="athlete-card__view tw-text-[length:--body-small-size] tw-font-normal tw-leading-[1.7]">VIEW COLLECTION</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  width="30"
+                  height="30"
+                  viewBox="0 0 30 30"
+                >
+                  <image
+                    xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAjtJREFUSEvtl8/LYVEYx79+RLFA2VixkI2VBZKyYWWLEpaYQjYopeywMMNKCBv1Tin5AwiZ3fhRUhYWUhYWFrKwGAvNdO6Med93mvHjdY3N+9Tt3u459/t5znme59xzGHg2B4APALQAuC/e0/G4B/AVQBHAZyLI+KX6EUCIDsIFGp8AhAmYjPTpgg/o7OIk4B4AA52qF2h9IeBvd4jpOfaegL+f63WP9nfwyVkVCAQYDAbg8XjodDpoNpvUfbVaXR2Nq6ZaLBZjMplAIpG8As1mM8qBbreLdruNzWZz1pGrwESNw+FAp9PBaDRSl1arBYvFegUaDodwuVwgDv3Lrgb/KcTn82EwGOBwOOB0OsFg/FwMA4EAcrnc/cBcLheRSATRaBTEiaOpVCqMx+P7gK1WK9LpNGQy2SvAdruFSCQ6Gec3TbVSqUSxWIRer8fhcECpVEIsFoPNZkOhUECtVoPdbqcPTLI6kUjA7XaDyWSi1+vB7/djOp1SkHq9DovFAo/Hg3K5fDuYzWYjGAwiHo+D1PJisUA4HEaj0fgtTpKKlJFQKIRUKsVyubwNbDabkc1moVAosNvtkEwmkclksN+Tf/uzqdVq9Pt9zOdzyOXy2+qYJE4oFKJKpFqtUtm7Xq//KkqyOpVKIZ/Pw+fz3QYmoyDJ4vV6MRqNToq1Wi2YTCYqxi9DcLcF5ChcqVSg0WioVY2E5Jy9qZzOiV7S/g6+ZJZo6fPQzd7DtrcP29CTmD3kCHNMlv96aPsByOLAMTAcOC0AAAAASUVORK5CYII="
+                    x="0" y="0" width="30" height="30" />
+                </svg>
+              </div>
+              
+            </div>
+            
+
+            {% if section.settings.columns_mobile == 1 %}
+              <div class="tw-mt-2 tw-flex tw-justify-end md:tw-hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  width="30"
+                  height="30" 
+                  viewBox="0 0 30 30"
+                >
+                  <image
+                    xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAjtJREFUSEvtl8/LYVEYx79+RLFA2VixkI2VBZKyYWWLEpaYQjYopeywMMNKCBv1Tin5AwiZ3fhRUhYWUhYWFrKwGAvNdO6Med93mvHjdY3N+9Tt3u459/t5znme59xzGHg2B4APALQAuC/e0/G4B/AVQBHAZyLI+KX6EUCIDsIFGp8AhAmYjPTpgg/o7OIk4B4AA52qF2h9IeBvd4jpOfaegL+f63WP9nfwyVkVCAQYDAbg8XjodDpoNpvUfbVaXR2Nq6ZaLBZjMplAIpG8As1mM8qBbreLdruNzWZz1pGrwESNw+FAp9PBaDRSl1arBYvFegUaDodwuVwgDv3Lrgb/KcTn82EwGOBwOOB0OsFg/FwMA4EAcrnc/cBcLheRSATRaBTEiaOpVCqMx+P7gK1WK9LpNGQy2SvAdruFSCQ6Gec3TbVSqUSxWIRer8fhcECpVEIsFoPNZkOhUECtVoPdbqcPTLI6kUjA7XaDyWSi1+vB7/djOp1SkHq9DovFAo/Hg3K5fDuYzWYjGAwiHo+D1PJisUA4HEaj0fgtTpKKlJFQKIRUKsVyubwNbDabkc1moVAosNvtkEwmkclksN+Tf/uzqdVq9Pt9zOdzyOXy2+qYJE4oFKJKpFqtUtm7Xq//KkqyOpVKIZ/Pw+fz3QYmoyDJ4vV6MRqNToq1Wi2YTCYqxi9DcLcF5ChcqVSg0WioVY2E5Jy9qZzOiV7S/g6+ZJZo6fPQzd7DtrcP29CTmD3kCHNMlv96aPsByOLAMTAcOC0AAAAASUVORK5CYII="
+                    x="0" y="0" width="30" height="30" />
+                </svg>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </{% if block.settings.button_link %}a href="{{ block.settings.button_link }}"{% else %}div{% endif %}>
+      
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Ambassador list",
+  "settings": [
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 3,
+      "label": "Columns for desktop"
+    },
+    {
+      "type": "range",
+      "id": "columns_mobile",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2,
+      "label": "Columns for mobile"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "ambassador",
+      "name": "ambassador",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "sub_title",
+          "label": "Sub title"
+        },
+        {
+            "type": "url",
+            "id": "button_link",
+            "label": "Add Redirection Link"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "Ambassador list",
+      "category": "custom",
+      "blocks": [
+        {
+          "type": "ambassador"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

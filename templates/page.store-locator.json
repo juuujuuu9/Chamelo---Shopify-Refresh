@@ -1,0 +1,51 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "index_storelocator_richtext_new_gEaBg6": {
+      "type": "Index-storelocator-richtext-new",
+      "settings": {
+        "title": "Find a store near you",
+        "description": "<p>Our game-changing eyewear is even better in person. Check out our store locator to find a location close to you.</p>"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "class-name": "white-bg-page-store-locator",
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "index_featured_collection_new_xdWKN3": {
+      "type": "Index-featured-collection-new",
+      "settings": {
+        "main_background_color": "#f6f6f6",
+        "main_heading_text": "Can’t find a store?",
+        "main_information_text": "<p>Check out some of our bestselling styles</p>",
+        "main_button_text": "",
+        "main_button_link": "",
+        "main_collection_products": "best-sellers",
+        "products_to_show": 5,
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none"
+      }
+    }
+  },
+  "order": [
+    "index_storelocator_richtext_new_gEaBg6",
+    "main",
+    "index_featured_collection_new_xdWKN3"
+  ]
+}

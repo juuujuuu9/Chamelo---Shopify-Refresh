@@ -1,0 +1,408 @@
+{%- if section.blocks.size > 0 or section.settings.main_heading_text != blank or section.settings.main_button_link != blank -%}
+  <div class="Index_collection_scroll_main_new" style="background: {{ section.settings.main_background_color }};">
+    <div class="page-width">
+      <div class="Index_collection_scroll_inner_new">
+        {%- if section.settings.main_heading_text != blank or section.settings.main_button_link != blank -%}
+          <div class="Index_collection_scroll_mainsides_new">
+            <div class="Index_collection_scroll_innersides_new">
+              {%- if section.settings.main_heading_text != blank -%}
+                <div class="Index_collection_scroll_innersides_mainleft_new">
+                  <div class="Common_title_new Index_collection_scroll_innersides_innerleft_new">
+                    <h2>{{ section.settings.main_heading_text }}</h2>
+                  </div>
+                </div>
+              {%- endif -%}
+              {%- if section.settings.main_button_text != blank and section.settings.main_button_link != blank -%}
+                <div class="Index_collection_scroll_innersides_mainright_new">
+                  <div class="Index_collection_scroll_innersides_innerright_new">
+                    <a href="{{ section.settings.main_button_link }}" class="button button_border_new">
+                      {{ section.settings.main_button_text }}  
+                    </a>
+                  </div>
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endif -%}
+        {%- if section.blocks.size > 0 -%}
+          <div class="Index_collection_scroll_maindesktop_new Desktop_only_new">
+            <div class="Index_collection_scroll_innerdesktop_new Tabs_common_main_new">
+              {%- if section.blocks.size > 0 -%}
+                <div class="Index_collection_scroll_innerdesktop_mainleft_new">
+                  <div class="tab Index_collection_scroll_innerdesktop_innerleft_new">
+                    {%- for block in section.blocks -%}
+                      {%- if block.settings.title != blank or block.settings.main_information_text != blank -%}
+                        <button class="tablinks Tabs_common_inner_new{% if forloop.first %} active{% endif %}" tab_id="tab_{{ block.id | replace: '-', '_' }}_{{ forloop.index0 }}">
+                          <div class="Index_collection_scroll_innerdesktop_innerleft_mainboxs_new">
+                            <div class="Index_collection_scroll_innerdesktop_innerleft_innerboxs_new">
+                              {%- if block.settings.title != blank -%}
+                                <div class="Index_collection_scroll_innerdesktop_innerleft_innerboxs_title_new">
+                                  <h3>{{ block.settings.title }}</h3>
+                                </div>
+                              {%- endif -%}
+                              {%- if block.settings.main_information_text != blank -%}
+                                <div class="Index_collection_scroll_innerdesktop_innerleft_innerboxs_infos_new">
+                                  {{ block.settings.main_information_text }}
+                                </div>
+                              {%- endif -%}
+                            </div>
+                          </div>
+                        </button>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </div>
+                </div>
+              {%- endif -%}
+              {%- if section.blocks.size > 0 -%}
+                <div class="Index_collection_scroll_innerdesktop_mainright_new">
+                  <div class="Index_collection_scroll_innerdesktop_innerright_new">
+                    {%- for block in section.blocks -%}
+                      <div class="tabcontent tab_{{ block.id | replace: '-', '_' }}_{{ forloop.index0 }}_open"{% if forloop.first %} style="display:block;"{% endif %}>
+                        {%- if block.settings.main_mp4_video != blank or block.settings.main_desktop_image != blank or block.settings.main_button_link != blank -%}
+                          <div class="Index_collection_scroll_innerdesktop_innerright_mainboxs_new">
+                            <div class="Index_collection_scroll_innerdesktop_innerright_innerboxs_new">
+                              {%- if block.settings.main_mp4_video != blank or block.settings.main_desktop_image != blank -%}
+                                <div class="Index_collection_scroll_innerdesktop_innerright_innerboxs_mainboths_new">
+                                  <div class="Index_collection_scroll_innerdesktop_innerright_innerboxs_innerboths_new">
+                                    {%- if block.settings.main_mp4_video != blank -%}
+                                      <div class="Index_collection_scroll_innerdesktop_innerright_innerboxs_innerboths_videoimage_new">
+                                        {{ block.settings.main_mp4_video | video_tag: class:'Static_video_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                                      </div>
+                                    {% else %}  
+                                      {%- if block.settings.main_desktop_image != blank -%}
+                                        <div class="Index_collection_scroll_innerdesktop_innerright_innerboxs_innerboths_videoimage_new">
+                                          {{
+                                            block.settings.main_desktop_image | 
+                                            image_url: width: img.width | 
+                                            image_tag: widths: '1296, 1512, 1728, 1944, 2048', 
+                                            fetchpriority: 'auto', 
+                                            class:'Static_image_new'
+                                          }}
+                                        </div>
+                                      {%- endif -%}
+                                    {%- endif -%}
+                                  </div>
+                                  {%- if block.settings.main_button_text != blank and block.settings.main_button_link != blank -%}
+                                    <div class="Index_collection_scroll_innerdesktop_innerright_mainboxs_mainbutton_new">
+                                      <div class="Index_collection_scroll_innerdesktop_innerright_mainboxs_innerbutton_new">
+                                        <a href="{{ block.settings.main_button_link }}" class="button button_white_new">
+                                          {{ block.settings.main_button_text }}  
+                                        </a>
+                                      </div>
+                                    </div>
+                                  {%- endif -%}
+                                </div>
+                              {%- endif -%}
+                            </div>
+                          </div>
+                        {%- endif -%}
+                      </div>
+                    {%- endfor -%}
+                  </div>
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endif -%}
+        {%- if section.blocks.size > 0 -%}
+          <div class="Index_collection_scroll_mainmobile_new Mobile_only_new">
+            <div class="Index_collection_scroll_innermobile_new">
+              {%- for block in section.blocks -%}
+                {%- if block.settings.main_mp4_mobile_video != blank or block.settings.main_mobile_image != blank or block.settings.main_thumbnail_image != blank or block.settings.title != blank or block.settings.main_information_text != blank or block.settings.main_button_link != blank -%}
+                  <div class="Index_collection_scroll_innermobile_mainboxs_new">
+                    {% if block.settings.main_svg_code_mobile != blank %}
+                      <div class="lottie_scroll_svg_new">
+                        {{
+                          block.settings.main_svg_code_mobile | 
+                          image_url: width: img.width | 
+                          image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+                          fetchpriority: 'auto'
+                        }}
+                      </div>
+                    {% endif %}
+                    <div class="Index_collection_scroll_innermobile_innerboxs_new">
+                      {%- if block.settings.main_mp4_mobile_video != blank or block.settings.main_mobile_image != blank or block.settings.main_thumbnail_image != blank -%}
+                        <div class="Index_collection_scroll_innermobile_innerboxs_mainboths_new">
+                          <div class="Index_collection_scroll_innermobile_innerboxs_innerboths_new">
+                            {%- if block.settings.main_mp4_mobile_video != blank -%}
+                              <div class="Index_collection_scroll_innermobile_innerboxs_innerboths_videoimage_new">
+                                {{ block.settings.main_mp4_mobile_video | video_tag: class:'Static_video_new', image_size: 'master', controls: false, autoplay: true, loop: true }}
+                              </div>
+                            {% else %}  
+                              {%- if block.settings.main_mobile_image != blank -%}
+                                <div class="Index_collection_scroll_innermobile_innerboxs_innerboths_videoimage_new">
+                                  {{
+                                    block.settings.main_mobile_image | 
+                                    image_url: width: img.width | 
+                                    image_tag: widths: '1296, 1512, 1728, 1944, 2048', 
+                                    fetchpriority: 'auto', 
+                                    class:'Static_image_new'
+                                  }}
+                                </div>
+                              {%- endif -%}
+                            {%- endif -%}
+                          </div>
+                          {%- if block.settings.main_thumbnail_image != blank -%}
+                            <div class="Index_collection_scroll_innermobile_innerboxs_mainboths_mainimage_new">
+                              <div class="Index_collection_scroll_innermobile_innerboxs_mainboths_innerimage_new">
+                                {{
+                                  block.settings.main_thumbnail_image | 
+                                  image_url: width: img.width | 
+                                  image_tag: widths: '1296, 1512, 1728, 1944, 2048', 
+                                  fetchpriority: 'auto', 
+                                  class:'Thumbnail_image_new'
+                                }}
+                              </div>
+                            </div>
+                          {%- endif -%}
+                        </div>
+                      {%- endif -%}
+                      {%- if block.settings.title != blank or block.settings.main_information_text != blank or block.settings.main_button_link != blank -%}
+                        <div class="Index_collection_scroll_innermobile_innerboxs_maintexts_new">
+                          <div class="Index_collection_scroll_innermobile_innerboxs_innertexts_new">
+                            {%- if block.settings.title != blank -%}
+                              <div class="Index_collection_scroll_innermobile_innerboxs_innertexts_title_new">
+                                <h3>{{ block.settings.title }}</h3>
+                              </div>
+                            {%- endif -%}
+                            {%- if block.settings.main_information_text != blank -%}
+                              <div class="Index_collection_scroll_innermobile_innerboxs_innertexts_infos_new">
+                                {{ block.settings.main_information_text }}
+                              </div>
+                            {%- endif -%}
+                            {%- if block.settings.main_button_text != blank and block.settings.main_button_link != blank -%}
+                              <div class="Index_collection_scroll_innermobile_innerboxs_innertexts_button_new">
+                                <a href="{{ block.settings.main_button_link }}" class="button button_white_new">
+                                  {{ block.settings.main_button_text }}  
+                                </a>
+                              </div>
+                            {%- endif -%}
+                          </div>
+                        </div>
+                      {%- endif -%}
+                    </div>
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}  
+            </div>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+    {%- for block in section.blocks -%}
+      {% if block.settings.main_svg_code_desktop != blank %}
+        <div class="Desktop_only_new">
+          <div class="lottie_scroll_svg_new tabcontent tab_{{ block.id | replace: '-', '_' }}_{{ forloop.index0 }}_open"{% if forloop.first %} style="display:block;"{% endif %}>
+            {{
+              block.settings.main_svg_code_desktop | 
+              image_url: width: img.width | 
+              image_tag: widths: '750, 900, 1080, 1296, 1512, 1728, 1944, 2048', 
+              fetchpriority: 'auto'
+            }}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+{%- endif -%}
+
+
+
+{%- comment -%}
+<lottie-player class="tab_information_Dpdqc9_0_open"  src="{{ 'sport.json' | asset_url }}" background="transparent" speed="1" direction="1" mode="normal" loop autoplay></lottie-player>
+<lottie-player class="tab_information_nFRtmJ_1_open"  style="display: none" src="{{ 'everyday.json' | asset_url }}" background="transparent" speed="1" direction="1" mode="normal" loop autoplay></lottie-player>
+<lottie-player class="tab_information_E8DX8C_2_open"  style="display: none" src="{{ 'prismatic.json' | asset_url }}" background="transparent" speed="1" direction="1" mode="normal" loop autoplay></lottie-player>
+{%- endcomment -%}
+
+<script>
+document.addEventListener("DOMContentLoaded", (event) => {
+  if(window.innerWidth > 749) {
+    gsap.registerPlugin(ScrollTrigger)
+
+    let timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".Index_collection_scroll_new",
+        start: "top top",
+        pin: true,
+        end: '+=3000',
+        scrub: true
+      }
+    });
+
+    timeline.to('[tab_id="tab_information_Dpdqc9_0"]', { duration: 0, opacity: 1})
+    timeline.to('.tab_information_Dpdqc9_0_open', { duration: 2, display: 'block'})
+    timeline.to('.tab_information_Dpdqc9_0_open', { duration: 0, display: 'none'})
+    timeline.to('[tab_id="tab_information_Dpdqc9_0"]', { duration: 0, opacity: 0.4})
+
+    timeline.to('[tab_id="tab_information_nFRtmJ_1"]', { duration: 0, opacity: 1})
+    timeline.to('.tab_information_nFRtmJ_1_open', { duration: 3, display: 'block'})
+    timeline.to('.tab_information_nFRtmJ_1_open', { duration: 0, display: 'none'})
+    timeline.to('[tab_id="tab_information_nFRtmJ_1"]', { duration: 0, opacity: 0.4})
+
+    timeline.to('[tab_id="tab_information_E8DX8C_2"]', { duration: 0, opacity: 1})
+    timeline.to('.tab_information_E8DX8C_2_open', { duration: 3, display: 'block'})
+    window.timeline = timeline;
+  }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const targetElement = document.querySelector(".Index_featured_collection_main_new");
+  if (!targetElement) return;
+  const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            window.timeline.scrollTrigger.refresh();
+              // You can trigger any function here
+          } else {
+            window.timeline.scrollTrigger.refresh();
+          }
+      });
+  }, {
+      root: null, // Observes relative to the viewport
+      threshold: 0.1 // Triggers when 10% of the element is visible
+  });
+
+  observer.observe(targetElement);
+})
+</script>
+
+<style>
+  .Index_collection_scroll_new lottie-player { 
+    display: none;
+    pointer-events: none;
+  }
+  @media(min-width: 749px) {
+    .Index_collection_scroll_new lottie-player {
+      position: absolute;
+      width: 125% !important;
+      height: 135% !important;
+      top: 50%;
+      left: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+    .Index_collection_scroll_new {
+      position: relative;
+      overflow: hidden;
+      min-height: 100vh;
+    }
+  }
+  
+</style>
+
+{% schema %}
+  {
+    "name": "Index Collection Scroll",
+    "class": "Index_collection_scroll_new",
+    "settings": [
+      {
+        "type": "color",
+        "id": "main_background_color",
+        "label": "Add Main Background Color"
+      },
+      {
+        "type": "textarea",
+        "id": "main_heading_text",
+        "label": "Add Main Heading Text",
+        "default": "Shop by collection"
+      },
+      {
+        "type": "text",
+        "id": "main_button_text",
+        "label": "Add Main Button Text",
+        "default": "Shop All"
+      },
+      {
+        "type": "url",
+        "id": "main_button_link",
+        "label": "Add Main Button Link",
+        "default": "/"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "information",
+        "name": "Information",
+        "limit": 3,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "main_svg_code_desktop",
+            "label": "Add SVG Gradient For Desktop"
+          },
+          {
+            "type": "image_picker",
+            "id": "main_svg_code_mobile",
+            "label": "Add SVG Gradient For Mobile"
+          },
+          {
+            "type": "textarea",
+            "id": "title",
+            "label": "Add Main Heading Text",
+            "default": "Heading"
+          },
+          {
+            "type": "richtext",
+            "id": "main_information_text",
+            "label": "Add Main Information Text",
+            "default": "<p>Lorem Ipsum is simply dummy text of the printing</p>"
+          },
+          {
+            "type": "video",
+            "id": "main_mp4_video",
+            "label": "Add Main MP4 Desktop Video"
+          },
+          {
+            "type": "video",
+            "id": "main_mp4_mobile_video",
+            "label": "Add Main MP4 Mobile Video"
+          },
+          {
+            "type": "image_picker",
+            "id": "main_desktop_image",
+            "label": "Add Main Desktop Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "main_mobile_image",
+            "label": "Add Main Mobile Image"
+          },
+          {
+            "type": "text",
+            "id": "main_button_text",
+            "label": "Add Main Button Text",
+            "default": "Shop All"
+          },
+          {
+            "type": "url",
+            "id": "main_button_link",
+            "label": "Add Main Button Link",
+            "default": "/"
+          },
+          {
+            "type": "image_picker",
+            "id": "main_thumbnail_image",
+            "label": "Add Main Thumbnail Image"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Index Collection Scroll",
+        "blocks": [
+          {
+            "type": "information"
+          },
+          {
+            "type": "information"
+          },
+          {
+            "type": "information"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

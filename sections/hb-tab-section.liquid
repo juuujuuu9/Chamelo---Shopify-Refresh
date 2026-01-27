@@ -1,0 +1,479 @@
+{{ "hb-tab-section.css" |  asset_url |  stylesheet_tag }}
+
+<style>
+    @media screen and (max-width:767px){
+        #hb_tab_section-{{ section.id }} {
+        padding-top: {{ section.settings.padding_top_mob }}px;
+        padding-bottom: {{ section.settings.padding_bottom_mob }}px;
+      }  
+    }
+</style>
+
+<script src="{{ 'lottie.js' |  asset_url }}" type="module"></script>
+
+<div class="hb_tab_section" id="hb_tab_section-{{ section.id }}">
+
+    {% if section.settings.title != blank %}
+        <h2 class="hb_tab_section__title mobile">{{ section.settings.title }}</h2>
+    {% endif %}
+    {% if section.settings.Top_img != blank %}
+        <div class="hb_tab_section__top-img">
+            <img src="{{ section.settings.Top_img |  image_url: width:  "2000x"  }}" alt="">
+        </div>
+    {% endif %}
+    {% if section.settings.title != blank or section.settings.video != blank or section.settings.text != blank %}
+        <div class="hb_tab_section__center-content" id="{{ section.settings.id }}">
+            <div class="page-width">
+                <div class="hb_tab_section__inner-row">
+                    {% if section.settings.title != blank %}
+                        <h2 class="hb_tab_section__title desktop">{{ section.settings.title }}</h2>
+                    {% endif %}
+                    <div class="hb_tab_section__row" style="max-width:{{ section.settings.width }}px">
+                        {%- if section.settings.video != blank -%}
+                        <div class="hb_tab_section__video" style="max-width:{{ section.settings.video_width }}px;flex:{{ section.settings.video_width }}px;height:{{ section.settings.video_height }}px;">
+                            {{ section.settings.video | video_tag: autoplay: true, muted: true, loop: true, controls: false }}
+                        </div>
+                        {%- endif -%}
+                        {% if section.settings.text != blank %}
+                            <div class="hb_tab_section__text">{{ section.settings.text }}</div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    <div class="page-width">
+        <div class="hb_tab_section__tab-content">
+            <div class="hb_tab_section__tab-alpha">
+                {% if section.settings.tab_title != blank %}
+                    <h4 class="hb-tab-section__tab-title">{{ section.settings.tab_title }}</h4>
+                {% endif %}
+                <div class="hb-tab-section__flex">
+                    {% for block in section.blocks %}
+                        {% if block.type == "tab" %}
+                            <h4 class="hb-tab-section__tab_text {% if forloop.first %}active{% endif %}">{{ block.settings.tab_text }}</h4>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="tab-contents">
+                    {% for block in section.blocks %}
+                        {% if block.type == "tab" %}
+                            <div class="hb-tab-section__tab-inner-content  {% if forloop.first %}active{% endif %}" js-desktop-tab_content>
+                                {% if block.settings.tab_sub_title != blank %}
+                                    <div class="hb-tab-section__sub_title">{{ block.settings.tab_sub_title }}</div>
+                                {% endif %}
+                                {% if block.settings.tab_sub_text != blank %}
+                                    <div class="hb_tab_section__text">{{ block.settings.tab_sub_text }}</div>
+                                {% endif %}
+                                {% if block.settings.popup_title != blank or block.settings.popup_text != blank %}
+                                    <div class="hb_tab_section__popup-container">
+                                        {% if block.settings.popup_title != blank %}
+                                            <h4 class="hb_tab_section__popup-title">{{ block.settings.popup_title }}</h4>
+                                        {% endif %}
+                                        {% if block.settings.popup_text != blank %}
+                                            <p class="hb_tab_section__popup-text">{{ block.settings.popup_text }}</p>
+                                        {% endif %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {% if section.settings.btn_text != blank %}
+                    <a href="{{ section.settings.btn_url }}" class="hb_tab_section__btn">{{ section.settings.btn_text }}</a>
+                {% endif %}
+            </div>
+            <div class="hb_tab_section__tab-beta">
+                <div class="hb_lottie-wrapper">
+                    {% for block in section.blocks %}
+                        {% if block.type == "tab" %}
+                            <div 
+                            {% if block.settings.lottie_url != "blank" %}
+                                lottie-url = "{{ block.settings.lottie_url }}"
+                            {% endif %} 
+                            class="hb-tab-section__tab_img-wrap {% if forloop.first %}active{% endif %}" js-tab-image_content>
+                             <canvas class="hb_lottie-canvas"></canvas>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {% for block in section.blocks %}
+                    {% if block.type == "tab" %}
+                        <div class="hb-tab-section__tab-inner-content  {% if forloop.first %}active{% endif %}" js-mob_tab-content>
+                            {% if block.settings.tab_sub_title != blank %}
+                                <div class="hb-tab-section__sub_title">{{ block.settings.tab_sub_title }}</div>
+                            {% endif %}
+                            {% if block.settings.tab_sub_text != blank %}
+                                <div class="hb_tab_section__text">{{ block.settings.tab_sub_text }}</div>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+                {% for block in section.blocks %}
+                    {% if block.type == "tab" %}
+                        {% if block.settings.button_mobile_text != blank %}
+                            <div class="hb_tab_section__popup mobile  {% if forloop.first %}active{% endif %}" js-mob-popup-content>
+                                <div class="hb_tab_section__popup-flex-wrap" js-mob-popup_trigger>
+                                    <span class="hb_tab_section__popup-btn">{{ block.settings.button_mobile_text }}</span>
+                                    <div class="hb_tab_section__popup-icon">
+                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5.5 8.5H6.5V5.5H5.5V8.5ZM6 4.5C6.14167 4.5 6.2605 4.452 6.3565 4.356C6.4525 4.26 6.50033 4.14133 6.5 4C6.49967 3.85867 6.45167 3.74 6.356 3.644C6.26033 3.548 6.14167 3.5 6 3.5C5.85833 3.5 5.73967 3.548 5.644 3.644C5.54833 3.74 5.50033 3.85867 5.5 4C5.49967 4.14133 5.54767 4.26017 5.644 4.3565C5.74033 4.45283 5.859 4.50067 6 4.5ZM6 11C5.30833 11 4.65833 10.8687 4.05 10.606C3.44167 10.3433 2.9125 9.98717 2.4625 9.5375C2.0125 9.08783 1.65633 8.55867 1.394 7.95C1.13167 7.34133 1.00033 6.69133 1 6C0.999667 5.30867 1.131 4.65867 1.394 4.05C1.657 3.44133 2.01317 2.91217 2.4625 2.4625C2.91183 2.01283 3.441 1.65667 4.05 1.394C4.659 1.13133 5.309 1 6 1C6.691 1 7.341 1.13133 7.95 1.394C8.559 1.65667 9.08817 2.01283 9.5375 2.4625C9.98683 2.91217 10.3432 3.44133 10.6065 4.05C10.8698 4.65867 11.001 5.30867 11 6C10.999 6.69133 10.8677 7.34133 10.606 7.95C10.3443 8.55867 9.98817 9.08783 9.5375 9.5375C9.08683 9.98717 8.55767 10.3435 7.95 10.6065C7.34233 10.8695 6.69233 11.0007 6 11ZM6 10C7.11667 10 8.0625 9.6125 8.8375 8.8375C9.6125 8.0625 10 7.11667 10 6C10 4.88333 9.6125 3.9375 8.8375 3.1625C8.0625 2.3875 7.11667 2 6 2C4.88333 2 3.9375 2.3875 3.1625 3.1625C2.3875 3.9375 2 4.88333 2 6C2 7.11667 2.3875 8.0625 3.1625 8.8375C3.9375 9.6125 4.88333 10 6 10Z" fill="black"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="hb_tab_section__overly"></div>
+                                <div class="hb_tab_section__popup-container">
+                                    {% if block.settings.popup_title != blank %}
+                                        <h4 class="hb_tab_section__popup-title">{{ block.settings.popup_title }}</h4>
+                                    {% endif %}
+                                    {% if block.settings.popup_text != blank %}
+                                        <p class="hb_tab_section__popup-text">{{ block.settings.popup_text }}</p>
+                                    {% endif %}
+                                    <div class="hb_tab_section__cross_icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_0_1245)">
+                                            <path d="M19.071 4.92889L4.92891 19.071" stroke="black" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
+                                            <path d="M19.0711 19.071L4.92896 4.92889" stroke="black" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
+                                            </g>
+                                            <defs>
+                                            <clipPath id="clip0_0_1245">
+                                            <rect width="24" height="24" fill="white"/>
+                                            </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+                {%- for block in section.blocks -%}
+                    <div class="hb_product_slider mobile {% if forloop.first %}active{% endif %}" js-mob-tab_product-content>
+                        <div class="hb_product_slider__texts--icon-wrap">
+                            <div class="hb_product_slider__texts--wrap">
+                                <span class="hb_product_slider__texst--item">shop hvl Lenses</span>
+                            </div>
+                            <div class="hb_product_slider__icon--wrap">
+                                <div class="hb_product_slider__icon prev" js-product-slider-prev>
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.81 7.56646L0.666651 7.56646L0.666651 5.8998L10.81 5.8998L6.33998 1.4298L7.51832 0.251465L14 6.73313L7.51832 13.2148L6.33998 12.0365L10.81 7.56646Z" fill="black"/>
+                                    </svg>
+                                </div>
+                                <div class="hb_product_slider__icon next" js-product-slider-next>
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.81 7.56646L0.666651 7.56646L0.666651 5.8998L10.81 5.8998L6.33998 1.4298L7.51832 0.251465L14 6.73313L7.51832 13.2148L6.33998 12.0365L10.81 7.56646Z" fill="black"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper mySwiper swiper-container" js-product-slider-mobile>
+                            <div class="hb_product_slider__wrapper swiper-wrapper">
+                                    {% assign productList = block.settings.choose_product %}
+                                    {% for product in productList %}
+                                        <div class="hb_product_slider__inner--wrapper swiper-slide">
+                                            <div class="hb_product_slider__wrap">
+                                                <div class="hb_product_slider__image">
+                                                    <img src="{{ product.featured_image | image_url: width: 500 }}" alt="{{ product.title }}">
+                                                </div>
+                                                <div class="hb_product_slider--texts-wrap">
+                                                    <h3 class="hb_product_slider__product--title">{{ product.title }}</h3>
+                                                    <h4 class="hb_product_slider__product--price">{{ product.price | money }}</h4>
+                                                    <a href="{{ product.url }}" class="hb_product_slider__product--link">SHOP NOW</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                {%- endfor -%}
+                <div class="hb_tab_section__bg-svg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="580" height="512" viewBox="0 0 580 512" fill="none">
+                        <path d="M40.1807 -76L40.1807 521M124.327 -76L124.327 521M208.474 -76L208.474 521M292.621 -76L292.621 521M376.767 -76L376.767 521M460.914 -76V521M545.06 -76V521M580 -20.4663L0 -20.4663M580 67.2342L0 67.2341M580 154.935L0 154.935M580 242.636L0 242.636M580 330.336L0 330.336M580 418.038L0 418.038M580 498.24L0 498.24" stroke="url(#paint0_radial_1_1718)" stroke-opacity="0.06"/>
+                        <defs>
+                        <radialGradient id="paint0_radial_1_1718" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(290 226.249) rotate(89.9353) scale(369.793 354.807)">
+                        <stop offset="0.315"/>
+                        <stop offset="1" stop-color="white"/>
+                        </radialGradient>
+                        </defs>
+                    </svg>
+                </div>
+                {% for block in section.blocks %}
+                <div class="hb_product_button__wrapper {% if forloop.first %}active{% endif %}" js-tab-product_content>
+                    <div class="hb_product_button__block--wrap">
+                            {% assign productList = block.settings.choose_product %}
+                            {% for product in productList %}
+                                <div class="hb_product_button__inner--wrapper">
+                                    {% if product.featured_image %}
+                                        <div class="hb_product_button__image">
+                                            <img src="{{ product.featured_image | image_url: width: "500x"  }}" alt="">
+                                        </div>
+                                    {% endif %}
+                                    <div class="hb_product_button__texts--wrap">
+                                        <h3 class="hb_product_button__title hb-button">{{ product.title }}</h3>
+                                        {% if product.price != blank %} 
+                                            <h4 class="hb_product_button__price">{{ product.price |  money_without_trailing_zeros }}</h4>
+                                        {% endif %}
+                                        <a href="{{ product.url }}" class="hb_product_button__link hb-button">Shop now</a>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        {% if section.settings.button_text != blank %}
+                            <div class="hb_product_button__wrap" js-product-button>
+                                <div class="hb_product_button__icon">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_1_2490)">
+                                            <path d="M8 1.33337V14.6667" stroke="black" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
+                                            <path d="M14.6668 8H1.3335" stroke="black" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_1_2490">
+                                                <rect width="16" height="16" fill="white"/>
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <h3 class="hb_product_button__text" js-button-text>{{ section.settings.button_text }}</h3>
+                            </div>
+                        {% endif %}
+                        
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      
+        function initSlider(section) {
+            if(sliderInstance.length) { 
+                sliderInstance.forEach( el => {
+                    if(el.wrapperEl === section.querySelector(".swiper-wrapper")) {
+                        el?.destroy()
+                    }
+                })
+            };
+      
+          const tabPanel = section.querySelector("[js-mob-tab_product-content].active");
+          const sliderEl = tabPanel.querySelector("[js-product-slider-mobile]");
+
+          const nextEl = tabPanel.querySelector("[js-product-slider-next]")
+          const prevEl = tabPanel.querySelector("[js-product-slider-prev]")
+      
+          const slider = new Swiper(sliderEl, {
+            slidesPerView: 1.1,
+            spaceBetween: 8,
+            navigation: {
+              nextEl,
+              prevEl
+            }
+          });
+
+          sliderInstance.push(slider)
+        };
+      
+        initSlider(document.querySelector("#shopify-section-{{ section.id }}"));
+      
+        // Select each .hb_tab_section separately
+        document.querySelectorAll(".hb_tab_section").forEach(section => {
+            const tabs = section.querySelectorAll(".hb-tab-section__tab_text");
+            const tabContents = section.querySelectorAll("[js-desktop-tab_content]");
+            const tabImageContents = section.querySelectorAll("[js-tab-image_content]");
+            const tabProductContents = section.querySelectorAll("[js-tab-product_content]");
+            const tabMobProductContents = section.querySelectorAll("[js-mob-tab_product-content]");
+            const tabMobTabContent = section.querySelectorAll("[js-mob_tab-content]");
+            const tabMobPopupContent = section.querySelectorAll("[js-mob-popup-content]");
+      
+            tabs.forEach((tab, index) => {
+                tab.addEventListener("click", function () {
+                    // Remove active class from all tabs and contents within the same section
+                    tabs.forEach(t => t.classList.remove("active"));
+                    tabContents.forEach(content => content.classList.remove("active"));
+                    tabImageContents.forEach(ImageContent => ImageContent.classList.remove("active"));
+                    tabProductContents.forEach(productContent => productContent.classList.remove("active"));
+                    tabMobProductContents.forEach(mobProductContent => mobProductContent.classList.remove("active"));
+                    tabMobTabContent.forEach(mobTabContent => mobTabContent.classList.remove("active"));
+                    tabMobPopupContent.forEach(mobPopupContent => mobPopupContent.classList.remove("active"));
+      
+                    
+                    // Add active class to the clicked tab and corresponding content
+                    tab.classList.add("active");
+                    tabContents[index].classList.add("active");
+
+                    
+                    tabImageContents[index].classList.add("active");
+                    tabProductContents[index].classList.add("active");
+                    tabMobProductContents[index].classList.add("active");
+                    tabMobTabContent[index].classList.add("active");
+                    
+                    initSlider(this.closest(".hb_tab_section"));
+
+                    tabMobPopupContent[index]?.classList.add("active");
+                   
+                });
+            });
+        });
+
+        
+      });
+    
+</script> 
+{% schema %}
+{
+    "name": "Tab Section",
+    "settings": [
+          {
+            "type": "text",
+            "id": "id",
+            "label": "Id"
+          },
+          {
+            "type": "image_picker",
+            "id": "Top_img",
+            "label": "Top Image"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "video",
+            "id": "video",
+            "label": "Video"
+          },
+          {
+            "type": "range",
+            "id": "video_width",
+            "max": 165,
+            "min": 152,
+            "step": 1,
+            "unit": "px",
+            "label": "Video Width",
+            "default": 155
+          },
+          {
+            "type": "range",
+            "id": "video_height",
+            "max": 120,
+            "min": 100,
+            "step": 1,
+            "unit": "px",
+            "label": "Video Height",
+            "default": 100
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text"
+          },
+          {
+            "type": "range",
+            "id": "width",
+            "max": 665,
+            "min": 583,
+            "step": 1,
+            "unit": "px",
+            "label": "Text Width",
+            "default": 583
+          },
+          {
+            "type": "text",
+            "id": "tab_title",
+            "label": "Tab title"
+          },
+          {
+            "type": "text",
+            "id": "btn_text",
+            "label": "Button Text"
+          },
+          {
+            "type": "url",
+            "id": "btn_url",
+            "label": "Button Url"
+          },
+          {
+            "type": "text",
+            "id": "button_text",
+            "label": "Product Button text"
+          },
+          {
+            "type": "range",
+            "max": 100,
+            "min": 0,
+            "step": 1,
+            "unit": "px",
+            "id": "padding_top_mob",
+            "label": "Padding Top(mobile)",
+            "default": 56
+          },
+          {
+            "type": "range",
+            "max": 100,
+            "min": 10,
+            "step": 1,
+            "unit": "px",
+            "id": "padding_bottom_mob",
+            "label": "Padding Bottom(mobile)",
+            "default": 56
+          }
+        ],
+        "blocks": [
+            {
+                "name": "Tab",
+                "type": "tab",
+                "limit": 3,
+                "settings": [
+                   {
+                    "type": "text",
+                    "id": "tab_text",
+                    "label": "Tab Text"
+                   },
+                   {
+                    "type": "text",
+                    "id": "tab_sub_title",
+                    "label": "Sub Title"
+                   },
+                   {
+                    "type": "html",
+                    "id": "tab_sub_text",
+                    "label": "Sub Text"
+                   },
+                   {
+                    "type": "text",
+                    "id": "popup_title",
+                    "label": "Popup Title"
+                   },
+                   {
+                    "type": "text",
+                    "id": "popup_text",
+                    "label": "Popup Text"
+                   },
+                   {
+                    "type": "text",
+                    "id": "lottie_url",
+                    "label": "Lottie Url"
+                   },
+
+                   {
+                    "type": "text",
+                    "id": "button_mobile_text",
+                    "label": "Popup Button (mob)"
+                   },
+                   {
+                    "type": "product_list",
+                    "id": "choose_product",
+                    "label": "Choose Product"
+                   }
+                ]
+            }
+        ],
+        "presets": [
+            {
+               "name": "Tab Section"
+            }
+        ]
+}
+{% endschema %}

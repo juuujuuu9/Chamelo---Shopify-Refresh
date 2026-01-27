@@ -1,0 +1,140 @@
+{{ 'hb-Redefining.css' |  asset_url |  stylesheet_tag }}
+<div class="hb_Redefining">
+    <div class="page-width">
+        <div class="hb_Redefining__wrapper">
+           <div class="hb_Redefining__block--wrap alpha">
+               {% for block in section.blocks %}
+                    <div class="hb_Redefining__block--inner-wrap">
+                            {%- if block.settings.video != blank -%}
+                                <div class="hb_Redefining__block--video">
+                                    {{ block.settings.video | video_tag: autoplay: true, muted: true, loop: true, controls: false }}
+                                </div>
+                            {%- endif -%}
+                            <div class="hb_Redefinig__block--texts-wrap">
+                                {%- if block.settings.pre_title != blank -%}
+                                    <h4 class="hb_Redefining__block--pre-title pre-title">{{ block.settings.pre_title }}</h4>
+                                {%- endif -%}
+                                {%- if block.settings.title != blank -%}
+                                    <h2 class="hb_Redefining__block--title">{{ block.settings.title }}</h2>
+                                {%- endif -%}
+                                {%- if block.settings.content != blank -%}
+                                    <div class="hb_Redefining__block--content">{{ block.settings.content }}</div>
+                                {%- endif -%}
+                                {%- if block.settings.button != blank -%} 
+                                    <a href="{{ block.settings.button_url }}" class="hb_Redefining__block--button">{{ block.settings.button }}</a>
+                                {%- endif -%}
+                            </div>
+                    </div>
+                {% endfor %}
+           </div> 
+           <div class="hb_Redefining__texts--wrap beta">
+            {%- if section.settings.circle_image != blank -%}
+                <div class="hb_Redefining__texts--circle-wrap">
+                    <div class="hb_Redefining__texts--circle-image">
+                        {{ section.settings.circle_image |  image_url: width: "1000x" |  image_tag  }}
+                    </div>
+                    <div class="hb_Redefining__texts--circle-icon">
+                        <svg width="23" height="34" viewBox="0 0 23 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.4428 17.191C22.3456 16.7963 19.9781 7.50688 16.8122 1.52301L16.5483 1.0226C16.5206 0.973261 16.4789 0.945068 16.4234 0.945068H6.51596C6.46042 0.945068 6.41876 0.973261 6.39099 1.0226L6.12716 1.52301C2.95429 7.50688 0.586788 16.8034 0.489589 17.191L0.475703 17.2403C0.447932 17.3602 0.440989 17.48 0.461818 17.5998V17.6491C1.62127 24.4083 5.92582 33.014 6.11328 33.3806L6.37016 33.8951C6.39099 33.9444 6.44653 33.9726 6.49513 33.9726H16.4303C16.4859 33.9726 16.5345 33.9444 16.5553 33.8951L16.8122 33.3806C16.9927 33.014 21.2972 24.4083 22.4497 17.6491V17.5998C22.4775 17.48 22.4706 17.3602 22.4497 17.2403L22.4359 17.191H22.4428ZM15.1251 3.13704C15.1806 3.13704 15.2292 3.16523 15.25 3.21457C17.4301 7.57736 19.2144 13.5824 19.9712 16.2959C19.992 16.3805 19.9295 16.465 19.8392 16.465C19.2144 16.465 17.1177 16.465 16.5969 16.465C16.5275 16.465 16.472 16.4157 16.4581 16.3452C16.4581 16.3452 14.3891 4.13082 14.2294 3.18637C14.2294 3.15818 14.2503 3.12999 14.278 3.12999H15.1181L15.1251 3.13704ZM7.68235 3.21457C7.70318 3.16523 7.75178 3.13704 7.80732 3.13704C8.35581 3.13704 11.3135 3.13704 11.9314 3.13704C12.0008 3.13704 12.0563 3.18637 12.0633 3.25685L14.2433 16.1408C14.285 16.3875 14.2294 16.4721 13.9656 16.4721C12.2438 16.4721 4.38451 16.4721 3.09315 16.4721C3.00289 16.4721 2.93346 16.3875 2.96123 16.2959C3.718 13.5824 5.50231 7.57736 7.68235 3.21457ZM11.9244 31.7947H7.82121C7.76567 31.7947 7.72401 31.7665 7.69624 31.7172C6.7659 29.7649 4.07903 23.9149 2.89875 18.8262C2.87792 18.7345 2.94735 18.65 3.03761 18.65H14.0975C14.1808 18.65 14.2503 18.7275 14.2364 18.8191L12.0633 31.6749C12.0494 31.7454 11.9938 31.7947 11.9244 31.7947ZM15.2292 31.7172C15.2084 31.7665 15.1598 31.7947 15.1112 31.7947C14.9515 31.7947 14.6043 31.7947 14.3961 31.7947C14.3058 31.7947 14.2433 31.7172 14.2572 31.6256L16.4303 18.7698C16.4442 18.6993 16.4997 18.65 16.5692 18.65H19.8878C19.9781 18.65 20.0475 18.7345 20.0267 18.8262C18.8464 23.9149 16.1665 29.7649 15.2292 31.7172Z" fill="black"/>
+                        </svg> 
+                    </div>
+                </div>
+            {%- endif -%}
+            <div class="hb_Redefining__texts--inner-wrap">
+                {%- if section.settings.text_pre_title != blank -%}
+                    <h4 class="hb_Redefining__texts--pre-title pre-title">{{ section.settings.text_pre_title }}</h4>
+                {%- endif -%}
+                {%- if section.settings.text_title != blank -%}
+                    <h2 class="hb_Redefining__texts--title">{{ section.settings.text_title }}</h2>
+                {%- endif -%}
+                {%- if section.settings.text_content != blank -%}
+                    <div class="hb_Redefining__texts--content">{{ section.settings.text_content }}</div>
+                {%- endif -%}
+                {%- if section.settings.text_button != blank -%}
+                    <a href="{{ section.settings.text_button_url }}" class="hb_Redefining__texts--button">{{ section.settings.text_button }}</a>
+                {%- endif -%}
+            </div>
+           </div>
+        </div>
+    </div>
+</div>
+{% schema %}
+  {
+    "name": "Hb Redefining",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "circle_image",
+        "label": "Circle image"
+      },
+      {
+        "type": "text",
+        "id": "text_pre_title",
+        "label": "Pre title"
+      },
+      {
+        "type": "text",
+        "id": "text_title",
+        "label": "Title"
+      },
+      {
+        "type": "richtext",
+        "id": "text_content",
+        "label": "Content"
+      },
+      {
+        "type": "text",
+        "id": "text_button",
+        "label": "Button"
+      },
+      {
+        "type": "url",
+        "id": "text_button_url",
+        "label": "Button Url"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "block",
+        "type": "block",
+        "settings": [
+          {
+            "type": "video",
+            "id": "video",
+            "label": "Video"
+          },
+          {
+            "type": "text",
+            "id": "pre_title",
+            "label": "Pre title"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content"
+          },
+          {
+            "type": "text",
+            "id": "button",
+            "label": "Button"
+          },
+          {
+            "type": "url",
+            "id": "button_url",
+            "label": "Button Url"
+          } 
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Hb Redefining"
+      }
+    ]
+  }
+{% endschema %}

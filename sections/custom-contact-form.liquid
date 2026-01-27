@@ -1,0 +1,170 @@
+
+{{ 'section-contact-form.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  
+  #ContactForm-phone-wrapper {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  #ContactForm-phone-wrapper.show {
+    display: block;
+    opacity: 1;
+  }
+  
+  .contact_form_container {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  
+  .contact_form_container.show {
+    display: block;
+    opacity: 1;
+  }
+  
+  .contact_field_custom_new{
+    max-width: 500px;
+    margin: auto;
+  }
+  
+  .contact_field_custom_new .field{
+    margin-bottom: 1rem!important;
+  }
+  
+  .contact__button_custom{
+    margin-top: 0rem!important;
+  }
+  
+  
+  .show_form_button.hidden {
+    display: none;
+  }
+  .button_custom_contact{
+       background-color: #116885 !important;
+    padding: 13px 40px !important;
+    width: fit-content !important;
+    color: #fff !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    line-height: 125% !important;
+    letter-spacing: .16px !important;
+    text-transform: uppercase !important;
+  }
+{%- endstyle -%}
+
+<div class="">
+
+    <div class="show_form_button" id="showFormButton">
+    <button type="button" class="button product-form__submit button button--full-width button--primary" onclick="showContactForm()">
+     Be the first to know when it drops
+    </button>
+  </div>
+
+
+  <div class="contact contact_field_custom_new contact_form_container" id="contactFormContainer">
+    {%- if block.settings.heading != blank -%}
+      <h2 class="title title-wrapper--no-top-margin inline-richtext">
+        {{ block.settings.heading }}
+      </h2>
+    {%- endif -%}
+    {%- liquid
+      assign contact_form_class = 'isolate'
+      if settings.animations_reveal_on_scroll
+        assign contact_form_class = 'isolate scroll-trigger animate--slide-in'
+      endif
+    -%}
+    {%- form 'contact', id: 'ContactForm', class: contact_form_class -%}
+      {%- if form.posted_successfully? -%}
+        <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
+          {% render 'icon-success' %}
+          {{ 'templates.contact.form.post_success' | t }}
+        </h2>       
+      {%- endif -%}
+      <div class="contact__fields_custom">
+        <div class="field field--with-error">
+          <input
+            autocomplete="email"
+            type="email"
+            id="ContactForm-email"
+            class="field__input"
+            name="contact[email]"
+            spellcheck="false"
+            autocapitalize="off"
+            value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+            aria-required="true"
+            {% if form.errors contains 'email' %}
+              aria-invalid="true"
+              aria-describedby="ContactForm-email-error"
+            {% endif %}
+            placeholder="{{ 'templates.contact.form.email' | t }}"
+          >
+          <label class="field__label" for="ContactForm-email">
+            {{- 'templates.contact.form.email' | t }}
+            <span aria-hidden="true">*</span></label
+          >
+          {%- if form.errors contains 'email' -%}
+            <small class="contact__field-error" id="ContactForm-email-error">
+              <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
+              <span class="form__message">
+                {%- render 'icon-error' -%}
+                {{- form.errors.translated_fields.email | capitalize }}
+                {{ form.errors.messages.email -}}
+              </span>
+            </small>
+          {%- endif -%}
+        </div>
+      </div>
+      <div class="field" id="ContactForm-phone-wrapper">
+        <input
+          type="tel"
+          id="ContactForm-phone"
+          class="field__input"
+          autocomplete="tel"
+          name="contact[{{ 'templates.contact.form.phone' | t }}]"
+          pattern="[0-9\-]*"
+          value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
+          placeholder="{{ 'templates.contact.form.phone' | t }}"
+        >
+        <label class="field__label" for="ContactForm-phone">{{ 'templates.contact.form.phone' | t }}</label>
+      </div>
+      <div class="contact__button_custom">
+        <button type="submit" class="button button_custom_contact">
+          {{ 'templates.contact.form.send' | t }}
+        </button>
+      </div>
+    {%- endform -%}
+  </div>
+</div>
+
+<script>
+  function showContactForm() {
+    const formContainer = document.getElementById('contactFormContainer');
+    const showButton = document.getElementById('showFormButton');
+    
+    showButton.classList.add('hidden');
+    
+    formContainer.classList.add('show');
+    
+   
+  }
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    const emailInput = document.getElementById('ContactForm-email');
+    const phoneWrapper = document.getElementById('ContactForm-phone-wrapper');
+    
+    if (emailInput.value.trim() !== '') {
+      phoneWrapper.classList.add('show');
+    }
+    
+    emailInput.addEventListener('input', function() {
+      if (this.value.trim() !== '') {
+        phoneWrapper.classList.add('show');
+      } else {
+        phoneWrapper.classList.remove('show');
+      }
+    });
+  });
+</script>
