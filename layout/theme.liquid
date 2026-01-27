@@ -357,71 +357,60 @@
       <script src="{{ 'localization-form.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
-    {%- comment -%} Load all third-party scripts after DOM is ready to prevent blocking {%- endcomment -%}
+    {%- comment -%} Weglot Translation - Load async but early {%- endcomment -%}
+    <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js" async></script>
     <script>
-      (function() {
-        function loadThirdPartyScripts() {
-          // Heatmap.com
-          (function (h,e,a,t,m,ap) { 
-            (h._heatmap_paq = []).push(['setTrackerUrl', (h.heatUrl = e) + a]); 
-            h.hErrorLogs=h.hErrorLogs || []; 
-            ap=t.createElement('script'); 
-            ap.src=h.heatUrl+'preprocessor.min.js?sid='+m; 
-            ap.defer=true; 
-            ap.async=true;
-            t.head.appendChild(ap); 
-            ['error', 'unhandledrejection'].forEach(function (ty) {
-              h.addEventListener(ty, function (et) { 
-                h.hErrorLogs.push({ type: ty, event: et }); 
-              }); 
-            });
-          })(window,'https://dashboard.heatmap.com/','heatmap.php',document,4385);
-
-          // Northbeam Pixel
-          (function(){var r;(n=r=r||{}).A="identify",n.B="trackPageView",n.C="fireEmailCaptureEvent",n.D="fireCustomGoal",n.E="firePurchaseEvent";var n="//j.northbeam.io/ota-sp/7aff28c5-7c59-4c59-b573-71ae459c945f.js";function t(n){for(var e=[],r=1;r<arguments.length;r++)e[r-1]=arguments[r];a.push({fnName:n,args:e})}var a=[],e=((e={_q:a})[r.A]=function(n,e){return t(r.A,n,e)},e[r.B]=function(){return t(r.B)},e[r.C]=function(n,e){return t(r.C,n,e)},e[r.D]=function(n,e){return t(r.D,n,e)},e[r.E]=function(n){return t(r.E,n)},window.Northbeam=e,document.createElement("script"));e.async=!0,e.src=n,document.head.appendChild(e);})();
-
-          // Post Pilot Pixel
-          var postPilotScript = document.createElement('script');
-          postPilotScript.src = 'https://xp2023-pix.s3.amazonaws.com/px_WJ5t7.js';
-          postPilotScript.async = true;
-          document.head.appendChild(postPilotScript);
-
-          // Clarity
-          (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-          })(window, document, "clarity", "script", "mtnqo9k24s");
-
-          // Intelligems
-          var intelligemsScript = document.createElement('script');
-          intelligemsScript.type = 'module';
-          intelligemsScript.src = 'https://cdn.intelligems.io/esm/db4d790f2d09/bundle.js';
-          intelligemsScript.async = true;
-          document.head.appendChild(intelligemsScript);
+      window.addEventListener('load', function() {
+        if (typeof Weglot !== 'undefined') {
+          Weglot.initialize({
+            api_key: 'wg_d0383aa8969128e7e3d5097d1f51e6592'
+          });
         }
+      });
+    </script>
 
-        // Load Weglot earlier for translation functionality
-        var weglotScript = document.createElement('script');
-        weglotScript.src = 'https://cdn.weglot.com/weglot.min.js';
-        weglotScript.async = true;
-        weglotScript.onload = function() {
-          if (typeof Weglot !== 'undefined') {
-            Weglot.initialize({
-              api_key: 'wg_d0383aa8969128e7e3d5097d1f51e6592'
-            });
-          }
-        };
-        document.head.appendChild(weglotScript);
+    {%- comment -%} Defer all other third-party scripts to improve page load performance {%- endcomment -%}
+    <script>
+      window.addEventListener('load', function() {
+        // Heatmap.com
+        (function (h,e,a,t,m,ap) { 
+          (h._heatmap_paq = []).push(['setTrackerUrl', (h.heatUrl = e) + a]); 
+          h.hErrorLogs=h.hErrorLogs || []; 
+          ap=t.createElement('script'); 
+          ap.src=h.heatUrl+'preprocessor.min.js?sid='+m; 
+          ap.defer=true; 
+          ap.async=true;
+          t.head.appendChild(ap); 
+          ['error', 'unhandledrejection'].forEach(function (ty) {
+            h.addEventListener(ty, function (et) { 
+              h.hErrorLogs.push({ type: ty, event: et }); 
+            }); 
+          });
+        })(window,'https://dashboard.heatmap.com/','heatmap.php',document,4385);
 
-        // Load other scripts after DOM is ready
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', loadThirdPartyScripts);
-        } else {
-          // DOM already loaded, wait a bit then load scripts
-          setTimeout(loadThirdPartyScripts, 100);
-        }
-      })();
+        // Northbeam Pixel
+        (function(){var r;(n=r=r||{}).A="identify",n.B="trackPageView",n.C="fireEmailCaptureEvent",n.D="fireCustomGoal",n.E="firePurchaseEvent";var n="//j.northbeam.io/ota-sp/7aff28c5-7c59-4c59-b573-71ae459c945f.js";function t(n){for(var e=[],r=1;r<arguments.length;r++)e[r-1]=arguments[r];a.push({fnName:n,args:e})}var a=[],e=((e={_q:a})[r.A]=function(n,e){return t(r.A,n,e)},e[r.B]=function(){return t(r.B)},e[r.C]=function(n,e){return t(r.C,n,e)},e[r.D]=function(n,e){return t(r.D,n,e)},e[r.E]=function(n){return t(r.E,n)},window.Northbeam=e,document.createElement("script"));e.async=!0,e.src=n,document.head.appendChild(e);})();
+
+        // Post Pilot Pixel
+        var postPilotScript = document.createElement('script');
+        postPilotScript.src = 'https://xp2023-pix.s3.amazonaws.com/px_WJ5t7.js';
+        postPilotScript.async = true;
+        document.head.appendChild(postPilotScript);
+
+        // Clarity
+        (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "mtnqo9k24s");
+
+        // Intelligems
+        var intelligemsScript = document.createElement('script');
+        intelligemsScript.type = 'module';
+        intelligemsScript.src = 'https://cdn.intelligems.io/esm/db4d790f2d09/bundle.js';
+        intelligemsScript.async = true;
+        document.head.appendChild(intelligemsScript);
+      });
     </script>
 <script>
     window.Shopify = window.Shopify || {theme: {id: {{ theme.id }}, role: '{{ theme.role }}' } };
@@ -442,8 +431,8 @@
     
     {%- comment -%} Defer geoIP redirect to prevent blocking page render {%- endcomment -%}
     <script>
-      (function() {
-        function checkGeoIP() {
+      window.addEventListener('load', function() {
+        setTimeout(function() {
           fetch('https://ipapi.co/json/')
             .then(response => {
               if (!response.ok) throw new Error('Network response was not ok');
@@ -457,17 +446,8 @@
             .catch(function() {
               // Silently fail if geoIP service is unavailable
             });
-        }
-        
-        // Wait for page to be fully interactive before checking geoIP
-        if (document.readyState === 'complete') {
-          setTimeout(checkGeoIP, 2000);
-        } else {
-          window.addEventListener('load', function() {
-            setTimeout(checkGeoIP, 2000);
-          });
-        }
-      })();
+        }, 2000);
+      });
     </script>
 
 <script>
@@ -609,8 +589,8 @@
     
     {%- comment -%} Defer TryMe and Klaviyo scripts {%- endcomment -%}
     <script>
-      (function() {
-        function loadAdditionalScripts() {
+      window.addEventListener('load', function() {
+        setTimeout(function() {
           var trymeScript = document.createElement('script');
           trymeScript.src = 'https://tryme.directory/api/embed?id=OocC-WNZa-AUfH-XdZq-JTmB-bX6O';
           trymeScript.async = true;
@@ -620,16 +600,8 @@
           klaviyoScript.src = 'https://a.klaviyo.com/media/js/onsite/onsite.js';
           klaviyoScript.async = true;
           document.head.appendChild(klaviyoScript);
-        }
-        
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(loadAdditionalScripts, 1000);
-          });
-        } else {
-          setTimeout(loadAdditionalScripts, 1000);
-        }
-      })();
+        }, 1000);
+      });
     </script>
   <script>
      //  var klaviyo = klaviyo || [];
